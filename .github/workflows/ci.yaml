@@ -7,8 +7,9 @@ on:
       - main
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
+  import:
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v3
     - uses: ega4432/notion-to-markdown-action@v0
       env:
