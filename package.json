@@ -1,5 +1,5 @@
 {
-  "name": "@example/basics",
+  "name": "egashira.dev",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -15,5 +15,9 @@
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.0.6",
     "tailwindcss": "^3.0.24"
-  }
+  },
+  "devDependencies": {
+    "rome": "^11.0.0"
+  },
+  "packageManager": "pnpm@7.26.2"
 }
