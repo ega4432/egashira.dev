@@ -10,16 +10,14 @@ const allNotes = await getCollection('notes', ({ data }) => {
 allNotes.sort((a, b) => dateSortDesc(a.data.createdAt, b.data.createdAt))
 ---
 <Layout title="Welcome to Astro.">
-	<main>
-    <div>
-      <p>All notes</p>
-      <ul>
-        {allNotes.map((note) =>
-          <li>
-            <a href={`/notes/${note.slug}`}>{note.data.title}</a>
-          </li>
-        )}
-      </ul>
-    </div>
-	</main>
+  <div>
+    <p>All notes</p>
+    <ul>
+      {allNotes.map((note) =>
+        <li>
+          <a href={`/notes/${note.slug}`}>{note.data.title}</a>
+        </li>
+      )}
+    </ul>
+  </div>
 </Layout>
