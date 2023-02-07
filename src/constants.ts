@@ -15,7 +15,7 @@ export const footerLinks: Link[] = [
 
 export const headerLinks: Link[] = [
 	{ href: "/about", title: "About" },
-	{ href: "/blog", title: "Blog" },
-	{ href: "/tags", title: "Tags" },
+	// { href: "/blog", title: "Blog" },
+	// { href: "/tags", title: "Tags" },
 	{ href: "/notes", title: "Notes" }
 ];

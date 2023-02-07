@@ -6,22 +6,12 @@ module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		extend: {
-			spacing: {
-				"9/16": "56.25%"
-			},
-			lineHeight: {
-				11: "2.75rem",
-				12: "3rem",
-				13: "3.25rem",
-				14: "3.5rem"
-			},
 			fontFamily: {
 				sans: ["InterVariable", ...defaultTheme.fontFamily.sans]
 			},
 			colors: {
-				primary: colors.sky,
-				//@ts-ignore
-				gray: colors.slate // TODO: Remove ts-ignore after tw types gets updated to v3
+				primary: colors.indigo,
+				gray: colors.neutral
 			},
 			typography: (theme) => ({
 				DEFAULT: {
