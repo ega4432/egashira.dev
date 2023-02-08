@@ -13,6 +13,6 @@ jobs:
         node-version-file: .tool-versions
         cache: 'npm'
     - run: npm ci
-    - run: npm rome format
-    - run: npm rome lint
+    - run: npx rome format ./src
+    - run: npx rome lint ./src
     - run: npm run build
