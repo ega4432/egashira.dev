@@ -1,5 +1,6 @@
 ---
-import { footerLinks } from "../constants";
+import { footerLinks } from "../config";
+import { siteMeta } from "../config";
 ---
 <footer>
   <div  class="flex flex-col items-center py-16">
@@ -9,7 +10,7 @@ import { footerLinks } from "../constants";
       )}
     </ul>
     <div class="flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-      <div>&copy 2023 ega4432</div>
+      <div>&copy 2023 {siteMeta.author}</div>
     </div>
   </div>
 </footer>

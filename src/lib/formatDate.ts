@@ -1,4 +1,4 @@
-const locale = "jp-JA";
+import { siteMeta } from "../config";
 
 export const formatDate = (date: string) => {
 	const options: Intl.DateTimeFormatOptions = {
@@ -6,7 +6,7 @@ export const formatDate = (date: string) => {
 		month: "long",
 		day: "numeric"
 	};
-	const now = new Date(date).toLocaleDateString(locale, options);
+	const now = new Date(date).toLocaleDateString(siteMeta.locale, options);
 
 	return now;
 };

@@ -1,17 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
 import { getCollection } from "astro:content";
 
+import Layout from '../layouts/Layout.astro';
 import { dateSortDesc, formatDate } from '../lib/formatDate';
+import { siteMeta } from '../config'
 
-const allNotes = await getCollection('notes', ({ data  }) => {
+const allNotes = await getCollection('notes', ({ data }) => {
   return data.isPublished === true;
 });
 allNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4);
 ---
 <Layout title="Welcome to Astro.">
   <div class="space-y-2 pt-6 pb-8 md:space-y-5">
-    <p>このサイトは、ega4432 の日々インプットしたことや技術情報、ライフハックなどについて発信するサイトです。</p>
+    <p>{`${siteMeta.description} ${siteMeta.author} の Web サイトです。`}</p>
   </div>
   <div class="divide-y">
     <div class="py-2 md:py-3">

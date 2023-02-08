@@ -1,13 +1,11 @@
 ---
-import { headerLinks } from "../constants";
-
-const title = 'egashira.dev'
+import { siteMeta, headerLinks } from "../config";
 ---
 <header class="flex items-center py-10 justify-between">
   <div>
-    <a href="/" aria-label={title}>
+    <a href="/" aria-label={siteMeta.title}>
       <div class="flex items-center justify-between">
-        <div class="h-6 text-2xl font-semibold leading-6">{title}</div>
+        <div class="h-6 text-2xl font-semibold leading-6">{siteMeta.title}</div>
       </div>
     </a>
   </div>
