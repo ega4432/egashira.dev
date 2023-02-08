@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-import Layout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { dateSortDesc, formatDate } from '../lib/formatDate';
 import { siteMeta } from '../config'
 
@@ -10,7 +10,7 @@ const allNotes = await getCollection('notes', ({ data }) => {
 });
 allNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4); // 最新 5 件のみ
 ---
-<Layout title="Welcome to Astro.">
+<BaseLayout title="Welcome to Astro.">
   <div class="space-y-2 pt-6 pb-8 md:space-y-5">
     <p>{`${siteMeta.description} ${siteMeta.author} の Web サイトです。`}</p>
   </div>

@@ -1,5 +1,6 @@
 ---
 import Layout from './BaseLayout.astro';
+import { siteMeta } from '../config';
 
 interface Props {
   title?: string | undefined
@@ -8,6 +9,6 @@ interface Props {
 
 const { title, description} = Astro.props
 ---
-<Layout title={title} description={description}>
+<Layout title={title ? `${title} | ${siteMeta.title}`: '' } description={description}>
   <slot />
 </Layout>

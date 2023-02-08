@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+
+import { siteMeta } from "../config";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const allNotes = await getCollection('notes')
+const pageTitle = `すべてのメモ書き | ${siteMeta.title}`
+---
+<BaseLayout title={pageTitle}>
+  <ol>
+    {allNotes.map((note) =>
+      <li>{note.data.title} {note.data.description}</li>
+    )}
+  </ol>
+</BaseLayout>
