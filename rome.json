@@ -8,7 +8,7 @@
     "ignore": ["node_modules"]
   },
   "formatter": {
-    "ignore": ["node_modules"]
+    "ignore": ["node_modules", "public"]
   },
   "javascript": {
     "formatter": {
