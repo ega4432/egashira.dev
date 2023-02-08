@@ -1,24 +1,28 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import SEO from '../components/SEO.astro';
-import { siteMeta } from '../constants'
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SEO from "../components/SEO.astro";
+import { siteMeta } from "../constants";
 
 export interface Props {
-	title?: string | undefined;
-  description?: string | undefined
+  title?: string | undefined;
+  description?: string | undefined;
 }
 
-const { title = siteMeta.title, description = siteMeta.description } = Astro.props;
+const { title = siteMeta.title, description = siteMeta.description } =
+  Astro.props;
 ---
+
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
+  <head>
     <title>{title}</title>
     <meta name="description" content={description} />
-		<SEO />
-	</head>
-	<body class="bg-gray-100 dark:bg-gray-800 text-black dark:text-gray-200 antialised">
+    <SEO />
+  </head>
+  <body
+    class="antialised bg-gray-100 text-black dark:bg-gray-800 dark:text-gray-200"
+  >
     <div class="mx-auto max-w-2xl px-4">
       <div class="flex h-screen flex-col justify-between">
         <Header />
@@ -28,5 +32,5 @@ const { title = siteMeta.title, description = siteMeta.description } = Astro.pro
         <Footer />
       </div>
     </div>
-	</body>
+  </body>
 </html>

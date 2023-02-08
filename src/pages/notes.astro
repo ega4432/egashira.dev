@@ -4,13 +4,20 @@ import { getCollection } from "astro:content";
 import { siteMeta } from "../constants";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = `すべてのメモ書き | ${siteMeta.title}`
-const allNotes = (await getCollection('notes')).reverse()
+const pageTitle = `すべてのメモ書き | ${siteMeta.title}`;
+const allNotes = (await getCollection("notes")).reverse();
 ---
+
 <BaseLayout title={pageTitle}>
   <ol>
-    {allNotes.map((note) =>
-      <li>{note.data.title} {note.data.description}</li> // TODO: replace custom component
-    )}
+    {
+      allNotes.map(
+        (note) => (
+          <li>
+            {note.data.title} {note.data.description}
+          </li>
+        ) // TODO: replace custom component
+      )
+    }
   </ol>
 </BaseLayout>
