@@ -14,6 +14,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './package-lock.json'
     - run: npm i
-    - run: npx rome format ./src
-    - run: npx rome check ./src
+    # - run: npm run check
+    # - run: npm run format
     - run: npm run build

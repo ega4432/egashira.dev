@@ -9,7 +9,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "rome formate ./src",
+    "check": "rome check ./src"
   },
   "dependencies": {
     "@astrojs/tailwind": "^3.0.1",
