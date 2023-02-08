@@ -12,7 +12,8 @@ jobs:
       with:
         node-version-file: .tool-versions
         cache: 'npm'
-    - run: npm ci
+        cache-dependency-path: './package-lock.json'
+    - run: npm i
     - run: npx rome format ./src
-    - run: npx rome lint ./src
+    - run: npx rome check ./src
     - run: npm run build
