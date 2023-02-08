@@ -1,4 +1,7 @@
 {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "rome.rome"
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

@@ -3,12 +3,10 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { dateSortDesc, formatDate } from '../lib/formatDate';
-import { siteMeta } from '../config'
+import { siteMeta } from '../constants'
 
-const allNotes = await getCollection('notes', ({ data }) => {
-  return data.isPublished === true;
-});
-allNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4); // 最新 5 件のみ
+const publishedNotes = await getCollection('notes', ({ data }) => data.isPublished === true);
+const latestNotes = publishedNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4); // max 5 notes
 ---
 <BaseLayout title="Welcome to Astro.">
   <div class="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -19,7 +17,7 @@ allNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4); // 最新 5 �
       <h2 class="text-xl font-semibold leading-6 tracking-tight sm:text-2xl sm:leading-7">メモ書き</h2>
     </div>
     <ul>
-      {allNotes.map((note) =>
+      {latestNotes.map((note) =>
         <li class="py-2">
           <article class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
             <dl>
@@ -46,4 +44,4 @@ allNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4); // 最新 5 �
       )}
     </ul>
   </div>
-</Layout>
+</BaseLayout>

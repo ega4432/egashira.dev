@@ -1,0 +1,27 @@
+---
+import Layout from "./BaseLayout.astro";
+import { siteMeta } from "../constants";
+
+export interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Layout
+  title={title ? `${title} | ${siteMeta.title}` : ""}
+  description={description}
+>
+  <div class="content">
+    <slot />
+  </div>
+</Layout>
+
+<style is:global>
+  .content h1,
+  h2 {
+    @apply text-2xl font-semibold py-3;
+  }
+</style>
