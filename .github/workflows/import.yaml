@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: ega4432/notion-to-markdown-action@v0
       with:
-        output_dir: ./src/pages/notes
+        output_path: ./src/pages/notes
       env:
         NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
         NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
