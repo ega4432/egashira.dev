@@ -11,8 +11,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version-file: .tool-versions
-        cache: 'pnpm'
-    - run: pnpm ci
-    - run: pnpm rome format
-    - run: pnpm rome lint
-    - run: pnpm run build
+        cache: 'npm'
+    - run: npm ci
+    - run: npm rome format
+    - run: npm rome lint
+    - run: npm run build

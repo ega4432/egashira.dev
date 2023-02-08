@@ -22,8 +22,13 @@
     "lint-staged": "^13.1.0",
     "rome": "^11.0.0"
   },
-  "packageManager": "pnpm@7.26.2",
+  "packageManager": "npm@8.19.3",
   "lint-staged": {
-    "*": "pnpm rome format --write ."
+    "src/*": "npx rome format --write ."
+  },
+  "engines": {
+    "npm": ">=8.19.3",
+    "yarn": "use npm!",
+    "pnpm": "use npm!"
   }
 }
