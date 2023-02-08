@@ -3,16 +3,16 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/tailwind': ^3.0.1
   '@tailwindcss/typography': ^0.5.9
-  astro: ^2.0.6
+  astro: ^2.0.8
   husky: ^8.0.3
   lint-staged: ^13.1.0
   rome: ^11.0.0
   tailwindcss: ^3.0.24
 
 dependencies:
-  '@astrojs/tailwind': 3.0.1_jiulpwjund37q6yckwlgwo54mu
+  '@astrojs/tailwind': 3.0.1_nzhaul33q55wvpvnukdgx72gje
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
-  astro: 2.0.6
+  astro: 2.0.8
   tailwindcss: 3.2.4
 
 devDependencies:
@@ -34,8 +34,8 @@ packages:
     resolution: {integrity: sha512-6bBFeDTtPOn4jZaiD3p0f05MEGQL9pw2Zbfj546oFETNmjJFWO3nzHz6/m+P53calknCvyVzZ5YhoBLIvzn5iw==}
     dev: false
 
-  /@astrojs/compiler/1.0.1:
-    resolution: {integrity: sha512-77aacobLKcL98NmhK3OBS5EHIrX9gs1ckB/vGSIdkVZuB7u51V4jh05I6W0tSvG7/86tALv6QtHTRZ8rLhFTbQ==}
+  /@astrojs/compiler/1.1.0:
+    resolution: {integrity: sha512-C4kTwirys+HafufMqaxCbML2wqkGaXJM+5AekXh/v1IIOnMIdcEON9GBYsG6qa8aAmLhZ58aUZGPhzcA3Dx7Uw==}
     dev: false
 
   /@astrojs/language-server/0.28.3:
@@ -56,13 +56,13 @@ packages:
       vscode-uri: 3.0.7
     dev: false
 
-  /@astrojs/markdown-remark/2.0.1_astro@2.0.6:
+  /@astrojs/markdown-remark/2.0.1_astro@2.0.8:
     resolution: {integrity: sha512-xQF1rXGJN18m+zZucwRRtmNehuhPMMhZhi6HWKrtpEAKnHSPk8lqf1GXgKH7/Sypglu8ivdECZ+EGs6kOYVasQ==}
     peerDependencies:
       astro: ^2.0.2
     dependencies:
       '@astrojs/prism': 2.0.0
-      astro: 2.0.6
+      astro: 2.0.8
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.1
       rehype-raw: 6.1.1
@@ -86,14 +86,14 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/tailwind/3.0.1_jiulpwjund37q6yckwlgwo54mu:
+  /@astrojs/tailwind/3.0.1_nzhaul33q55wvpvnukdgx72gje:
     resolution: {integrity: sha512-QSYh/xmz454j1yZU9rjw2J24PpH7j3h2ClesqMaAniOtcuL8RfP7KYCnCrk01xvjwqqO+QBpZNDD/SUhHNtFFg==}
     peerDependencies:
       astro: ^2.0.4
       tailwindcss: ^3.0.24
     dependencies:
       '@proload/core': 0.3.3
-      astro: 2.0.6
+      astro: 2.0.8
       autoprefixer: 10.4.13_postcss@8.4.21
       postcss: 8.4.21
       postcss-load-config: 4.0.1_postcss@8.4.21
@@ -903,14 +903,14 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /astro/2.0.6:
-    resolution: {integrity: sha512-aI8Ijy2EpMyP5SpjmDJpEUdNL6CUAxnja6IeaBC1BokD/mNAnijtmMnTyWVI3UeEZ727wYLISQMyqCfEUq8VNA==}
+  /astro/2.0.8:
+    resolution: {integrity: sha512-Rbp/6MfxzSVp8qJXjWWja555ZxdqS7Nk/IYg90VKvLNbDsnnBobZZ6vJp21T2e/my4sqJ6PZIOPVnxXr7OeQLQ==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 1.0.1
+      '@astrojs/compiler': 1.1.0
       '@astrojs/language-server': 0.28.3
-      '@astrojs/markdown-remark': 2.0.1_astro@2.0.6
+      '@astrojs/markdown-remark': 2.0.1_astro@2.0.8
       '@astrojs/telemetry': 2.0.0
       '@astrojs/webapi': 2.0.0
       '@babel/core': 7.20.12
