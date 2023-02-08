@@ -1,14 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/BaseLayout.astro';
 import { dateSortDesc, formatDate } from '../lib/formatDate';
 import { siteMeta } from '../config'
 
 const allNotes = await getCollection('notes', ({ data }) => {
   return data.isPublished === true;
 });
-allNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4);
+allNotes.sort((a, b) => dateSortDesc(a.slug, b.slug)).slice(0, 4); // 最新 5 件のみ
 ---
 <Layout title="Welcome to Astro.">
   <div class="space-y-2 pt-6 pb-8 md:space-y-5">

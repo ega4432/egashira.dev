@@ -24,7 +24,7 @@
   },
   "packageManager": "npm@8.19.3",
   "lint-staged": {
-    "src/*": "npx rome format --write ."
+    "src/**": "npx rome format --write ./src"
   },
   "engines": {
     "npm": ">=8.19.3",
