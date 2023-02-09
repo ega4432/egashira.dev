@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { dateSortDesc, formatDate } from "../lib/formatDate";
-import { siteMeta } from "../constants";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { dateSortDesc, formatDate } from "@lib/formatDate";
+import { siteMeta } from "@constants";
 
 const publishedNotes = await getCollection(
   "notes",

@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
-import { siteMeta } from "../constants";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteMeta } from "@constants";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 const pageTitle = `すべてのメモ書き | ${siteMeta.title}`;
 const allNotes = (await getCollection("notes")).reverse();

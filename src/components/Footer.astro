@@ -1,5 +1,5 @@
 ---
-import { footerLinks, siteMeta } from "../constants";
+import { footerLinks, siteMeta } from "@constants";
 ---
 
 <footer>
@@ -10,7 +10,7 @@ import { footerLinks, siteMeta } from "../constants";
       {
         footerLinks.map((link) => (
           <a
-            class="text-primary-500 hover:text-primary-600 hover:underline dark:hover:text-primary-400"
+            class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 hover:underline"
             target="_blank"
             href={link.href}
             rel="noreferrer noopener"

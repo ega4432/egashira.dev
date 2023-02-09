@@ -1,4 +1,4 @@
-import { siteMeta } from "../constants";
+import { siteMeta } from "@constants";
 
 export const formatDate = (date: string) => {
   const options: Intl.DateTimeFormatOptions = {
