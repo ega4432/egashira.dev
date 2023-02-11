@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
-import { noteScheme } from "./schemes";
+import { noteScheme, articleScheme } from "./schemes";
 
 export const collections = {
-  notes: defineCollection(noteScheme)
+  notes: defineCollection(noteScheme),
+  articles: defineCollection(articleScheme)
 };
