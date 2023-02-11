@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky install",
-    "lint": "eslint .",
+    "lint": "eslint . --ext '.ts,.astro' --max-warnings 0",
     "format": "prettier ."
   },
   "dependencies": {

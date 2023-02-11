@@ -18,7 +18,7 @@
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": ["*.astro"]
+        "extraFileExtensions": [".astro"]
       },
       "rules": {}
     }
@@ -30,5 +30,10 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {},
-  "ignorePatterns": ["node_modules/", "dist/", "tailwind.config.cjs"]
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "tailwind.config.cjs",
+    "src/content/articles/*.md"
+  ]
 }

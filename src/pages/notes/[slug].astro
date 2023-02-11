@@ -1,11 +1,7 @@
 ---
-import { getCollection, CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
-
-interface Props {
-  note: CollectionEntry<"notes">;
-}
 
 export async function getStaticPaths() {
   const notes = await getCollection("notes");
