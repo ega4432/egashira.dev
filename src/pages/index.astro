@@ -15,7 +15,7 @@ const latestBlogs = (
 ---
 
 <BaseLayout>
-  <div class="space-y-2 pt-6 pb-8 md:space-y-5">
+  <div class="space-y-2 pt-8 pb-20">
     <p>{`${siteMeta.description} ${siteMeta.author} の Web サイトです。`}</p>
   </div>
   <div>
@@ -42,5 +42,8 @@ const latestBlogs = (
         })
       }
     </ol>
+  </div>
+  <div class="py-12">
+    <Link href="/blog">すべての記事</Link>
   </div>
 </BaseLayout>
