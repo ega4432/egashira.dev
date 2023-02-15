@@ -25,11 +25,13 @@ interface SiteMeta {
 }
 
 export const footerLinks: Link[] = [
+  { href: "/", title: "ホーム" },
+  { href: "/about", title: "このサイトについて" },
+  { href: "/privacy-policy", title: "プライバシーポリシー" },
+  { href: "/feed.xml", title: "フィード" },
+  { href: "/sitemap.xml", title: "サイトマップ" },
   { href: `https://github.com/${me}`, title: "GitHub" },
-  { href: `https://twitter.com/${me}`, title: "Twitter" },
-  { href: "/privacy-policy", title: "Privacy Policy" },
-  { href: "/feed.xml", title: "Feed" },
-  { href: "/sitemap.xml", title: "Sitemap" }
+  { href: `https://twitter.com/${me}`, title: "Twitter" }
 ];
 
 export const headerLinks: Link[] = [
