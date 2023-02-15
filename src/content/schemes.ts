@@ -11,7 +11,7 @@ export const noteScheme = {
   })
 };
 
-export const articleScheme = {
+export const blogScheme = {
   schema: z.object({
     title: z.string(),
     date: z.string(),

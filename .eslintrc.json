@@ -3,24 +3,21 @@
     "browser": true,
     "es2021": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:astro/recommended"
-  ],
+  "extends": ["plugin:astro/recommended"],
   "overrides": [
     {
-      "files": ["./src/env.d.ts"],
-      "rules": { "@typescript-eslint/triple-slash-reference": "off" }
-    },
-    {
       "files": ["*.astro"],
+      "plugins": ["astro"],
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [".astro"]
+        "extraFileExtensions": [".astro"],
+        "sourceType": "module"
       },
-      "rules": {}
+      "rules": {
+        "astro/no-conflict-set-directives": "error",
+        "astro/no-unused-define-vars-in-style": "error"
+      }
     }
   ],
   "parser": "@typescript-eslint/parser",
@@ -34,6 +31,6 @@
     "node_modules/",
     "dist/",
     "tailwind.config.cjs",
-    "src/content/articles/*.md"
+    "src/content/blog/*.md"
   ]
 }

@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["InterVariable", ...defaultTheme.fontFamily.sans]
+        sans: ["sans-serif", "InterVariable", ...defaultTheme.fontFamily.sans]
       },
       colors: {
-        primary: colors.indigo,
+        primary: colors.blue,
         gray: colors.neutral
       },
       typography: (theme) => ({
@@ -26,12 +26,10 @@ module.exports = {
             },
             h1: {
               fontWeight: "700",
-              letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.gray.900")
             },
             h2: {
               fontWeight: "700",
-              letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.gray.900")
             },
             h3: {
@@ -95,12 +93,10 @@ module.exports = {
             },
             h1: {
               fontWeight: "700",
-              letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.gray.100")
             },
             h2: {
               fontWeight: "700",
-              letterSpacing: theme("letterSpacing.tight"),
               color: theme("colors.gray.100")
             },
             h3: {

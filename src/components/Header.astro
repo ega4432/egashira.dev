@@ -1,27 +1,19 @@
 ---
-import { siteMeta, headerLinks } from "@constants";
+import Link from "./Link.astro";
+import { siteMeta } from "@constants";
 ---
 
-<header class="flex items-center justify-between py-10">
-  <div>
-    <a href="/" aria-label={siteMeta.title}>
-      <div class="flex items-center justify-between">
-        <div class="h-6 text-2xl font-semibold leading-6">{siteMeta.title}</div>
-      </div>
-    </a>
-  </div>
-  <div class="flex items-center text-base leading-5">
-    <div class="hidden sm:block">
-      {
-        headerLinks.map((link) => (
-          <a
-            href={link.href}
-            class="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
-          >
-            {link.title}
-          </a>
-        ))
-      }
+<header>
+  <nav
+    class="mx-auto flex max-w-2xl items-center justify-between px-4 py-10 2xl:max-w-4xl"
+  >
+    <div>
+      <Link
+        href="/"
+        className="h-6 text-2xl font-semibold leading-6 text-inherit hover:text-inherit hover:no-underline dark:text-inherit dark:hover:text-inherit"
+      >
+        {siteMeta.title}
+      </Link>
     </div>
-  </div>
+  </nav>
 </header>
