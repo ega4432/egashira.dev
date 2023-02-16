@@ -1,0 +1,63 @@
+---
+import type { GetStaticPathsOptions, Page } from "astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import { formatInTimeZone } from "date-fns-tz";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { dateSortDesc } from "@lib/utils/dateSortDesc";
+import Link from "@components/Link.astro";
+
+export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
+  const allBlog = (
+    await getCollection("blog", ({ data }) => data.draft !== true)
+  ).sort((a, b) => dateSortDesc(a.data.date, b.data.date));
+  return paginate(allBlog, { pageSize: 10 });
+};
+
+const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
+---
+
+<BaseLayout>
+  <div class="pt-8 pb-20">
+    <p>記事一覧</p>
+  </div>
+  <div>
+    <ol class="flex flex-col gap-8">
+      {
+        page.data.map((blog) => {
+          const formattedDate = formatInTimeZone(
+            new Date(blog.data.date),
+            "Asia/Tokyo",
+            "yyyy年MM月dd日"
+          );
+          return (
+            <li>
+              <time
+                datetime={blog.data.date}
+                class="block text-gray-500 dark:text-gray-400"
+              >
+                {formattedDate}
+              </time>
+              <Link href={`blog/${blog.slug}`}>{blog.data.title}</Link>
+              <p>{blog.data.summary}</p>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </div>
+  <div class="py-12">
+    <p>{Object.keys(page).join(", ")}</p>
+    <p>start: {page.start}</p>
+    <p>current Page: {page.currentPage}</p>
+    <p>size: {page.size}</p>
+    <p>total: {page.total}</p>
+    <p>end: {page.end}</p>
+    <p>lastPage: {page.lastPage}</p>
+    <ul>
+      <li>url.current: {page.url.current}</li>
+      <li>url.next: {page.url.next}</li>
+      <li>url.prev: {page.url.prev}</li>
+    </ul>
+  </div>
+</BaseLayout>
