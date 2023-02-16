@@ -14,14 +14,9 @@ const { title, description } = Astro.props;
   title={title ? `${title} | ${siteMeta.title}` : ""}
   description={description}
 >
-  <div class="content">
+  <article
+    class="lg:text-md prose max-w-none break-words dark:prose-dark xl:text-xl"
+  >
     <slot />
-  </div>
+  </article>
 </BaseLayout>
-
-<style is:global>
-  .content h1,
-  h2 {
-    @apply py-3 text-2xl font-semibold;
-  }
-</style>
