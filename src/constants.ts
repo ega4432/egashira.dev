@@ -59,3 +59,5 @@ export const siteMeta: SiteMeta = {
   zenn: "https://zenn.dev/ysmtegsr",
   locale: "ja-JP"
 };
+
+export const DEFAULT_PAGE_SIZE = 10;

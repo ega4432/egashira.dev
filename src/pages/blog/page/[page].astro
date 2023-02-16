@@ -1,17 +1,16 @@
 ---
 import type { GetStaticPathsOptions, Page } from "astro";
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { formatInTimeZone } from "date-fns-tz";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { dateSortDesc } from "@lib/utils/dateSortDesc";
 import Link from "@components/Link.astro";
+import { getBlogs } from "@lib/blog";
+import { DEFAULT_PAGE_SIZE } from "@constants";
 
 export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
-  const allBlog = (
-    await getCollection("blog", ({ data }) => data.draft !== true)
-  ).sort((a, b) => dateSortDesc(a.data.date, b.data.date));
-  return paginate(allBlog, { pageSize: 10 });
+  const allBlogs = await getBlogs();
+  return paginate(allBlogs, { pageSize: DEFAULT_PAGE_SIZE });
 };
 
 const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };

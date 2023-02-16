@@ -1,17 +1,12 @@
 ---
-import { getCollection } from "astro:content";
 import { formatInTimeZone } from "date-fns-tz";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Link from "@components/Link.astro";
-import { dateSortDesc } from "@lib/utils/dateSortDesc";
 import { siteMeta } from "@constants";
+import { getBlogs } from "@lib/blog";
 
-const latestBlogs = (
-  await getCollection("blog", ({ data }) => data.draft !== true)
-)
-  .sort((a, b) => dateSortDesc(a.data.date, b.data.date))
-  .slice(0, 5); // max 5 posts
+const latestBlogs = (await getBlogs()).slice(0, 5); // max 5 posts
 ---
 
 <BaseLayout>
