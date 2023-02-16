@@ -15,6 +15,6 @@ const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
 const { Content } = await blog.render();
 ---
 
-<MarkdownLayout>
+<MarkdownLayout title={blog.data.title} description={blog.data.summary}>
   <Content />
 </MarkdownLayout>

@@ -34,13 +34,6 @@ export const footerLinks: Link[] = [
   { href: `https://twitter.com/${me}`, title: "Twitter" }
 ];
 
-export const headerLinks: Link[] = [
-  { href: "/about", title: "About" },
-  // { href: "/blog", title: "Blog" },
-  // { href: "/tags", title: "Tags" },
-  { href: "/notes", title: "Notes" }
-];
-
 export const siteMeta: SiteMeta = {
   title: "egashira.dev",
   author: me,

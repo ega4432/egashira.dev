@@ -1,23 +1,25 @@
 ---
 import { siteMeta } from "@constants";
 
-export interface Props {
-  title?: string | undefined;
-  descripton?: string | undefined;
+type Props = {
+  title: string;
+  descripton: string;
   ogType?: "website" | "article";
   ogImage?: string | undefined;
-}
+};
 
 const generator = Astro.generator;
 const {
-  title = siteMeta.title,
-  description = siteMeta.description,
+  title,
+  description,
   ogType = "website",
   ogImage = siteMeta.socialBanner
 } = Astro.props;
 const twCardType = "summary"; // TODO: URL に応じて `summary_large_image` と使い分ける
 ---
 
+<title>{title}</title>
+<meta name="description" content={description} />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

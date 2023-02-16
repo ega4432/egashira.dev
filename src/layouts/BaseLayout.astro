@@ -16,9 +16,7 @@ const { title = siteMeta.title, description = siteMeta.description } =
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <SEO />
+    <SEO title={title} descripton={description} />
   </head>
   <body
     class="antialised bg-gray-100 text-black dark:bg-gray-800 dark:text-gray-200"
