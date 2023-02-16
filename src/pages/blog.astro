@@ -1,20 +1,10 @@
 ---
-import type { GetStaticPathsOptions, Page } from "astro";
-import type { CollectionEntry } from "astro:content";
-import { formatInTimeZone } from "date-fns-tz";
-
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Link from "@components/Link.astro";
 import Time from "@components/Time.astro";
 import { getBlogs } from "@lib/blog";
-import { DEFAULT_PAGE_SIZE } from "@constants";
 
-export const getStaticPaths = async ({ paginate }: GetStaticPathsOptions) => {
-  const allBlogs = await getBlogs();
-  return paginate(allBlogs, { pageSize: DEFAULT_PAGE_SIZE });
-};
-
-const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
+const allBlogs = await getBlogs();
 ---
 
 <BaseLayout>
@@ -24,7 +14,7 @@ const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
   <div>
     <ol class="flex flex-col gap-8">
       {
-        page.data.map((blog) => (
+        allBlogs.map((blog) => (
           <li>
             <Time date={blog.data.date} />
             <Link href={`blog/${blog.slug}`}>{blog.data.title}</Link>
@@ -35,7 +25,7 @@ const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
     </ol>
   </div>
   <div class="py-12">
-    <p>{Object.keys(page).join(", ")}</p>
+    <!-- <p>{Object.keys(page).join(", ")}</p>
     <p>start: {page.start}</p>
     <p>current Page: {page.currentPage}</p>
     <p>size: {page.size}</p>
@@ -46,6 +36,6 @@ const { page } = Astro.props as { page: Page<CollectionEntry<"blog">> };
       <li>url.current: {page.url.current}</li>
       <li>url.next: {page.url.next}</li>
       <li>url.prev: {page.url.prev}</li>
-    </ul>
+    </ul> -->
   </div>
 </BaseLayout>
