@@ -30,7 +30,8 @@ module.exports = {
             },
             h2: {
               fontWeight: "700",
-              color: theme("colors.gray.900")
+              color: theme("colors.gray.900"),
+              borderBottomColor: theme("colors.green.100")
             },
             h3: {
               fontWeight: "600",
@@ -85,9 +86,9 @@ module.exports = {
           css: {
             color: theme("colors.gray.300"),
             a: {
-              color: theme("colors.primary.500"),
+              color: theme("colors.primary.400"),
               "&:hover": {
-                color: `${theme("colors.primary.400")} !important`
+                color: `${theme("colors.primary.300")} !important`
               },
               code: { color: theme("colors.primary.400") }
             },
@@ -97,7 +98,8 @@ module.exports = {
             },
             h2: {
               fontWeight: "700",
-              color: theme("colors.gray.100")
+              color: theme("colors.gray.100"),
+              borderBottomColor: theme("colors.gray.100")
             },
             h3: {
               fontWeight: "600",
