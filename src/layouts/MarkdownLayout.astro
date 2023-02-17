@@ -15,8 +15,19 @@ const { title, description } = Astro.props;
   description={description}
 >
   <article
-    class="lg:text-md prose max-w-none break-words dark:prose-dark xl:text-xl"
+    class="lg:text-md blog prose max-w-none break-words dark:prose-dark xl:text-xl"
   >
     <slot />
   </article>
 </BaseLayout>
+<style is:global>
+  .blog pre {
+    @apply text-xs xl:text-sm;
+  }
+  .blog ul:has(> li.task-list-item) {
+    @apply pl-0;
+  }
+  .blog li:has(> input) {
+    @apply list-none pl-0;
+  }
+</style>

@@ -24,21 +24,19 @@ module.exports = {
               },
               code: { color: theme("colors.primary.400") }
             },
-            h1: {
-              fontWeight: "700",
-              color: theme("colors.gray.900")
-            },
-            h2: {
-              fontWeight: "700",
-              color: theme("colors.gray.900"),
-              borderBottomColor: theme("colors.green.100")
+            "h1,h2": {
+              fontWeight: "600",
+              color: theme("colors.gray.800"),
+              borderBottomColor: theme("colors.gray.200"),
+              borderBottomWidth: "1px",
+              paddingBottom: "0.5rem"
             },
             h3: {
               fontWeight: "600",
-              color: theme("colors.gray.900")
+              color: theme("colors.gray.800")
             },
             "h4,h5,h6": {
-              color: theme("colors.gray.900")
+              color: theme("colors.gray.800")
             },
             pre: {
               backgroundColor: theme("colors.gray.800")
@@ -69,7 +67,6 @@ module.exports = {
             },
             hr: { borderColor: theme("colors.gray.200") },
             "ol li::marker": {
-              fontWeight: "600",
               color: theme("colors.gray.500")
             },
             "ul li::marker": {
@@ -92,26 +89,24 @@ module.exports = {
               },
               code: { color: theme("colors.primary.400") }
             },
-            h1: {
-              fontWeight: "700",
-              color: theme("colors.gray.100")
-            },
-            h2: {
-              fontWeight: "700",
-              color: theme("colors.gray.100"),
-              borderBottomColor: theme("colors.gray.100")
+            "h1,h2": {
+              fontWeight: "600",
+              color: theme("colors.gray.200"),
+              borderBottomColor: theme("colors.gray.700"),
+              borderBottomWidth: "1px",
+              paddingBottom: "0.5rem"
             },
             h3: {
               fontWeight: "600",
-              color: theme("colors.gray.100")
+              color: theme("colors.gray.200")
             },
             "h4,h5,h6": {
-              color: theme("colors.gray.100")
+              color: theme("colors.gray.200")
             },
             pre: {
-              backgroundColor: theme("colors.gray.800"),
+              backgroundColor: theme("colors.gray.700"),
               code: {
-                backgroundColor: theme("colors.gray.800")
+                backgroundColor: theme("colors.gray.700")
               }
             },
             code: {
@@ -121,7 +116,6 @@ module.exports = {
             // details: {},
             hr: { borderColor: theme("colors.gray.700") },
             "ol li::marker": {
-              fontWeight: "600",
               color: theme("colors.gray.400")
             },
             "ul li::marker": {
