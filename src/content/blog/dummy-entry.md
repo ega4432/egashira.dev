@@ -186,7 +186,7 @@ https://egashira.dev
 
 これはローカルファイルを指定した画像です。
 
-![icon](/static/images/avatar-ega.png)
+![icon](/images/avatar-ega.png)
 
 ## 数式
 
