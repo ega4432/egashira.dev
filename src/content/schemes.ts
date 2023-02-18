@@ -9,3 +9,11 @@ export const blogScheme = {
     summary: z.string()
   })
 };
+
+export const authorScheme = {
+  schema: z.object({
+    name: z.string(),
+    avatar: z.string(),
+    occupation: z.string()
+  })
+};

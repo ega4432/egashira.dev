@@ -15,10 +15,11 @@
     "lint": "lint-staged --config .lintstagedrc.js"
   },
   "dependencies": {
+    "@astrojs/image": "^0.15.0",
     "@astrojs/tailwind": "^3.0.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.0.8",
+    "astro": "^2.0.14",
     "date-fns-tz": "^2.0.0",
     "hastscript": "^7.2.0",
     "rehype-autolink-headings": "^6.1.1",

@@ -1,0 +1,42 @@
+---
+import { getEntryBySlug } from "astro:content";
+
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Image from "@components/Image.astro";
+import avatar from "/public/images/avatar-ega.png";
+import "@styles/prism.css";
+
+const me = await getEntryBySlug("author", "me");
+const { Content } = await me.render();
+---
+
+<BaseLayout>
+  <div
+    class="grid items-start space-y-2 xl:grid-cols-4 xl:gap-x-8 xl:space-y-0"
+  >
+    <div
+      class="flex flex-col items-center gap-3 space-x-2 py-12 xl:py-6 2xl:gap-6"
+    >
+      <Image
+        alt={me.data.name}
+        src={avatar}
+        width={192}
+        height={192}
+        className="mr-0 rounded-full"
+      />
+      <div class="!ml-0 text-2xl font-semibold">{me.data.name}</div>
+      <span
+        class="!ml-0 whitespace-nowrap text-base text-gray-600 dark:text-gray-400"
+        >{me.data.occupation}</span
+      >
+    </div>
+    <div class="xl:col-span-3">
+      <div
+        class="lg:text-md blog prose max-w-none break-words dark:prose-dark xl:text-xl"
+      >
+        <Content />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
