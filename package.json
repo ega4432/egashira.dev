@@ -9,21 +9,44 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "eslint": "eslint ./src --ext '.ts,.astro' --max-warnings 0",
+    "prettier": "prettier .",
+    "lint": "lint-staged --config .lintstagedrc.js"
   },
   "dependencies": {
     "@astrojs/tailwind": "^3.0.1",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.0.6",
-    "tailwindcss": "^3.0.24"
+    "astro": "^2.0.8",
+    "date-fns-tz": "^2.0.0",
+    "hastscript": "^7.2.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-katex": "^6.0.2",
+    "rehype-prism-plus": "^1.5.1",
+    "rehype-slug": "^5.1.0",
+    "remark-emoji": "^3.1.0",
+    "remark-footnotes": "^4.0.1",
+    "remark-math": "^5.1.1",
+    "tailwindcss": "^3.0.24",
+    "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-astro": "^0.23.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "rome": "^11.0.0"
+    "prettier": "^2.8.4",
+    "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.2"
   },
-  "packageManager": "pnpm@7.26.2",
-  "lint-staged": {
-    "*": "pnpm rome format --write ."
+  "packageManager": "npm@8.19.3",
+  "engines": {
+    "npm": ">=8.19.3",
+    "yarn": "use npm!",
+    "pnpm": "use npm!"
   }
 }

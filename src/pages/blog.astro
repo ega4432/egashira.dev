@@ -2,20 +2,19 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Link from "@components/Link.astro";
 import Time from "@components/Time.astro";
-import { siteMeta } from "@constants";
 import { getBlogs } from "@lib/blog";
 
-const latestBlogs = (await getBlogs()).slice(0, 5); // max 5 posts
+const allBlogs = await getBlogs();
 ---
 
 <BaseLayout>
   <div class="pt-8 pb-20">
-    <p>{`${siteMeta.description} ${siteMeta.author} の Web サイトです。`}</p>
+    <p>記事一覧</p>
   </div>
   <div>
     <ol class="flex flex-col gap-8">
       {
-        latestBlogs.map((blog) => (
+        allBlogs.map((blog) => (
           <li>
             <Time date={blog.data.date} />
             <Link href={`/blog/${blog.slug}`}>{blog.data.title}</Link>
@@ -26,6 +25,17 @@ const latestBlogs = (await getBlogs()).slice(0, 5); // max 5 posts
     </ol>
   </div>
   <div class="py-12">
-    <Link href="/blog">すべての記事</Link>
+    <!-- <p>{Object.keys(page).join(", ")}</p>
+    <p>start: {page.start}</p>
+    <p>current Page: {page.currentPage}</p>
+    <p>size: {page.size}</p>
+    <p>total: {page.total}</p>
+    <p>end: {page.end}</p>
+    <p>lastPage: {page.lastPage}</p>
+    <ul>
+      <li>url.current: {page.url.current}</li>
+      <li>url.next: {page.url.next}</li>
+      <li>url.prev: {page.url.prev}</li>
+    </ul> -->
   </div>
 </BaseLayout>

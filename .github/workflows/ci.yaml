@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .tool-versions
+          cache: "npm"
+          cache-dependency-path: "./package-lock.json"
+      - run: npm i
+      - run: npm run eslint
+      - run: npm run prettier
+      - run: npm run build
