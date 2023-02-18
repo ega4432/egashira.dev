@@ -73,7 +73,7 @@ VSCode でコマンドパレットを開き（mac だと ⌘ + Shift + P で開�
 
 すると以下のようなファイルが作成される。
 
-```JSON:.vscode/tasks.json showLineNumber
+```json:.vscode/tasks.json showLineNumber
 {
   "version": "2.0.0",
   "tasks": [
@@ -93,7 +93,7 @@ VSCode でコマンドパレットを開き（mac だと ⌘ + Shift + P で開�
 
 その場合 `runOptions` プロパティの `runOn` を使って、動作のタイミングをカスタマイズできる。今回は開いたときに実行させたいので `folderOpen` を指定すると良い。
 
-```JSON:.vscode/tasks.json showLineNumber {8-10}
+```json:.vscode/tasks.json showLineNumber {8-10}
 {
   "version": "2.0.0",
   "tasks": [

@@ -1,6 +1,7 @@
 ---
-import Layout from "@layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import { siteMeta } from "@constants";
+import "katex/dist/katex.css";
 
 export interface Props {
   title?: string | undefined;
@@ -10,18 +11,62 @@ export interface Props {
 const { title, description } = Astro.props;
 ---
 
-<Layout
+<BaseLayout
   title={title ? `${title} | ${siteMeta.title}` : ""}
   description={description}
 >
-  <div class="content">
+  <article
+    class="lg:text-md blog prose max-w-none break-words dark:prose-dark xl:text-xl"
+  >
     <slot />
-  </div>
-</Layout>
+  </article>
+</BaseLayout>
 
 <style is:global>
-  .content h1,
-  h2 {
-    @apply py-3 text-2xl font-semibold;
+  /* コード、数式 */
+  .blog pre,
+  .math {
+    @apply text-xs xl:text-sm;
+  }
+  /* チェックボックス */
+  .blog ul:has(> .task-list-item) {
+    @apply pl-0;
+  }
+  .blog .task-list-item::before {
+    @apply hidden;
+  }
+  .blog .task-list-item {
+    @apply list-none pl-0;
+  }
+  .blog .task-list-item > input {
+    @apply my-0 mr-2 align-middle;
+  }
+  /* 注釈 */
+  .blog .footnotes {
+    @apply mt-20 border-t-[1px] border-gray-200 pt-12 dark:border-gray-700;
+  }
+  .blog .footnotes #footnote-label {
+    @apply sr-only;
+  }
+  .blog a[data-footnote-ref] {
+    @apply no-underline;
+  }
+  .blog .data-footnote-backref {
+    @apply no-underline;
+  }
+  /* アンカーリンク */
+  .blog a:has(.anchor-icon) {
+    @apply text-inherit hover:!text-inherit;
+  }
+  .blog .anchor-icon {
+    @apply invisible my-0 ml-[-1.25rem] inline-block w-5 align-middle dark:text-gray-200;
+  }
+  .blog h1:hover > a .anchor-icon,
+  .blog h2:hover > a .anchor-icon,
+  .blog h3:hover > a .anchor-icon,
+  .blog h4:hover > a .anchor-icon,
+  .blog h5:hover > a .anchor-icon,
+  .blog h6:hover > a .anchor-icon {
+    @apply visible;
   }
 </style>

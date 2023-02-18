@@ -34,13 +34,6 @@ export const footerLinks: Link[] = [
   { href: `https://twitter.com/${me}`, title: "Twitter" }
 ];
 
-export const headerLinks: Link[] = [
-  { href: "/about", title: "About" },
-  // { href: "/blog", title: "Blog" },
-  // { href: "/tags", title: "Tags" },
-  { href: "/notes", title: "Notes" }
-];
-
 export const siteMeta: SiteMeta = {
   title: "egashira.dev",
   author: me,
@@ -50,8 +43,8 @@ export const siteMeta: SiteMeta = {
   siteUrl: "https://egashira.dev",
   siteRepo: `https://github.com/${me}/egashira.dev`,
   siteLogo: "", // TODO: '/static/images/logo.png',
-  image: "", // TODO: '/static/images/avatar-ega.png',
-  socialBanner: "/static/images/undraw.png", // TODO: '/static/images/twitter-card.png',
+  image: "/images/avatar-ega.png",
+  socialBanner: "/images/undraw.png", // TODO: '/static/images/twitter-card.png',
   email: "hello@egashira.dev",
   github: `https://github.com/${me}`,
   twitter: `https://twitter.com/${me}`,
@@ -59,3 +52,5 @@ export const siteMeta: SiteMeta = {
   zenn: "https://zenn.dev/ysmtegsr",
   locale: "ja-JP"
 };
+
+export const DEFAULT_PAGE_SIZE = 10;

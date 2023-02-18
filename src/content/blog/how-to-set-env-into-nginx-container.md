@@ -31,7 +31,7 @@ nginx コンテナを建てる際に、どうやって設定ファイルに環�
 
 公式の nginx イメージを使う場合、デフォルトで `/etc/nginx/templates/*.template` の設定ファイルに対して envsubst を実行して `/etc/nginx/conf.d/*.conf` へ出力するようになっている。そのためまずは、以下のようなテンプレートファイルを作成する。
 
-```conf:default.conf.template showLineNumbers {14}
+```nginx:default.conf.template showLineNumbers {14}
 server {
     listen       80;
     server_name  localhost;

@@ -9,6 +9,7 @@
       "@pages/*": ["src/pages/*"],
       "@lib/*": ["src/lib/*"],
       "@content/*": ["src/content/*"],
+      "@styles/*": ["src/styles/*"],
       "@constants": ["src/constants.ts"]
     }
   }

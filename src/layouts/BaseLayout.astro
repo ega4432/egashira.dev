@@ -16,12 +16,10 @@ const { title = siteMeta.title, description = siteMeta.description } =
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <SEO />
+    <SEO title={title} description={description} />
   </head>
   <body
-    class="antialised bg-gray-100 text-black dark:bg-gray-800 dark:text-gray-200"
+    class="antialised bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 lg:text-lg xl:text-xl 2xl:text-2xl"
   >
     <div>
       <Header />

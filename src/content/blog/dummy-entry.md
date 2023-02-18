@@ -186,7 +186,7 @@ https://egashira.dev
 
 これはローカルファイルを指定した画像です。
 
-![icon](/static/images/avatar-ega.png)
+![icon](/images/avatar-ega.png)
 
 ## 数式
 
@@ -202,6 +202,10 @@ $$
   y_n
 \end{array}\right]
 $$
+
+## 脚注
+
+これは脚注です[^1]
 
 ## 絵文字
 
@@ -1846,3 +1850,5 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 これは Twitter のリンクです。
 https://twitter.com/ega4432/status/1504042310576730112
+
+[^1]: クリックするとここまで飛びます。

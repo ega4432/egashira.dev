@@ -41,7 +41,7 @@ function App() {
 
 React を SPA としてビルドしたものを配信するサーバとして nginx を選定した。さらによりポータビリティを考慮してコンテナしてみた。その際の Dockerfile は以下を参照してもらえたらと思う。
 
-```Dockerfile:Dockerfile showLineNumbers
+```dockerfile:Dockerfile showLineNumbers
 FROM docker.io/library/node:18.12.1-slim AS builder
 WORKDIR /app
 COPY ./package*.json ./
@@ -88,7 +88,7 @@ https://docs.unity3d.com/Manual/webgl-deploying.html
 
 https://docs.unity3d.com/Manual/webgl-server-configuration-code-samples.html
 
-```conf:./docker/nginx/default.conf showLineNumbers {11-32}
+```nginx:./docker/nginx/default.conf showLineNumbers {11-32}
 server {
   listen       8080;
   server_name  localhost;
