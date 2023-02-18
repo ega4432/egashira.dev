@@ -203,6 +203,10 @@ $$
 \end{array}\right]
 $$
 
+## 脚注
+
+これは脚注です[^1]
+
 ## 絵文字
 
 これは絵文字 :yum: です :v:
@@ -1846,3 +1850,5 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 これは Twitter のリンクです。
 https://twitter.com/ega4432/status/1504042310576730112
+
+[^1]: クリックするとここまで飛びます。

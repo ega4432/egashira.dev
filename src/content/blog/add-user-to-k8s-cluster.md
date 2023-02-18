@@ -32,7 +32,7 @@ alias k=kubectl
 
 まずは、PKI 秘密鍵とそれを元に証明書署名要求（CSR）を作成する。ここではユーザ名（CN）を `test` と指定している。
 
-```sell
+```shell
 openssl genrsa -out test.key 2048
 
 openssl req -new -key test.key -out test.csr -subj "/CN=test"
@@ -103,7 +103,7 @@ rolebinding.rbac.authorization.k8s.io/test-binding created
 
 CSR から証明書を取得して、ユーザ情報として使用する。
 
-```Shell
+```shell
 k get csr test -o jsonpath='{ .status.certificate }' | base64 -d > test.crt
 
 # User

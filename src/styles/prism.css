@@ -7,11 +7,19 @@
 
 /* Code title styles */
 .remark-code-title {
-  @apply rounded-t bg-gray-700 px-5 py-3 font-mono text-sm font-bold text-gray-200;
+  @apply w-fit rounded-t bg-gray-800 px-4 py-2 font-mono text-sm text-gray-200 drop-shadow-xl dark:bg-gray-900;
 }
 
-.remark-code-title + div > pre {
-  @apply mt-0 rounded-t-none ring-1 dark:ring-inset dark:ring-white/10;
+pre {
+  @apply border border-gray-800 drop-shadow-2xl dark:!bg-gray-900;
+}
+
+.remark-code-title + pre {
+  @apply mt-0 rounded-t-none rounded-tr;
+}
+
+pre > code {
+  @apply dark:!bg-inherit;
 }
 
 /* Code block styles */

@@ -1,6 +1,8 @@
 ---
-import MarkdownLayout from "@layouts/MarkdownLayout.astro";
 import { CollectionEntry, getCollection } from "astro:content";
+
+import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import "@styles/prism.css";
 
 export const getStaticPaths = async () => {
   const blogs = await getCollection("blog", ({ data }) => data.draft !== true);

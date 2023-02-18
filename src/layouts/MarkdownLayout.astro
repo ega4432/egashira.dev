@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { siteMeta } from "@constants";
+import "katex/dist/katex.css";
 
 export interface Props {
   title?: string | undefined;
@@ -20,14 +21,46 @@ const { title, description } = Astro.props;
     <slot />
   </article>
 </BaseLayout>
+
 <style is:global>
-  .blog pre {
+  /* コード、数式 */
+  .blog pre,
+  .math {
     @apply text-xs xl:text-sm;
   }
+  /* リスト */
   .blog ul:has(> li.task-list-item) {
     @apply pl-0;
   }
   .blog li:has(> input) {
     @apply list-none pl-0;
+  }
+  /* 注釈 */
+  .blog .footnotes {
+    @apply mt-20 border-t-[1px] border-gray-200 pt-12 dark:border-gray-700;
+  }
+  .blog .footnotes #footnote-label {
+    @apply sr-only;
+  }
+  .blog a[data-footnote-ref] {
+    @apply no-underline;
+  }
+  .blog .data-footnote-backref {
+    @apply no-underline;
+  }
+  /* アンカーリンク */
+  .blog a:has(.anchor-icon) {
+    @apply text-inherit hover:!text-inherit;
+  }
+  .blog .anchor-icon {
+    @apply invisible my-0 ml-[-1.25rem] inline-block w-5 align-middle dark:text-gray-200;
+  }
+  .blog h1:hover > a .anchor-icon,
+  .blog h2:hover > a .anchor-icon,
+  .blog h3:hover > a .anchor-icon,
+  .blog h4:hover > a .anchor-icon,
+  .blog h5:hover > a .anchor-icon,
+  .blog h6:hover > a .anchor-icon {
+    @apply visible;
   }
 </style>
