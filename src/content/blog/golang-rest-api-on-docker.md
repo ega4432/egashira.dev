@@ -150,7 +150,7 @@ Docker Compose は基本的にローカルでのコンテナ環境なので、Do
 
 Dockerfile で次のようにすることで、初期データを dump した。
 
-```Dockerfile:build/db/Dockerfile showLineNumbers {4}
+```dockerfile:build/db/Dockerfile showLineNumbers {4}
 FROM mysql:8.0
 
 COPY build/db/conf.d/ /etc/mysql/conf.d/

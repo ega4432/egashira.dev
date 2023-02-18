@@ -80,7 +80,7 @@ func main() {
 
 個人的な興味として distroless[^1] をベースイメージとして使ってみた！
 
-```Dockerfile:Dockerfile
+```dockerfile:Dockerfile
 # === Build phase ===
 FROM golang:1.18.3 AS builder
 

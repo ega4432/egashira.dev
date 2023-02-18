@@ -77,7 +77,7 @@ package.json の一部を抜粋すると…
 
 また Dockerfile では devDependencies をインストールしないようにしていると husky がインストールされず `husky: not found` となる。
 
-```Dockerfile:Dockerfile showLineNumbers {3}
+```dockerfile:Dockerfile showLineNumbers {3}
 ...
 
 RUN npm install --production
