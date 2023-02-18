@@ -7,6 +7,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
 import { s } from "hastscript";
 import tailwind from "@astrojs/tailwind";
+import rehypePrismPlus from "rehype-prism-plus";
 
 import remarkCodeTitles from "./src/lib/utils/remark-code-titles";
 
@@ -48,7 +49,8 @@ export default defineConfig({
           content: anchorIcon
         }
       ],
-      rehypeKatex
+      rehypeKatex,
+      [rehypePrismPlus, { ignoreMissing: true }]
     ]
   }
 });
