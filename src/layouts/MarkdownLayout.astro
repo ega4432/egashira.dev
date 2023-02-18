@@ -28,12 +28,18 @@ const { title, description } = Astro.props;
   .math {
     @apply text-xs xl:text-sm;
   }
-  /* リスト */
-  .blog ul:has(> li.task-list-item) {
+  /* チェックボックス */
+  .blog ul:has(> .task-list-item) {
     @apply pl-0;
   }
-  .blog li:has(> input) {
+  .blog .task-list-item::before {
+    @apply hidden;
+  }
+  .blog .task-list-item {
     @apply list-none pl-0;
+  }
+  .blog .task-list-item > input {
+    @apply my-0 mr-2 align-middle;
   }
   /* 注釈 */
   .blog .footnotes {

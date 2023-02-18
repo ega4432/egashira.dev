@@ -19,13 +19,13 @@ const latestBlogs = (await getBlogs()).slice(0, 5); // max 5 posts
           <li>
             <Time date={blog.data.date} />
             <Link href={`/blog/${blog.slug}`}>{blog.data.title}</Link>
-            <p>{blog.data.summary}</p>
+            <p class="line-clamp-2">{blog.data.summary}</p>
           </li>
         ))
       }
     </ol>
   </div>
   <div class="py-12">
-    <Link href="/blog">もっと見る</Link>
+    <Link href="/blog">すべての記事</Link>
   </div>
 </BaseLayout>
