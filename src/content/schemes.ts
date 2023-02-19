@@ -6,7 +6,9 @@ export const blogScheme = {
     date: z.string(),
     tags: z.array(z.string()),
     draft: z.boolean(),
-    summary: z.string()
+    summary: z.string(),
+    createdAt: z.string().optional(),
+    updatedAt: z.string().optional()
   })
 };
 
