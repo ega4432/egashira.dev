@@ -42,10 +42,12 @@ jobs:
           git config --local user.name "GitHub Actions"
 
       - name: Output diff
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug == 'true' }}
         run: |
+          git branch
           git status --short
           git diff --name-only
+          ls -ltra ./src/content/blog
 
       - name: Delete `slug` property from front matter
         run: |
