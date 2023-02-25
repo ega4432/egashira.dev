@@ -1,6 +1,6 @@
 ---
 name: "ega4432"
-avatar: "/public/images/avatar-ega.png"
+avatar: "/public/images/avatar-ega.png" # TODO: いらない？
 occupation: "Software Engineer"
 ---
 
