@@ -16,17 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - name: Generate token
-        uses: tibdex/github-app-token@v1
-        with:
-          app_id: ${{ secrets.MY_APP_ID }}
-          private_key: ${{ secrets.MY_APP_PRIVATE_KEY }}
-        id: my_app
-
       - name: Checkout source
         uses: actions/checkout@v3
-        with:
-          token: ${{ steps.my_app.outputs.token }}
 
       - uses: ega4432/notion-to-markdown-action@v0
         with:
