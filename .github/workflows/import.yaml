@@ -43,10 +43,9 @@ jobs:
           git diff --name-only
           ls -l ./src/content/blog
 
-      - name: Delete `slug` property from front matter
-        run: |
-          git diff --name-only ./src/content/blog/ | xargs sed -i '/^slug:/d'
-
+      # - name: Delete `slug` property from front matter
+      #   run: |
+      #     git diff --name-only ./src/content/blog/ | xargs sed -i '/^slug:/d'
       - name: Move images to `public` directory
         run: ls -d ./src/content/blog/*/
         # ls -d ./src/content/blog/*/ | grep -Ev "book-review" | xargs -I {} mv -fv {} ./public/images/blog/
