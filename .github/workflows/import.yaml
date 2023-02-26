@@ -20,12 +20,14 @@ jobs:
         uses: actions/checkout@v3
 
       - uses: ega4432/notion-to-markdown-action@v0
+        id: import
         with:
           output_path: ./src/content/blog
           filename_property: slug
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          ACTIONS_STEP_DEBUG: true
 
       - name: Configure git
         run: |
@@ -35,6 +37,7 @@ jobs:
       - name: Output diff
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug == 'true' }}
         run: |
+          echo "output count --- ${{ steps.import.outputs.files_count }}"
           git branch
           git status --short
           git diff --name-only
