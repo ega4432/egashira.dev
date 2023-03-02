@@ -1,13 +1,7 @@
 name: import
 
 on:
-  workflow_dispatch:
-    inputs:
-      debug:
-        description: "debug mode"
-        required: false
-        default: false
-        type: boolean
+  workflow_dispatch: {}
   schedule:
     - cron: "0 */3 * * *"
 
@@ -27,41 +21,26 @@ jobs:
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-          ACTIONS_STEP_DEBUG: true
 
-      - name: Configure git
+      - name: Remove draft files
+        if: steps.import.outputs.files_count > 0
+        run: |
+          find ./src/content/blog/ -name '*.md' | xargs grep -l "draft: true" | xargs rm
+
+      - name: Add markdown files & images
+        if: steps.import.outputs.files_count > 0
+        run: |
+          git add -N .
+          find ./src/content/blog/ -name '*.md' | xargs sed -i '/^slug:/d'
+
+          if [ "$(ls -d ./src/content/blog/*/ | grep -Ev "book-review" | wc -l)" -gt "0" ]; then
+            ls -d ./src/content/blog/*/ | grep -Ev "book-review" | xargs -I {} mv -fv {} ./public/images/blog/
+          fi
+
+      - name: Commit & push
+        if: steps.import.outputs.files_count > 0 && success()
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-
-      - name: Output diff
-        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug == 'true' }}
-        run: |
-          echo "output count --- ${{ steps.import.outputs.files_count }}"
-          git branch
-          git status --short
-          git diff --name-only
-          ls -l ./src/content/blog
-
-      # - name: Delete `slug` property from front matter
-      #   run: |
-      #     git diff --name-only ./src/content/blog/ | xargs sed -i '/^slug:/d'
-      - name: Move images to `public` directory
-        run: ls -d ./src/content/blog/*/
-        # ls -d ./src/content/blog/*/ | grep -Ev "book-review" | xargs -I {} mv -fv {} ./public/images/blog/
-
-      # - name: Check diff
-      #   id: diff
-      #   run: |
-      #     if [ "$(git diff --name-only ./src/content/blog | wc -l)" -gt "0" ]; then
-      #       git diff --name-only ./src/content/blog
-      #       exit 1
-      #     fi
-      #   continue-on-error: true
-
-      # - name: Commit only published contents & push
-      #   if: ${{ steps.diff.outcome == 'failure' }}
-      #   run: |
-      #     git diff --name-only ./src/content/blog | xargs grep -L "draft: true" | xargs git add
-      #     git commit -m '[bot] Automatically import contents from Notion'
-      #     git push
+          git commit -a -m '[bot] Automatically import contents from Notion'
+          # git push
