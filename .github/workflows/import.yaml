@@ -10,8 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@v1
+        with:
+          app_id: ${{ secrets.MY_APP_ID }}
+          private_key: ${{ secrets.MY_APP_PRIVATE_KEY }}
+
       - name: Checkout source
         uses: actions/checkout@v3
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
 
       - uses: ega4432/notion-to-markdown-action@v0
         id: import
@@ -22,25 +31,35 @@ jobs:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
-      - name: Remove draft files
+      - name: Remove draft files and images
         if: steps.import.outputs.files_count > 0
         run: |
-          find ./src/content/blog/ -name '*.md' | xargs grep -l "draft: true" | xargs rm
+          draft_files=$(find src/content/blog -name '*.md' -exec grep -l "draft: true" {} \;)
 
-      - name: Add markdown files & images
+          for target in $draft_files; do
+            echo "target: $target"
+            rm "$target"
+
+            file_path="${target%.*}"
+
+            if [ -d "$file_path" ]; then
+              rm -rf "$file_path"
+            fi
+          done
+
+      - name: Remove slug from frontmatter
         if: steps.import.outputs.files_count > 0
-        run: |
-          git add -N .
-          find ./src/content/blog/ -name '*.md' | xargs sed -i '/^slug:/d'
+        run: find src/content/blog -name '*.md' -exec sed -i '/^slug:/d' {} \;
 
-          if [ "$(ls -d ./src/content/blog/*/ | grep -Ev "book-review" | wc -l)" -gt "0" ]; then
-            ls -d ./src/content/blog/*/ | grep -Ev "book-review" | xargs -I {} mv -fv {} ./public/images/blog/
-          fi
+      - name: Move images to public directory
+        if: steps.import.outputs.files_count > 0
+        run: find ./src/content/blog -mindepth 1 -maxdepth 1 -type d -not -name "book-review" -exec sh -c 'mv {} ./public/images/blog/"$(basename {})"/' \;
 
       - name: Commit & push
-        if: steps.import.outputs.files_count > 0 && success()
+        if: steps.import.outputs.files_count > 0
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
+          git add -N .
           git commit -a -m '[bot] Automatically import contents from Notion'
-          # git push
+          git push
