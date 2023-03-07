@@ -47,13 +47,21 @@ jobs:
             fi
           done
 
-      - name: Remove slug from frontmatter
+      - name: Update frontmatter
         if: steps.import.outputs.files_count > 0
-        run: find src/content/blog -name '*.md' -exec sed -i '/^slug:/d' {} \;
+        run: npm run update:fm
 
-      - name: Move images to public directory
+      - name: Upload images & update markdown
         if: steps.import.outputs.files_count > 0
-        run: find ./src/content/blog -mindepth 1 -maxdepth 1 -type d -not -name "book-review" -exec sh -c 'mv {} ./public/images/blog/"$(basename {})"/' \;
+        run: npm run update:images
+        env:
+          IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }}
+          IMGUR_CLIENT_SECRET: ${{ secrets.IMGUR_CLIENT_SECRET }}
+          IMGUR_CLIENT_REFRESH_TOKEN: ${{ secrets.IMGUR_CLIENT_REFRESH_TOKEN }}
+
+      # - name: Move images to public directory
+      #   if: steps.import.outputs.files_count > 0
+      #   run: find ./src/content/blog -mindepth 1 -maxdepth 1 -type d -not -name "book-review" -exec sh -c 'mv {} ./public/images/blog/"$(basename {})"/' \;
 
       - name: Commit & push
         if: steps.import.outputs.files_count > 0
