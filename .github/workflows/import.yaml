@@ -20,7 +20,9 @@ jobs:
         with:
           token: ${{ steps.generate_token.outputs.token }}
 
-      - run: npm run archive-images
+      - run: |
+          npm install
+          npm run archive-images
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
