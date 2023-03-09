@@ -3,7 +3,6 @@ createdAt: "2023-02-15T14:33:00.000Z"
 updatedAt: "2023-03-03T11:12:00.000Z"
 summary: ""
 tags: []
-slug: "keep-my-mental-healthy"
 date: "2023-02-16"
 draft: false
 title: "メンタルを保つために"

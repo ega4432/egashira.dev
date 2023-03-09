@@ -4,7 +4,6 @@ updatedAt: "2023-03-04T09:09:00.000Z"
 summary: ""
 tags:
   - "macOS"
-slug: "wc-cmd-on-macos"
 date: "2023-03-04"
 draft: false
 title: "mac の wc が無駄なスペースを含んでくる"

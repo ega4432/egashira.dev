@@ -6,7 +6,6 @@ tags:
   - "GitHub"
   - "GitHub Actions"
   - "TypeScript"
-slug: "created-my-own-github-action"
 date: "2023-02-04"
 draft: false
 title: "初めて GitHub Actions を自作してる→作った"
