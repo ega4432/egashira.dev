@@ -28,7 +28,8 @@ jobs:
           IMGUR_CLIENT_SECRET: ${{ secrets.IMGUR_CLIENT_SECRET }}
           IMGUR_REFRESH_TOKEN: ${{ secrets.IMGUR_REFRESH_TOKEN }}
 
-      - uses: ega4432/notion-to-markdown-action@v0
+      - if: success()
+        uses: ega4432/notion-to-markdown-action@v0
         id: import
         with:
           output_path: ./src/content/blog
@@ -37,12 +38,12 @@ jobs:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
-      - if: steps.import.outputs.files_count > 0
+      - if: success() && steps.import.outputs.files_count > 0
         run: |
-          find src/content/blog -name "*.md" -type f -exec sh -c 'grep -q "draft: true" "$1" && rm "$1"' sh {} \;
+          find src/content/blog -name "*.md" -type f -exec sh -c 'grep -q "draft: true" "$1" && rm "$1" || sed -i "/^slug:/d"' sh {} \;
 
       - name: Commit & push
-        if: steps.import.outputs.files_count > 0
+        if: success() && steps.import.outputs.files_count > 0
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
