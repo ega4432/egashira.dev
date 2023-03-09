@@ -4,6 +4,7 @@ updatedAt: "2023-03-03T10:59:00.000Z"
 summary: "何したか忘れた"
 tags:
   - "Twitter"
+slug: "twitter-api-is-now-changed"
 date: "2023-02-02"
 draft: false
 title: "Twitter API が有料化するらしい"

@@ -3,6 +3,7 @@ createdAt: "2023-02-06T06:55:00.000Z"
 updatedAt: "2023-03-03T11:05:00.000Z"
 summary: ""
 tags: []
+slug: "started-reading-fundamentals-of-software-architects"
 date: "2023-02-07"
 draft: false
 title: "ソフトウェアアーキテクトの基礎を読み始めた"

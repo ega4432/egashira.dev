@@ -3,6 +3,7 @@ createdAt: "2023-02-08T11:25:00.000Z"
 updatedAt: "2023-03-03T11:05:00.000Z"
 summary: ""
 tags: []
+slug: "articles-on-name-of-disease-engineer"
 date: "2023-02-09"
 draft: false
 title: "[病名]エンジニアを支える技術"

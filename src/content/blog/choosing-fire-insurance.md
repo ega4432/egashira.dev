@@ -3,6 +3,7 @@ createdAt: "2023-02-13T14:22:00.000Z"
 updatedAt: "2023-03-03T11:11:00.000Z"
 summary: ""
 tags: []
+slug: "choosing-fire-insurance"
 date: "2023-02-13"
 draft: false
 title: "火災保険"

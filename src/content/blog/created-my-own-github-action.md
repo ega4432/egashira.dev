@@ -1,11 +1,12 @@
 ---
 createdAt: "2023-02-04T08:23:00.000Z"
-updatedAt: "2023-03-03T11:03:00.000Z"
+updatedAt: "2023-03-09T12:20:00.000Z"
 summary: "作業に没頭した土曜日だった"
 tags:
   - "GitHub"
   - "GitHub Actions"
   - "TypeScript"
+slug: "created-my-own-github-action"
 date: "2023-02-04"
 draft: false
 title: "初めて GitHub Actions を自作してる→作った"
@@ -28,6 +29,6 @@ Notion から API 経由でデータを取得してローカルに Markdown フ�
 
 ## メンタリスト
 
-![](created-my-own-github-action/untitled1.png)
+![メンタリスト](https://i.imgur.com/wTfYbkp.webp)
 
 相変わらずの名作ドラマ。作業の BGM として Netflix で流してたけど初めて観たときは本当にハマって観た記憶。

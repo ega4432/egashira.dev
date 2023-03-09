@@ -6,6 +6,7 @@ tags:
   - "GitHub Actions"
   - "Netlify"
   - "Gatsby"
+slug: "creating-my-own-first-github-action"
 date: "2023-02-03"
 draft: false
 title: "初めて GitHub Actions を自作してる"

@@ -5,6 +5,7 @@ summary: "静的サイト作るときはもうこれでいいかなとなって�
 tags:
   - "Astro"
   - "TailwindCSS"
+slug: "trying-astro"
 date: "2023-02-05"
 draft: false
 title: "Astro で遊んだ"

@@ -1,14 +1,15 @@
 ---
 createdAt: "2023-02-10T12:11:00.000Z"
-updatedAt: "2023-03-03T11:06:00.000Z"
+updatedAt: "2023-03-04T01:38:00.000Z"
 summary: ""
 tags: []
+slug: "learning-about-browser-cache"
 date: "2023-02-10"
 draft: false
-title: "ブラウザのキャッシュ制御ってむずいよね"
+title: "ブラウザのキャッシュ制御ってむずい"
 ---
 
-この辺の記事を読んで実際にデプロイして挙動を見たりした。デプロイ先は Object Storrage で静的 Web サイトホスティング機能を使った（nginx とか Apache とかサーバで試した訳ではないが内部的にそれらが使われているのでさほど変わらないと思う）
+この辺の記事を読んで実際にデプロイして挙動を見たりした。デプロイ先は Object Storage で静的 Web サイトホスティング機能を使った（nginx とか Apache とかサーバで試した訳ではないが内部的にそれらが使われているのでさほど変わらないと思う）
 
 - [Cache\-Control \- HTTP \| MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Cache-Control)
 - [ブラウザのキャッシュコントロールを正しく理解する \- Qiita](https://qiita.com/hkusu/items/d40aa8a70bacd2015dfa)
