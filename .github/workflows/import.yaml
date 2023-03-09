@@ -42,7 +42,7 @@ jobs:
 
       - if: success() && steps.import.outputs.files_count > 0
         run: |
-          find src/content/blog -name "*.md" -type f -exec sh -c 'grep -q "draft: true" "$1" && rm "$1" || sed -i "/^slug:/d"' sh {} \;
+          find src/content/blog -name "*.md" -type f -exec sh -c 'grep -q "draft: true" "$1" && rm "$1" || sed -i "/^slug:/d" "$1"' sh {} \;
 
       - name: Commit & push
         if: success() && steps.import.outputs.files_count > 0
