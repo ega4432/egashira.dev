@@ -13,12 +13,12 @@
     "eslint": "eslint ./src --ext '.ts,.astro' --max-warnings 0",
     "prettier": "prettier .",
     "lint": "lint-staged --config .lintstagedrc.js",
-    "update:fm": "node ./scripts/replace-frontmatter.mjs",
-    "update:images": "node ./scripts/upload-images.mjs"
+    "archive-images": "node ./scripts/archive-images.mjs"
   },
   "dependencies": {
     "@astrojs/image": "^0.15.0",
     "@astrojs/tailwind": "^3.0.1",
+    "@notionhq/client": "^2.2.3",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.0.14",
