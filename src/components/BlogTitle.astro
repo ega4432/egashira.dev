@@ -1,0 +1,15 @@
+---
+import Time from "./Time.astro";
+
+type Props = {
+  title: string;
+  date: string;
+};
+
+const { title, date } = Astro.props;
+---
+
+<div>
+  <Time date={date} />
+  <h1>{title}</h1>
+</div>
