@@ -1,8 +1,10 @@
 ---
 createdAt: "2023-02-10T12:11:00.000Z"
-updatedAt: "2023-03-04T01:38:00.000Z"
+updatedAt: "2023-03-11T04:37:00.000Z"
 summary: ""
-tags: []
+tags:
+  - "Note"
+  - "Web"
 date: "2023-02-10"
 draft: false
 title: "ブラウザのキャッシュ制御ってむずい"

@@ -1,9 +1,10 @@
 ---
 createdAt: "2023-02-04T08:23:00.000Z"
-updatedAt: "2023-03-03T10:59:00.000Z"
+updatedAt: "2023-03-11T04:35:00.000Z"
 summary: "何したか忘れた"
 tags:
   - "Twitter"
+  - "Note"
 date: "2023-02-02"
 draft: false
 title: "Twitter API が有料化するらしい"

@@ -1,9 +1,10 @@
 ---
 createdAt: "2023-02-19T14:29:00.000Z"
-updatedAt: "2023-03-04T09:09:00.000Z"
+updatedAt: "2023-03-11T04:05:00.000Z"
 summary: ""
 tags:
   - "macOS"
+  - "Linux"
 date: "2023-03-04"
 draft: false
 title: "mac の wc が無駄なスペースを含んでくる"

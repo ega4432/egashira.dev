@@ -1,10 +1,11 @@
 ---
 createdAt: "2023-02-05T03:04:00.000Z"
-updatedAt: "2023-03-03T11:04:00.000Z"
+updatedAt: "2023-03-11T04:39:00.000Z"
 summary: "静的サイト作るときはもうこれでいいかなとなっている。"
 tags:
   - "Astro"
   - "TailwindCSS"
+  - "Book"
 date: "2023-02-05"
 draft: false
 title: "Astro で遊んだ"

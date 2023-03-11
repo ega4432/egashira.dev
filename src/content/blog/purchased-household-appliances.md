@@ -1,8 +1,10 @@
 ---
 createdAt: "2023-02-13T14:22:00.000Z"
-updatedAt: "2023-03-03T11:07:00.000Z"
+updatedAt: "2023-03-11T04:36:00.000Z"
 summary: ""
-tags: []
+tags:
+  - "Life"
+  - "Note"
 date: "2023-02-12"
 draft: false
 title: "白物家電"

@@ -1,8 +1,10 @@
 ---
 createdAt: "2023-02-19T09:21:00.000Z"
-updatedAt: "2023-03-03T11:12:00.000Z"
+updatedAt: "2023-03-11T04:54:00.000Z"
 summary: ""
-tags: []
+tags:
+  - "Dependabot"
+  - "CI/CD"
 date: "2023-02-19"
 draft: false
 title: "Dependabot が作る patch version up を自動でマージする"
