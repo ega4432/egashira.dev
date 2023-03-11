@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getTags } from "@lib/blog";
+import Link from "@components/Link.astro";
+import { kebabCase } from "@lib/utils/kebabCase";
+
+const tags = await getTags();
+const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a]);
+---
+
+<BaseLayout>
+  <div class="pt-8 pb-20">
+    <p>タグ一覧</p>
+  </div>
+  <div class="flex flex-wrap">
+    {Object.keys(tags).length === 0 && "タグがありません"}
+    {
+      sortedTags.map((tag) => (
+        <div class="mt-2 mb-2 mr-5 flex items-center gap-1">
+          <Link href={`/tags/${kebabCase(tag)}`}>{tag}</Link>
+          <span class="text-sm">({tags[tag]})</span>
+        </div>
+      ))
+    }
+  </div>
+</BaseLayout>
