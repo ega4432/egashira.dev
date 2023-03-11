@@ -2,6 +2,7 @@
 import { CollectionEntry, getCollection } from "astro:content";
 
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import BlogHead from "@components/BlogHead.astro";
 import "@styles/prism.css";
 
 export const getStaticPaths = async () => {
@@ -18,5 +19,10 @@ const { Content } = await blog.render();
 ---
 
 <MarkdownLayout title={blog.data.title} description={blog.data.summary}>
+  <BlogHead
+    title={blog.data.title}
+    date={blog.data.date}
+    tags={blog.data.tags}
+  />
   <Content />
 </MarkdownLayout>
