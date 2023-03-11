@@ -5,18 +5,22 @@ import SEO from "@components/SEO.astro";
 import { siteMeta } from "@constants";
 
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
+  title: string;
+  description: string;
 }
 
-const { title = siteMeta.title, description = siteMeta.description } =
-  Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <SEO title={title} description={description} />
+    <SEO
+      title={Astro.url.pathname !== "/"
+        ? `${title} | ${siteMeta.title}`
+        : title}
+      description={description}
+    />
   </head>
   <body
     class="antialised bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 lg:text-lg xl:text-xl 2xl:text-2xl"
