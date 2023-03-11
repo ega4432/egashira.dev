@@ -8,7 +8,7 @@ import { getBlogs } from "@lib/blog";
 const latestBlogs = (await getBlogs()).slice(0, 5); // max 5 posts
 ---
 
-<BaseLayout>
+<BaseLayout title={siteMeta.title} description={siteMeta.description}>
   <div class="pt-8 pb-20">
     <p>{`${siteMeta.description} ${siteMeta.author} の Web サイトです。`}</p>
   </div>

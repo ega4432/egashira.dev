@@ -16,9 +16,12 @@ export const getStaticPaths = async () => {
 
 const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
 const { Content } = await blog.render();
+
+const description =
+  blog.data.summary || blog.body.slice(0, 30).replace(/\n/g, "");
 ---
 
-<MarkdownLayout title={blog.data.title} description={blog.data.summary}>
+<MarkdownLayout title={blog.data.title} description={description}>
   <BlogHead
     title={blog.data.title}
     date={blog.data.date}
