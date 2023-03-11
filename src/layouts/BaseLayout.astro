@@ -24,7 +24,7 @@ const { title = siteMeta.title, description = siteMeta.description } =
     <div>
       <Header />
       <main>
-        <div class="mx-auto max-w-2xl px-4 pb-12 2xl:max-w-4xl">
+        <div class="mx-auto max-w-2xl px-6 pb-12 2xl:max-w-4xl">
           <slot />
         </div>
       </main>
@@ -70,7 +70,7 @@ const { title = siteMeta.title, description = siteMeta.description } =
     @apply text-inherit hover:!text-inherit;
   }
   .prose .anchor-icon {
-    @apply invisible my-0 ml-[-1.25rem] inline-block w-5 align-middle dark:text-gray-200;
+    @apply my-0 ml-[-1.25rem] inline-block w-5 align-middle dark:text-gray-200 md:invisible;
   }
   .prose h1:hover > a .anchor-icon,
   .prose h2:hover > a .anchor-icon,
