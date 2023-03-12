@@ -16,5 +16,6 @@ export default {
   "**/*.{ts,tsx,js,jsx,astro}": async (files) => {
     const filesToLint = await removeIgnoredFiles(files);
     return [`eslint --max-warnings=0 ${filesToLint}`];
-  }
+  },
+  "**/*.astro": ["astro check"]
 };
