@@ -67,5 +67,6 @@ export default defineConfig({
         }
       ]
     ]
-  }
+  },
+  site: "https://egashira.dev"
 });
