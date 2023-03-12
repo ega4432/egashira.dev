@@ -1,7 +1,7 @@
 ---
 createdAt: "2023-03-04T09:02:00.000Z"
-updatedAt: "2023-03-12T01:29:00.000Z"
-summary: ""
+updatedAt: "2023-03-12T11:06:00.000Z"
+summary: "今年も無事完了した。"
 tags:
   - "Life"
   - "Note"

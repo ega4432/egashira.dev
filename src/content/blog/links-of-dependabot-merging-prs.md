@@ -1,7 +1,7 @@
 ---
 createdAt: "2023-02-19T09:21:00.000Z"
-updatedAt: "2023-03-12T01:19:00.000Z"
-summary: ""
+updatedAt: "2023-03-12T11:05:00.000Z"
+summary: "調べてみると多くの知見が見つかったのでメモ"
 tags:
   - "Dependabot"
   - "CI/CD"

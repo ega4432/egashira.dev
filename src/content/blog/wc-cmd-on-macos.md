@@ -1,7 +1,7 @@
 ---
 createdAt: "2023-02-19T14:29:00.000Z"
-updatedAt: "2023-03-12T01:29:00.000Z"
-summary: "あるあるなやつなので備忘に"
+updatedAt: "2023-03-12T11:05:00.000Z"
+summary: "あるあるなことなので備忘に"
 tags:
   - "macOS"
   - "Linux"

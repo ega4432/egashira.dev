@@ -1,7 +1,7 @@
 ---
 createdAt: "2023-02-04T08:23:00.000Z"
-updatedAt: "2023-03-12T01:26:00.000Z"
-summary: ""
+updatedAt: "2023-03-12T11:02:00.000Z"
+summary: "Notion 記事を GitHub に Markdown として反映させたくて見切り発車で作り始めた。"
 tags:
   - "GitHub Actions"
   - "Note"

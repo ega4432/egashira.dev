@@ -1,7 +1,7 @@
 ---
 createdAt: "2023-02-04T08:23:00.000Z"
-updatedAt: "2023-03-12T01:27:00.000Z"
-summary: ""
+updatedAt: "2023-03-12T11:02:00.000Z"
+summary: "使う側から作る側へ。まずは自分にとってあれば便利なものを作ってみてる。"
 tags:
   - "GitHub"
   - "GitHub Actions"
