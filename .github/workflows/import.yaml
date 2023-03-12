@@ -49,6 +49,8 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add *.md
-          git commit -m '[bot] Automatically import contents from Notion'
-          git push
+          git add -Av "*.md"
+          if ! git diff --cached --quiet --exit-code; then
+            git commit -m '[bot] Automatically import contents from Notion'
+            git push
+          fi
