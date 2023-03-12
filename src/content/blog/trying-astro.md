@@ -1,15 +1,25 @@
 ---
 createdAt: "2023-02-05T03:04:00.000Z"
-updatedAt: "2023-03-11T04:39:00.000Z"
-summary: "静的サイト作るときはもうこれでいいかなとなっている。"
+updatedAt: "2023-03-12T01:04:00.000Z"
+summary: "静的サイト作るときはもうこれでいいかなとなっている"
 tags:
   - "Astro"
   - "TailwindCSS"
-  - "Book"
+  - "Note"
 date: "2023-02-05"
 draft: false
-title: "Astro で遊んだ"
+title: "Astro を触っている"
 ---
+
+## Astro
+
+先日 v2 がリリースされ割とホットなのかなと思うので、このブログを Astro で書き換えようと着手している。
+
+[静的サイトジェネレータ「Astro 2\.0」正式リリース。新機能「Content Collections」で大量 Markdown 対応、「Hybrid Rendering」で静的と動的ページの混在可能に － Publickey](https://www.publickey1.jp/blog/23/astro_20content_cllectionsmarkdownhybrid_rendering.html)
+
+JS をできる限り排除できるのはやっぱり魅力的。
+
+以下は着手している中での雑なメモ。
 
 ## Astro の Content Collections
 
@@ -18,7 +28,7 @@ title: "Astro で遊んだ"
 [https://docs.astro.build/en/guides/content-collections/](https://docs.astro.build/en/guides/content-collections/)
 
 ```shell
-tree ./src/content
+$ tree ./src/content
 ./src/content
 ├── config.ts
 ├── blog
@@ -39,11 +49,3 @@ import { getCollection } from "astro:content";
 const allPosts = await getCollection("blog");
 ---
 ```
-
-## 読書
-
-「節約・貯蓄・投資の前に　今さら聞けないお金の超基本」を読んでいる。
-
-[https://www.amazon.co.jp/dp/B07KWSF8QF](https://www.amazon.co.jp/dp/B07KWSF8QF)
-
-今までお金の管理をちゃんとやってこなかった（特に費やすものがなくそこまで必要がなかった）ので、今後は少しちゃんとしようと思って入門書を手にとって読んでる。基本的な事が多くすでに実践していることも多いが、脳内にインデックスが貼れたので「何だったけ？」ってなったらこの本見返すと早そう。

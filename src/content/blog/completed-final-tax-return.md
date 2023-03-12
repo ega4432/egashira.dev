@@ -1,9 +1,10 @@
 ---
 createdAt: "2023-03-04T09:02:00.000Z"
-updatedAt: "2023-03-11T04:05:00.000Z"
+updatedAt: "2023-03-12T01:29:00.000Z"
 summary: ""
 tags:
   - "Life"
+  - "Note"
 date: "2023-03-05"
 draft: false
 title: "2022（令和 4 ）年度 確定申告"
