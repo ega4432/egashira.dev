@@ -8,9 +8,11 @@ import "@styles/prism.css";
 
 const me = await getEntryBySlug("author", "me");
 const { Content } = await me.render();
+
+const pageTitle = "このサイトについて";
 ---
 
-<BaseLayout>
+<BaseLayout title={pageTitle} description={pageTitle}>
   <div
     class="grid items-start space-y-2 xl:grid-cols-4 xl:gap-x-8 xl:space-y-0"
   >

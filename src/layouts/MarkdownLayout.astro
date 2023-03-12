@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { siteMeta } from "@constants";
 import "katex/dist/katex.css";
 
 export interface Props {
   title: string;
   description: string;
+  children: any;
 }
 
 const { title, description } = Astro.props;
