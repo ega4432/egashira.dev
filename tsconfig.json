@@ -11,6 +11,8 @@
       "@content/*": ["src/content/*"],
       "@styles/*": ["src/styles/*"],
       "@constants": ["src/constants.ts"]
-    }
+    },
+    "types": ["@astrojs/image/client"],
+    "importsNotUsedAsValues": "error"
   }
 }

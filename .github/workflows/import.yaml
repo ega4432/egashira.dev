@@ -1,20 +1,56 @@
 name: import
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 */3 * * *"
 
 jobs:
   import:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
-      - uses: actions/checkout@v3
-      - uses: ega4432/notion-to-markdown-action@v0
+      - id: generate_token
+        uses: tibdex/github-app-token@v1
         with:
-          output_path: ./src/pages/notes
+          app_id: ${{ secrets.MY_APP_ID }}
+          private_key: ${{ secrets.MY_APP_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+
+      - run: npm install
+
+      - run: npm run archive-images
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-      - run: ls -ltra output
+          IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }}
+          IMGUR_CLIENT_SECRET: ${{ secrets.IMGUR_CLIENT_SECRET }}
+          IMGUR_REFRESH_TOKEN: ${{ secrets.IMGUR_REFRESH_TOKEN }}
+
+      - if: success()
+        uses: ega4432/notion-to-markdown-action@v0
+        id: import
+        with:
+          output_path: ./src/content/blog
+          filename_property: slug
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+
+      - if: success() && steps.import.outputs.files_count > 0
+        run: |
+          find src/content/blog -name "*.md" -type f -exec sh -c 'grep -q "draft: true" "$1" && rm "$1" || sed -i "/^slug:/d" "$1"' sh {} \;
+
+      - name: Commit & push
+        if: success() && steps.import.outputs.files_count > 0
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add -Av "*.md"
+          if ! git diff --cached --quiet --exit-code; then
+            git commit -m '[bot] Automatically import contents from Notion'
+            git push
+          fi
