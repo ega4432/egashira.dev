@@ -69,5 +69,8 @@ export default defineConfig({
       ]
     ]
   },
-  site: "https://egashira.dev"
+  site: "https://egashira.dev",
+  build: {
+    format: "file"
+  }
 });
