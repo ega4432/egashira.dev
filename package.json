@@ -18,6 +18,7 @@
   "dependencies": {
     "@astrojs/image": "^0.15.0",
     "@astrojs/rss": "^2.2.0",
+    "@astrojs/sitemap": "^1.2.0",
     "@astrojs/tailwind": "^3.0.1",
     "@notionhq/client": "^2.2.3",
     "@tailwindcss/line-clamp": "^0.4.2",

@@ -10,6 +10,7 @@ import tailwind from "@astrojs/tailwind";
 import rehypePrismPlus from "rehype-prism-plus";
 import remarkCodeTitles from "./src/lib/utils/remark-code-titles";
 import image from "@astrojs/image";
+import sitemap from "@astrojs/sitemap";
 
 const anchorIcon = s(
   "svg",
@@ -37,7 +38,7 @@ const anchorIcon = s(
 );
 
 export default defineConfig({
-  integrations: [tailwind(), image()],
+  integrations: [tailwind(), image(), sitemap()],
   markdown: {
     syntaxHighlight: "prism",
     remarkPlugins: [
