@@ -95,7 +95,7 @@ export default function generateOgImage(): AstroIntegration {
             font
           });
 
-          await writeFile(`${dist}/${blogPath}/ogp.png`, buffer);
+          await writeFile(`${dist}/${blogPath}/og.png`, buffer);
         }
       }
     }
