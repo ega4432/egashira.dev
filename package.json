@@ -21,7 +21,6 @@
     "@astrojs/sitemap": "^1.2.0",
     "@astrojs/tailwind": "^3.0.1",
     "@notionhq/client": "^2.2.3",
-    "@resvg/resvg-js": "^2.4.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^2.0.14",
@@ -38,11 +37,11 @@
     "remark-emoji": "^3.1.0",
     "remark-footnotes": "^4.0.1",
     "remark-math": "^5.1.1",
-    "satori": "^0.4.2",
     "tailwindcss": "^3.0.24",
     "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
+    "@types/sharp": "^0.31.1",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "eslint": "^8.33.0",
@@ -53,7 +52,9 @@
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.4",
     "prettier-plugin-astro": "^0.8.0",
-    "prettier-plugin-tailwindcss": "^0.2.2"
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "satori": "^0.4.3",
+    "sharp": "^0.31.3"
   },
   "packageManager": "npm@8.19.3",
   "engines": {

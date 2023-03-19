@@ -1,8 +1,8 @@
 import type { AstroIntegration } from "astro";
 import { read } from "gray-matter";
-import satori from "satori";
 import { readFile, writeFile, mkdir, stat } from "fs/promises";
-import { Resvg } from "@resvg/resvg-js";
+import satori from "satori";
+import sharp from "sharp";
 
 const getTitleFromMarkdownFm = (mdFilePath: string) => {
   const { data } = read(mdFilePath);
@@ -13,52 +13,51 @@ const generate = async (
   title: string,
   { background, font }: { background: string; font: Buffer }
 ) => {
-  const svg = await satori(
-    {
-      type: "div",
-      props: {
-        style: {
-          display: "flex",
-          width: 1200,
-          height: 630,
-          backgroundImage: `url(${background})`,
-          backgroundSize: "1200px 630px"
-        },
-        children: {
-          type: "div",
-          props: {
-            style: {
-              display: "flex",
-              alignItems: "center",
-              width: 1040,
-              height: 390,
-              marginTop: 80,
-              marginLeft: 80,
-              fontSize: "70px",
-              fontWeight: "bold",
-              textOverflow: "ellipsis"
-            },
-            children: title
-          }
+  const element = {
+    type: "div",
+    props: {
+      style: {
+        alignItems: "center",
+        backgroundImage: `url(${background})`,
+        backgroundSize: "1200px 630px",
+        display: "flex",
+        justifyContent: "center",
+        height: 630,
+        textAlign: "start",
+        width: 1200
+      },
+      children: {
+        type: "div",
+        props: {
+          style: {
+            display: "flex",
+            fontSize: "60px",
+            fontWeight: "bold",
+            height: 390,
+            marginTop: 80,
+            textOverflow: "ellipsis",
+            width: 1040
+          },
+          children: title
         }
       }
-    },
-    {
-      width: 1200,
-      height: 630,
-      fonts: [
-        {
-          name: "NotoSansJP",
-          data: font,
-          weight: 500,
-          style: "normal"
-        }
-      ]
     }
-  );
+  };
 
-  const resvg = new Resvg(svg);
-  return resvg.render().asPng();
+  const svg = await satori(element, {
+    width: 1200,
+    height: 630,
+    fonts: [
+      {
+        name: "NotoSansJP",
+        data: font,
+        weight: 500,
+        style: "normal"
+      }
+    ]
+  });
+
+  return await sharp(Buffer.from(svg)).png().toBuffer();
 };
 
 const createDirectory = async (path: string, recursive: boolean = true) => {
