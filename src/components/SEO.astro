@@ -12,13 +12,14 @@ const generator = Astro.generator;
 const { twitter, socialBanner } = siteMeta;
 const { title, description, currentUrl } = Astro.props;
 
-const isBlogPage =
-  currentUrl.pathname.startsWith("/blog/") && currentUrl.pathname !== "/blog/";
+const currentPath = currentUrl.pathname.split(".")[0];
+const isBlogPage = currentPath.startsWith("/blog/") && currentPath !== "/blog/";
 const ogUrl = currentUrl.href;
 const ogType = isBlogPage ? "article" : "website";
-const ogImage = `${currentUrl.origin}${
-  isBlogPage ? join("/images", currentUrl.pathname, "og.png") : socialBanner
-}`;
+const ogImage = new URL(
+  isBlogPage ? join("/images", currentPath, "og.png") : socialBanner,
+  currentUrl
+);
 const twCardType = isBlogPage ? "summary_large_image" : "summary";
 ---
 
