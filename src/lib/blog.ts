@@ -1,7 +1,7 @@
-import { getCollection } from "astro:content";
+import { getCollection, CollectionEntry } from "astro:content";
 import { dateSortDesc } from "@lib/utils/dateSortDesc";
 
-export const getBlogs = async () => {
+export const getBlogs = async (): Promise<CollectionEntry<"blog">[]> => {
   return (await getCollection("blog")).sort((a, b) =>
     dateSortDesc(a.data.date, b.data.date)
   );

@@ -8,9 +8,11 @@ import rehypeKatex from "rehype-katex";
 import { s } from "hastscript";
 import tailwind from "@astrojs/tailwind";
 import rehypePrismPlus from "rehype-prism-plus";
-import remarkCodeTitles from "./src/lib/utils/remark-code-titles";
 import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
+
+import remarkCodeTitles from "./src/lib/utils/remark-code-titles";
+import generateOgImage from "./src/integrations/generateOgImages";
 
 const anchorIcon = s(
   "svg",
@@ -38,7 +40,7 @@ const anchorIcon = s(
 );
 
 export default defineConfig({
-  integrations: [tailwind(), image(), sitemap()],
+  integrations: [tailwind(), image(), sitemap(), generateOgImage()],
   markdown: {
     syntaxHighlight: "prism",
     remarkPlugins: [

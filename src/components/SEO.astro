@@ -1,31 +1,37 @@
 ---
 import { siteMeta } from "@constants";
+import { join } from "path";
 
 type Props = {
   title: string;
   description: string;
-  ogType?: "website" | "article";
-  ogImage?: string | undefined;
+  currentUrl: URL;
 };
 
 const generator = Astro.generator;
-const {
-  title,
-  description,
-  ogType = "website",
-  ogImage = siteMeta.socialBanner
-} = Astro.props;
-const twCardType = "summary"; // TODO: URL に応じて `summary_large_image` と使い分ける
+const { twitter, socialBanner } = siteMeta;
+const { title, description, currentUrl } = Astro.props;
+
+const currentPath = currentUrl.pathname.split(".")[0];
+const isBlogPage = currentPath.startsWith("/blog/") && currentPath !== "/blog/";
+const ogUrl = currentUrl.href;
+const ogType = isBlogPage ? "article" : "website";
+const ogImage = new URL(
+  isBlogPage ? join("/images", currentPath, "og.png") : socialBanner,
+  currentUrl
+);
+const twCardType = isBlogPage ? "summary_large_image" : "summary";
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={generator} />
 <meta name="robots" content="follow, index" />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<!-- icon, Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" sizes="16x16" href="/favicons/favicon.ico" />
 <link rel="icon" type="image/png" href="/favicons/favicon.png" />
 <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
@@ -47,12 +53,12 @@ const twCardType = "summary"; // TODO: URL に応じて `summary_large_image` �
   href="/favicons/favicon-16x16.png"
 />
 <link rel="manifest" href="/favicons/site.webmanifest" />
-<!-- <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#0ea5e9" /> -->
+<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#0ea5e9" />
 <meta name="msapplication-TileColor" content="#000000" />
 <meta name="theme-color" content="#000000" />
-<!-- <link rel="alternate" type="application/rss+xml" href="/feed.xml" /> -->
-
-<!-- <meta property="og:url" content={`${siteMeta.siteUrl}${router.asPath}`} /> -->
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+<!-- OGP -->
+<meta property="og:url" content={ogUrl} />
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={title} />
 <meta property="og:description" content={description} />
@@ -60,6 +66,6 @@ const twCardType = "summary"; // TODO: URL に応じて `summary_large_image` �
 <meta property="og:image" content={ogImage} />
 <meta name="twitter:image" content={ogImage} />
 <meta name="twitter:card" content={twCardType} />
-<meta name="twitter:site" content={siteMeta.twitter} />
+<meta name="twitter:site" content={twitter} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
