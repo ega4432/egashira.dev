@@ -41,50 +41,50 @@ const currentUrl = Astro.url;
 </html>
 
 <style is:global>
-/* コード、数式 */
-.prose pre,
-.math {
-  @apply text-xs xl:text-sm;
-}
-/* チェックボックス */
-.prose ul:has(> .task-list-item) {
-  @apply pl-0;
-}
-.prose .task-list-item::before {
-  @apply hidden;
-}
-.prose .task-list-item {
-  @apply list-none pl-0;
-}
-.prose .task-list-item > input {
-  @apply my-0 mr-2 align-middle;
-}
-/* 注釈 */
-.prose .footnotes {
-  @apply mt-20 border-t-[1px] border-gray-200 pt-12 dark:border-gray-700;
-}
-.prose .footnotes #footnote-label {
-  @apply sr-only;
-}
-.prose a[data-footnote-ref] {
-  @apply no-underline;
-}
-.prose .data-footnote-backref {
-  @apply no-underline;
-}
-/* アンカーリンク */
-.prose a:has(.anchor-icon) {
-  @apply text-inherit hover:!text-inherit;
-}
-.prose .anchor-icon {
-  @apply my-0 ml-[-1.25rem] inline-block w-5 align-middle dark:text-gray-200 md:invisible;
-}
-.prose h1:hover > a .anchor-icon,
-.prose h2:hover > a .anchor-icon,
-.prose h3:hover > a .anchor-icon,
-.prose h4:hover > a .anchor-icon,
-.prose h5:hover > a .anchor-icon,
-.prose h6:hover > a .anchor-icon {
-  @apply visible;
-}
+  /* コード、数式 */
+  .prose pre,
+  .math {
+    @apply text-xs xl:text-sm;
+  }
+  /* チェックボックス */
+  .prose ul:has(> .task-list-item) {
+    @apply pl-0;
+  }
+  .prose .task-list-item::before {
+    @apply hidden;
+  }
+  .prose .task-list-item {
+    @apply list-none pl-0;
+  }
+  .prose .task-list-item > input {
+    @apply my-0 mr-2 align-middle;
+  }
+  /* 注釈 */
+  .prose .footnotes {
+    @apply mt-20 border-t-[1px] border-gray-200 pt-12 dark:border-gray-700;
+  }
+  .prose .footnotes #footnote-label {
+    @apply sr-only;
+  }
+  .prose a[data-footnote-ref] {
+    @apply no-underline;
+  }
+  .prose .data-footnote-backref {
+    @apply no-underline;
+  }
+  /* アンカーリンク */
+  .prose a:has(.anchor-icon) {
+    @apply text-inherit hover:!text-inherit;
+  }
+  .prose .anchor-icon {
+    @apply my-0 ml-[-1.25rem] inline-block w-5 align-middle dark:text-gray-200 md:invisible;
+  }
+  .prose h1:hover > a .anchor-icon,
+  .prose h2:hover > a .anchor-icon,
+  .prose h3:hover > a .anchor-icon,
+  .prose h4:hover > a .anchor-icon,
+  .prose h5:hover > a .anchor-icon,
+  .prose h6:hover > a .anchor-icon {
+    @apply visible;
+  }
 </style>
