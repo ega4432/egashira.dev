@@ -2,6 +2,7 @@
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SEO from "@components/SEO.astro";
+import GoogleTagManager from "@components/GoogleTagManager.astro";
 import { siteMeta } from "@constants";
 
 type Props = {
@@ -17,6 +18,7 @@ const currentUrl = Astro.url;
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <GoogleTagManager gtmId={import.meta.env.GTM_ID} />
     <SEO
       title={Astro.url.pathname !== "/"
         ? `${title} | ${siteMeta.title}`
