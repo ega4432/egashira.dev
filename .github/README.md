@@ -1,5 +1,8 @@
 # egashira.dev
 
+[![build](https://github.com/ega4432/egashira.dev/actions/workflows/ci.yaml/badge.svg)](https://github.com/ega4432/egashira.dev/actions/workflows/ci.yaml)
+[![import](https://github.com/ega4432/egashira.dev/actions/workflows/import.yaml/badge.svg)](https://github.com/ega4432/egashira.dev/actions/workflows/import.yaml)
+
 ## Commands
 
 All commands are run from the root of the project, from a terminal:

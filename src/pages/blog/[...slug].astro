@@ -1,13 +1,15 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
+import { getBlogs } from "@lib/blog";
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
+import BlogHead from "@components/BlogHead.astro";
 import "@styles/prism.css";
 
 export const getStaticPaths = async () => {
-  const blogs = await getCollection("blog", ({ data }) => data.draft !== true);
+  const allBlogs = await getBlogs();
 
-  return blogs.map((blog) => ({
+  return allBlogs.map((blog) => ({
     params: { slug: blog.slug },
     props: { blog }
   }));
@@ -15,8 +17,16 @@ export const getStaticPaths = async () => {
 
 const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
 const { Content } = await blog.render();
+
+const description =
+  blog.data.summary || blog.body.slice(0, 30).replace(/\n/g, "");
 ---
 
-<MarkdownLayout title={blog.data.title} description={blog.data.summary}>
+<MarkdownLayout title={blog.data.title} description={description}>
+  <BlogHead
+    title={blog.data.title}
+    date={blog.data.date}
+    tags={blog.data.tags}
+  />
   <Content />
 </MarkdownLayout>

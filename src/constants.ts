@@ -29,7 +29,7 @@ export const footerLinks: Link[] = [
   { href: "/about", title: "このサイトについて" },
   { href: "/privacy-policy", title: "プライバシーポリシー" },
   { href: "/feed.xml", title: "フィード" },
-  { href: "/sitemap.xml", title: "サイトマップ" },
+  { href: "/sitemap-index.xml", title: "サイトマップ" },
   { href: `https://github.com/${me}`, title: "GitHub" },
   { href: `https://twitter.com/${me}`, title: "Twitter" }
 ];

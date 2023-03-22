@@ -10,7 +10,10 @@
       "@lib/*": ["src/lib/*"],
       "@content/*": ["src/content/*"],
       "@styles/*": ["src/styles/*"],
+      "@integrations/*": ["src/integrations/*"],
       "@constants": ["src/constants.ts"]
-    }
+    },
+    "types": ["@astrojs/image/client"],
+    "importsNotUsedAsValues": "error"
   }
 }
