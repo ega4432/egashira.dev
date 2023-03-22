@@ -15,6 +15,13 @@ import sitemap from "@astrojs/sitemap";
 import remarkCodeTitles from "./src/lib/utils/remark-code-titles";
 import generateOgImage from "./src/integrations/generateOgImages";
 
+let site = "http://localhost:3000";
+if (process.env.CF_PAGES_BRANCH === "main") {
+  site = "https://egashira.dev";
+} else if (process.env.CF_PAGES_URL) {
+  site = process.env.CF_PAGES_URL;
+}
+
 const anchorIcon = s(
   "svg",
   {
@@ -82,7 +89,7 @@ export default defineConfig({
       ]
     ]
   },
-  site: "https://egashira.dev",
+  site,
   build: {
     format: "file"
   }
