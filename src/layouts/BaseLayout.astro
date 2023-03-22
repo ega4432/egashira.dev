@@ -18,7 +18,11 @@ const currentUrl = Astro.url;
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <GoogleTagManager gtmId={import.meta.env.GTM_ID} />
+    {
+      import.meta.env.CF_PAGES_BRANCH === "main" && (
+        <GoogleTagManager gtmId={import.meta.env.GTM_ID} />
+      )
+    }
     <SEO
       title={Astro.url.pathname !== "/"
         ? `${title} | ${siteMeta.title}`
