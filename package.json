@@ -29,7 +29,7 @@
     "date-fns-tz": "^2.0.0",
     "github-slugger": "^2.0.0",
     "hastscript": "^7.2.0",
-    "qs": "^6.11.0",
+    "qs": "^6.11.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-katex": "^6.0.2",
     "rehype-prism-plus": "^1.5.1",
