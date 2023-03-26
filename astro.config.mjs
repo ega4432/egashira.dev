@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import emoji from "remark-emoji";
 import remarkFootnotes from "remark-footnotes";
 import remarkMath from "remark-math";
+import remarkLinkCard from "remark-link-card";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
@@ -70,7 +71,8 @@ export default defineConfig({
           inlineNotes: true
         }
       ],
-      remarkCodeTitles
+      remarkCodeTitles,
+      [remarkLinkCard, { shortenUrl: true }]
     ],
     rehypePlugins: [
       rehypeSlug,
