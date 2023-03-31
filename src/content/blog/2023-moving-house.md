@@ -15,6 +15,8 @@ title: "引っ越しをした"
 - Qrio Lock の初期化
   - [ロックの初期化 – Qrio 株式会社](https://support.qrio.me/hc/ja/articles/7029277495833-%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E5%88%9D%E6%9C%9F%E5%8C%96)
 - 福岡市不燃ゴミの捨て方
+  - [福岡市 燃えないごみの分け方・出し方](https://www.city.fukuoka.lg.jp/kankyo/jigyokeigomi/life/katei-bunbetsu/moenaigomi.html)
+  - 不燃ごみ、粗大ごみは大変なイメージだが、僕が住んでいる福岡市は割と楽だった。
 - タスク管理
   - 決めることが予想以上に多いのと、絶対的に抜け落ちてしまうので Notion で Todo を管理し、何かしらこの日までにアクションが必要なものは Google カレンダーにタスク or リマインダを入れて管理したが結構良かった。
 
