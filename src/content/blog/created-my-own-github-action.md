@@ -1,6 +1,6 @@
 ---
 createdAt: "2023-02-04T08:23:00.000Z"
-updatedAt: "2023-03-12T11:02:00.000Z"
+updatedAt: "2023-04-01T08:01:00.000Z"
 summary: "使う側から作る側へ。まずは自分にとってあれば便利なものを作ってみてる。"
 tags:
   - "GitHub"
@@ -14,7 +14,7 @@ title: "初めて GitHub Actions を自作してる→作った"
 
 昨日やり始めて雑だが取りあえず動くものを作った。
 
-[bookmark](https://github.com/marketplace/actions/notion-to-markdown-action)
+[https://github.com/marketplace/actions/notion-to-markdown-action](https://github.com/marketplace/actions/notion-to-markdown-action)
 
 Notion から API 経由でデータを取得してローカルに Markdown ファイルとして保存するもの。GitHub 公式が [action を自作する場合のテンプレート](https://github.com/actions/typescript-action)を用意してくれているので、それを利用した。
 

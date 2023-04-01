@@ -1,6 +1,6 @@
 ---
 createdAt: "2023-04-01T04:02:00.000Z"
-updatedAt: "2023-04-01T07:06:00.000Z"
+updatedAt: "2023-04-01T07:34:00.000Z"
 summary: "beta リリースされたので早速インストールして使ってみた"
 tags:
   - "GitHub Actions"
@@ -31,7 +31,7 @@ VSCode 拡張を入れて、左側の GitHub Actions のアイコンをクリッ
 
 ## secret の確認と変更
 
-ワークフローの一覧の下には、以下のように secret の一覧が表示されている。GitHub 上でこれまで確認や変更（削除含め）行っていたのが、VSCode 上でも可能となっていた。
+ワークフローの一覧の下には、以下のように secret の一覧が表示されている（値はもちろん確認できない）。GitHub 上でこれまで確認や変更（削除含め）行っていたのが、VSCode 上でも可能となっていた。
 
 ![](https://i.imgur.com/RySr5gn.webp)
 
