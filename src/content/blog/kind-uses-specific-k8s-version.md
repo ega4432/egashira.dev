@@ -14,11 +14,11 @@ kind でクラスタを構築する際に、特定の Kubernetes（以下 k8s）
 
 特定のバージョンを指定する場合、設定ファイルにイメージのバージョンを指定すれば実現できる。対応するイメージのバージョンについては、kind の GitHub release ページより確認できる。
 
-[Releases · kubernetes\-sigs/kind](https://github.com/kubernetes-sigs/kind/releases)
+https://github.com/kubernetes-sigs/kind/releases
 
 kind のバージョンによって使用できる k8s のバージョンが決まっていて、例えば最新の kind v0.17.0 で v1.26 が追加された。また公式ドキュメントは以下を参照いただければと思う。
 
-[kind – Configuration](https://kind.sigs.k8s.io/docs/user/configuration/#kubernetes-version)
+https://kind.sigs.k8s.io/docs/user/configuration/#kubernetes-version
 
 詳しくは以下に手順を記載する。
 

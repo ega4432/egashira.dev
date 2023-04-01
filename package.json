@@ -29,6 +29,8 @@
     "date-fns-tz": "^2.0.0",
     "github-slugger": "^2.0.0",
     "hastscript": "^7.2.0",
+    "html-entities": "^2.3.3",
+    "open-graph-scraper": "^5.2.3",
     "qs": "^6.11.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-katex": "^6.0.2",
@@ -43,6 +45,7 @@
   "devDependencies": {
     "@astrojs/partytown": "^1.1.1",
     "@types/sharp": "^0.31.1",
+    "@types/unist": "^2.0.6",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "eslint": "^8.33.0",

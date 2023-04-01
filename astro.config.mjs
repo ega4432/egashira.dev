@@ -12,7 +12,8 @@ import image from "@astrojs/image";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 
-import remarkCodeTitles from "./src/lib/utils/remark-code-titles";
+import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
+import remarkLinkCard from './src/lib/utils/remark-plugins/remark-link-card';
 import generateOgImage from "./src/integrations/generateOgImages";
 
 let site = "http://localhost:3000";
@@ -70,7 +71,8 @@ export default defineConfig({
           inlineNotes: true
         }
       ],
-      remarkCodeTitles
+      remarkCodeTitles,
+      remarkLinkCard
     ],
     rehypePlugins: [
       rehypeSlug,
