@@ -16,12 +16,9 @@ export default function remarkCodeTitles() {
           title = nodeLang.slice(nodeLang.search(":") + 1, nodeLang.length);
         }
 
-        if (!title) {
-          return;
-        }
+        if (!title) return;
 
         const className = "remark-code-title";
-
         const titleNode = {
           type: "html",
           value: `<div class="${className}">${title}</div>`.trim()

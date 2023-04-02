@@ -165,7 +165,7 @@ https://egashira.dev/blog/get-latest-pr-via-github-cli
 
 こちらも Go で自作した twitter クライアントを API 化して AWS Lambda + API Gateway にデプロイした。cURL で叩けば事足りるだろと思われるかもしれないが、API 化しておくことで何かと今後叩きやすくしておいた意味がある。
 
-[ega4432/go\-lambda\-twitter](https://github.com/ega4432/go-lambda-twitter)
+https://github.com/ega4432/go-lambda-twitter
 
 こちらの開発では AWS SAM を使ってインフラのコード化にも挑戦してみたので非常に勉強になったし、その CI/CD 環境も初めて作ったので、今度詳しくブログにまとめたい。
 
