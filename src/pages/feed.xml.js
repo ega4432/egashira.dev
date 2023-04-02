@@ -23,7 +23,6 @@ export const get = async (context) => {
         .map((tag) => `<category>${tag}</category>`)
         .join("")}`
     })),
-    customData: `<webMaster>${me}</webMaster><managingEditor>${me}</managingEditor>${lastBuildDate}${lang}`,
-    stylesheet: "/rss/styles.xsl"
+    customData: `<webMaster>${me}</webMaster><managingEditor>${me}</managingEditor>${lastBuildDate}${lang}`
   });
 };

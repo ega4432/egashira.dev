@@ -1,6 +1,6 @@
 ---
 createdAt: "2023-04-01T04:02:00.000Z"
-updatedAt: "2023-04-01T07:34:00.000Z"
+updatedAt: "2023-04-01T15:25:00.000Z"
 summary: "beta リリースされたので早速インストールして使ってみた"
 tags:
   - "GitHub Actions"
@@ -13,7 +13,7 @@ title: "GitHub Actions VSCode 拡張の紹介"
 
 ## はじめに
 
-3/29 に public beta となったため、VSCode に早速インストールして使ってみた。今回は試してみたことをメモがてら残しておく。公式のブログは以下を参照してもらえればと思う。
+2023-03-29 に public beta となったため、VSCode に早速インストールして使ってみた。今回は試してみたことをメモがてら残しておく。公式のブログは以下を参照してもらえればと思う。
 
 [https://github.blog/2023-03-28-announcing-the-github-actions-extension-for-vs-code/](https://github.blog/2023-03-28-announcing-the-github-actions-extension-for-vs-code/)
 
