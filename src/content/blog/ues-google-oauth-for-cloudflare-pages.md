@@ -1,9 +1,8 @@
 ---
 createdAt: "2023-03-26T11:25:00.000Z"
-updatedAt: "2023-04-02T13:51:00.000Z"
+updatedAt: "2023-04-02T15:02:00.000Z"
 summary: ""
 tags:
-  - "Astro"
   - "Cloudflare Pages"
   - "security"
   - "Google"
