@@ -1,7 +1,7 @@
 ---
 createdAt: "2023-03-26T11:25:00.000Z"
-updatedAt: "2023-04-02T15:02:00.000Z"
-summary: ""
+updatedAt: "2023-04-04T15:08:00.000Z"
+summary: "このサイトを Vercel から Cloudflare Pages へ移行した際にプレビュー画面へ Google 認証を設定した。その方法についてまとめる。"
 tags:
   - "Cloudflare Pages"
   - "security"
@@ -14,7 +14,7 @@ title: "Cloudflare Pages でプレビュー画面に Google 認証を設定す�
 
 ## はじめに
 
-このサイトを Vercel から Cloudflare Pages へ移行した。また、その際にプレビュー画面へ Google 認証を設定したので、その方法についてまとめておく。
+このサイトを Vercel から Cloudflare Pages へ移行した。その際にプレビュー画面へ Google 認証を設定したので、その方法についてまとめておく。
 
 以下に記載する手順については Cloudflare Pages を使って静的サイトをホスティングする場合にはおそらく同じ流れになると思う。
 
@@ -52,9 +52,13 @@ Cloudflare Pages へのアクセス制御は Cloudflare Zero Trust というサ�
 1. Cloudflare Zero Trust のメニューから「Access」>「Application」と進む。
 2. 設定したい Cloudflare Pages のプロジェクトのレコードの 3 点リーダ `…` から「Configure」をクリックする。
 3. 「Add Policy」をクリックし、「Type」を `include`、「Selector」を `Emails`、「Value」を自身のメールアドレスと入力して保存する。
-4. 作成した Policy の対象を設定する。「Subdomain」を `*`、「Domain」を `example.pages.dev` として設定を保存する。
+4. 作成した Policy の対象を設定する。「Subdomain」を `*`、「Domain」を `例） example.pages.dev` として設定を保存する。
 
 以上で、Cloudflare Pages のプレビュー画面に Google 認証で自分だけがアクセスできる設定が完了となる。
+
+## あとがき
+
+この記事はほとんど ChatGPT に書いてもらった。ベースは書いてもらって、自分が作業した部分と異なる内容を修正するだけで済んだのでこういう記事を書くハードルがだいぶ下がった気がする。
 
 ## 参考
 
