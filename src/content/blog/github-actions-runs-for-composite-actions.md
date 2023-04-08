@@ -1,6 +1,6 @@
 ---
 createdAt: "2023-04-06T13:50:00.000Z"
-updatedAt: "2023-04-08T09:49:00.000Z"
+updatedAt: "2023-04-08T12:53:00.000Z"
 summary: "処理をまとめて再利用可能なかたちで定義できる機能があるみたいなので使ってみた。"
 tags:
   - "GitHub Actions"
@@ -53,9 +53,9 @@ runs:
 - `using` 句では `compose` を指定する。
 - `inputs` 句で composite action 側にパラメータを渡すことができる。
   - 詳細としては他にも `require`, `default` , `description` が指定できる。
-  - [https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs)
+  - [Metadata syntax for GitHub Actions \- GitHub Docs](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#inputs)
 - `run` 句では `shell` の設定が必須となっている。
-  - [https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runsstepsshell](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runsstepsshell)
+  - [Metadata syntax for GitHub Actions \- GitHub Docs](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runsstepsshell)
 
 ## composite action を使う
 
