@@ -1,7 +1,7 @@
 ---
 title: React + TypeScript でファイルアップロード機能を実装する
-date: '2022-04-26'
-tags: ['React', 'TypeScript', 'HTTP', 'API']
+date: "2022-04-26"
+tags: ["React", "TypeScript", "HTTP", "API"]
 draft: false
 summary: 実装する機会があったので簡単に手順をまとめておく
 ---

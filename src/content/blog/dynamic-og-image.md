@@ -1,9 +1,9 @@
 ---
-title: 'vercel/og-image を使って動的 OGP に対応する'
-date: '2022-04-02'
-tags: ['Next.js', 'Vercel', 'Update']
+title: "vercel/og-image を使って動的 OGP に対応する"
+date: "2022-04-02"
+tags: ["Next.js", "Vercel", "Update"]
 draft: false
-summary: 'このサイトに動的 OGP 対応した際のメモ'
+summary: "このサイトに動的 OGP 対応した際のメモ"
 ---
 
 ## はじめに

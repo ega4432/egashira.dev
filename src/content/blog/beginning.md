@@ -1,9 +1,9 @@
 ---
-title: '個人サイト立ち上げ'
-date: '2022-03-27'
-tags: ['Next.js', 'TailwindCSS', 'TypeScript', 'Vercel', 'Google Domains']
+title: "個人サイト立ち上げ"
+date: "2022-03-27"
+tags: ["Next.js", "TailwindCSS", "TypeScript", "Vercel", "Google Domains"]
 draft: false
-summary: 'このサイトの立ち上げを通して考えたことや学んだことなど'
+summary: "このサイトの立ち上げを通して考えたことや学んだことなど"
 ---
 
 ## きっかけ

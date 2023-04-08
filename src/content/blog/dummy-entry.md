@@ -1,9 +1,9 @@
 ---
 title: テスト
-date: '2022-03-06'
-tags: ['Markdown']
+date: "2022-03-06"
+tags: ["Markdown"]
 draft: false
-summary: '自分用 Markdown ファイルのテスト'
+summary: "自分用 Markdown ファイルのテスト"
 canonicalUrl: https://egashira.dev/blog/dummy-entry
 ---
 

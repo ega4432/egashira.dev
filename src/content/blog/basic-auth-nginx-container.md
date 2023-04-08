@@ -1,7 +1,7 @@
 ---
 title: nginx コンテナに Basic 認証をかける
-date: '2022-10-08'
-tags: ['nginx', 'Docker', 'Container']
+date: "2022-10-08"
+tags: ["nginx", "Docker", "Container"]
 draft: false
 summary: よくやるのでまとめておく
 ---
