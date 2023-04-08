@@ -14,21 +14,14 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: .tool-versions
-          cache: "npm"
-          cache-dependency-path: "./package-lock.json"
-
-      - name: Install dependencies
-        run: npm ci
+      - name: Initialize node & npm
+        uses: ./.github/actions/npm
 
       - name: Execute prettier
-        run: npx prettier .
+        run: npm run prettier
 
       - name: Execute eslint
-        run: npx eslint ./src --ext '.ts,.astro' --max-warnings 0
+        run: npm run eslint
 
       - name: Build
         run: npm run build

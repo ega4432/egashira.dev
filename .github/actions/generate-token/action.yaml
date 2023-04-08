@@ -1,0 +1,19 @@
+inputs:
+  app-id:
+    required: true
+  private-id:
+    required: true
+
+outputs:
+  token:
+    value: ${{ steps.generate.outputs.token }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Generate token
+      uses: tibdex/github-app-token@v1
+      with:
+        app_id: ${{ inputs.app-id }}
+        private_key: ${{ inputs.private-id }}
+      id: generate

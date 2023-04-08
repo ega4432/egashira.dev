@@ -1,0 +1,23 @@
+inputs:
+  node-version-file:
+    required: false
+    default: ".tool-versions"
+  cache:
+    required: false
+    default: "npm"
+  cache-dependency-path:
+    required: false
+    default: "./package-lock.json"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: ${{ inputs.node-version-file }}
+        cache: ${{ inputs.cache }}
+        cache-dependency-path: ${{ inputs.cache-dependency-path }}
+    - name: Install dependencies
+      shell: bash
+      run: npm ci

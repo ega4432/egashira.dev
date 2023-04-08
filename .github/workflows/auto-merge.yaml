@@ -14,10 +14,10 @@ jobs:
     if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     steps:
       - name: Generate token
-        uses: tibdex/github-app-token@v1
+        uses: ./.github/actions/generate-token
         with:
-          app_id: ${{ secrets.MY_APP_ID }}
-          private_key: ${{ secrets.MY_APP_PRIVATE_KEY }}
+          app-id: ${{ secrets.MY_APP_ID }}
+          private-key: ${{ secrets.MY_APP_PRIVATE_KEY }}
         id: my_app
 
       - name: Fetch metadata

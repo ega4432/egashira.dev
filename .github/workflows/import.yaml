@@ -10,17 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - id: generate_token
-        uses: tibdex/github-app-token@v1
+      - name: Generate token
+        uses: ./.github/actions/generate-token
         with:
-          app_id: ${{ secrets.MY_APP_ID }}
-          private_key: ${{ secrets.MY_APP_PRIVATE_KEY }}
+          app-id: ${{ secrets.MY_APP_ID }}
+          private-key: ${{ secrets.MY_APP_PRIVATE_KEY }}
+        id: generate_token
 
       - uses: actions/checkout@v3
         with:
           token: ${{ steps.generate_token.outputs.token }}
 
-      - run: npm install
+      - name: Initialize node & npm
+        uses: ./.github/actions/npm
 
       - run: npm run archive-images
         env:
@@ -34,8 +36,8 @@ jobs:
         uses: ega4432/notion-to-markdown-action@v0
         id: import
         with:
-          output_path: ./src/content/blog
-          filename_property: slug
+          output_path: "./src/content/blog"
+          filename_property: "slug"
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
