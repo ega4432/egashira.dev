@@ -11,7 +11,8 @@
     "astro": "astro",
     "prepare": "husky install",
     "eslint": "eslint ./src --ext '.ts,.astro' --max-warnings 0",
-    "prettier": "prettier .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
     "lint": "lint-staged --config .lintstagedrc.js",
     "archive-images": "node ./scripts/archive-images.mjs"
   },
