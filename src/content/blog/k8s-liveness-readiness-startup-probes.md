@@ -1,7 +1,7 @@
 ---
 title: Kubernetes のヘルスチェック Liveness, Readiness, Startup Probe についてまとめてみた
-date: '2022-04-20'
-tags: ['k8s', 'Container']
+date: "2022-04-20"
+tags: ["k8s", "Container"]
 draft: false
 summary: k8s の Pod へのヘルスチェックを行う機能の種類や方式についてまとめてみた
 ---

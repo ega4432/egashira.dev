@@ -1,7 +1,7 @@
 ---
 title: Kubernetes のパッケージマネージャ Helm を触ってみた
-date: '2022-06-26'
-tags: ['k8s', 'Helm', 'DevOps']
+date: "2022-06-26"
+tags: ["k8s", "Helm", "DevOps"]
 draft: false
 summary: 今更ながら Helm を触ってみたので概要をまとめてみた
 ---

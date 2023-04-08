@@ -1,7 +1,7 @@
 ---
 title: Argo CD のチュートリアルをやってみた
-date: '2022-04-29'
-tags: ['k8s', 'Argo CD', 'CI/CD', 'GitOps', 'DevOps']
+date: "2022-04-29"
+tags: ["k8s", "Argo CD", "CI/CD", "GitOps", "DevOps"]
 draft: false
 summary: Kubernetes のための宣言型 GitOps 継続的デリバリツールである Argo CD に入門した
 ---

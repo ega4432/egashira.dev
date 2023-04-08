@@ -30,7 +30,7 @@ const { title, date, tags } = Astro.props;
               <li class="my-0 text-base">
                 <Link
                   href={`/tags/${kebabCase(value)}`}
-                  className="text-gray-700 no-underline hover:!text-gray-700 dark:!text-gray-200 dark:hover:!text-gray-200"
+                  className="!text-gray-700 no-underline hover:!text-gray-700 dark:!text-gray-200 dark:hover:!text-gray-200"
                 >
                   {value}
                 </Link>
