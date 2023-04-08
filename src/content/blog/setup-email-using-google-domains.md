@@ -1,7 +1,7 @@
 ---
 title: Google Domains で取得したドメインにエイリアス設定しメールを送受信する
-date: '2022-05-05'
-tags: ['Google Domains', 'Email', 'SaaS', 'Tips']
+date: "2022-05-05"
+tags: ["Google Domains", "Email", "SaaS", "Tips"]
 draft: false
 summary: Google Domains で取得したドメインをメールアドレスとして使用するための設定をしてみたので手順をまとめる
 ---

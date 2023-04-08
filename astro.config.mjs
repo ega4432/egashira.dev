@@ -13,7 +13,7 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 
 import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
-import remarkLinkCard from './src/lib/utils/remark-plugins/remark-link-card';
+import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
 import generateOgImage from "./src/integrations/generateOgImages";
 
 let site = "http://localhost:3000";

@@ -1,9 +1,9 @@
 ---
 title: kind を使ってローカルにマルチノードな Kubernetes クラスタを構築する
-date: '2022-05-21'
-tags: ['k8s', 'Docker', 'Container', 'kind']
+date: "2022-05-21"
+tags: ["k8s", "Docker", "Container", "kind"]
 draft: false
-summary: 'k8s クラスタをローカルに作成できる kind を触ってみた'
+summary: "k8s クラスタをローカルに作成できる kind を触ってみた"
 ---
 
 ## はじめに

@@ -1,9 +1,9 @@
 ---
-title: 'Kubernetes 技術者認定 CKA/CKAD を取得したので振り返る'
-date: '2022-04-09'
-tags: ['k8s', 'CKA', 'CKAD', 'Certification', 'Tips']
+title: "Kubernetes 技術者認定 CKA/CKAD を取得したので振り返る"
+date: "2022-04-09"
+tags: ["k8s", "CKA", "CKAD", "Certification", "Tips"]
 draft: false
-summary: 'Linux Foundation が提供している Certified Kubernetes Administrator / Application Developer の受験にあたり行ったことや学んだことなどをまとめる'
+summary: "Linux Foundation が提供している Certified Kubernetes Administrator / Application Developer の受験にあたり行ったことや学んだことなどをまとめる"
 ---
 
 ## **2022 年 6 月に行われた受験方式の変更について**

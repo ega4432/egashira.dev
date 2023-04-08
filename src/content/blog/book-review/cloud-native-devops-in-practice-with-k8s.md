@@ -1,7 +1,7 @@
 ---
 title: 「Kubernetesで実践するクラウドネイティブDevOps」を読んだ
-date: '2022-06-18'
-tags: ['k8s', 'DevOps', 'CloudNative', 'o11y', 'book']
+date: "2022-06-18"
+tags: ["k8s", "DevOps", "CloudNative", "o11y", "book"]
 draft: false
 summary: 自分なりのまとめや感想などを書いておく
 ---
