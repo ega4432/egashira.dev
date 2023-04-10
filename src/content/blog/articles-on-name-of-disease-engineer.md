@@ -1,9 +1,11 @@
 ---
 createdAt: "2023-02-08T11:25:00.000Z"
-updatedAt: "2023-03-12T01:23:00.000Z"
+updatedAt: "2023-04-10T10:51:00.000Z"
 summary: "TL に流れてきた記事を読んだメモ"
 tags:
   - "Note"
+  - "Engineer"
+  - "Life"
 date: "2023-02-09"
 draft: false
 title: "[病名]エンジニアを支える技術"
