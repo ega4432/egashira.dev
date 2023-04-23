@@ -12,10 +12,10 @@ export const blogScheme = {
   })
 };
 
-export const authorScheme = {
+export const pageScheme = {
   schema: z.object({
     name: z.string(),
-    avatar: z.string(),
-    occupation: z.string()
+    occupation: z.string().optional(),
+    updatedAd: z.string().optional()
   })
 };
