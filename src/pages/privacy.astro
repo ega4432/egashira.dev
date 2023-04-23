@@ -1,0 +1,24 @@
+---
+import { getEntryBySlug } from "astro:content";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+import "@styles/prism.css";
+
+const privacy = await getEntryBySlug("page", "privacy");
+const { Content } = await privacy.render();
+
+const pageTitle = "プライバシーポリシー";
+---
+
+<BaseLayout title={pageTitle} description={pageTitle}>
+  <h1 class="mb-6 pb-2 text-2xl font-semibold lg:mb-8 lg:text-4xl xl:mb-12">
+    {pageTitle}
+  </h1>
+  <div class="space-y-2">
+    <div
+      class="lg:text-md prose max-w-none break-words dark:prose-dark xl:text-xl"
+    >
+      <Content />
+    </div>
+  </div>
+</BaseLayout>
