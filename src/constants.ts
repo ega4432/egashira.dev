@@ -27,7 +27,7 @@ interface SiteMeta {
 export const footerLinks: Link[] = [
   { href: "/", title: "ホーム" },
   { href: "/about", title: "このサイトについて" },
-  { href: "/privacy-policy", title: "プライバシーポリシー" },
+  { href: "/privacy", title: "プライバシーポリシー" },
   { href: "/feed.xml", title: "フィード" },
   { href: "/sitemap-index.xml", title: "サイトマップ" },
   { href: `https://github.com/${me}`, title: "GitHub" },

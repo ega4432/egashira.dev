@@ -1,7 +1,7 @@
 import { defineCollection } from "astro:content";
-import { authorScheme, blogScheme } from "./schemes";
+import { pageScheme, blogScheme } from "./schemes";
 
 export const collections = {
-  author: defineCollection(authorScheme),
+  page: defineCollection(pageScheme),
   blog: defineCollection(blogScheme)
 };
