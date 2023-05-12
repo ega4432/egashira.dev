@@ -1,13 +1,13 @@
 ---
 createdAt: "2023-04-09T06:15:00.000Z"
-updatedAt: "2023-05-12T13:50:00.000Z"
+updatedAt: "2023-05-12T14:04:00.000Z"
 summary: "読んだ感想など"
 tags:
-  - "Book"
+  - "book"
   - "Life"
 date: "2023-05-12"
 draft: false
-title: "「DIE WITH ZERO」を読んだ"
+title: "書籍「DIE WITH ZERO」を読んだ"
 ---
 
 ## はじめに
@@ -16,7 +16,7 @@ title: "「DIE WITH ZERO」を読んだ"
 
 [https://www.amazon.co.jp/dp/B08K88Z2XR](https://www.amazon.co.jp/DIE-ZERO-%E4%BA%BA%E7%94%9F%E3%81%8C%E8%B1%8A%E3%81%8B%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%99%E3%81%8E%E3%82%8B%E7%A9%B6%E6%A5%B5%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%AB-%E3%83%93%E3%83%AB%E3%83%BB%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B9-ebook/dp/B08K88Z2XR/ref=mp_s_a_1_1?crid=22TAUITZCM4WY&keywords=die+with+zero&qid=1683898452&s=books&sprefix=die+%2Caps%2C884&sr=1-1)
 
-## 本書の要約
+## 感想
 
 著者の主張としては、タイトル通り「ゼロで死ぬ」すなわち、死ぬ時に財産を残さずにいる状態でいることを目指そう！ということをメインに書かれている本だった。
 
