@@ -1,9 +1,9 @@
 ---
 createdAt: "2023-02-06T06:55:00.000Z"
-updatedAt: "2023-03-12T01:31:00.000Z"
+updatedAt: "2023-05-12T14:04:00.000Z"
 summary: "2023 年 2 月の読書ログ"
 tags:
-  - "Book"
+  - "book"
   - "Note"
 date: "2023-02-07"
 draft: false
