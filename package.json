@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.16.6",
-    "@astrojs/rss": "^2.3.2",
+    "@astrojs/rss": "^2.4.1",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.1",
     "@notionhq/client": "^2.2.4",
@@ -40,7 +40,7 @@
     "remark-emoji": "^3.1.0",
     "remark-footnotes": "^4.0.1",
     "remark-math": "^5.1.1",
-    "tailwindcss": "^3.0.24",
+    "tailwindcss": "^3.3.1",
     "unist-util-visit": "^4.1.2"
   },
   "devDependencies": {
