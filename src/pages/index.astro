@@ -9,7 +9,7 @@ const latestBlogs = (await getBlogs()).slice(0, 5); // max 5 posts
 ---
 
 <BaseLayout title={siteMeta.title} description={siteMeta.description}>
-  <div class="pt-8 pb-20">
+  <div class="pb-20 pt-8">
     <p>{`${siteMeta.description} ${siteMeta.author} の Web サイトです。`}</p>
   </div>
   <div>
@@ -25,7 +25,7 @@ const latestBlogs = (await getBlogs()).slice(0, 5); // max 5 posts
       }
     </ol>
   </div>
-  <div class="pt-20 pb-8">
+  <div class="pb-8 pt-20">
     <Link href="/blog">すべての記事</Link>
   </div>
 </BaseLayout>
