@@ -9,14 +9,14 @@ const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a]);
 ---
 
 <BaseLayout title="タグ一覧" description="タグ一覧">
-  <div class="pt-8 pb-20">
+  <div class="pb-20 pt-8">
     <p>タグ一覧</p>
   </div>
   <div class="flex flex-wrap">
     {Object.keys(tags).length === 0 && "タグがありません"}
     {
       sortedTags.map((tag) => (
-        <div class="mt-2 mb-2 mr-5 flex items-center gap-1">
+        <div class="mb-2 mr-5 mt-2 flex items-center gap-1">
           <Link href={`/tags/${kebabCase(tag)}`}>{tag}</Link>
           <span class="text-sm">({tags[tag]}記事)</span>
         </div>
