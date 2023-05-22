@@ -1,6 +1,6 @@
 ---
 createdAt: "2023-05-13T03:38:00.000Z"
-updatedAt: "2023-05-21T12:25:00.000Z"
+updatedAt: "2023-05-22T06:32:00.000Z"
 summary: "GraphQL および周辺技術にキャッチアップするためのメモ。"
 tags:
   - "GraphQL"
@@ -19,11 +19,11 @@ GraphQL および周辺技術にキャッチアップするための自分用メ
 - GraphQL
   - 概要
   - REST API との違い
-- Apollo Server
+- その他 GraphQL に関すること
 
 ## 登場人物
 
-まずは概要をざっくり理解するために出てくる主な登場人物の言葉の理解から。
+まずは概要をざっくり理解するために出てくる主な言葉の理解から。
 
 ### GraphQL
 
@@ -132,12 +132,12 @@ WIP
 概要をざっくり知ることができたので、引き継きインプットをしながら何か動くものを作りつつ理解をふかめていきたい。直近は以下のことを演る予定なので、またアップデートがあれば本サイトに記事を書こうと思う。
 
 - Udemy を見る
-  - [https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/](https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/)
+  - https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/
 - 書籍を読む
-  - [https://www.oreilly.co.jp/books/9784873118932/](https://www.oreilly.co.jp/books/9784873118932/)
+  - https://www.oreilly.co.jp/books/9784873118932/
 - Apollo を使って GraphQL サーバを作る
   - リポジトリだけは作った
-    - [https://github.com/ega4432/graphql-todo-app-sample](https://github.com/ega4432/graphql-todo-app-sample)
+    - https://github.com/ega4432/graphql-todo-app-sample
 
 ## 参考にしたサイトや資料、ドキュメントなど
 
