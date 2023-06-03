@@ -33,7 +33,7 @@ jobs:
           IMGUR_REFRESH_TOKEN: ${{ secrets.IMGUR_REFRESH_TOKEN }}
 
       - if: success()
-        uses: ega4432/notion-to-markdown-action@v0.4.0
+        uses: ega4432/notion-to-markdown-action@v0
         id: import
         with:
           output_path: "./src/content/blog"
