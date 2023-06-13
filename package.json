@@ -32,7 +32,7 @@
     "github-slugger": "^2.0.0",
     "hastscript": "^7.2.0",
     "html-entities": "^2.3.5",
-    "open-graph-scraper": "^5.2.3",
+    "open-graph-scraper": "^6.1.0",
     "qs": "^6.11.2",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-katex": "^6.0.3",
