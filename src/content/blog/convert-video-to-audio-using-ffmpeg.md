@@ -26,7 +26,7 @@ sudo apt install -y ffmpeg
 ffmpeg -i input.mp4 -f mp3 -nv output.mp3
 ```
 
-- `-i` :　インプットファイルのパス、URL を指定 
+- `-i` :　インプットファイルのパス、URL を指定
 - `-f` :　フォーマットする形式を指定
 - `-nv` : 動画を取り除く
 
