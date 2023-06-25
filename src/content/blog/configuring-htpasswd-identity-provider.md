@@ -1,7 +1,7 @@
 ---
 title: OpenShift クラスタに htpasswd を使ってユーザを作成する
 date: "2023-06-25"
-tags: ["k8s", "OpenShift"]
+tags: ["k8s", "OpenShift", "OAuth"]
 draft: false
 summary: OpneShift クラスタに最もシンプルにユーザを作成する方法の紹介
 ---
