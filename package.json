@@ -18,7 +18,7 @@
     "archive-images": "node ./scripts/archive-images.mjs"
   },
   "dependencies": {
-    "@astrojs/image": "^0.16.6",
+    "@astrojs/image": "^0.17.1",
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.3",
