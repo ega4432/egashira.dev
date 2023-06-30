@@ -23,7 +23,6 @@ interface OgObject {
   displayUrl: string;
 }
 
-const defaultDownloadLimit = 1000000;
 const faviconApiUrl = "https://www.google.com/s2/favicons?domain=";
 
 const formatOgImageUrl = (
@@ -45,7 +44,7 @@ const fetchOpenGraph = async (url: string): Promise<OgObject | null> => {
   try {
     const { result } = await ogs({
       url,
-      downloadLimit: defaultDownloadLimit * 10
+      onlyGetOpenGraphInfo: true
     });
     const parsedUrl = new URL(result.requestUrl || url);
     const title =
