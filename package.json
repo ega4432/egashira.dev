@@ -18,14 +18,14 @@
     "archive-images": "node ./scripts/archive-images.mjs"
   },
   "dependencies": {
-    "@astrojs/image": "^0.16.6",
+    "@astrojs/image": "^0.17.1",
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.3",
     "@notionhq/client": "^2.2.5",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.3.2",
+    "astro": "^2.7.0",
     "astro-icon": "^0.8.0",
     "axios": "^1.4.0",
     "date-fns-tz": "^2.0.0",
