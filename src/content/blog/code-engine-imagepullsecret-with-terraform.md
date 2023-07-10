@@ -93,11 +93,11 @@ resource "ibm_code_engine_app" "main_app" {
 IBM Cloud の Web コンソールを確認すると、すぐに判明した。
 Code Engine のアプリケーションの画面を見ると、「リビジョンの準備ができていません」というメッセージが出ていた。
 
-![IBM Cloud Web console 1](https://user-images.githubusercontent.com/38056766/246586790-7dbe9276-0b9e-4c7e-bf35-e47ab5eb1909.png)
+![IBM Cloud Web console 1](https://i.imgur.com/C9lPZY4.webp)
 
 また「構成」タブを見てみると一目で原因に気づけたが、見ての通りプライベートレジストリからのイメージのプルに失敗していた。
 
-![IBM Cloud Web console 1](https://user-images.githubusercontent.com/38056766/246586799-48e51372-a132-45a9-97a2-2b9e23a27c31.png)
+![IBM Cloud Web console 1](https://i.imgur.com/R4hqwHk.webp)
 
 プライベートレジストリからのイメージを取得するにはレジストリー・アクセス・シークレットが必要らしい。当然必要になるものを忘れていた。
 
