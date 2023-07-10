@@ -56,7 +56,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.7",
-    "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-astro": "^0.10.0",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "satori": "^0.10.1",
     "sharp": "^0.32.1"
