@@ -92,7 +92,7 @@ oc apply -f ./oauth.yaml
 
 ここまで各リソースを作成できたら、OpenShift の Web Console を開いてみる。ログイン方法として、作成した htpasswd IdP が表示されていれば OK。テストで作成したユーザでログインできるか実際にやってみよう。
 
-![OpenShift signin page](https://user-images.githubusercontent.com/38056766/248536983-5b9ef71d-c3e6-4d81-95aa-e592a83c80ca.png)
+![OpenShift signin page](https://i.imgur.com/RZ8ZT5M.webp)
 
 ## cluster-admin 権限の付与
 
