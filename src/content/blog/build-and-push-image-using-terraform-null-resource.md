@@ -18,7 +18,7 @@ Terraform の `null_resource` という空のリソース定義をする構文�
 
 最初に結論として、コンテナイメージを build, push する `null_resource` の定義を貼っておく。
 
-コマンドに渡す際に外部注入しやすくするために varialbe をいくつか使用しているが今回は記載を省略している。
+コマンドに渡す際に外部注入しやすくするために variable をいくつか使用しているが今回は記載を省略している。
 
 ```tf
 resource "null_resource" "build_and_push" {
@@ -54,7 +54,7 @@ resource "aws_ecr_repository" "repository" {
   - トリガーとなる条件を指定する。ここに指定したリソースが変更されると、`null_resource` 内の provisioner の処理が実行される。
 - provisioner
   - 実行したいコマンドを定義するブロック。例の通り、複数コマンドを実行したい場合は `provisioner` ブロックを複数定義することもでき、この場合は上から順番に実行される。また今回使用している [`local-exec`](https://developer.hashicorp.com/terraform/language/resources/provisioners/local-exec) は作成したリソース上ではなく、Terraform を実行しているマシン上で実行される。
-  - 一方で作成したリソース上でコマンドを実行したい場合は `remoe-exec` を使うといいだろう。
+  - 一方で作成したリソース上でコマンドを実行したい場合は `remote-exec` を使うといいだろう。
 
 ## どんな時に使うか
 
