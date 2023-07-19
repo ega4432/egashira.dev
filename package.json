@@ -55,7 +55,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "prettier": "^2.8.7",
+    "prettier": "^3.0.0",
     "prettier-plugin-astro": "^0.10.0",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "satori": "^0.10.1",
