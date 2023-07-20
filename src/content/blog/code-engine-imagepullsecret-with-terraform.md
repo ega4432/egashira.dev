@@ -58,7 +58,7 @@ $ terraform apply -var-file=terraform.tfvars -auto-approve
 
 HCL ファイルは以下のような感じだった。
 
-```HCL:main.tf showLineNumbers
+```hcl:main.tf showLineNumbers
 resource "ibm_code_engine_secret" "app_secret" {
   project_id = var.project_id
   name       = "${var.project_name}-secret"
