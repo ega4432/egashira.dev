@@ -20,7 +20,7 @@ Terraform の `null_resource` という空のリソース定義をする構文�
 
 コマンドに渡す際に外部注入しやすくするために variable をいくつか使用しているが今回は記載を省略している。
 
-```tf
+```hcl:main.tf showLineNumbers
 resource "null_resource" "build_and_push" {
   triggers = {
     registry_arn = aws_ecr_repository.repository.arn
