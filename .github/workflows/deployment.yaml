@@ -1,0 +1,23 @@
+name: Deployment
+
+on:
+  deployment_status:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # if: github.event.environment.environment == 'Prorduction' && github.event.deployment_status.state == "success"
+
+    steps:
+      - name: echo github.event_name
+        run: echo '${{ github.event_name }}'
+
+      - name: dump github
+        run: echo "${{ toJSON(github) }}"
