@@ -1,7 +1,7 @@
 ---
 title: 「Kubernetesで実践するクラウドネイティブDevOps」を読んだ
 date: "2022-06-18"
-tags: ["k8s", "DevOps", "CloudNative", "o11y", "book"]
+tags: ["k8s", "DevOps", "CloudNative", "o11y", "book", "O'reilly"]
 draft: false
 summary: 自分なりのまとめや感想などを書いておく
 ---
@@ -10,7 +10,7 @@ summary: 自分なりのまとめや感想などを書いておく
 
 書籍「Kubernetes で実践するクラウドネイティブ DevOps」を読んだので自分なりのまとめや感想などを書いておく。
 
-[O'Reilly Japan \- Kubernetes で実践するクラウドネイティブ DevOps](https://www.oreilly.co.jp/books/9784873119014/)
+https://www.oreilly.co.jp/books/9784873119014/
 
 ## 感想
 
