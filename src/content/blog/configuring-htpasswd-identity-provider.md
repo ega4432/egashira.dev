@@ -38,7 +38,7 @@ htpasswd -b dev-users.htpasswd bob h0geh0ge
 
 生成されたファイルを確認すると以下のような内容が記載されているはずだ。
 
-```htpasswd:dev-users.htpasswd
+```txt:dev-users.htpasswd
 alice:$2y$05$UF5GFgbhvr65KSYKr8EZhermFCGKj6XEzqR/1zkmgsY/FIxp55/.i
 bob:$apr1$/eLa1rBD$kP7EMggu01Ol61qMunTjS/
 ```

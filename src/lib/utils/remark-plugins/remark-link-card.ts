@@ -115,40 +115,46 @@ const addProperties = (node: LinkNode) => {
 const remarkLinkCard = () => {
   const transformers: (() => Promise<void>)[] = [];
   return async (tree: Parent) => {
-    visit(tree, "paragraph", (paragraphNode: Parent, index) => {
-      visit(paragraphNode, "link", (linkNode: LinkNode) => {
-        if (linkNode.url && isExternal(linkNode.url)) {
-          addProperties(linkNode);
-        }
-      });
+    visit(
+      tree,
+      "paragraph",
+      (paragraphNode: Parent, index: number | undefined) => {
+        if (!index) return;
 
-      if (
-        paragraphNode.children.length !== 1 ||
-        (paragraphNode && paragraphNode.data !== undefined)
-      )
-        return;
+        visit(paragraphNode, "link", (linkNode: LinkNode) => {
+          if (linkNode.url && isExternal(linkNode.url)) {
+            addProperties(linkNode);
+          }
+        });
 
-      visit(paragraphNode, "text", (textNode: TextNode) => {
-        const urls = textNode.value.match(
-          /(https?:\/\/|www(?=\.))([-.\w]+)([^ \t\r\n]*)/g
-        );
-        if (urls && urls.length === 1) {
-          transformers.push(async () => {
-            const data = await fetchOpenGraph(urls[0]);
-            if (!data) return;
+        if (
+          paragraphNode.children.length !== 1 ||
+          (paragraphNode && paragraphNode.data !== undefined)
+        )
+          return;
 
-            const linkCardHtml = createLinkCard(data, urls[0]);
-            const linkCardNode = {
-              type: "html",
-              value: linkCardHtml
-            };
+        visit(paragraphNode, "text", (textNode: TextNode) => {
+          const urls = textNode.value.match(
+            /(https?:\/\/|www(?=\.))([-.\w]+)([^ \t\r\n]*)/g
+          );
+          if (urls && urls.length === 1) {
+            transformers.push(async () => {
+              const data = await fetchOpenGraph(urls[0]);
+              if (!data) return;
 
-            // Replace paragraph node with linkCardNode
-            tree.children.splice(index, 1, linkCardNode);
-          });
-        }
-      });
-    });
+              const linkCardHtml = createLinkCard(data, urls[0]);
+              const linkCardNode = {
+                type: "html",
+                value: linkCardHtml
+              };
+
+              // Replace paragraph node with linkCardNode
+              tree.children.splice(index, 1, linkCardNode);
+            });
+          }
+        });
+      }
+    );
 
     try {
       await Promise.all(transformers.map((t) => t()));
