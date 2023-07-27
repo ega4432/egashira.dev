@@ -6,7 +6,13 @@ export default function remarkCodeTitles() {
     visit(
       tree,
       "code",
-      (node: Parent & { lang?: string }, index, parent: Parent) => {
+      (
+        node: Parent & { lang?: string },
+        index: number | undefined,
+        parent: Parent
+      ) => {
+        if (!index) return;
+
         const nodeLang = node.lang || "";
         let language = "";
         let title = "";
