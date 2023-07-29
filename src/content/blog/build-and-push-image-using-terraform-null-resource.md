@@ -66,7 +66,7 @@ resource "aws_ecr_repository" "repository" {
 
 ## まとめ
 
-いつもは build.sh などのスクリプトにコンテナイメージの build, push 処理を書いて用意していたが、`null_resource` を使用することでコンテナイメージの build, push の処理を　tf ファイルに集約することができた。
+いつもは build.sh などのスクリプトにコンテナイメージの build, push 処理を書いて用意していたが、`null_resource` を使用することでコンテナイメージの build, push の処理を tf ファイルに集約することができた。
 しかし、その方法についてはベストプラクティスではないかもしれないので、もう少しいい方法がないかは今後も模索したい。
 
 ## 参考

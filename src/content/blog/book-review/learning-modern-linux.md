@@ -9,7 +9,7 @@ completeDate: "2023-07-23"
 
 ## はじめに
 
-書籍「入門 モダンLinux」を読んだので自分なりのまとめや感想などを書いておく。
+書籍「入門 モダン Linux」を読んだので自分なりのまとめや感想などを書いておく。
 
 https://www.oreilly.co.jp/books/9784814400218/
 
@@ -23,13 +23,13 @@ https://www.oreilly.co.jp/books/9784814400218/
 
 ## 本書の要約
 
-### 2章 Linux カーネル
+### 2 章 Linux カーネル
 
 - Linux の中核であるカーネルの話。ディストリビューションや環境に関わらず大まかな機能や構成は同じなのでざっくりでいいので知っておくと良いと思った。
 - Linux カーネルを拡張したい際やカーネル内で実行可能なタスクを実装した場合に利用する eBPF についても触れられている。
   - k8s クラスタ内のコンテナ間通信で活用されていることも最近注目されている技術らしい。
   - eBPF については名前くらいしか知らなかったので、とりあえずこの辺を読んでキャッチアップした。
-    - [eBPFに3日で入門した話 \- CADDi Tech Blog](https://caddi.tech/archives/3880)
+    - [eBPF に 3 日で入門した話 \- CADDi Tech Blog](https://caddi.tech/archives/3880)
     - [eBPF \- 入門概要 編](https://zenn.dev/hidenori3/articles/e1352e8cfeb2af)
 
 ### 3 章 シェルとスクリプト
@@ -105,7 +105,7 @@ https://www.oreilly.co.jp/books/9784814400218/
 
 - [サーバーレスコンピューティングのための軽量な仮想化機能](https://aws.amazon.com/jp/blogs/news/firecracker-lightweight-virtualization-for-serverless-computing/)
 - [ケルベロス認証（Kerberos Authentication）とは](https://www.infraexpert.com/study/security18.html)
-- [PAM（特権アクセス管理）とは？｜Safeguard – ジュピターテクノロジー株式会社](https://www.jtc-i.co.jp/product/sps/pam.html)
+- [PAM（特権アクセス管理）とは？｜ Safeguard – ジュピターテクノロジー株式会社](https://www.jtc-i.co.jp/product/sps/pam.html)
 - [Nix & NixOS \| Reproducible builds and deployments](https://nixos.org/)
 
 ## 参考
