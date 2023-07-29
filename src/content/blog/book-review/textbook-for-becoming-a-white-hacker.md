@@ -1,5 +1,5 @@
 ---
-title: 「ホワイトハッカーの教科書」を読んだ
+title: 書籍「ホワイトハッカーの教科書」を読んだ
 date: "2022-08-20"
 tags: ["security", "engineer", "career", "hacker", "book"]
 draft: false
