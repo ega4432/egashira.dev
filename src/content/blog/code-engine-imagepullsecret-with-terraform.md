@@ -1,7 +1,7 @@
 ---
 title: "Terraform 管理下の Code Engine でプライベートレジストリのイメージを使う"
 date: "2023-06-19"
-tags: ["IBM Cloud", "Code Engine", "Container Registry", "Container"]
+tags: ["IBM Cloud", "Code Engine", "Container Registry", "Container", "Terraform"]
 draft: false
 summary: "何も考えずにプライベートレジストリのコンテナイメージを指定したらエラーになってハマったので書いておく"
 ---
