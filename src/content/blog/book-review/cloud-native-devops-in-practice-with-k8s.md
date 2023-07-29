@@ -1,5 +1,5 @@
 ---
-title: 「Kubernetesで実践するクラウドネイティブDevOps」を読んだ
+title: 書籍「Kubernetesで実践するクラウドネイティブDevOps」を読んだ
 date: "2022-06-18"
 tags: ["k8s", "DevOps", "CloudNative", "o11y", "book", "O'reilly"]
 draft: false
