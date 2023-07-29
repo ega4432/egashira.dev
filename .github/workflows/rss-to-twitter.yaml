@@ -1,0 +1,20 @@
+name: rss-to-twitter
+on:
+  schedule:
+    # every 1 hour
+    - cron: "0 * * * *"
+
+jobs:
+  twitter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: azu/rss-to-twitter@v1
+        with:
+          RSS_URL: "https://egashira.dev/feed.xml"
+          TWEET_TEMPLATE: '書きました！: "%title%" %url%'
+          TWITTER_APIKEY: ${{ secrets.TWITTER_APIKEY }}
+          TWITTER_APIKEY_SECRET: ${{ secrets.TWITTER_APIKEY_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
