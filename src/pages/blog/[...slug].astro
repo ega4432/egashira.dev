@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import { getBlogs } from "@lib/blog";
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
 import BlogHead from "@components/BlogHead.astro";
+import Toc from "@components/Toc.astro"
 import "@styles/prism.css";
 
 export const getStaticPaths = async () => {
@@ -16,17 +17,24 @@ export const getStaticPaths = async () => {
 };
 
 const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
-const { Content } = await blog.render();
+const { Content, headings } = await blog.render();
+
+headings.filter((heading) => heading.depth<= 3)
 
 const description =
   blog.data.summary || blog.body.slice(0, 30).replace(/\n/g, "");
 ---
 
 <MarkdownLayout title={blog.data.title} description={description}>
-  <BlogHead
-    title={blog.data.title}
-    date={blog.data.date}
-    tags={blog.data.tags}
-  />
-  <Content />
+    <BlogHead
+      title={blog.data.title}
+      date={blog.data.date}
+      tags={blog.data.tags}
+    />
+    <div class="2xl:grid 2xl:grid-cols-4 2xl:gap-6 2xl:items-start">
+      <div class="2xl:col-span-3">
+        <Content />
+      </div>
+      <Toc headings={headings} />
+    </div>
 </MarkdownLayout>

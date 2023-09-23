@@ -1,12 +1,12 @@
 ---
-import { getEntryBySlug } from "astro:content";
+import { getEntry } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Image from "@components/Image.astro";
 import avatar from "/public/images/avatar-ega.png";
 import "@styles/prism.css";
 
-const me = await getEntryBySlug("page", "me");
+const me = await getEntry("page", "me");
 const { Content } = await me.render();
 
 const pageTitle = "このサイトについて";

@@ -1,0 +1,23 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+import Link from "@components/Link.astro";
+
+type Props = {
+  headings: MarkdownHeading[]
+}
+
+const { headings } = Astro.props;
+---
+
+<div class="sticky hidden 2xl:block top-20 text-base">
+  <ol class="">
+    {headings.map((heading) => {
+      return (
+        <li class="">
+          <Link href={`#${heading.slug}`}>{heading.text}</Link>
+        </li>
+      )
+    })}
+  </ol>
+</div>

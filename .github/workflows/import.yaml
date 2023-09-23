@@ -11,13 +11,13 @@ jobs:
     timeout-minutes: 3
     steps:
       - name: Generate token
-        uses: tibdex/github-app-token@v1
+        uses: tibdex/github-app-token@v2
         with:
           app_id: ${{ secrets.MY_APP_ID }}
           private_key: ${{ secrets.MY_APP_PRIVATE_KEY }}
         id: generate_token
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ steps.generate_token.outputs.token }}
 
