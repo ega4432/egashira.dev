@@ -61,9 +61,9 @@
     "satori": "^0.10.1",
     "sharp": "^0.32.3"
   },
-  "packageManager": "npm@8.19.3",
+  "packageManager": "npm@9.5.1",
   "engines": {
-    "npm": ">=8.19.3",
+    "npm": ">=9.5.1",
     "yarn": "use npm!",
     "pnpm": "use npm!"
   }
