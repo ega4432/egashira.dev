@@ -1,6 +1,5 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
-/// <reference types="@astrojs/image/client" />
 
 import { GtmId } from "../src/components/GoogleTagManager.astro";
 

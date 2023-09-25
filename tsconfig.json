@@ -13,7 +13,6 @@
       "@integrations/*": ["src/integrations/*"],
       "@constants": ["src/constants.ts"]
     },
-    "types": ["@astrojs/image/client"],
-    "importsNotUsedAsValues": "error"
+    "types": ["astro/client"]
   }
 }

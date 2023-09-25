@@ -59,8 +59,7 @@ const fetchOpenGraph = async (url: string): Promise<OgObject | null> => {
     const displayUrl = decodeURI(parsedUrl.hostname);
     return { title, description, faviconSrc, ogImageSrc, displayUrl };
   } catch (e) {
-    console.error(`Failed to fetch data for ${url}`);
-    console.dir(e);
+    console.warn(`Failed to fetch data for ${url}`);
     return null;
   }
 };
@@ -159,7 +158,7 @@ const remarkLinkCard = () => {
     try {
       await Promise.all(transformers.map((t) => t()));
     } catch (e) {
-      console.error(`[remark-link-card] Error: ${e}`);
+      console.warn(`[remark-link-card] Error: ${e}`);
     }
 
     return tree;

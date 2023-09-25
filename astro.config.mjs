@@ -8,7 +8,6 @@ import rehypeKatex from "rehype-katex";
 import { s } from "hastscript";
 import tailwind from "@astrojs/tailwind";
 import rehypePrismPlus from "rehype-prism-plus";
-import image from "@astrojs/image";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 
@@ -55,7 +54,6 @@ const partytownConfig = {
 export default defineConfig({
   integrations: [
     tailwind(),
-    image(),
     sitemap(),
     partytown(partytownConfig),
     generateOgImage()

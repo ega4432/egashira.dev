@@ -1,4 +1,4 @@
-import { getCollection, CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { dateSortDesc } from "@lib/utils/dateSortDesc";
 
 export const getBlogs = async (): Promise<CollectionEntry<"blog">[]> => {
