@@ -8,16 +8,17 @@ type Props = {
 }
 
 const { headings } = Astro.props;
+
+const toc = headings.filter((heading) => heading.depth <= 3);
 ---
 
 <div class="sticky hidden 2xl:block top-40 text-base">
-  <ol class="">
-    {headings.map((heading) => {
-      return (
-        <li class="">
-          <Link href={`#${heading.slug}`}>{heading.text}</Link>
-        </li>
-      )
-    })}
+  <div class="text-md font-semibold mb-6">目次</div>
+  <ol class="max-h-[calc(((100vh-200px)-112px)-188px)] overflow-y-scroll overscroll-contain list-none pl-0 my-0 relative before:absolute before:w-px before:top-4 before:left-[5px] before:bottom-5 before:content-[''] before:bg-gray-300">
+    {toc.map((heading) => (
+      <li class={`relative pl-6 before:content-[''] before:bg-gray-500 before:rounded-full before:absolute before:h-[12px] before:w-[12px] before:top-[6px] before:left-0 ${heading.depth >=3 ? "before:border-4" : "before:border-2"} before:border-gray-100`}>
+        <Link className={`block !text-gray-600 !no-underline hover:!text-gray-800 ${heading.depth < 3 && "font-semibold"}`} href={`#${heading.slug}`}>{heading.text}</Link>
+      </li>
+    ))}
   </ol>
 </div>
