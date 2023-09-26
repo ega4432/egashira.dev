@@ -34,4 +34,4 @@ occupation: "Software Engineer"
 
 ## 連絡先
 
-ご連絡の際は、[X](https://twitter.com/ega4432) の DM または [メール](mailto:hello@egashira.dev) にてご連絡ください。
+ご連絡の際は、[X](https://twitter.com/ega4432) の DM または [メール](mailto:contact@egashira.dev) にてご連絡ください。
