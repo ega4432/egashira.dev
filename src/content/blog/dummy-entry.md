@@ -149,6 +149,9 @@ https://github.com/ega4432
 
 https://egashira.dev
 
+[未実装] これは Twitter のリンクです。
+https://twitter.com/ega4432/status/1504042310576730112
+
 ## コード
 
 これはコードです。
@@ -1843,14 +1846,5 @@ console.log("hello");
 </details>
 
 <br />
-
-# WIP
-
-ここからは以後反映予定です。
-
-## ツイートのリンク
-
-これは Twitter のリンクです。
-https://twitter.com/ega4432/status/1504042310576730112
 
 [^1]: クリックするとここまで飛びます。
