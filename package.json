@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.17.1",
-    "@astrojs/rss": "^2.4.3",
+    "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^4.0.0",
     "@notionhq/client": "^2.2.6",
