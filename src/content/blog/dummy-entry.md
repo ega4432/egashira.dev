@@ -149,6 +149,9 @@ https://github.com/ega4432
 
 https://egashira.dev
 
+[未実装] これは Twitter のリンクです。
+https://twitter.com/ega4432/status/1504042310576730112
+
 ## コード
 
 これはコードです。
@@ -166,7 +169,7 @@ https://egashira.dev
 
 これは ~~取り消し線~~ です。
 
-### 改行
+## 改行
 
 これは改行です。
 
@@ -386,7 +389,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>People & Body</summary>
 
-### People & Body
+#### People & Body
 
 - [Hand Fingers Open](#hand-fingers-open)
 - [Hand Fingers Partial](#hand-fingers-partial)
@@ -670,7 +673,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>Animals & Nature</summary>
 
-### Animals & Nature
+#### Animals & Nature
 
 - [Animal Mammal](#animal-mammal)
 - [Animal Bird](#animal-bird)
@@ -798,7 +801,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>Food & Drink</summary>
 
-### Food & Drink
+#### Food & Drink
 
 - [Food Fruit](#food-fruit)
 - [Food Vegetable](#food-vegetable)
@@ -921,7 +924,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>Travel & Places</summary>
 
-### Travel & Places
+#### Travel & Places
 
 - [Place Map](#place-map)
 - [Place Geographic](#place-geographic)
@@ -1107,7 +1110,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>Activities</summary>
 
-### Activities
+#### Activities
 
 - [Event](#event)
 - [Award Medal](#award-medal)
@@ -1190,7 +1193,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>Objects</summary>
 
-### Objects
+#### Objects
 
 - [Clothing](#clothing)
 - [Sound](#sound)
@@ -1439,7 +1442,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>Symbols</summary>
 
-### Symbols
+#### Symbols
 
 - [Transport Sign](#transport-sign)
 - [Warning](#warning)
@@ -1647,7 +1650,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>Flags</summary>
 
-### Flags
+#### Flags
 
 - [Flag](#flag)
 - [Country Flag](#country-flag)
@@ -1803,7 +1806,7 @@ https://github.com/ikatyang/emoji-cheat-sheet
 | :england: | `:england:` | :scotland: | `:scotland:` |
 |  :wales:  | `:wales:`   |            |              |
 
-### GitHub Custom Emoji
+#### GitHub Custom Emoji
 
 |     ico     | shortcode     |      ico      | shortcode       |
 | :---------: | ------------- | :-----------: | --------------- |
@@ -1826,11 +1829,13 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 <summary>クリックして開く</summary>
 
-# h1
+hello
 
-## h2
+```js
+console.log("hello");
+```
 
-### h3
+#### text
 
 - list1
 - list2
@@ -1841,14 +1846,5 @@ https://github.com/ikatyang/emoji-cheat-sheet
 </details>
 
 <br />
-
-# WIP
-
-ここからは以後反映予定です。
-
-## ツイートのリンク
-
-これは Twitter のリンクです。
-https://twitter.com/ega4432/status/1504042310576730112
 
 [^1]: クリックするとここまで飛びます。

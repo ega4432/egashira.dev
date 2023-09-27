@@ -23,6 +23,8 @@ headings.filter((heading) => heading.depth<= 3)
 
 const description =
   blog.data.summary || blog.body.slice(0, 30).replace(/\n/g, "");
+
+const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug === "footnote-label" && heading.text === "Footnotes"));
 ---
 
 <MarkdownLayout title={blog.data.title} description={description}>
@@ -31,10 +33,10 @@ const description =
       date={blog.data.date}
       tags={blog.data.tags}
     />
-    <div class="2xl:grid 2xl:grid-cols-4 2xl:gap-6 2xl:items-start">
-      <div class="2xl:col-span-3">
+    <div class="2xl:grid 2xl:grid-cols-10 2xl:gap-8 2xl:items-start">
+      <div class={`${toc.length > 0 ? "2xl:col-span-7" : "2xl:col-span-10"}`}>
         <Content />
       </div>
-      <Toc headings={headings} />
+      {toc.length > 0 && <Toc headings={toc} />}
     </div>
 </MarkdownLayout>
