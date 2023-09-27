@@ -3,7 +3,6 @@ import { getEntry } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Image from "@components/Image.astro";
-import avatar from "/public/images/avatar-ega.png";
 import "@styles/prism.css";
 
 const me = await getEntry("page", "me");
@@ -24,7 +23,7 @@ const pageTitle = "このサイトについて";
     >
       <Image
         alt={me.data.name}
-        src={avatar}
+        src={"/images/avatar-ega.png"}
         width={192}
         height={192}
         className="mr-0 rounded-full"

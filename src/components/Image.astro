@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image as AstroImage } from "astro:assets";
 
 type Props = {
   alt: string;
@@ -7,14 +7,13 @@ type Props = {
   height: number;
   width: number;
   className?: string;
-  aspectRatio?: string | number;
   background?: string;
 };
 
 const { alt, src, height, width, className } = Astro.props;
 ---
 
-<Image
+<AstroImage
   alt={alt}
   src={src}
   height={height}
