@@ -1,7 +1,7 @@
 ---
 import Time from "@components/Time.astro";
-import Image from "@components/Image.astro";
 import Link from "@components/Link.astro";
+import TagIcon from "@components/TagIcon.astro";
 import { kebabCase } from "@lib/utils/kebabCase";
 
 type Props = {
@@ -21,7 +21,7 @@ const { title, date, tags } = Astro.props;
   {
     tags.length > 0 && (
       <div class="flex flex-row flex-nowrap items-center">
-        <Image src={"/images/baseline-local-offer.svg"} alt={"Tags"} width={20} height={20} className="my-0" />
+        <TagIcon />
         <ul class="my-0 flex list-none flex-row flex-wrap pl-0">
           {tags.map((tag, i) => {
             const delimiter = tags.length - 1 !== i ? "," : "";
