@@ -38,7 +38,7 @@ const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug ==
     <div class={`${toc.length > 0 ? "2xl:col-span-7" : "2xl:col-span-10"}`}>
       <Content />
     </div>
-    <aside class="sticky hidden top-20 2xl:col-span-3 2xl:block">
+    <aside class="hidden 2xl:col-span-3 2xl:block">
       {import.meta.env.CF_PAGES_BRANCH === "main" && (
         <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_SLOT} />
       )}
