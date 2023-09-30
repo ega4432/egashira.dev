@@ -1,4 +1,6 @@
 ---
+export type ADClient = `ca-pub-${string}`;
+
 type Props = {
   adClient: string;
   adSlot: string;
@@ -7,12 +9,7 @@ type Props = {
 const { adClient, adSlot } = Astro.props;
 ---
 
-<div class="min-w-[330px]">
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8415863265353363"
-    crossorigin="anonymous"
-  ></script>
+<div class="min-w-80">
   <ins
     class="adsbygoogle"
     style="display:block"
