@@ -39,7 +39,9 @@ const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug ==
       <Content />
     </div>
     <aside class="sticky hidden top-20 2xl:col-span-3 2xl:block">
-      <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_SLOT} />
+      {import.meta.env.CF_PAGES_BRANCH === "main" && (
+        <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_SLOT} />
+      )}
       {toc.length > 0 && <TOC headings={toc} />}
     </aside>
   </div>
