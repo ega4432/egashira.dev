@@ -12,6 +12,9 @@ type Props = {
 
 const { title, description } = Astro.props;
 const currentUrl = Astro.url;
+
+const gtmId = import.meta.env.GTM_ID;
+const adClient = import.meta.env.AD_CLIENT;
 ---
 
 <!DOCTYPE html>
@@ -19,9 +22,9 @@ const currentUrl = Astro.url;
   <head>
     {
       import.meta.env.CF_PAGES_BRANCH === "main" && (
-        <GoogleTagManager gtmId={import.meta.env.GTM_ID} />
+        <GoogleTagManager gtmId={gtmId} />
         <script
-          define:vars={{ adClient: import.meta.env.AD_CLIENT }}
+          define:vars={{ adClient }}
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`}
           crossorigin="anonymous"
