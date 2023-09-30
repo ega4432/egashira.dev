@@ -1,0 +1,24 @@
+---
+export type ADClient = `ca-pub-${string}`;
+
+type Props = {
+  adClient: string;
+  adSlot: string;
+};
+
+const { adClient, adSlot } = Astro.props;
+---
+
+<div class="min-w-80">
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client={adClient}
+    data-ad-slot={adSlot}
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  ></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>

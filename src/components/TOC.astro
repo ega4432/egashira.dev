@@ -1,0 +1,20 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+import Link from "@components/Link.astro";
+
+type Props = {
+  headings: MarkdownHeading[]
+}
+
+const { headings } = Astro.props;
+---
+
+<div class="text-md font-semibold mb-4">目次</div>
+<ol class="max-h-[calc((100vh-200px)-188px)] overflow-y-auto overscroll-contain list-none pl-0 my-0 relative before:absolute before:w-px before:top-5 before:left-[5px] before:bottom-5 before:content-[''] before:bg-gray-400 before:overflow-visible">
+  {headings.map((heading) => (
+    <li class={`relative pl-6 before:content-[''] before:bg-gray-600 before:dark:bg-gray-200 before:rounded-full before:absolute before:h-[12px] before:w-[12px] before:top-[6px] before:left-0 before:border-gray-100 before:dark:border-gray-800 ${heading.depth < 3 ? "before:border-2" : "before:border-4"}`}>
+      <Link className={`block !text-gray-600 hover:!text-gray-800 !no-underline dark:!text-gray-200 dark:hover:!text-gray-100  ${heading.depth < 3 && "font-semibold"}`} href={`#${heading.slug}`}>{heading.text}</Link>
+    </li>
+  ))}
+</ol>
