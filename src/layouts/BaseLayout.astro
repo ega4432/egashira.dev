@@ -24,6 +24,7 @@ const adClient = import.meta.env.AD_CLIENT;
       import.meta.env.CF_PAGES_BRANCH === "main" && (
         <GoogleTagManager gtmId={gtmId} />
         <script
+          type="text/partytown"
           define:vars={{ adClient }}
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`}
