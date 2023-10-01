@@ -14,7 +14,7 @@ const allBlogs = await getBlogs();
     <ol class="flex flex-col gap-8">
       {
         allBlogs.map((blog) => (
-        <BlogListItem blog={blog} />
+          <BlogListItem blog={blog} />
         ))
       }
     </ol>
