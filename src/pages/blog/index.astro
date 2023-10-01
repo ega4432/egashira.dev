@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getBlogs } from "@lib/blog";
+import BlogListItem from "@components/BlogListItem.astro";
+
+const allBlogs = await getBlogs();
+---
+
+<BaseLayout title="記事一覧" description="記事一覧">
+  <div class="pb-20 pt-8">
+    <p>記事一覧</p>
+  </div>
+  <div>
+    <ol class="flex flex-col gap-8">
+      {
+        allBlogs.map((blog) => (
+        <BlogListItem blog={blog} />
+        ))
+      }
+    </ol>
+  </div>
+</BaseLayout>
