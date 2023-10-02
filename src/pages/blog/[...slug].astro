@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
 const { Content, headings } = await blog.render();
 
-headings.filter((heading) => heading.depth<= 3)
+headings.filter((heading) => heading.depth <= 3)
 
 const description =
   blog.data.summary || blog.body.slice(0, 30).replace(/\n/g, "");
