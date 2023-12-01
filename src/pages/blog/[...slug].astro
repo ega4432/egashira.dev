@@ -29,22 +29,23 @@ const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug ==
 ---
 
 <MarkdownLayout title={blog.data.title} description={description}>
-  <BlogHead
-    title={blog.data.title}
-    date={blog.data.date}
-    tags={blog.data.tags}
-  />
-  <div class="2xl:grid 2xl:grid-cols-10 2xl:gap-8 2xl:items-start">
-    <div class="2xl:col-span-7">
+  <div class="xl:grid xl:grid-cols-10 xl:gap-8 xl:items-start">
+    <!-- TODO: <div class="xl:col-span-1" /> -->
+    <div class="xl:col-span-7">
+      <BlogHead
+        title={blog.data.title}
+        date={blog.data.date}
+        tags={blog.data.tags}
+      />
       <Content />
     </div>
-    <aside class="hidden 2xl:col-span-3 2xl:flex 2xl:flex-col 2xl:sticky 2xl:top-20 gap-y-8">
-      {toc.length > 0 && <TOC headings={toc} />}
+    <aside class="hidden xl:col-span-3 xl:flex xl:flex-col xl:sticky xl:top-28 gap-y-6">
       {import.meta.env.CF_PAGES_BRANCH === "main" ? (
-        <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_SLOT} />
+        <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_SIDE_SLOT} />
       ) : (
-        <div class="h-[600px] mb-6 w-20 p-6 min-w-full bg-red-200 text-center">Ad</div>
+        <div class="h-[200px] p-6 w-full bg-red-200 text-center text-gray-600">Ad</div>
       )}
+      {toc.length > 0 && <TOC headings={toc} />}
     </aside>
   </div>
 </MarkdownLayout>
