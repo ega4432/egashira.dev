@@ -58,6 +58,24 @@ https://developers.cloudflare.com/registrar/get-started/transfer-domain-to-cloud
 
 反映されるまで、数時間かかるがしばらく経って見に行くとアクティブになっていたので、これで移管が完了した。
 
+## あとがき: 楽天カードで決済がうまくいかない?!
+
+移管にトライしていた際に、躓いたこととして以前 [X(Twitter) にもポストした](https://twitter.com/ega4432/status/1687675120872275968) のだが、なぜか上手く行かず、サポートに問い合わせたところ以下のような返信が来た。
+
+```
+Payment attempt with Visa •••• XXXX was declined
+
+The bank returned the decline code do_not_honor,
+and did not provide any other information. We
+recommend that your customer contact their card
+issuer, Rakuten Card Co., Ltd., for more
+information, or use another payment method.
+```
+
+あきらめて別のクレジットカードで決済したところ問題なく移管できた。
+
+意外と罠だったので、もし Cloudflare Registrar への移管を検討されている方がいたら別のクレジットカードか PayPal などの決済手段を選ぶと難なく移管できると思う。
+
 ## 参考
 
 https://www.cloudflare.com/ja-jp/products/registrar/
