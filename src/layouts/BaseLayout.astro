@@ -102,6 +102,42 @@ const adClient = import.meta.env.AD_CLIENT;
       .prose h6:hover > a .anchor-icon {
         @apply visible;
       }
+
+      .rlc-container {
+        @apply min-h-[122px] my-4 box-border flex flex-row justify-between rounded-md border-2 text-gray-800 no-underline hover:bg-gray-200 hover:!text-gray-800 dark:border-gray-700 dark:hover:bg-gray-700;
+      }
+
+      .rlc-info {
+        @apply flex w-[50%] flex-1 flex-col justify-evenly break-words p-4 md:w-[65%];
+      }
+
+      .rlc-title {
+        @apply text-xs font-semibold line-clamp-2 dark:text-gray-300 sm:text-sm md:text-base;
+      }
+
+      .rlc-description {
+        @apply truncate text-xs leading-normal text-gray-500 dark:text-gray-400;
+      }
+
+      .rlc-image-container {
+        @apply h-[122px] w-[33.333%] max-w-[230px] md:w-auto;
+      }
+
+      .rlc-image {
+        @apply my-0 h-[100%] w-[100%] rounded-r-[0.275rem] object-cover;
+      }
+
+      .rlc-url-container {
+        @apply flex flex-row text-xs dark:text-gray-300;
+      }
+
+      .rlc-favicon {
+        @apply my-0 mr-2 h-[15px] w-[15px] object-contain;
+      }
+
+      .rlc-url {
+        @apply flex truncate flex-row text-xs dark:text-gray-300;
+      }
     </style>
   </body>
 </html>
