@@ -145,4 +145,4 @@ https://zenn.dev/eringiv3/books/a85174531fd56a
 
 https://zenn.dev/offers/articles/20220609-graphql-onboarding
 
-https://www.udemy.com/course/graphql-tutorial-with-newspapp-api/
+https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/

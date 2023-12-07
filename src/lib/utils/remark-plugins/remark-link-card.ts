@@ -1,7 +1,7 @@
 import type { Parent, Node } from "unist";
 import { visit } from "unist-util-visit";
 import { encode } from "html-entities";
-import ogs from "open-graph-scraper";
+import ogs, { type ErrorResult, type SuccessResult } from "open-graph-scraper";
 import type { ImageObject } from "open-graph-scraper/dist/lib/types";
 
 interface TextNode extends Node {
@@ -24,6 +24,7 @@ interface OgObject {
 }
 
 const faviconApiUrl = "https://www.google.com/s2/favicons?domain=";
+const ignoreHosts = ["hub.docker.com", "ffmpeg.org"];
 
 const formatOgImageUrl = (
   ogImage: string | ImageObject | ImageObject[],
@@ -40,28 +41,49 @@ const formatOgImageUrl = (
   }
 };
 
-const fetchOpenGraph = async (url: string): Promise<OgObject | null> => {
-  try {
-    const { result } = await ogs({
-      url,
-      onlyGetOpenGraphInfo: true
-    });
-    const parsedUrl = new URL(result.requestUrl || url);
-    const title =
-      (result.ogTitle && encode(result.ogTitle)) || parsedUrl.hostname;
-    const description =
-      (result.ogDescription && encode(result.ogDescription)) || "";
-    const faviconSrc = `${faviconApiUrl}${parsedUrl.hostname}`;
+const fetchOpenGraph = async (url: string): Promise<OgObject> => {
+  let parsedUrl = new URL(url);
+  const defaultOgObject = {
+    title: parsedUrl.href,
+    description: "",
+    faviconSrc: `${faviconApiUrl}${parsedUrl.hostname}`,
+    ogImageSrc: "",
+    displayUrl: decodeURI(parsedUrl.hostname)
+  };
 
-    const ogImageSrc = result.ogImage
-      ? formatOgImageUrl(result.ogImage, parsedUrl.origin)
-      : "";
-    const displayUrl = decodeURI(parsedUrl.hostname);
-    return { title, description, faviconSrc, ogImageSrc, displayUrl };
-  } catch (e) {
-    console.warn(`Failed to fetch data for ${url}`);
-    return null;
-  }
+  // Note: そもそも OGP がない場合
+  if (ignoreHosts.includes(parsedUrl.hostname)) return defaultOgObject;
+
+  return ogs({
+    url,
+    onlyGetOpenGraphInfo: true,
+    timeout: 20,
+    fetchOptions: {
+      headers: {
+        "user-agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'"
+      }
+    }
+  })
+    .then((data: SuccessResult) => {
+      const { result } = data;
+      parsedUrl = new URL(result.requestUrl || url);
+      const title =
+        (result.ogTitle && encode(result.ogTitle)) || parsedUrl.href;
+      const description =
+        (result.ogDescription && encode(result.ogDescription)) || "";
+      const faviconSrc = `${faviconApiUrl}${parsedUrl.hostname}`;
+
+      const ogImageSrc = result.ogImage
+        ? formatOgImageUrl(result.ogImage, parsedUrl.origin)
+        : "";
+      const displayUrl = decodeURI(parsedUrl.hostname);
+      return { title, description, faviconSrc, ogImageSrc, displayUrl };
+    })
+    .catch((e: ErrorResult) => {
+      console.log("failed to fetch og data", e);
+      return defaultOgObject;
+    });
 };
 
 const isExternal = (url: string) => !url.includes("egashira.dev");
@@ -138,10 +160,8 @@ const remarkLinkCard = () => {
           );
           if (urls && urls.length === 1) {
             transformers.push(async () => {
-              const data = await fetchOpenGraph(urls[0]);
-              if (!data) return;
-
-              const linkCardHtml = createLinkCard(data, urls[0]);
+              const ogData = await fetchOpenGraph(urls[0]);
+              const linkCardHtml = createLinkCard(ogData, urls[0]);
               const linkCardNode = {
                 type: "html",
                 value: linkCardHtml
