@@ -1,7 +1,7 @@
 import type { Parent, Node } from "unist";
 import { visit } from "unist-util-visit";
 import { encode } from "html-entities";
-import ogs, { type ErrorResult, type SuccessResult } from "open-graph-scraper";
+import ogs from "open-graph-scraper";
 import type { ImageObject } from "open-graph-scraper/dist/lib/types";
 
 interface TextNode extends Node {
@@ -65,7 +65,8 @@ const fetchOpenGraph = async (url: string): Promise<OgObject> => {
       }
     }
   })
-    .then((data: SuccessResult) => {
+    .then((data) => {
+      if (data.error) return defaultOgObject;
       const { result } = data;
       parsedUrl = new URL(result.requestUrl || url);
       const title =
@@ -80,8 +81,8 @@ const fetchOpenGraph = async (url: string): Promise<OgObject> => {
       const displayUrl = decodeURI(parsedUrl.hostname);
       return { title, description, faviconSrc, ogImageSrc, displayUrl };
     })
-    .catch((e: ErrorResult) => {
-      console.log("failed to fetch og data", e);
+    .catch((e) => {
+      console.log("failed to fetch og data: ", e.result.requestUrl);
       return defaultOgObject;
     });
 };
