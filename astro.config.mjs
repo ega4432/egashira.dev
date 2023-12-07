@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import emoji from "remark-emoji";
 import remarkFootnotes from "remark-footnotes";
 import remarkMath from "remark-math";
+import remarkLinkCard from "remark-link-card";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
@@ -12,7 +13,6 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 
 import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
-import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
 import generateOgImage from "./src/integrations/generateOgImages";
 
 let site = "http://localhost:3000";
@@ -70,7 +70,12 @@ export default defineConfig({
         }
       ],
       remarkCodeTitles,
-      remarkLinkCard
+      [
+        remarkLinkCard,
+        {
+          shortenUrl: true
+        }
+      ]
     ],
     rehypePlugins: [
       rehypeSlug,
