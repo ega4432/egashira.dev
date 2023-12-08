@@ -15,7 +15,8 @@
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "lint": "lint-staged --config .lintstagedrc.js",
-    "archive-images": "node ./scripts/archive-images.mjs"
+    "archive-images": "node ./scripts/archive-images.mjs",
+    "new": "ts-node --esm ./scripts/new-post.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
@@ -47,6 +48,7 @@
   },
   "devDependencies": {
     "@astrojs/partytown": "^2.0.0",
+    "@inquirer/prompts": "^3.3.0",
     "@types/sharp": "^0.32.0",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.62.0",
@@ -61,6 +63,7 @@
     "prettier-plugin-tailwindcss": "^0.5.7",
     "satori": "^0.10.8",
     "sharp": "^0.32.3",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "packageManager": "npm@9.5.1",

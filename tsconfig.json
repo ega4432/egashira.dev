@@ -11,7 +11,8 @@
       "@content/*": ["src/content/*"],
       "@styles/*": ["src/styles/*"],
       "@integrations/*": ["src/integrations/*"],
-      "@constants": ["src/constants.ts"]
+      "@constants": ["src/constants.ts"],
+      "@scripts/*": ["scripts/*.ts"]
     },
     "types": ["astro/client"]
   }
