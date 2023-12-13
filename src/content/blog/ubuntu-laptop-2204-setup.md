@@ -1,13 +1,13 @@
 ---
 createdAt: "2023-05-23T12:25:00.000Z"
-updatedAt: "2023-12-13T10:15:00.000Z"
+updatedAt: "2023-12-13T14:27:00.000Z"
 summary: "Ubuntu をクリーンインストールして開発マシンとして使ってみる上でやったことなど"
 tags:
   - "Linux"
   - "Ubuntu"
 date: "2023-12-13"
 draft: false
-title: "Ubuntu laptop の初期設定 2023 年度版"
+title: "Ubuntu laptop の初期設定"
 ---
 
 ## はじめに
