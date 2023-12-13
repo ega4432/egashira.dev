@@ -1,6 +1,6 @@
 ---
 createdAt: "2023-05-23T12:25:00.000Z"
-updatedAt: "2023-12-13T14:27:00.000Z"
+updatedAt: "2023-12-13T14:43:00.000Z"
 summary: "Ubuntu をクリーンインストールして開発マシンとして使ってみる上でやったことなど"
 tags:
   - "Linux"
@@ -68,7 +68,7 @@ $ tail -f /var/log/ufw.log
 Caps Lock を Ctrl にした。
 
 ```bash
-sudo vi /etc/default/keyboard
+sudo vim /etc/default/keyboard
 ```
 
 以下のようにして再起動すれば設定が読み込まれる。
