@@ -23,7 +23,7 @@
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.0",
-    "@notionhq/client": "^2.2.6",
+    "@notionhq/client": "^2.2.14",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^3.6.4",
     "astro-icon": "^0.8.1",
