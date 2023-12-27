@@ -52,7 +52,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.55.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^0.30.0",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.3",
