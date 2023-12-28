@@ -15,5 +15,6 @@
       "@scripts/*": ["scripts/*.ts"]
     },
     "types": ["astro/client"]
-  }
+  },
+  "exclude": ["dist", "node_modules"]
 }

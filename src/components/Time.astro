@@ -1,6 +1,4 @@
 ---
-import { formatDate } from "@lib/utils/formatDate";
-
 type Props = {
   date: string;
 };
@@ -8,6 +6,6 @@ type Props = {
 const { date } = Astro.props;
 ---
 
-<time datetime={formatDate(date)} class="block text-gray-600 dark:text-gray-400"
+<time datetime={date} class="block text-gray-600 dark:text-gray-400"
   >{date}</time
 >

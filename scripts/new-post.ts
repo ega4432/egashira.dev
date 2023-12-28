@@ -56,7 +56,7 @@ summary: "${summary}"
         month: "2-digit",
         day: "2-digit"
       })
-      .replaceAll("/", "-")
+      .replace(/\//g, "-")
   });
 
   const tags = await input({
