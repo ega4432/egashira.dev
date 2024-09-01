@@ -26,7 +26,7 @@
     "@notionhq/client": "^2.2.14",
     "@tailwindcss/typography": "^0.5.10",
     "astro": "^3.6.4",
-    "astro-icon": "^0.8.1",
+    "astro-icon": "^1.1.1",
     "axios": "^1.6.5",
     "github-slugger": "^2.0.0",
     "hastscript": "^8.0.0",
