@@ -11,7 +11,7 @@ summary: "Linux Foundation が提供している Certified Kubernetes Administra
 **僕が受験した後に、受験方式が大幅に変更されたためこちらの記事を見てくださった方のために誤解のないように追記する。
 具体的には Chrome ブラウザで受験ができていたものが、独自ブラウザをインストールする必要があったり主に環境面での変更が行われた。**
 
-[Update on Certification Exam Proctoring Migration \- Linux Foundation \- Training](https://training.linuxfoundation.org/blog/update-on-certification-exam-proctoring-migration/)
+https://training.linuxfoundation.org/blog/update-on-certification-exam-proctoring-migration/
 
 **詳しくは、上記リンク先を参照しつつ新方式に向けた準備をしてもらえればと思う。本記事で書いていたが、新方式で意味をなさなくなったものについてはその旨を記載しておく。**
 
@@ -51,14 +51,15 @@ summary: "Linux Foundation が提供している Certified Kubernetes Administra
 
 基本的には以下の Udemy 講座をベースに対策した。他にも合格体験記事を調べるとだいたいの方がこちらを購入されているようだった。内容としては Lab 環境を利用したハンズオン形式かつ最後には本番を想定した Mock Exam がいくつか用意されている。これをやり込めば知識として基本的なことは習得できるので、個人的には現段階で最も優秀な教材だと思う。
 
-- [Certified Kubernetes Administrator \(CKA\) Practice Exam Tests \| Udemy](https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/)
-- [Kubernetes Certified Application Developer \(CKAD\) Training \| Udemy](https://www.udemy.com/course/certified-kubernetes-application-developer/)
+https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/
+
+https://www.udemy.com/course/certified-kubernetes-application-developer/
 
 ### 書籍「Kubernetes 完全ガイド 第２版」
 
 言わずと知れた k8s の完全ガイド。分厚く解説も丁寧なので全部を読むというよりは辞書的に知りたいことについて読み込むようにして利用した。
 
-[Kubernetes 完全ガイド 第 2 版 impress top gear シリーズ \| 青山真也 \| 工学 \| Kindle ストア \| Amazon](https://www.amazon.co.jp/dp/B08FZX8PYW)
+https://www.amazon.co.jp/dp/B08FZX8PYW
 
 ### Killer.sh
 
@@ -86,7 +87,7 @@ https://killer.sh/
 
 ~ブックマークをいちから作るのは流石に骨が折れるので、僕は下記をインポートして活用した。Mock Exam などに取り組む過程で必要そうなページは都度追加して自分なりのブックマークを準備した。~
 
-~[kubernetes/Kubernetes\-Chrome\-Bookmarks\.html at main · sidd\-harth/kubernetes](https://github.com/sidd-harth/kubernetes/blob/main/Kubernetes-Chrome-Bookmarks.html)~
+~https://github.com/sidd-harth/kubernetes/blob/main/Kubernetes-Chrome-Bookmarks.html~
 
 ### エイリアス設定
 
