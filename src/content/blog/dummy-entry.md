@@ -191,21 +191,6 @@ https://twitter.com/ega4432/status/1504042310576730112
 
 ![icon](/images/avatar-ega.png)
 
-## 数式
-
-これは数式です。
-
-$$
-\mathbf{Y} = \left[\begin{array}
-  {c}
-  y_1 \\
-  . \\
-  . \\
-  . \\
-  y_n
-\end{array}\right]
-$$
-
 ## 脚注
 
 これは脚注です[^1]
