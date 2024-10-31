@@ -81,9 +81,9 @@ https://killer.sh/
 
 ~Profile に次いで、ブックマークも準備した。以下の URL は試験時も閲覧可能だが、いちいち検索する時間ももったいないので Chrome のブックマークを強化しておくのが良いだろう。~
 
-- ~https://kubernetes.io/docs/~
-- ~https://github.com/kubernetes/~
-- ~https://kubernetes.io/blog/~
+~https://kubernetes.io/docs/~
+~https://github.com/kubernetes/~
+~https://kubernetes.io/blog/~
 
 ~ブックマークをいちから作るのは流石に骨が折れるので、僕は下記をインポートして活用した。Mock Exam などに取り組む過程で必要そうなページは都度追加して自分なりのブックマークを準備した。~
 
