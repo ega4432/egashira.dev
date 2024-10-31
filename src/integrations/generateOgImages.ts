@@ -1,11 +1,11 @@
 import type { AstroIntegration } from "astro";
-import { read } from "gray-matter";
+import matter from "gray-matter";
 import { readFile, writeFile, mkdir, stat } from "fs/promises";
 import satori from "satori";
 import sharp from "sharp";
 
 const getTitleFromMarkdownFm = (mdFilePath: string) => {
-  const { data } = read(mdFilePath);
+  const { data } = matter.read(mdFilePath);
   return data.title || "";
 };
 

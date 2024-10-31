@@ -23,13 +23,15 @@ const adClient = import.meta.env.AD_CLIENT;
   <head>
     {
       import.meta.env.CF_PAGES_BRANCH === "main" && (
-        <GoogleTagManager gtmId={gtmId} />
-        <script
-          define:vars={{ adClient }}
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`}
-          crossorigin="anonymous"
-        ></script>
+        <>
+          <GoogleTagManager gtmId={gtmId} />
+          <script
+            define:vars={{ adClient }}
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`}
+            crossorigin="anonymous"
+          ></script>
+        </>
       )
     }
     <SEO title={title} description={description} currentUrl={currentUrl} />
