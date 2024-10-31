@@ -2,7 +2,7 @@ import type { Parent, Node } from "unist";
 import { visit } from "unist-util-visit";
 import { encode } from "html-entities";
 import ogs from "open-graph-scraper";
-import type { ImageObject } from "open-graph-scraper/dist/lib/types";
+import type { ImageObject } from "open-graph-scraper/types";
 
 interface TextNode extends Node {
   type: "text";
