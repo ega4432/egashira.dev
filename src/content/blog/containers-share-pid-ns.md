@@ -1,7 +1,7 @@
 ---
 title: "コンテナで PID Namespace を共有する"
 date: "2024-10-31"
-tags: ["Linux", "コンテナ", "セキュリティ", "Docker"]
+tags: ["Linux", "Container", "security", "Docker"]
 draft: true
 summary: "Linux カーネルの Namespace の一つである PID Namespace について実際にコンテナでどのように隔離・共有されるのか挙動を見てみた際のメモ"
 ---
@@ -98,10 +98,10 @@ $ docker exec -it app3 ps aux | grep nginx
 
 ```sh
 # ここで app1 コンテナを指定する
-$ docker run --rm -it -d --name app3 --pid=container:app1 nginx:alpine
+$ docker run --rm -it -d --name app4 --pid=container:app1 nginx:alpine
 311460a5803cf044756e75b4a370431d98dc8d2245b1bfef2360e3ea2115ac80
 
-$ docker exec -it app3 ps aux
+$ docker exec -it app4 ps aux
 PID   USER     TIME  COMMAND
     1 root      0:00 sleep 1d
   111 root      0:00 nginx: master process nginx -g daemon off;
