@@ -30,7 +30,7 @@
     "axios": "^1.6.5",
     "github-slugger": "^2.0.0",
     "hastscript": "^9.0.0",
-    "html-entities": "^2.4.0",
+    "html-entities": "^2.5.2",
     "open-graph-scraper": "^6.8.2",
     "qs": "^6.13.0",
     "rehype-autolink-headings": "^6.1.1",
