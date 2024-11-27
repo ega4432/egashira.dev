@@ -1,5 +1,5 @@
 ---
-title: "kubeadm でのクラスタ構築"
+title: "kubeadm での Kubernetes クラスタ構築"
 date: "2024-11-28"
 tags: ["k8s", "Container"]
 draft: true
@@ -23,6 +23,8 @@ summary: "kubeadm を使った Kubernetes クラスタ構築の手順につい�
 kubeadm コマンドをインストールする前の事前準備を行う。実施する内容については、下記に記載されている。
 
 https://kubernetes.io/ja/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#%E5%A7%8B%E3%82%81%E3%82%8B%E5%89%8D%E3%81%AB
+
+マシンに SSH して移行の手順を行った。
 
 ### swap の無効化
 
@@ -75,7 +77,7 @@ $ sudo sysctl --system
 
 ### Containerd のインストール
 
-下記の公式ドキュメントに従って進めた。インストールしたバージョンは記事執筆時の最新バージョンを使っているので適宜置き換えてもらえればと思う。
+下記の公式ドキュメントに従って進めた。インストールしたバージョンは記事執筆時の最新バージョンを使っているので、適宜利用したいバージョンに置き換えてもらえればと思う。
 
 https://github.com/containerd/containerd/blob/main/docs/getting-started.md
 
@@ -192,7 +194,7 @@ $ kubectl get po -A
 
 ## ワーカーノードの追加
 
-ノードとして追加したいマシンに SSH して、下記のコマンドを実行する。
+ノードとして追加したいマシンに別途 SSH して入り、下記のコマンドを実行する。
 
 ```sh
 $ kubeadm join <CONTROL_PLANE_IP>:6443 --token <TOKEN> \
