@@ -12,7 +12,7 @@ Kubernetes では、セキュリティ強化のために様々な仕組みが用
 
 本記事では、AppArmor を Kubernetes クラスタに導入し、プロファイルを適用する手順について解説する。
 
-ちなみに AppArmor は Kubernetes v1.31 で stable としてリリースされた。
+ちなみに AppArmor は Kubernetes v1.31 で stable としてリリースされたので、試したい場合はこれ以降のバージョンを使うと良い。
 
 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.31.md
 
@@ -25,7 +25,7 @@ https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.31.md
 - Kubernetes: v1.31.3
 
 ```sh
-$ k get nodes -o wide
+$ kubectl get nodes -o wide
 NAME            STATUS   ROLES           AGE     VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION       CONTAINER-RUNTIME
 k8s-study       Ready    control-plane   3d17h   v1.31.3   159.89.193.134   <none>        Ubuntu 22.04.4 LTS   5.15.0-113-generic   containerd://1.7.24
 k8s-study2      Ready    worker          2d20h   v1.31.3   152.42.177.36    <none>        Ubuntu 22.04.4 LTS   5.15.0-113-generic   containerd://1.7.24
@@ -85,14 +85,15 @@ profile deny-write flags=(attach_disconnected) {
 }
 ```
 
-このプロファイルでは、ファイルへのアクセスを制限している。
+このプロファイルでは、ファイルへの書き込みの制限をしている。
 
 プロファイルを適用するために以下を実行する。
 
 ```sh
+# ノードにコピー
 $ scp aa-profile k8s-study2:~/
 
-# 適用したいワーカーノードに入る
+# 適用したいノードに入る
 $ ssh k8s-study2
 
 # `apparmor_parser` コマンドで適用
@@ -130,7 +131,7 @@ $ kubectl apply -f apparmor-pod.yaml
 # ちゃんと指定したノードで起動しているか確認
 $ kubectl get po -o wide
 NAME       READY   STATUS    RESTARTS   AGE   IP               NODE            NOMINATED NODE   READINESS GATES
-apparmor   1/1     Running   0          96s   192.168.44.185   k8s-study2   <none>           <none>
+apparmor   1/1     Running   0          96s   192.168.44.185   k8s-study2      <none>           <none>
 ```
 
 ## テスト
@@ -152,8 +153,8 @@ $ kubectl run nginx --image nginx
 
 $ kubectl get po -o wide
 NAME       READY   STATUS                 RESTARTS        AGE   IP               NODE            NOMINATED NODE   READINESS GATES
-apparmor   0/1     CreateContainerError   7 (2m54s ago)   33m   192.168.44.133   k8s-study2   <none>           <none>
-nginx      1/1     Running                2 (3m21s ago)   17m   192.168.44.130   k8s-study2   <none>           <none>
+apparmor   0/1     CreateContainerError   7 (2m54s ago)   33m   192.168.44.133   k8s-study2      <none>           <none>
+nginx      1/1     Running                2 (3m21s ago)   17m   192.168.44.130   k8s-study2      <none>           <none>
 
 # ファイルの作成を実行
 $ kubectl exec nginx -- touch /tmp/sample.txt
