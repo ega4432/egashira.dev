@@ -2,7 +2,7 @@
 title: "kubeadm での Kubernetes クラスタ構築"
 date: "2024-11-28"
 tags: ["k8s", "Container"]
-draft: true
+draft: false
 summary: "kubeadm を使った Kubernetes クラスタ構築の手順についての備忘録"
 ---
 
