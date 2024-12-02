@@ -205,4 +205,5 @@ https://github.com/asdf-vm/asdf-nodejs/
 https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 
 [^1]: [Homebrew Shell Completion — Homebrew Documentation](https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
+
 [^2]: 以前は Node.js のバージョン管理に anyenv 経由で nodenv というツールを使用していた。nodenv のローカルのバージョン固定には .node-version というファイルを使用する。
