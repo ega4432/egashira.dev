@@ -47,4 +47,5 @@ https://github.com/timlrx/tailwind-nextjs-starter-blog
 ただ、完全に自分だけのサイトと言うこともあり、自分の経験がよりほやほやなうちにクオリティよりもスピード重視でメモ書き程度にアップしていけたらいいなと思っている。
 
 [^1]: [Amazon Route 53 に登録できる最上位ドメイン \- Amazon Route 53](https://docs.aws.amazon.com/ja_jp/Route53/latest/DeveloperGuide/registrar-tld-list.html)
+
 [^2]: 広告掲載は Hobby プランでは許可されていないとのこと。[Vercel の料金形態と内容についてまとめた \- 2020 冬](https://zenn.dev/lollipop_onl/articles/eoz-vercel-pricing-2020) に分かりやすくまとめられている。

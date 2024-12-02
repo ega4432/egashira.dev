@@ -161,5 +161,7 @@ https://github.com/ega4432/dotfiles
 今後は `.zshrc` , `.bashrc` , `.vimrc` など本来で言うところのドットで始まるファイルたちの管理を始めていきたい。
 
 [^1]: 初めて聞いたという方は、Google で検索すると上位に出てくる [ようこそ dotfiles の世界へ \- Qiita](https://qiita.com/yutkat/items/c6c7584d9795799ee164) や [GitHub でスター数の多い dotfiles を使ってみた](https://zenn.dev/yutakatay/articles/try-dotfiles-01) を読んでみて欲しい。それで面白そうだと思ったら仲間だ。
+
 [^2]: [macOS（または Linux）用パッケージマネージャー — Homebrew](https://brew.sh/index_ja)
+
 [^3]: [About billing for GitHub Actions \- GitHub Docs](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions)

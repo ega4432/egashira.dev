@@ -370,4 +370,5 @@ https://amateur-engineer-blog.com/livenessprobe-readinessprobe/#toc7
 https://zenn.dev/nekoshita/articles/4e838ae224ed56
 
 [^1]: kubelet が自動で `spec.restartPolicy` に基づいたアクションを実行する。ref. [kubelet \| Kubernetes](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
+
 [^2]: `spec.containers.livenessProbe.periodSeconds` に特に設定していなければデフォルトは 30 秒。
