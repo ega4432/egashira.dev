@@ -121,5 +121,3 @@ Go のお作法についてはまだまだキャッチアップする必要が�
 ## 参考
 
 https://go-tour-jp.appspot.com/methods/15
-
-https://blog.y-yuki.net/entry/2017/05/08/000000
