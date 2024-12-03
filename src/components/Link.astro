@@ -5,7 +5,7 @@ type Props = {
 };
 
 const { href, className = "" } = Astro.props;
-const pattern = /^(http|https):\/\/[\w/:%#\$&\?\(\)~\.=\+\-]+$/;
+const pattern = /^(http|https):\/\/[\w/:%#$&?()~.=+-]+$/;
 const isExternal = pattern.test(href);
 ---
 

@@ -1,8 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
 
-import { type GtmId } from "../src/components/GoogleTagManager.astro";
-import { type ADClient } from "./components/GoogleAdsense.astro";
+import type { GtmId } from "../src/components/GoogleTagManager.astro";
+import type { ADClient } from "./components/GoogleAdsense.astro";
 
 interface ImportMetaEnv {
   readonly GTM_ID: GtmId;

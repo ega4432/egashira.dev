@@ -17,7 +17,6 @@ export default tsEslint.config(
     }
   },
   ...eslintPluginAstro.configs["flat/recommended"],
-  // ...eslintPluginAstro.configs["flat/jsx-a11y-strict"],
   eslintConfigPrettier,
   {
     languageOptions: {
@@ -26,5 +25,12 @@ export default tsEslint.config(
         ...globals.node
       }
     }
+  },
+  {
+    ignores: [
+      "src/content/blog/*.md",
+      "tailwind.config.cjs",
+      "src/components/GoogleTagManager.astro"
+    ]
   }
 );
