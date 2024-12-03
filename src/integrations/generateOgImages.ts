@@ -1,6 +1,6 @@
 import type { AstroIntegration } from "astro";
 import matter from "gray-matter";
-import { readFile, writeFile, mkdir, stat } from "fs/promises";
+import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
 import satori from "satori";
 import sharp from "sharp";
 
@@ -60,7 +60,7 @@ const generate = async (
   return await sharp(Buffer.from(svg)).png().toBuffer();
 };
 
-const createDirectory = async (path: string, recursive: boolean = true) => {
+const createDirectory = async (path: string, recursive = true) => {
   await stat(path).catch(async (e) => {
     if (e.code === "ENOENT") {
       await mkdir(path, { recursive });
@@ -83,20 +83,32 @@ export default function generateOgImage(): AstroIntegration {
           "base64"
         );
         const font = await readFile(`${assetPath}/NotoSansJP-Bold.otf`);
-
         const dist = "dist/images/";
-        for await (const blogPath of blogPaths) {
-          const title = getTitleFromMarkdownFm(`src/content/${blogPath}.md`);
 
-          await createDirectory(`${dist}/${blogPath}`);
+        await Promise.allSettled(
+          blogPaths.map(async (blogPath) => {
+            const title = getTitleFromMarkdownFm(`src/content/${blogPath}.md`);
+            await createDirectory(`${dist}/${blogPath}`);
+            const buffer = await generate(title, {
+              background: `data:image/png;base64,${background}`,
+              font
+            });
+            await writeFile(`${dist}/${blogPath}/og.png`, buffer);
+          })
+        );
 
-          const buffer = await generate(title, {
-            background: `data:image/png;base64,${background}`,
-            font
-          });
+        // for await (const blogPath of blogPaths) {
+        //   const title = getTitleFromMarkdownFm(`src/content/${blogPath}.md`);
 
-          await writeFile(`${dist}/${blogPath}/og.png`, buffer);
-        }
+        //   await createDirectory(`${dist}/${blogPath}`);
+
+        //   const buffer = await generate(title, {
+        //     background: `data:image/png;base64,${background}`,
+        //     font
+        //   });
+
+        //   await writeFile(`${dist}/${blogPath}/og.png`, buffer);
+        // }
       }
     }
   };
