@@ -55,8 +55,9 @@ https://kubernetes.io/ja/docs/setup/production-environment/container-runtimes/#i
 
 ```sh
 # Linux カーネルの IPv4 フォワーディング機能を有効にする
-$ cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
-net.ipv4.ip_forward = 1
+$ cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
 EOF
 
 $ sudo modprobe overlay
