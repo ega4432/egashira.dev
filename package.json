@@ -9,7 +9,7 @@
     "build": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prepare": "husky install",
+    "prepare": "husky",
     "eslint": "eslint ./src --max-warnings 0",
     "eslint:fix": "eslint ./src --fix --max-warnings 0",
     "prettier": "prettier --check .",
