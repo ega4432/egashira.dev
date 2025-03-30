@@ -59,7 +59,7 @@ https://www.udemy.com/course/certified-kubernetes-application-developer/
 
 言わずと知れた k8s の完全ガイド。分厚く解説も丁寧なので全部を読むというよりは辞書的に知りたいことについて読み込むようにして利用した。
 
-https://www.amazon.co.jp/dp/B08FZX8PYW
+https://amzn.to/43rxleG
 
 ### Killer.sh
 

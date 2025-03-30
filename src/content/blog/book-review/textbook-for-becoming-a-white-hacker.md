@@ -11,7 +11,7 @@ completeDate: "2022-08-07"
 
 書籍「ホワイトハッカーの教科書」を読んだので自分なりのまとめや感想などを書いておく。
 
-[ホワイトハッカーの教科書 \| IPUSIRON \|本 \| 通販 \| Amazon](https://www.amazon.co.jp/dp/4863543832)
+https://amzn.to/41Se9pa
 
 ## 本書の要約
 
@@ -71,6 +71,6 @@ CTF[^1] の話もでてきた。
 
 ## 参考
 
-https://www.amazon.co.jp/dp/4863543832
+https://amzn.to/41Se9pa
 
 [^1]: Capture the Flag というセキュリティに関する問題を解くことで技術や知識を競う競技。
