@@ -1,7 +1,7 @@
 ---
 createdAt: "2025-03-29T07:36:00.000Z"
-updatedAt: "2025-03-30T06:19:00.000Z"
-summary: "Certified Kubenetes Security Specialist 通称 CKS に合格したので、受験に至るまでの学習内容や受験してみての感想などをまとめる。"
+updatedAt: "2025-03-30T09:14:00.000Z"
+summary: "CKS に合格したので、受験に至るまでの学習内容や受験してみての感想などをまとめる。"
 tags:
   - "k8s"
   - "security"
