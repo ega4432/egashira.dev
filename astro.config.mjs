@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import emoji from "remark-emoji";
 import remarkFootnotes from "remark-footnotes";
 import remarkMath from "remark-math";
-import remarkLinkCard from "remark-link-card";
+import remarkLinkCard from "remark-link-card-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
@@ -73,7 +73,18 @@ export default defineConfig({
       [
         remarkLinkCard,
         {
-          shortenUrl: true
+          // cache: true,
+          shortenUrl: true,
+          ogTransformer: (og) => {
+            if (og.title.startsWith("Amazon.co.jp: ")) {
+              console.log("--- Amazon Link ---");
+              og.title = og.title.replace("Amazon.co.jp: ", "");
+              if (!og.faviconUrl)
+                og.faviconUrl = "https://i.imgur.com/pHkePZN.png";
+              console.log(og);
+            }
+            return og;
+          }
         }
       ]
     ],
