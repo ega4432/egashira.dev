@@ -165,7 +165,7 @@ kind-worker2         Ready      <none>          33s   v1.24.0
 
 k8s クラスタをローカルに作成できる kind を触ってみた。kind を使うとカジュアルにマルチノードなクラスタをローカルに構築できるので非常に便利だと思うので、いろいろと遊んでみたい。
 
-ちなみに、書籍「[Kubernetes 完全ガイド 第 2 版](https://www.amazon.co.jp/dp/B08FZX8PYW)」で紹介されていたことが、kind を知るきっかけだった。もし読んだことない方は是非こちらも手にとって見るといいと思う。
+ちなみに、書籍「[Kubernetes 完全ガイド 第 2 版](https://amzn.to/43rxleG)」で紹介されていたことが、kind を知るきっかけだった。もし読んだことない方は是非こちらも手にとって見るといいと思う。
 
 [^1]:
     > If the flag --name is not specified, kind will use the default cluster context name kind and delete that cluster. ref: https://kind.sigs.k8s.io/docs/user/quick-start/#deleting-a-cluster
