@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import emoji from "remark-emoji";
-import remarkFootnotes from "remark-footnotes";
 import remarkMath from "remark-math";
 import remarkLinkCard from "remark-link-card";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -63,12 +62,6 @@ export default defineConfig({
     remarkPlugins: [
       emoji,
       remarkMath,
-      [
-        remarkFootnotes,
-        {
-          inlineNotes: true
-        }
-      ],
       remarkCodeTitles,
       [
         remarkLinkCard,

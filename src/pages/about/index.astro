@@ -1,13 +1,12 @@
 ---
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Image from "@components/Image.astro";
 import "@styles/prism.css";
 
 const me = await getEntry("page", "me");
-const { Content } = await me.render();
-
+const { Content } = await render(me);
 const pageTitle = "このサイトについて";
 ---
 
