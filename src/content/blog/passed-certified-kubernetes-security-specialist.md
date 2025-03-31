@@ -1,6 +1,6 @@
 ---
 createdAt: "2025-03-29T07:36:00.000Z"
-updatedAt: "2025-03-30T09:14:00.000Z"
+updatedAt: "2025-03-31T05:25:00.000Z"
 summary: "CKS に合格したので、受験に至るまでの学習内容や受験してみての感想などをまとめる。"
 tags:
   - "k8s"
@@ -56,6 +56,10 @@ CKS とは、Linux Foundation という団体が提供している Kubernetes（
 
 CKS に特化した書籍ではないが、こういう普遍的な内容が個人的には一番最初に学習しておけると助かる思った。また、次の Udemy 講座しかりまだまだ英語のリソースが多い中で日本語で読めるということでまずは手にとってもらえると良いのではないかと思う。
 
+こちらはまだ読めていないがタイトル的に非常に要件に合っていそう。
+
+[https://amzn.to/43zIeuW](https://amzn.to/43zIeuW)
+
 ### Udemy
 
 上記の書籍と並行してこちらの講座を受講した。
@@ -107,6 +111,8 @@ CKS を受験した感想などをまとめておく。
 [https://training.linuxfoundation.org/ja/blog/cks-exam-to-update-september-12-2024/](https://training.linuxfoundation.org/ja/blog/cks-exam-to-update-september-12-2024/)
 
 [https://amzn.to/3XFUaro](https://amzn.to/3XFUaro)
+
+[https://amzn.to/43zIeuW](https://amzn.to/43zIeuW)
 
 [https://www.udemy.com/course/certified-kubernetes-security-specialist-certification/](https://www.udemy.com/course/certified-kubernetes-security-specialist-certification/)
 
