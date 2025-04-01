@@ -2,7 +2,7 @@ import rss from "@astrojs/rss";
 
 import { getBlogs } from "@lib/blog";
 
-export const get = async (context) => {
+export const GET = async (context) => {
   const site = new URL("blog", context.site).href;
   const blogs = await getBlogs();
   const me = "hello@egashira.dev (ega4432)";
