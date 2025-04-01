@@ -57,7 +57,7 @@ summary: 2022 年 1 年間のやってきたことを振り返ってみた
 - [Go 言語 ハンズオン \| 掌田津耶乃 \|本 \| 通販 \| Amazon](https://amzn.to/427Tmg7)
 - [ホワイトハッカーの教科書 \| IPUSIRON \| 工学 \| Kindle ストア \| Amazon](https://amzn.to/41Se9pa)
   - 感想ブログ：[「ホワイトハッカーの教科書」を読んだ](https://egashira.dev/blog/book-review/textbook-for-becoming-a-white-hacker)
-- [O'Reilly Japan \- Kubernetes で実践するクラウドネイティブ DevOps](https://amzn.to/3E1FZ9k)
+- [O'Reilly Japan \- Kubernetes で実践するクラウドネイティブ DevOps](https://amzn.to/443TfVy)
   - 感想ブログ：[「Kubernetes で実践するクラウドネイティブ DevOps」を読んだ](https://egashira.dev/blog/book-review/cloud-native-devops-in-practice-with-k8s)
 - [図解入門 TCP/IP 仕組み・動作が見てわかる \| みやた ひろし \|本 \| 通販 \| Amazon](https://amzn.to/4cb4u0m)
 

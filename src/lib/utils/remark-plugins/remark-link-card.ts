@@ -186,7 +186,6 @@ const remarkLinkCard: Plugin<[undefined], Root> = () => async (tree) => {
     tree,
     "paragraph",
     (paragraphNode: Parent, index: number | undefined, parent) => {
-      console.log("exist paragraph node", tree.children[0].data);
       if (parent?.type !== "root" || paragraphNode.children.length !== 1)
         return;
 
