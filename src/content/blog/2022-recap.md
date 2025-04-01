@@ -54,12 +54,12 @@ summary: 2022 年 1 年間のやってきたことを振り返ってみた
 
 あまり多くの本を読めなかった。技術的なもの（ビジネス書、漫画を除く）は以下を読んだ。良書ばかりだったので興味のある方にはどれもオススメできる。
 
-- [Go 言語 ハンズオン \| 掌田津耶乃 \|本 \| 通販 \| Amazon](https://www.amazon.co.jp/dp/4798063991)
-- [ホワイトハッカーの教科書 \| IPUSIRON \| 工学 \| Kindle ストア \| Amazon](https://www.amazon.co.jp/dp/B09YCB99MK)
+- [Go 言語 ハンズオン \| 掌田津耶乃 \|本 \| 通販 \| Amazon](https://amzn.to/427Tmg7)
+- [ホワイトハッカーの教科書 \| IPUSIRON \| 工学 \| Kindle ストア \| Amazon](https://amzn.to/41Se9pa)
   - 感想ブログ：[「ホワイトハッカーの教科書」を読んだ](https://egashira.dev/blog/book-review/textbook-for-becoming-a-white-hacker)
-- [O'Reilly Japan \- Kubernetes で実践するクラウドネイティブ DevOps](https://www.oreilly.co.jp/books/9784873119014/)
+- [O'Reilly Japan \- Kubernetes で実践するクラウドネイティブ DevOps](https://amzn.to/443TfVy)
   - 感想ブログ：[「Kubernetes で実践するクラウドネイティブ DevOps」を読んだ](https://egashira.dev/blog/book-review/cloud-native-devops-in-practice-with-k8s)
-- [図解入門 TCP/IP 仕組み・動作が見てわかる \| みやた ひろし \|本 \| 通販 \| Amazon](https://www.amazon.co.jp/dp/4815604975)
+- [図解入門 TCP/IP 仕組み・動作が見てわかる \| みやた ひろし \|本 \| 通販 \| Amazon](https://amzn.to/4cb4u0m)
 
 ### 英語
 

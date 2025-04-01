@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import emoji from "remark-emoji";
 import remarkMath from "remark-math";
-import remarkLinkCard from "remark-link-card";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
@@ -13,6 +12,7 @@ import sitemap from "@astrojs/sitemap";
 
 import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
 import generateOgImage from "./src/integrations/generateOgImages";
+import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
 
 let site = "http://localhost:3000";
 if (process.env.CF_PAGES_BRANCH === "main") {
@@ -59,17 +59,7 @@ export default defineConfig({
   ],
   markdown: {
     syntaxHighlight: "prism",
-    remarkPlugins: [
-      emoji,
-      remarkMath,
-      remarkCodeTitles,
-      [
-        remarkLinkCard,
-        {
-          shortenUrl: true
-        }
-      ]
-    ],
+    remarkPlugins: [emoji, remarkMath, remarkCodeTitles, remarkLinkCard],
     rehypePlugins: [
       rehypeSlug,
       [

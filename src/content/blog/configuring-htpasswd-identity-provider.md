@@ -142,4 +142,4 @@ done
 
 ## 参考
 
-[第 7 章 アイデンティティープロバイダーの設定 OpenShift Container Platform 4\.13 \| Red Hat Customer Portal](https://access.redhat.com/documentation/ja-jp/openshift_container_platform/4.13/html/authentication_and_authorization/configuring-identity-providers#configuring-htpasswd-identity-provider)
+https://access.redhat.com/documentation/ja-jp/openshift_container_platform/4.13/html/authentication_and_authorization/configuring-identity-providers#configuring-htpasswd-identity-provider
