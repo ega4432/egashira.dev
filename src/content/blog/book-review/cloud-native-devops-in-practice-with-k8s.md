@@ -10,7 +10,7 @@ summary: 自分なりのまとめや感想などを書いておく
 
 書籍「Kubernetes で実践するクラウドネイティブ DevOps」を読んだので自分なりのまとめや感想などを書いておく。
 
-https://www.oreilly.co.jp/books/9784873119014/
+https://amzn.to/3E1FZ9k
 
 ## 感想
 
@@ -90,6 +90,4 @@ k8s の Pod に焦点を当てつつ深い話に入っていく。Label, Affinit
 
 ## 参考
 
-https://www.oreilly.co.jp/books/9784873119014/
-
-https://www.amazon.co.jp/dp/4873119014
+https://amzn.to/3E1FZ9k
