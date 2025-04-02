@@ -940,8 +940,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Place Map
 
-|      ico       | shortcode        |          ico           | shortcode                |     |
-| :------------: | ---------------- | :--------------------: | ------------------------ | --- |
+|      ico       | shortcode        |          ico           | shortcode                |
+| :------------: | ---------------- | :--------------------: | ------------------------ |
 | :earth_africa: | `:earth_africa:` |    :earth_americas:    | `:earth_americas:`       |
 |  :earth_asia:  | `:earth_asia:`   | :globe_with_meridians: | `:globe_with_meridians:` |
 |  :world_map:   | `:world_map:`    |        :japan:         | `:japan:`                |
@@ -949,8 +949,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Place Geographic
 
-|       ico       | shortcode         |       ico        | shortcode          |     |
-| :-------------: | ----------------- | :--------------: | ------------------ | --- |
+|       ico       | shortcode         |       ico        | shortcode          |
+| :-------------: | ----------------- | :--------------: | ------------------ |
 | :mountain_snow: | `:mountain_snow:` |    :mountain:    | `:mountain:`       |
 |    :volcano:    | `:volcano:`       |   :mount_fuji:   | `:mount_fuji:`     |
 |    :camping:    | `:camping:`       | :beach_umbrella: | `:beach_umbrella:` |
@@ -959,8 +959,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Place Building
 
-|           ico           | shortcode                 |          ico           | shortcode                |     |
-| :---------------------: | ------------------------- | :--------------------: | ------------------------ | --- |
+|           ico           | shortcode                 |          ico           | shortcode                |
+| :---------------------: | ------------------------- | :--------------------: | ------------------------ |
 |        :stadium:        | `:stadium:`               |  :classical_building:  | `:classical_building:`   |
 | :building_construction: | `:building_construction:` |        :bricks:        | `:bricks:`               |
 |         :rock:          | `:rock:`                  |         :wood:         | `:wood:`                 |
@@ -978,16 +978,16 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Place Religious
 
-|       ico       | shortcode         |     ico     | shortcode     |     |
-| :-------------: | ----------------- | :---------: | ------------- | --- |
+|       ico       | shortcode         |     ico     | shortcode     |
+| :-------------: | ----------------- | :---------: | ------------- |
 |    :church:     | `:church:`        |  :mosque:   | `:mosque:`    |
 | :hindu_temple:  | `:hindu_temple:`  | :synagogue: | `:synagogue:` |
 | :shinto_shrine: | `:shinto_shrine:` |   :kaaba:   | `:kaaba:`     |
 
 #### Place Other
 
-|      ico       | shortcode        |           ico            | shortcode                  |     |
-| :------------: | ---------------- | :----------------------: | -------------------------- | --- |
+|      ico       | shortcode        |           ico            | shortcode                  |
+| :------------: | ---------------- | :----------------------: | -------------------------- |
 |   :fountain:   | `:fountain:`     |          :tent:          | `:tent:`                   |
 |    :foggy:     | `:foggy:`        |    :night_with_stars:    | `:night_with_stars:`       |
 |  :cityscape:   | `:cityscape:`    | :sunrise_over_mountains: | `:sunrise_over_mountains:` |
@@ -999,8 +999,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Transport Ground
 
-|           ico            | shortcode                  |          ico           | shortcode                |     |
-| :----------------------: | -------------------------- | :--------------------: | ------------------------ | --- |
+|           ico            | shortcode                  |          ico           | shortcode                |
+| :----------------------: | -------------------------- | :--------------------: | ------------------------ |
 |    :steam_locomotive:    | `:steam_locomotive:`       |     :railway_car:      | `:railway_car:`          |
 |    :bullettrain_side:    | `:bullettrain_side:`       |  :bullettrain_front:   | `:bullettrain_front:`    |
 |         :train2:         | `:train2:`                 |        :metro:         | `:metro:`                |
@@ -1029,8 +1029,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Transport Water
 
-|       ico        | shortcode          |     ico     | shortcode                    |     |
-| :--------------: | ------------------ | :---------: | ---------------------------- | --- |
+|       ico        | shortcode          |     ico     | shortcode                    |
+| :--------------: | ------------------ | :---------: | ---------------------------- |
 |     :anchor:     | `:anchor:`         |   :boat:    | `:boat:` <br /> `:sailboat:` |
 |     :canoe:      | `:canoe:`          | :speedboat: | `:speedboat:`                |
 | :passenger_ship: | `:passenger_ship:` |   :ferry:   | `:ferry:`                    |
@@ -1038,8 +1038,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Transport Air
 
-|          ico           | shortcode                |         ico          | shortcode              |     |
-| :--------------------: | ------------------------ | :------------------: | ---------------------- | --- |
+|          ico           | shortcode                |         ico          | shortcode              |
+| :--------------------: | ------------------------ | :------------------: | ---------------------- |
 |       :airplane:       | `:airplane:`             |   :small_airplane:   | `:small_airplane:`     |
 |   :flight_departure:   | `:flight_departure:`     |   :flight_arrival:   | `:flight_arrival:`     |
 |      :parachute:       | `:parachute:`            |        :seat:        | `:seat:`               |
@@ -1050,14 +1050,14 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Hotel
 
-|      ico       | shortcode        |    ico    | shortcode   |     |
-| :------------: | ---------------- | :-------: | ----------- | --- |
+|      ico       | shortcode        |    ico    | shortcode   |
+| :------------: | ---------------- | :-------: | ----------- |
 | :bellhop_bell: | `:bellhop_bell:` | :luggage: | `:luggage:` |
 
 #### Time
 
-|         ico         | shortcode             |           ico            | shortcode                  |     |
-| :-----------------: | --------------------- | :----------------------: | -------------------------- | --- |
+|         ico         | shortcode             |           ico            | shortcode                  |
+| :-----------------: | --------------------- | :----------------------: | -------------------------- |
 |     :hourglass:     | `:hourglass:`         | :hourglass_flowing_sand: | `:hourglass_flowing_sand:` |
 |       :watch:       | `:watch:`             |      :alarm_clock:       | `:alarm_clock:`            |
 |     :stopwatch:     | `:stopwatch:`         |      :timer_clock:       | `:timer_clock:`            |
@@ -1077,8 +1077,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Sky & Weather
 
-| ico                            |            shortcode             | ico                             |                shortcode                |     |
-| ------------------------------ | :------------------------------: | ------------------------------- | :-------------------------------------: | --- |
+| ico                            |            shortcode             | ico                             |                shortcode                |
+| ------------------------------ | :------------------------------: | ------------------------------- | :-------------------------------------: |
 | :new_moon:                     |           `:new_moon:`           | :waxing_crescent_moon:          |        `:waxing_crescent_moon:`         |
 | :first_quarter_moon:           |      `:first_quarter_moon:`      | :moon:                          | `:moon:` <br /> `:waxing_gibbous_moon:` |
 | :full_moon:                    |          `:full_moon:`           | :waning_gibbous_moon:           |         `:waning_gibbous_moon:`         |
@@ -1120,8 +1120,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Event
 
-|                   |         ico         | shortcode        |        ico         | shortcode |     |
-| ----------------- | :-----------------: | ---------------- | :----------------: | --------- | --- |
+| ico               |      shortcode      | ico              |     shortcode      |
+| ----------------- | :-----------------: | ---------------- | :----------------: |
 | :jack_o_lantern:  | `:jack_o_lantern:`  | :christmas_tree: | `:christmas_tree:` |
 | :fireworks:       |    `:fireworks:`    | :sparkler:       |    `:sparkler:`    |
 | :firecracker:     |   `:firecracker:`   | :sparkles:       |    `:sparkles:`    |
@@ -1136,16 +1136,16 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Award Medal
 
-|                   |         ico         | shortcode         |         ico         | shortcode |     |
-| ----------------- | :-----------------: | ----------------- | :-----------------: | --------- | --- |
+| ico               |      shortcode      | ico               |      shortcode      |
+| ----------------- | :-----------------: | ----------------- | :-----------------: |
 | :medal_military:  | `:medal_military:`  | :trophy:          |     `:trophy:`      |
 | :medal_sports:    |  `:medal_sports:`   | :1st_place_medal: | `:1st_place_medal:` |
 | :2nd_place_medal: | `:2nd_place_medal:` | :3rd_place_medal: | `:3rd_place_medal:` |
 
 #### Sport
 
-|                  |        ico         | shortcode                 |             ico             | shortcode |     |
-| ---------------- | :----------------: | ------------------------- | :-------------------------: | --------- | --- |
+| ico              |     shortcode      | ico                       |          shortcode          |
+| ---------------- | :----------------: | ------------------------- | :-------------------------: |
 | :soccer:         |     `:soccer:`     | :baseball:                |        `:baseball:`         |
 | :softball:       |    `:softball:`    | :basketball:              |       `:basketball:`        |
 | :volleyball:     |   `:volleyball:`   | :football:                |        `:football:`         |
@@ -1163,8 +1163,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Game
 
-|                        |           ico            | shortcode      |       ico        | shortcode |     |
-| ---------------------- | :----------------------: | -------------- | :--------------: | --------- | --- |
+| ico                    |        shortcode         | ico            |    shortcode     |
+| ---------------------- | :----------------------: | -------------- | :--------------: |
 | :dart:                 |         `:dart:`         | :yo_yo:        |    `:yo_yo:`     |
 | :kite:                 |         `:kite:`         | :gun:          |     `:gun:`      |
 | :8ball:                |        `:8ball:`         | :crystal_ball: | `:crystal_ball:` |
@@ -1180,8 +1180,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Arts & Crafts
 
-|                   |         ico         | shortcode        |        ico         | shortcode |     |
-| ----------------- | :-----------------: | ---------------- | :----------------: | --------- | --- |
+| ico               |      shortcode      | ico              |     shortcode      |
+| ----------------- | :-----------------: | ---------------- | :----------------: |
 | :performing_arts: | `:performing_arts:` | :framed_picture: | `:framed_picture:` |
 | :art:             |       `:art:`       | :thread:         |     `:thread:`     |
 | :sewing_needle:   |  `:sewing_needle:`  | :yarn:           |      `:yarn:`      |
@@ -1216,8 +1216,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Clothing
 
-|                        |              ico              | shortcode            |          ico           | shortcode |     |
-| ---------------------- | :---------------------------: | -------------------- | :--------------------: | --------- | --- |
+| ico                    |           shortcode           | ico                  |       shortcode        |
+| ---------------------- | :---------------------------: | -------------------- | :--------------------: |
 | :eyeglasses:           |        `:eyeglasses:`         | :dark_sunglasses:    |  `:dark_sunglasses:`   |
 | :goggles:              |          `:goggles:`          | :lab_coat:           |      `:lab_coat:`      |
 | :safety_vest:          |        `:safety_vest:`        | :necktie:            |      `:necktie:`       |
@@ -1244,8 +1244,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Sound
 
-|               |       ico       | shortcode    |      ico       | shortcode |     |
-| ------------- | :-------------: | ------------ | :------------: | --------- | --- |
+| ico           |    shortcode    | ico          |   shortcode    |
+| ------------- | :-------------: | ------------ | :------------: |
 | :mute:        |    `:mute:`     | :speaker:    |  `:speaker:`   |
 | :sound:       |    `:sound:`    | :loud_sound: | `:loud_sound:` |
 | :loudspeaker: | `:loudspeaker:` | :mega:       |    `:mega:`    |
@@ -1254,8 +1254,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Music
 
-|                 |        ico        | shortcode           |          ico          | shortcode |     |
-| --------------- | :---------------: | ------------------- | :-------------------: | --------- | --- |
+| ico             |     shortcode     | ico                 |       shortcode       |
+| --------------- | :---------------: | ------------------- | :-------------------: |
 | :musical_score: | `:musical_score:` | :musical_note:      |   `:musical_note:`    |
 | :notes:         |     `:notes:`     | :studio_microphone: | `:studio_microphone:` |
 | :level_slider:  | `:level_slider:`  | :control_knobs:     |   `:control_knobs:`   |
@@ -1264,8 +1264,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Musical Instrument
 
-|             |      ico      | shortcode          |         ico          | shortcode |     |
-| ----------- | :-----------: | ------------------ | :------------------: | --------- | --- |
+| ico         |   shortcode   | ico                |      shortcode       |
+| ----------- | :-----------: | ------------------ | :------------------: |
 | :saxophone: | `:saxophone:` | :accordion:        |    `:accordion:`     |
 | :guitar:    |  `:guitar:`   | :musical_keyboard: | `:musical_keyboard:` |
 | :trumpet:   |  `:trumpet:`  | :violin:           |      `:violin:`      |
@@ -1274,16 +1274,16 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Phone
 
-|          |              ico               | shortcode            |          ico           | shortcode |     |
-| -------- | :----------------------------: | -------------------- | :--------------------: | --------- | --- |
+| ico      |           shortcode            | ico                  |       shortcode        |
+| -------- | :----------------------------: | -------------------- | :--------------------: |
 | :iphone: |           `:iphone:`           | :calling:            |      `:calling:`       |
 | :phone:  | `:phone:` <br /> `:telephone:` | :telephone_receiver: | `:telephone_receiver:` |
 | :pager:  |           `:pager:`            | :fax:                |        `:fax:`         |
 
 #### Computer
 
-|                  |        ico         | shortcode          |         ico          | shortcode |     |
-| ---------------- | :----------------: | ------------------ | :------------------: | --------- | --- |
+| ico              |     shortcode      | ico                |      shortcode       |
+| ---------------- | :----------------: | ------------------ | :------------------: |
 | :battery:        |    `:battery:`     | :electric_plug:    |  `:electric_plug:`   |
 | :computer:       |    `:computer:`    | :desktop_computer: | `:desktop_computer:` |
 | :printer:        |    `:printer:`     | :keyboard:         |     `:keyboard:`     |
@@ -1294,8 +1294,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Light & Video
 
-|                   |                  ico                   | shortcode      |       ico        | shortcode |     |
-| ----------------- | :------------------------------------: | -------------- | :--------------: | --------- | --- |
+| ico               |               shortcode                | ico            |    shortcode     |
+| ----------------- | :------------------------------------: | -------------- | :--------------: |
 | :movie_camera:    |            `:movie_camera:`            | :film_strip:   |  `:film_strip:`  |
 | :film_projector:  |           `:film_projector:`           | :clapper:      |   `:clapper:`    |
 | :tv:              |                 `:tv:`                 | :camera:       |    `:camera:`    |
@@ -1307,8 +1307,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Book Paper
 
-|                                  |                ico                 | shortcode        |        ico         | shortcode |     |
-| -------------------------------- | :--------------------------------: | ---------------- | :----------------: | --------- | --- |
+| ico                              |             shortcode              | ico              |     shortcode      |
+| -------------------------------- | :--------------------------------: | ---------------- | :----------------: |
 | :notebook_with_decorative_cover: | `:notebook_with_decorative_cover:` | :closed_book:    |  `:closed_book:`   |
 | :book:                           |   `:book:` <br /> `:open_book:`    | :green_book:     |   `:green_book:`   |
 | :blue_book:                      |           `:blue_book:`            | :orange_book:    |  `:orange_book:`   |
@@ -1321,8 +1321,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Money
 
-|                    |         ico          | shortcode     |       ico       | shortcode |     |
-| ------------------ | :------------------: | ------------- | :-------------: | --------- | --- |
+| ico                |      shortcode       | ico           |    shortcode    |
+| ------------------ | :------------------: | ------------- | :-------------: |
 | :moneybag:         |     `:moneybag:`     | :coin:        |    `:coin:`     |
 | :yen:              |       `:yen:`        | :dollar:      |   `:dollar:`    |
 | :euro:             |       `:euro:`       | :pound:       |    `:pound:`    |
@@ -1331,8 +1331,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Mail
 
-|                        |           ico            | shortcode             |             ico             | shortcode |     |
-| ---------------------- | :----------------------: | --------------------- | :-------------------------: | --------- | --- |
+| ico                    |        shortcode         | ico                   |          shortcode          |
+| ---------------------- | :----------------------: | --------------------- | :-------------------------: |
 | :envelope:             |       `:envelope:`       | :e-mail:              | `:e-mail:` <br /> `:email:` |
 | :incoming_envelope:    |  `:incoming_envelope:`   | :envelope_with_arrow: |   `:envelope_with_arrow:`   |
 | :outbox_tray:          |     `:outbox_tray:`      | :inbox_tray:          |       `:inbox_tray:`        |
@@ -1343,8 +1343,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Writing
 
-|                |            ico             | shortcode   |      ico      | shortcode |     |
-| -------------- | :------------------------: | ----------- | :-----------: | --------- | --- |
+| ico            |         shortcode          | ico         |   shortcode   |
+| -------------- | :------------------------: | ----------- | :-----------: |
 | :pencil2:      |        `:pencil2:`         | :black_nib: | `:black_nib:` |
 | :fountain_pen: |      `:fountain_pen:`      | :pen:       |    `:pen:`    |
 | :paintbrush:   |       `:paintbrush:`       | :crayon:    |  `:crayon:`   |
@@ -1352,8 +1352,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Office
 
-|                              |              ico               | shortcode                  |             ico              | shortcode |     |
-| ---------------------------- | :----------------------------: | -------------------------- | :--------------------------: | --------- | --- |
+| ico                          |           shortcode            | ico                        |          shortcode           |
+| ---------------------------- | :----------------------------: | -------------------------- | :--------------------------: |
 | :briefcase:                  |         `:briefcase:`          | :file_folder:              |       `:file_folder:`        |
 | :open_file_folder:           |      `:open_file_folder:`      | :card_index_dividers:      |   `:card_index_dividers:`    |
 | :date:                       |            `:date:`            | :calendar:                 |         `:calendar:`         |
@@ -1369,16 +1369,16 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Lock
 
-|                     |          ico          | shortcode              |           ico            | shortcode |     |
-| ------------------- | :-------------------: | ---------------------- | :----------------------: | --------- | --- |
+| ico                 |       shortcode       | ico                    |        shortcode         |
+| ------------------- | :-------------------: | ---------------------- | :----------------------: |
 | :lock:              |       `:lock:`        | :unlock:               |        `:unlock:`        |
 | :lock_with_ink_pen: | `:lock_with_ink_pen:` | :closed_lock_with_key: | `:closed_lock_with_key:` |
 | :key:               |        `:key:`        | :old_key:              |       `:old_key:`        |
 
 #### Tool
 
-|                     |          ico          | shortcode         |         ico         | shortcode |     |
-| ------------------- | :-------------------: | ----------------- | :-----------------: | --------- | --- |
+| ico                 |       shortcode       | ico               |      shortcode      |
+| ------------------- | :-------------------: | ----------------- | :-----------------: |
 | :hammer:            |      `:hammer:`       | :axe:             |       `:axe:`       |
 | :pick:              |       `:pick:`        | :hammer_and_pick: | `:hammer_and_pick:` |
 | :hammer_and_wrench: | `:hammer_and_wrench:` | :dagger:          |     `:dagger:`      |
@@ -1395,8 +1395,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Science
 
-|              |      ico       | shortcode   |      ico      | shortcode |     |
-| ------------ | :------------: | ----------- | :-----------: | --------- | --- |
+| ico          |   shortcode    | ico         |   shortcode   |
+| ------------ | :------------: | ----------- | :-----------: |
 | :alembic:    |  `:alembic:`   | :test_tube: | `:test_tube:` |
 | :petri_dish: | `:petri_dish:` | :dna:       |    `:dna:`    |
 | :microscope: | `:microscope:` | :telescope: | `:telescope:` |
@@ -1404,16 +1404,16 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Medical
 
-|               |       ico       | shortcode          |         ico          | shortcode |     |
-| ------------- | :-------------: | ------------------ | :------------------: | --------- | --- |
+| ico           |    shortcode    | ico                |      shortcode       |
+| ------------- | :-------------: | ------------------ | :------------------: |
 | :syringe:     |   `:syringe:`   | :drop_of_blood:    |  `:drop_of_blood:`   |
 | :pill:        |    `:pill:`     | :adhesive_bandage: | `:adhesive_bandage:` |
 | :stethoscope: | `:stethoscope:` |                    |                      |
 
 #### Household
 
-|                     |          ico          | shortcode        |        ico         | shortcode |     |
-| ------------------- | :-------------------: | ---------------- | :----------------: | --------- | --- |
+| ico                 |       shortcode       | ico              |     shortcode      |
+| ------------------- | :-------------------: | ---------------- | :----------------: |
 | :door:              |       `:door:`        | :elevator:       |    `:elevator:`    |
 | :mirror:            |      `:mirror:`       | :window:         |     `:window:`     |
 | :bed:               |        `:bed:`        | :couch_and_lamp: | `:couch_and_lamp:` |
@@ -1429,8 +1429,8 @@ https://github.com/ikatyang/emoji-cheat-sheet
 
 #### Other Object
 
-|                |       ico        | shortcode     |       ico       | shortcode |     |
-| -------------- | :--------------: | ------------- | :-------------: | --------- | --- |
+| ico            |    shortcode     | ico           |    shortcode    |
+| -------------- | :--------------: | ------------- | :-------------: |
 | :smoking:      |   `:smoking:`    | :coffin:      |   `:coffin:`    |
 | :headstone:    |  `:headstone:`   | :funeral_urn: | `:funeral_urn:` |
 | :nazar_amulet: | `:nazar_amulet:` | :moyai:       |    `:moyai:`    |
