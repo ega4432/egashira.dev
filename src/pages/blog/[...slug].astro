@@ -7,24 +7,27 @@ import BlogHead from "@components/BlogHead.astro";
 import TOC from "@components/TOC.astro"
 import "@styles/prism.css";
 import GoogleAdsense from "@components/GoogleAdsense.astro";
+import PrevNextLink from "@components/PrevNextLink.astro"
 
 export const getStaticPaths = async () => {
   const allBlogs = await getBlogs();
 
-  return allBlogs.map((blog) => ({
-    params: { slug: blog.id },
-    props: { blog }
-  }));
+  return allBlogs.map((blog, i) => {
+    const prev = i !== allBlogs.length -1 ? allBlogs[i+1] : undefined;
+    const next = i !== 0 ? allBlogs[i-1] : undefined;
+    return {
+      params: { slug: blog.id },
+      props: { blog, prev, next }
+    }
+  })
 };
 
-const { blog } = Astro.props;
+const { blog, prev, next } = Astro.props;
 
 if (!blog) {
   return Astro.redirect('/404');
 }
 const { Content, headings } = await render(blog);
-
-headings.filter((heading) => heading.depth <= 3)
 
 const description =
   blog.data.summary || blog.body?.slice(0, 30).replace(/\n/g, "") || "";
@@ -42,6 +45,7 @@ const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug ==
         tags={blog.data.tags}
       />
       <Content />
+      <PrevNextLink prev={prev} next={next} />
     </div>
     <aside class="hidden xl:col-span-3 xl:flex xl:flex-col xl:sticky xl:top-28 gap-y-6">
       {import.meta.env.CF_PAGES_BRANCH === "main" ? (
