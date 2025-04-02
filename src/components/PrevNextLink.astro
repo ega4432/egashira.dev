@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  prev: CollectionEntry<"blog"> | null;
+  next: CollectionEntry<"blog"> | null;
+}
+
+const { prev, next } = Astro.props;
+---
+
+<div class="grid grid-flow-col xl:col-span-10 gap-4">
+  {prev && (
+    <a href={prev.slug} class={`grid p-2 border border-gray-200 dark:border-gray-600 text-gray-600 hover:!text-gray-600 no-underline rounded ${!next && "col-span-2"}`}>
+      <span>{prev.data.title}</span>
+    </a>
+  )}
+  {next && (
+    <a href={next?.slug}>
+      <span >{next.data.title}</span>
+    </a>
+
+  )}
+</div>
