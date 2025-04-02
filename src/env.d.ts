@@ -9,6 +9,8 @@ interface ImportMetaEnv {
   readonly GTM_ID: GtmId;
   readonly AD_CLIENT: ADClient;
   readonly AD_SLOT: string;
+  readonly AD_BOTTOM_SLOT: string;
+  readonly AD_SIDE_SLOT: string;
 }
 
 interface ImportMeta {

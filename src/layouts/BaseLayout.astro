@@ -46,13 +46,13 @@ const adClient = import.meta.env.AD_CLIENT;
           <slot />
           <div class="mt-8">
             {import.meta.env.CF_PAGES_BRANCH == "main" ? (
-            <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_BUTTOM_SLOT} />
-          ) : (
-            <div class="h-[100px] p-6 w-full bg-red-200 text-center text-gray-600">
-              <span>Ad</span>
-            </div>
-          )}
-        </div>
+            <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_BOTTOM_SLOT} />
+            ) : (
+              <div class="h-[100px] p-6 w-full bg-red-200 text-center text-gray-600">
+                <span>Ad</span>
+              </div>
+            )}
+          </div>
         </div>
       </main>
       <Footer />
