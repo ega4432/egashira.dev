@@ -1,6 +1,4 @@
 ---
-import type { CollectionEntry } from "astro:content";
-
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getBlogs, getTags } from "@lib/blog";
 import { kebabCase } from "@lib/utils/kebabCase";
@@ -13,7 +11,7 @@ export const getStaticPaths = async () => {
 
   return tags.map((tag) => {
     const blogs = allBlogs.filter((blog) =>
-      blog.data.tags.map((t) => t).includes(tag)
+      blog.data.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase())
     );
 
     return {
@@ -23,10 +21,7 @@ export const getStaticPaths = async () => {
   });
 };
 
-const { blogs, tag } = Astro.props as {
-  blogs: CollectionEntry<"blog">[];
-  tag: string;
-};
+const { blogs, tag } = Astro.props;
 
 const pageTitle = `「${tag}」の記事一覧`;
 ---
