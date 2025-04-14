@@ -15,7 +15,7 @@ export const GET = async (context) => {
     xmlns: { atom: "http://www.w3.org/2005/Atom" },
     site,
     items: blogs.map((blog) => ({
-      link: `${site}/${blog.slug}`,
+      link: `${site}/${blog.id}`,
       description: blog.data.summary || undefined,
       title: blog.data.title,
       pubDate: new Date(blog.data.date),

@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 
 import { getBlogs } from "@lib/blog";
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
@@ -12,18 +12,22 @@ export const getStaticPaths = async () => {
   const allBlogs = await getBlogs();
 
   return allBlogs.map((blog) => ({
-    params: { slug: blog.slug },
+    params: { slug: blog.id },
     props: { blog }
   }));
 };
 
 const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
-const { Content, headings } = await blog.render();
+
+if (!blog) {
+  return Astro.redirect('/404')
+}
+const { Content, headings } = await render(blog);
 
 headings.filter((heading) => heading.depth <= 3)
 
 const description =
-  blog.data.summary || blog.body.slice(0, 30).replace(/\n/g, "");
+  blog.data.summary || blog.body?.slice(0, 30).replace(/\n/g, "") || "";
 
 const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug === "footnote-label" && heading.text === "Footnotes"));
 ---
