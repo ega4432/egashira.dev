@@ -5,8 +5,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import "@styles/prism.css";
 
 const privacy = await getEntry("page", "privacy");
-const { Content } = await render(privacy);
+if (!privacy) {
+  return Astro.redirect('/404')
+}
 
+const { Content } = await render(privacy);
 const pageTitle = "プライバシーポリシー";
 ---
 

@@ -6,6 +6,10 @@ import Image from "@components/Image.astro";
 import "@styles/prism.css";
 
 const me = await getEntry("page", "me");
+if (!me) {
+  return Astro.redirect('/404')
+}
+
 const { Content } = await render(me);
 const pageTitle = "このサイトについて";
 ---

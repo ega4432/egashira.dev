@@ -9,15 +9,19 @@ export const getBlogs = async (): Promise<CollectionEntry<"blog">[]> => {
 
 export const getTags = async () => {
   const tagsCount: Record<string, number> = {};
+  const normalizedTagsMap: Record<string, string> = {};
   const blogs = await getBlogs();
   if (blogs.length) {
     for (const blog of blogs) {
       const tags = blog.data.tags;
 
       for (const tag of tags) {
-        if (tag in tagsCount) {
-          tagsCount[tag] += 1;
+        const normalizedTag = tag.toLowerCase();
+        if (normalizedTag in normalizedTagsMap) {
+          const originalTag = normalizedTagsMap[normalizedTag];
+          tagsCount[originalTag] += 1;
         } else {
+          normalizedTagsMap[normalizedTag] = tag;
           tagsCount[tag] = 1;
         }
       }
