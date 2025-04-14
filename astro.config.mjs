@@ -14,6 +14,7 @@ import icon from "astro-icon";
 import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
 import generateOgImage from "./src/integrations/generateOgImages";
 import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
+import rehypeMermaid from "rehype-mermaid";
 
 let site = "http://localhost:3000";
 if (process.env.CF_PAGES_BRANCH === "main") {
@@ -60,7 +61,10 @@ export default defineConfig({
     icon()
   ],
   markdown: {
-    syntaxHighlight: "prism",
+    syntaxHighlight: {
+      type: "prism",
+      excludeLangs: ["mermaid", "math"]
+    },
     remarkPlugins: [emoji, remarkMath, remarkCodeTitles, remarkLinkCard],
     rehypePlugins: [
       rehypeSlug,
@@ -76,7 +80,8 @@ export default defineConfig({
         {
           ignoreMissing: true
         }
-      ]
+      ],
+      rehypeMermaid
     ]
   },
   site,
