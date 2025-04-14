@@ -1,5 +1,5 @@
 ---
-import { render, type CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 import { getBlogs } from "@lib/blog";
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
@@ -17,10 +17,10 @@ export const getStaticPaths = async () => {
   }));
 };
 
-const { blog } = Astro.props as { blog: CollectionEntry<"blog"> };
+const { blog } = Astro.props;
 
 if (!blog) {
-  return Astro.redirect('/404')
+  return Astro.redirect('/404');
 }
 const { Content, headings } = await render(blog);
 
