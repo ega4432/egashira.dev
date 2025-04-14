@@ -16,7 +16,7 @@
     "prettier:fix": "prettier --write .",
     "lint": "lint-staged --config .lintstagedrc.js",
     "archive-images": "node ./scripts/archive-images.mjs",
-    "new": "node --loader ts-node/esm ./scripts/new-post.ts"
+    "new": "npx tsx ./scripts/new-post.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
