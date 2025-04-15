@@ -1,6 +1,6 @@
 ---
 createdAt: "2025-03-29T07:36:00.000Z"
-updatedAt: "2025-04-01T04:48:00.000Z"
+updatedAt: "2025-04-15T13:35:00.000Z"
 summary: "CKS に合格したので、受験に至るまでの学習内容や受験してみての感想などをまとめる。"
 tags:
   - "k8s"
@@ -17,6 +17,14 @@ title: "Certified Kubernetes Security Specialist に合格した"
 タイトルの通り Certified Kubenetes Security Specialist 通称 CKS に合格したので、受験に至るまでの学習内容や受験してみての感想などをまとめる。
 
 ちなみに合格したのは 2025 年 2 月中旬になるので、この記事を書いている時点で既に 1 ヶ月くらい前のことになってしまった点はご容赦いただきたい。
+
+## TL;DR
+
+コンテナセキュリティの知識を確認するためにはぴったりの資格試験だった。むしろ現時点では唯一無二かも。
+
+今年ホットな AI Agent のコンテキストで言うと、マシン上で勝手にコマンドを叩き始める奴らも登場した。
+
+そんな時に脚光を浴びるのがコンテナセキュリティとも言われている[^1]ので興味のある方はチャレンジしてみてはどうだろうか。
 
 ## 試験の概要
 
@@ -119,3 +127,5 @@ CKS を受験した感想などをまとめておく。
 [https://killercoda.com/killer-shell-cka](https://killercoda.com/killer-shell-cka)
 
 [https://killer.sh/cks](https://killer.sh/cks)
+
+[^1]: この記事で述べられている。[https://zenn.dev/mizchi/articles/all-in-on-cline](https://zenn.dev/mizchi/articles/all-in-on-cline)
