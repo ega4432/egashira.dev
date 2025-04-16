@@ -9,6 +9,7 @@ import tailwind from "@astrojs/tailwind";
 import rehypePrismPlus from "rehype-prism-plus";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+import icon from "astro-icon";
 
 import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
 import generateOgImage from "./src/integrations/generateOgImages";
@@ -55,7 +56,8 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     partytown(partytownConfig),
-    generateOgImage()
+    generateOgImage(),
+    icon()
   ],
   markdown: {
     syntaxHighlight: "prism",
