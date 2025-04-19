@@ -64,7 +64,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "satori": "^0.10.11",
+    "satori": "^0.12.2",
     "sharp": "^0.33.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
