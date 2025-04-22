@@ -81,7 +81,20 @@ export default defineConfig({
           ignoreMissing: true
         }
       ],
-      rehypeMermaid
+      [
+        rehypeMermaid,
+        {
+          strategy: "img-svg",
+          dark: {
+            theme: "dark",
+            fontFamily: "sans-serif"
+          },
+          mermaidConfig: {
+            darkMode: true,
+            fontFamily: "sans-serif"
+          }
+        }
+      ]
     ]
   },
   site,
