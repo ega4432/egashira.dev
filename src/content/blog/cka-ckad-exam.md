@@ -51,9 +51,9 @@ https://training.linuxfoundation.org/blog/update-on-certification-exam-proctorin
 
 基本的には以下の Udemy 講座をベースに対策した。他にも合格体験記事を調べるとだいたいの方がこちらを購入されているようだった。内容としては Lab 環境を利用したハンズオン形式かつ最後には本番を想定した Mock Exam がいくつか用意されている。これをやり込めば知識として基本的なことは習得できるので、個人的には現段階で最も優秀な教材だと思う。
 
-https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/
+https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-administrator-with-practice-tests%2F
 
-https://www.udemy.com/course/certified-kubernetes-application-developer/
+https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-application-developer%2F
 
 ### 書籍「Kubernetes 完全ガイド 第２版」
 

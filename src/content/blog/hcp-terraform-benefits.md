@@ -36,8 +36,8 @@ https://developer.hashicorp.com/terraform/cloud-docs
 ちなみに各提供形態の名称については以下の通りである。
 
 - CE 版: Terraform
-  - 旧名称だと Terraform Cloud と呼ばれている時期もあったので、こちらが馴染みのある人も多いかも知れない。
 - SaaS 版: HCP Terraform
+  - 旧名称だと Terraform Cloud と呼ばれている時期もあったので、こちらが馴染みのある人も多いかも知れない。
 - オンプレ版: Terraform Enterprise
 
 ## HCP Terraform のメリット

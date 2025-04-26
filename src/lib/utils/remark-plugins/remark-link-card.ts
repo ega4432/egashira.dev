@@ -24,6 +24,7 @@ const amazonMeta = {
 };
 const faviconApiUrl = "https://www.google.com/s2/favicons?domain=";
 const ignoreHosts = ["hub.docker.com", "ffmpeg.org"];
+const affiliateLinks = ["click.linksynergy.com"];
 
 const formatOgImageUrl = (
   ogImage: string | ImageObject | ImageObject[],
@@ -53,6 +54,12 @@ const fetchOpenGraph = async (url: string): Promise<LinkCardData> => {
     url
   };
 
+  if (affiliateLinks.includes(parsedUrl.hostname)) {
+    defaultOgObject.faviconSrc = `${faviconApiUrl}www.udemy.com`;
+    const murl = parsedUrl.searchParams.get("murl") || parsedUrl.hostname;
+    defaultOgObject.displayUrl = decodeURI(murl);
+  }
+
   // Note: そもそも OGP がない場合
   if (ignoreHosts.includes(parsedUrl.hostname)) return defaultOgObject;
 
@@ -77,12 +84,24 @@ const fetchOpenGraph = async (url: string): Promise<LinkCardData> => {
         (result.ogTitle && encode(result.ogTitle)) || parsedUrl.href;
       const description =
         (result.ogDescription && encode(result.ogDescription)) || "";
-      const faviconSrc = `${faviconApiUrl}${parsedUrl.hostname}`;
+      const isAffiliateLink = affiliateLinks.includes(parsedUrl.hostname);
+      const murlParam = isAffiliateLink
+        ? parsedUrl.searchParams.get("murl")
+        : null;
+
+      const faviconSrc =
+        isAffiliateLink && murlParam
+          ? `${faviconApiUrl}${murlParam}`
+          : `${faviconApiUrl}${parsedUrl.hostname}`;
 
       const ogImageSrc = result.ogImage
         ? formatOgImageUrl(result.ogImage, parsedUrl.origin)
         : "";
-      const displayUrl = decodeURI(parsedUrl.hostname);
+      const displayUrl =
+        isAffiliateLink && murlParam
+          ? decodeURI(new URL(murlParam).hostname)
+          : decodeURI(parsedUrl.hostname);
+
       return { title, description, faviconSrc, ogImageSrc, displayUrl, url };
     })
     .catch((e) => {
