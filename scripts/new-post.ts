@@ -35,7 +35,7 @@ const generateFrontmatter = ({
   return `---
 title: "${title}"
 date: "${date}"
-tags: [${tags}]
+tags: [${tags.join(", ")}]
 draft: ${isDraft}
 summary: "${summary}"
 ---
@@ -82,7 +82,7 @@ summary: "${summary}"
     tags: tags
       .split(",")
       .filter((tag) => tag !== "")
-      .map((tag) => `"${tag.trim()}"`),
+      .map((tag) => tag.trim()),
     isDraft,
     summary
   });

@@ -156,6 +156,4 @@ https://future-architect.github.io/articles/20230828a/
 
 https://qiita.com/yoshi_yast/items/04d52eda57bd4d58e208
 
-https://be-outliers.com/it/scrayping-mf-by-python-1/
-
 [^1]: waitForNavigation - ref. https://playwright.dev/docs/api/class-frame#frame-wait-for-navigation
