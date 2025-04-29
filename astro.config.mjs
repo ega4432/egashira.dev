@@ -63,7 +63,7 @@ export default defineConfig({
   markdown: {
     syntaxHighlight: {
       type: "prism",
-      excludeLangs: ["mermaid", "math"]
+      excludeLangs: ["mermaid"]
     },
     remarkPlugins: [emoji, remarkMath, remarkCodeTitles, remarkLinkCard],
     rehypePlugins: [
@@ -87,10 +87,6 @@ export default defineConfig({
           strategy: "img-svg",
           dark: {
             theme: "dark",
-            fontFamily: "sans-serif"
-          },
-          mermaidConfig: {
-            darkMode: true,
             fontFamily: "sans-serif"
           }
         }

@@ -82,7 +82,7 @@ summary: "${summary}"
     tags: tags
       .split(",")
       .filter((tag) => tag !== "")
-      .map((tag) => tag.trim()),
+      .map((tag) => `"${tag.trim()}"`),
     isDraft,
     summary
   });

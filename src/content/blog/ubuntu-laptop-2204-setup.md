@@ -176,6 +176,4 @@ Hi ega4432! You've successfully authenticated, but GitHub does not provide shell
 
 [https://qiita.com/outou_hakutou/items/ce06cb3c8c355d5fd87c](https://qiita.com/outou_hakutou/items/ce06cb3c8c355d5fd87c)
 
-[https://sicklylife.jp/ubuntu/2004/settings.html](https://sicklylife.jp/ubuntu/2004/settings.html)
-
 [https://zenn.dev/sprout2000/articles/8ea4a77d81583a](https://zenn.dev/sprout2000/articles/8ea4a77d81583a)

@@ -39,7 +39,9 @@ canonicalUrl: https://egashira.dev/blog/dummy-entry
 これは 2 つ目の段落の 1 行目です。
 これは 2 つ目の段落の 2 行目です。
 
-## 順序無しリスト
+## リスト
+
+### 順序無しリスト
 
 これは順序無しリストです。
 
@@ -51,7 +53,7 @@ canonicalUrl: https://egashira.dev/blog/dummy-entry
     - 2-2-2
 - 3
 
-## 順序付きリスト
+### 順序付きリスト
 
 これは順序付きリストです。
 
@@ -63,7 +65,7 @@ canonicalUrl: https://egashira.dev/blog/dummy-entry
       2. 2-2-2
 3. 3
 
-## チェックリスト
+### チェックリスト
 
 これはチェックリストです。
 
@@ -81,14 +83,13 @@ canonicalUrl: https://egashira.dev/blog/dummy-entry
 
 ## コードブロック
 
-これはコードブロックです。
+### ベーシック
 
 ```
 $ rm -rf /*
 ```
 
 ```go
-// シンタックスハイライト
 package main
 
 import "fmt"
@@ -99,29 +100,137 @@ func main() {
 }
 ```
 
-```go {6, 9-10}
-// ラインハイライト
+### ファイル名表示
+
+```js:hello.js
+console.log("Hello markdown")
+```
+
+### diff
+
+```diff
 package main
 
 import "fmt"
 
-var world string
++var world string
 
 func main() {
-    world = "world"
-    fmt.Printf("Hello %s\n", world)
++   world = "world"
++   fmt.Printf("Hello %s\n", world)
 }
 ```
 
-```js:hello.js
-// ファイル名指定
-console.log("Hello markdown")
+### (WIP)diff & シンタックスハイライト
+
+```diff:main.js
+-console.log('hallo')
++console.log('hello')
 ```
 
-```js:行数表示 showLineNumbers
-console.log("Line 1")
-console.log("Line 2")
-console.log("Line 3")
+### (WIP)行数表示
+
+```js showLineNumbers
+console.log("Line 1");
+console.log("Line 2");
+console.log("Line 3");
+```
+
+### Mermaid 記法
+
+[公式](https://mermaid.js.org/intro/)からサンプルを取得。
+
+#### フローチャート
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+#### シーケンスダイアグラム
+
+```mermaid
+sequenceDiagram
+Alice->>John: Hello John, how are you?
+loop Healthcheck
+    John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
+```
+
+#### ガントダイアグラム
+
+```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
+
+#### クラスダイアグラム
+
+```mermaid
+classDiagram
+Class01 <|-- AveryLongClass : Cool
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 --> C2 : Where am i?
+Class09 --* C3
+Class09 --|> Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+Class08 <--> C2: Cool label
+```
+
+#### Git ダイアグラム
+
+```mermaid
+    gitGraph
+       commit
+       commit
+       branch develop
+       commit
+       commit
+       commit
+       checkout main
+       commit
+       commit
+```
+
+#### XY チャート
+
+```mermaid
+xychart-beta
+    title "Sales Revenue"
+    x-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+    y-axis "Revenue (in $)" 4000 --> 11000
+    bar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+    line [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]
+```
+
+#### 円グラフ
+
+```mermaid
+pie
+"Dogs" : 386
+"Cats" : 85
+"Rats" : 15
 ```
 
 ## テーブル
@@ -141,7 +250,7 @@ console.log("Line 3")
 
 これは [内部リンク](#リンク) です。
 
-これは [Google](http://www.google.com) のリンクです。
+これは [Google](https://www.google.com) のリンクです。
 
 これはリンクカードです。
 
@@ -149,7 +258,7 @@ https://github.com/ega4432
 
 https://egashira.dev
 
-[未実装] これは Twitter のリンクです。
+[WIP] これは Twitter のリンクです。
 https://twitter.com/ega4432/status/1504042310576730112
 
 ## コード
@@ -195,8 +304,8 @@ https://twitter.com/ega4432/status/1504042310576730112
 
 これは数式です。
 
-$$
-\mathbf{Y} = \left[\begin{array}
+```math
+{Y} = \left[\begin{array}
   {c}
   y_1 \\
   . \\
@@ -204,7 +313,7 @@ $$
   . \\
   y_n
 \end{array}\right]
-$$
+```
 
 ## 脚注
 
@@ -214,7 +323,7 @@ $$
 
 これは絵文字 :yum: です :v:
 
-以下の emoji-cheat-sheet から取ってきた。
+以下の emoji-cheat-sheet からサンプルを取得。
 
 https://github.com/ikatyang/emoji-cheat-sheet
 
