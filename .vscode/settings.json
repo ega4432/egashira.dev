@@ -4,6 +4,13 @@
     "source.fixAll.eslint": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "cSpell.words": ["adsbygoogle", "egashira", "frontmatter", "partytown"],
+  "cSpell.words": [
+    "adsbygoogle",
+    "Controlplane",
+    "egashira",
+    "frontmatter",
+    "kubeadm",
+    "partytown"
+  ],
   "eslint.useFlatConfig": true
 }

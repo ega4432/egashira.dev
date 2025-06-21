@@ -120,6 +120,12 @@ const adClient = import.meta.env.AD_CLIENT;
       .prose th, td {
         @apply py-2 border border-gray-300 dark:border-gray-700;
       }
+      .prose th, td:first-of-type {
+        @apply pl-2;
+      }
+      .prose th, td:last-of-type {
+        @apply pr-2;
+      }
       img[id^="mermaid-"] {
         @apply mx-auto;
       }
