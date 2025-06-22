@@ -237,14 +237,14 @@ pie
 
 これはテーブルです。
 
-| Left align | Right align | Center align |
-| :--------- | ----------: | :----------: |
-| This       |        This |     This     |
-| column     |      column |    column    |
-| will       |        will |     will     |
-| be         |          be |      be      |
-| left       |       right |    center    |
-| aligned    |     aligned |   aligned    |
+| Normal  | Left align | Right align | Center align |
+| ------- | :--------- | ----------: | :----------: |
+| This    | This       |        This |     This     |
+| column  | column     |      column |    column    |
+| will    | will       |        will |     will     |
+| be      | be         |          be |      be      |
+| normal  | left       |       right |    center    |
+| aligned | aligned    |     aligned |   aligned    |
 
 ## リンク
 
