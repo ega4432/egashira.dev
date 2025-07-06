@@ -3,7 +3,7 @@ title: "Terraform Associate に合格した"
 date: "2025-07-06"
 tags: ["Terraform", "Certification", "Hashicorp", "Tips"]
 draft: false
-summary: "Terraform Associate の受験した際の学習方法や受験体験、感想などをまとめる。"
+summary: "Terraform Associate を受験した際の学習方法や受験体験、感想などをまとめる。"
 ---
 
 ## はじめに
