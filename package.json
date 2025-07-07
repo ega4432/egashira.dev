@@ -63,7 +63,7 @@
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "satori": "^0.12.2",
     "sharp": "^0.34.1",
     "ts-node": "^10.9.2",
