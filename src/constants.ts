@@ -31,8 +31,8 @@ export const footerLinks: Link[] = [
   { href: "/feed.xml", title: "フィード" },
   { href: "/sitemap-index.xml", title: "サイトマップ" },
   { href: `https://github.com/${me}`, title: "GitHub" },
-  { href: `https://twitter.com/${me}`, title: "X" },
-  { href: `https://bsky.app/profile/${me}.bsky.social`, title: "Bluesky" }
+  { href: `https://twitter.com/${me}`, title: "X" }
+  // { href: `https://bsky.app/profile/${me}.bsky.social`, title: "Bluesky" }
 ];
 
 export const siteMeta: SiteMeta = {
