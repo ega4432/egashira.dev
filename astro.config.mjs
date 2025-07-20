@@ -16,7 +16,7 @@ import generateOgImage from "./src/integrations/generateOgImages";
 import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
 import rehypeMermaid from "rehype-mermaid";
 
-let site = "http://localhost:3000";
+let site = "http://localhost:4321";
 if (process.env.CF_PAGES_BRANCH === "main") {
   site = "https://egashira.dev";
 } else if (process.env.CF_PAGES_URL) {
