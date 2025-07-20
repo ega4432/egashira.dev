@@ -1,5 +1,5 @@
 ---
-title: "AI クローラー向けに LLMs.txt を導入した"
+title: "AI 時代のサイト最適化のため LLMs.txt を導入した"
 date: "2025-07-20"
 tags: ["AI", "LLM", "Astro"]
 draft: false
@@ -82,6 +82,10 @@ https://github.com/ega4432/egashira.dev/pull/522
 LLMs.txt の種類としては、`llms.txt`, `llms-full.txt` と 2 パターンがあるらしいが、今回は前者だけ対応した。
 
 LLM がインターネット上から様々な情報を取得する世の中になった今、LLM フレンドリーな Web サイト構築が求められているかもしれない。
+
+完成した LLMs.txt ↓
+
+https://egashira.dev/llms.txt
 
 ## 参考
 
