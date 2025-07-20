@@ -31,14 +31,14 @@ export const footerLinks: Link[] = [
   { href: "/feed.xml", title: "フィード" },
   { href: "/sitemap-index.xml", title: "サイトマップ" },
   { href: `https://github.com/${me}`, title: "GitHub" },
-  { href: `https://twitter.com/${me}`, title: "X" }
+  { href: `https://twitter.com/${me}`, title: "X(Twitter)" }
   // { href: `https://bsky.app/profile/${me}.bsky.social`, title: "Bluesky" }
 ];
 
 export const siteMeta: SiteMeta = {
   title: "egashira.dev",
   author: me,
-  description: "外資系企業で働く防衛大卒のソフトウェアエンジニア",
+  description: "外資系企業で働く防衛大卒のプリセールスエンジニア",
   language: "ja-jp",
   theme: "system", // system, dark or light
   siteUrl: "https://egashira.dev",
