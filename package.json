@@ -69,11 +69,5 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.1"
-  },
-  "packageManager": "npm@9.5.1",
-  "engines": {
-    "npm": ">=9.5.1",
-    "yarn": "use npm!",
-    "pnpm": "use npm!"
   }
 }
