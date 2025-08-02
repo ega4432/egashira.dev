@@ -5,16 +5,9 @@ import ogs from "open-graph-scraper";
 import type { Plugin } from "unified";
 import type { Html, Link, Text, Root } from "mdast";
 import type { ImageObject } from "open-graph-scraper/types";
-import amazon from "../../../../public/amazon.json";
 
-export interface LinkCardData {
-  title: string;
-  description: string;
-  faviconSrc: string;
-  ogImageSrc: string;
-  displayUrl: string;
-  url: string;
-}
+import amazon from "../../../../public/amazon.json";
+import { getOgData, setOgData, type LinkCardData } from "../../ogCache";
 
 const OWN_DOMAIN = "egashira.dev";
 const amazonMeta = {
@@ -44,8 +37,11 @@ const formatOgImageUrl = (
 };
 
 const fetchOpenGraph = async (url: string): Promise<LinkCardData> => {
+  const cachedData = (await getOgData(url)) as LinkCardData | null;
+  if (cachedData) return cachedData;
+
   let parsedUrl = new URL(url);
-  const defaultOgObject = {
+  const defaultOgObject: LinkCardData = {
     title: parsedUrl.href,
     description: "",
     faviconSrc: `${faviconApiUrl}${parsedUrl.hostname}`,
@@ -54,60 +50,55 @@ const fetchOpenGraph = async (url: string): Promise<LinkCardData> => {
     url
   };
 
-  if (affiliateLinks.includes(parsedUrl.hostname)) {
-    defaultOgObject.faviconSrc = `${faviconApiUrl}www.udemy.com`;
-    const murl = parsedUrl.searchParams.get("murl") || parsedUrl.hostname;
-    defaultOgObject.displayUrl = decodeURI(murl);
+  const isAffiliateLink = affiliateLinks.includes(parsedUrl.hostname);
+  const murlParam = isAffiliateLink ? parsedUrl.searchParams.get("murl") : null;
+  const targetUrl = murlParam || url;
+
+  if (ignoreHosts.includes(parsedUrl.hostname)) {
+    return defaultOgObject;
   }
 
-  // Note: そもそも OGP がない場合
-  if (ignoreHosts.includes(parsedUrl.hostname)) return defaultOgObject;
-
-  return ogs({
-    url,
-    // onlyGetOpenGraphInfo: true,
-    timeout: 10000
-    // fetchOptions: {
-    //   headers: {
-    //     "user-agent":
-    //       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'"
-    //   }
-    // }
-  })
-    .then((data) => {
-      if (data.error) return defaultOgObject;
-      const { result } = data;
-      if (result.requestUrl) {
-        parsedUrl = new URL(result.requestUrl);
-      }
-      const title =
-        (result.ogTitle && encode(result.ogTitle)) || parsedUrl.href;
-      const description =
-        (result.ogDescription && encode(result.ogDescription)) || "";
-      const isAffiliateLink = affiliateLinks.includes(parsedUrl.hostname);
-      const murlParam = isAffiliateLink
-        ? parsedUrl.searchParams.get("murl")
-        : null;
-
-      const faviconSrc =
-        isAffiliateLink && murlParam
-          ? `${faviconApiUrl}${murlParam}`
-          : `${faviconApiUrl}${parsedUrl.hostname}`;
-
-      const ogImageSrc = result.ogImage
-        ? formatOgImageUrl(result.ogImage, parsedUrl.origin)
-        : "";
-      const displayUrl =
-        isAffiliateLink && murlParam
-          ? decodeURI(new URL(murlParam).hostname)
-          : decodeURI(parsedUrl.hostname);
-
-      return { title, description, faviconSrc, ogImageSrc, displayUrl, url };
-    })
-    .catch((e) => {
-      console.log("failed to fetch og data: ", e.result.requestUrl);
-      return defaultOgObject;
+  try {
+    const data = await ogs({
+      url: targetUrl,
+      timeout: 10000
     });
+    if (data.error) {
+      return defaultOgObject;
+    }
+    const { result } = data;
+    if (result.requestUrl) {
+      parsedUrl = new URL(result.requestUrl);
+    }
+    const title = (result.ogTitle && encode(result.ogTitle)) || parsedUrl.href;
+    const description =
+      (result.ogDescription && encode(result.ogDescription)) || "";
+    const faviconSrc =
+      isAffiliateLink && murlParam
+        ? `${faviconApiUrl}${murlParam}`
+        : `${faviconApiUrl}${parsedUrl.hostname}`;
+    const ogImageSrc = result.ogImage
+      ? formatOgImageUrl(result.ogImage, parsedUrl.origin)
+      : "";
+    const displayUrl =
+      isAffiliateLink && murlParam
+        ? decodeURI(new URL(murlParam).hostname)
+        : decodeURI(parsedUrl.hostname);
+    const finalData = {
+      title,
+      description,
+      faviconSrc,
+      ogImageSrc,
+      displayUrl,
+      url
+    };
+    await setOgData(url, finalData);
+    return finalData;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (e: any) {
+    console.log("failed to fetch og data: ", e.result.requestUrl);
+    return defaultOgObject;
+  }
 };
 
 const isExternal = (url: string) => !url.includes(OWN_DOMAIN);
@@ -167,7 +158,7 @@ const remarkLinkCard: Plugin<[undefined], Root> = () => async (tree) => {
 
   const addTransformer = (url: string, index: number | undefined) => {
     let data: LinkCardData;
-    let isAmazonUrl: boolean;
+    let isAmazonUrl = false;
     transformers.push(async () => {
       if (url.startsWith(amazonMeta.URL)) {
         const item = amazon.find(
