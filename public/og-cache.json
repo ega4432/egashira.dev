@@ -3254,5 +3254,49 @@
       "displayUrl": "www.raspberrypi.com",
       "url": "https://www.raspberrypi.com/software/"
     }
+  },
+  "https://github.com/ollama/ollama": {
+    "timestamp": 1755309491717,
+    "data": {
+      "title": "GitHub - ollama/ollama: Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models.",
+      "description": "Get up and running with OpenAI gpt-oss, DeepSeek-R1, Gemma 3 and other models. - ollama/ollama",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/78ea53485fefc2966498196376440d25b0e59152b0a8f67b6a689fc3502d9842/ollama/ollama",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ollama/ollama"
+    }
+  },
+  "https://openai.com/ja-JP/index/introducing-gpt-oss/": {
+    "timestamp": 1755310109823,
+    "data": {
+      "title": "gpt-oss が登場",
+      "description": "オープンウェイトリーズニングモデルの限界を押し広げる gpt-oss-120b と gpt-oss-20b",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=openai.com",
+      "ogImageSrc": "https://images.ctfassets.net/kftzwdyauwt9/1qconCL35vLK9SMASUgpKl/b42ddf6889e3d04edc82d8e12408fcb0/OpenModels_LP_SEO_16x9.png?w=1600&h=900&fit=fill",
+      "displayUrl": "openai.com",
+      "url": "https://openai.com/ja-JP/index/introducing-gpt-oss/"
+    }
+  },
+  "https://ollama.com": {
+    "timestamp": 1755312371383,
+    "data": {
+      "title": "Ollama",
+      "description": "Get up and running with large language models.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=ollama.com",
+      "ogImageSrc": "https://ollama.com/public/og.png",
+      "displayUrl": "ollama.com",
+      "url": "https://ollama.com"
+    }
+  },
+  "https://github.com/openai/gpt-oss": {
+    "timestamp": 1755312378253,
+    "data": {
+      "title": "GitHub - openai/gpt-oss: gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI",
+      "description": "gpt-oss-120b and gpt-oss-20b are two open-weight language models by OpenAI - openai/gpt-oss",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/d72c4b504e408f6a04ba974a4adaa505bc3e03c6b5b82e1a62599a52e22991e7/openai/gpt-oss",
+      "displayUrl": "github.com",
+      "url": "https://github.com/openai/gpt-oss"
+    }
   }
 }
