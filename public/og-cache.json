@@ -3298,5 +3298,27 @@
       "displayUrl": "github.com",
       "url": "https://github.com/openai/gpt-oss"
     }
+  },
+  "https://hashicorp-certifications.zendesk.com/hc/en-us/articles/26234761626125-Exam-appointment-rules-and-requirements": {
+    "timestamp": 1755919137046,
+    "data": {
+      "title": "Exam appointment rules and requirements",
+      "description": "Your exam fees will be forfeited if you miss your appointment because you did not follow these rules and requirements.\nAccount requirements\nYour HashiCorp Cloud Engineer Certification Exam Portal i...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=hashicorp-certifications.zendesk.com",
+      "ogImageSrc": "https://hashicorp-certifications.zendesk.com/hc/theming_assets/01JN6R3V6BRBQR5W16YXSA52PK",
+      "displayUrl": "hashicorp-certifications.zendesk.com",
+      "url": "https://hashicorp-certifications.zendesk.com/hc/en-us/articles/26234761626125-Exam-appointment-rules-and-requirements"
+    }
+  },
+  "https://twitter.com/TwitterDev/status/1621026986784337922?s=20&t=QXnyUQgbx-7dPiJbRSm1xw": {
+    "timestamp": 1755919137590,
+    "data": {
+      "title": "https://twitter.com/TwitterDev/status/1621026986784337922?s=20&t=QXnyUQgbx-7dPiJbRSm1xw",
+      "description": "",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=twitter.com",
+      "ogImageSrc": "https://abs-0.twimg.com/emoji/v2/svg/26a0.svg",
+      "displayUrl": "twitter.com",
+      "url": "https://twitter.com/TwitterDev/status/1621026986784337922?s=20&t=QXnyUQgbx-7dPiJbRSm1xw"
+    }
   }
 }
