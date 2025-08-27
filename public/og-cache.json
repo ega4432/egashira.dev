@@ -3298,5 +3298,71 @@
       "displayUrl": "github.com",
       "url": "https://github.com/openai/gpt-oss"
     }
+  },
+  "http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html": {
+    "timestamp": 1756207128332,
+    "data": {
+      "title": "Module ngx_http_auth_basic_module",
+      "description": "",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=nginx.org",
+      "ogImageSrc": "",
+      "displayUrl": "nginx.org",
+      "url": "http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html"
+    }
+  },
+  "https://hashicorp-certifications.zendesk.com/hc/en-us/articles/26234761626125-Exam-appointment-rules-and-requirements": {
+    "timestamp": 1756207128482,
+    "data": {
+      "title": "Exam appointment rules and requirements",
+      "description": "Your exam fees will be forfeited if you miss your appointment because you did not follow these rules and requirements.\nAccount requirements\nYour HashiCorp Cloud Engineer Certification Exam Portal i...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=hashicorp-certifications.zendesk.com",
+      "ogImageSrc": "https://hashicorp-certifications.zendesk.com/hc/theming_assets/01JN6R3V6BRBQR5W16YXSA52PK",
+      "displayUrl": "hashicorp-certifications.zendesk.com",
+      "url": "https://hashicorp-certifications.zendesk.com/hc/en-us/articles/26234761626125-Exam-appointment-rules-and-requirements"
+    }
+  },
+  "https://twitter.com/TwitterDev/status/1621026986784337922?s=20&t=QXnyUQgbx-7dPiJbRSm1xw": {
+    "timestamp": 1756207129179,
+    "data": {
+      "title": "https://twitter.com/TwitterDev/status/1621026986784337922?s=20&t=QXnyUQgbx-7dPiJbRSm1xw",
+      "description": "",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=twitter.com",
+      "ogImageSrc": "https://abs-0.twimg.com/emoji/v2/svg/26a0.svg",
+      "displayUrl": "twitter.com",
+      "url": "https://twitter.com/TwitterDev/status/1621026986784337922?s=20&t=QXnyUQgbx-7dPiJbRSm1xw"
+    }
+  },
+  "https://zenn.dev/trustdock/articles/ff2c5282b00fe3": {
+    "timestamp": 1756207657419,
+    "data": {
+      "title": "パスワードマネージャへのクリックジャッキング攻撃に対して、いま私たちが出来ること",
+      "description": "",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=zenn.dev",
+      "ogImageSrc": "https://res.cloudinary.com/zenn/image/upload/s--MB_yOlBp--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2583%2591%25E3%2582%25B9%25E3%2583%25AF%25E3%2583%25BC%25E3%2583%2589%25E3%2583%259E%25E3%2583%258D%25E3%2583%25BC%25E3%2582%25B8%25E3%2583%25A3%25E3%2581%25B8%25E3%2581%25AE%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2583%25E3%2582%25AF%25E3%2582%25B8%25E3%2583%25A3%25E3%2583%2583%25E3%2582%25AD%25E3%2583%25B3%25E3%2582%25B0%25E6%2594%25BB%25E6%2592%2583%25E3%2581%25AB%25E5%25AF%25BE%25E3%2581%2597%25E3%2581%25A6%25E3%2580%2581%25E3%2581%2584%25E3%2581%25BE%25E7%25A7%2581%25E3%2581%259F%25E3%2581%25A1%25E3%2581%258C%25E5%2587%25BA%25E6%259D%25A5%25E3%2582%258B%25E3%2581%2593%25E3%2581%25A8%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:th0x0472%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzEzNzA5NTQzOWYuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:TRUSTDOCK%2520%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E3%2583%2596%25E3%2583%25AD%25E3%2582%25B0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyL2UzYzI4Njg4YjQuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png",
+      "displayUrl": "zenn.dev",
+      "url": "https://zenn.dev/trustdock/articles/ff2c5282b00fe3"
+    }
+  },
+  "https://support.1password.com/link-family/": {
+    "timestamp": 1756207894588,
+    "data": {
+      "title": "Get a free 1Password Families membership when you use 1Password Business | 1Password Support",
+      "description": "Learn how to redeem your free 1Password Families membership, so you can stay as safe at home as you are at work.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=support.1password.com",
+      "ogImageSrc": "https://support.1password.com/img/meta-og-image.png",
+      "displayUrl": "support.1password.com",
+      "url": "https://support.1password.com/link-family/"
+    }
+  },
+  "https://marektoth.com/blog/dom-based-extension-clickjacking/": {
+    "timestamp": 1756217887221,
+    "data": {
+      "title": "DOM-based Extension Clickjacking: Your Password Manager Data at Risk",
+      "description": "Security Researcher | Ethical Hacker | Web Application Security",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=marektoth.com",
+      "ogImageSrc": "https://marektoth.com/images/dombased-image.png",
+      "displayUrl": "marektoth.com",
+      "url": "https://marektoth.com/blog/dom-based-extension-clickjacking/"
+    }
   }
 }
