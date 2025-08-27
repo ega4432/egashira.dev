@@ -16,7 +16,7 @@ https://support.1password.com/link-Families/
 
 これにより、5 人までの家族を招待することができ、私だけでなく家族も一元化されたパスワード管理を享受できるようになった。
 
-https://amzn.to/4n2yaB8
+https://amzn.to/4g0mSuW
 
 ## 1Password Families プランのメリット
 
@@ -74,6 +74,6 @@ https://marektoth.com/blog/dom-based-extension-clickjacking/
 
 ## 参考
 
-https://amzn.to/4n2yaB8
+https://amzn.to/4g0mSuW
 
 https://amzn.to/3VlYCK8
