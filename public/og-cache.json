@@ -3299,6 +3299,50 @@
       "url": "https://github.com/openai/gpt-oss"
     }
   },
+  "https://github.com/DBmarlin/dbmarlin-docker": {
+    "timestamp": 1755949464418,
+    "data": {
+      "title": "GitHub - DBmarlin/dbmarlin-docker: DBmarlin agent running in Docker container",
+      "description": "DBmarlin agent running in Docker container. Contribute to DBmarlin/dbmarlin-docker development by creating an account on GitHub.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/6764865004ffe9b5298c17486c255155432559ed973a01975f00c388c696144e/DBmarlin/dbmarlin-docker",
+      "displayUrl": "github.com",
+      "url": "https://github.com/DBmarlin/dbmarlin-docker"
+    }
+  },
+  "https://youtu.be/0Bs1G2f8RGU?si=rut9FFB191Tg_pTq": {
+    "timestamp": 1755949475494,
+    "data": {
+      "title": "Integrating IBM Instana with DBmarlin for Database Insights",
+      "description": "Short demo showing the integration from IBM Instana to DBmarlin for deeper database visibility. See how to enable the integration and then walk-through the c...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=youtu.be",
+      "ogImageSrc": "https://i.ytimg.com/vi/0Bs1G2f8RGU/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBMgRyh_MA8=&rs=AOn4CLDshyNSKMvUXaXOrVeegKmi0NFkNg",
+      "displayUrl": "youtu.be",
+      "url": "https://youtu.be/0Bs1G2f8RGU?si=rut9FFB191Tg_pTq"
+    }
+  },
+  "https://www.instana.com": {
+    "timestamp": 1755949476228,
+    "data": {
+      "title": "IBM Instana Observability",
+      "description": "Harness the power of AI and automation to proactively solve issues across the application stack with IBM Instana Observability.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.instana.com",
+      "ogImageSrc": "https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/creative-assets/s-migr/ul/g/27/dc/dco-leadspace-instana.png/_jcr_content/renditions/cq5dam.thumbnail.1280.1280.png",
+      "displayUrl": "www.instana.com",
+      "url": "https://www.instana.com"
+    }
+  },
+  "https://www.dbmarlin.com/": {
+    "timestamp": 1757741628222,
+    "data": {
+      "title": "Home",
+      "description": "Get FREE AI driven database observability. Database performance and change monitoring with DBmarlin. Monitor MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, CockroachDB, IBM DB2, Informix, SAP HANA and SAP ASE easily.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.dbmarlin.com",
+      "ogImageSrc": "https://www.dbmarlin.com/images/dbmarlin.png",
+      "displayUrl": "www.dbmarlin.com",
+      "url": "https://www.dbmarlin.com/"
+    }
+  },
   "http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html": {
     "timestamp": 1756207128332,
     "data": {
