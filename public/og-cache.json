@@ -3331,5 +3331,16 @@
       "displayUrl": "www.instana.com",
       "url": "https://www.instana.com"
     }
+  },
+  "https://www.dbmarlin.com/": {
+    "timestamp": 1757741628222,
+    "data": {
+      "title": "Home",
+      "description": "Get FREE AI driven database observability. Database performance and change monitoring with DBmarlin. Monitor MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, CockroachDB, IBM DB2, Informix, SAP HANA and SAP ASE easily.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.dbmarlin.com",
+      "ogImageSrc": "https://www.dbmarlin.com/images/dbmarlin.png",
+      "displayUrl": "www.dbmarlin.com",
+      "url": "https://www.dbmarlin.com/"
+    }
   }
 }
