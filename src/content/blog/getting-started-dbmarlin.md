@@ -1,6 +1,6 @@
 ---
 title: "データベース可視化ツール DBmarlin を触ってみた"
-date: "2025-08-23"
+date: "2025-09-13"
 tags: ["DBmarlin", "Docker", "DB"]
 draft: false
 summary: "DBmarlin を Docker で立てて動かしたメモ"
