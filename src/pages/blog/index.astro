@@ -18,7 +18,11 @@ const allBlogs = await getBlogs();
           <>
             <BlogListItem blog={blog} />
             {(i+1) % 10 == 0 && (import.meta.env.CF_PAGES_BRANCH == "main" ?
-              <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_BOTTOM_SLOT} />
+              <GoogleAdsense
+                adClient={import.meta.env.AD_CLIENT}
+                adSlot={import.meta.env.AD_FEED_SLOT} adFormat="fluid"
+                adLayoutKey={import.meta.env.AD_LAYOUT_KEY}
+              />
               : (
                 <div class="p-6 py-12 w-full bg-red-200 text-center text-gray-600">
                   <span>Ad</span>

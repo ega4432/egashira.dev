@@ -6,19 +6,22 @@ export type ADClient = `ca-pub-${string}`;
 type Props = {
   adClient: ADClient;
   adSlot: string;
+  adFormat?: string;
+  adLayoutKey?: string;
   className?: string;
 };
 
-const { adClient, adSlot, className } = Astro.props;
+const { adClient, adSlot, adFormat = "auto", adLayoutKey, className } = Astro.props;
 ---
 
-<div class={clsx(className, "sm:max-h-[20vh]")}>
+<div class={clsx(className, "max-h-[20vh]")}>
   <ins
     class="adsbygoogle"
     style="display:block"
     data-ad-client={adClient}
     data-ad-slot={adSlot}
-    data-ad-format="auto"
+    data-ad-format={adFormat}
+    data-ad-layout-key={adLayoutKey}
     data-full-width-responsive="true"
   ></ins>
   <script is:inline>
