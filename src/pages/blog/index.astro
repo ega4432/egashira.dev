@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getBlogs } from "@lib/blog";
 import BlogListItem from "@components/BlogListItem.astro";
+import GoogleAdsense from "@components/GoogleAdsense.astro";
 
 const allBlogs = await getBlogs();
 ---
@@ -13,8 +14,17 @@ const allBlogs = await getBlogs();
   <div>
     <ol class="flex flex-col gap-8">
       {
-        allBlogs.map((blog) => (
-          <BlogListItem blog={blog} />
+        allBlogs.map((blog, i) => (
+          <>
+            <BlogListItem blog={blog} />
+            {(i+1) % 10 == 0 && (import.meta.env.CF_PAGES_BRANCH == "main" ?
+              <GoogleAdsense adClient={import.meta.env.AD_CLIENT} adSlot={import.meta.env.AD_BOTTOM_SLOT} /> : (
+              <div class="p-6 py-12 w-full bg-red-200 text-center text-gray-600">
+                <span>Ad</span>
+              </div>
+            )
+            )}
+          </>
         ))
       }
     </ol>
