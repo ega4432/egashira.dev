@@ -12,9 +12,9 @@ type Props = {
 const { adClient, adSlot, className } = Astro.props;
 ---
 
-<div>
+<div class={clsx(className, "sm:max-h-[20vh]")}>
   <ins
-    class={clsx(className, "sm:max-h-[20vh] adsbygoogle")}
+    class="adsbygoogle"
     style="display:block"
     data-ad-client={adClient}
     data-ad-slot={adSlot}

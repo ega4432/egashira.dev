@@ -10,7 +10,7 @@ summary: "1Password Families プランへアップグレードしたのでメリ
 
 先日、1Password Business を会社で導入している場合、個人アカウントとリンクすることで Families プランに無料でアップグレードできるということを知った。
 
-https://support.1password.com/link-Families/
+https://1password.com/jp/personal-family-security
 
 これまで、個人アカウントは individual プランを年単位でサブスクリプション契約していたため、会社のアカウントとリンクさせて、Families プランにグレードさせることにした。
 

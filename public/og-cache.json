@@ -3408,5 +3408,16 @@
       "displayUrl": "marektoth.com",
       "url": "https://marektoth.com/blog/dom-based-extension-clickjacking/"
     }
+  },
+  "https://1password.com/jp/personal-family-security": {
+    "timestamp": 1763798839840,
+    "data": {
+      "title": "家族や個人に最適なパスワードマネージャー | 1Password",
+      "description": "家族や個人向けの使いやすいパスワードマネージャー1Passwordは、家庭の安全を確保し、個人情報を保護するための最適な選択肢です。",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=1password.com",
+      "ogImageSrc": "https://images.ctfassets.net/2h488pz7kgfv/7f4UOAZf75TqyGFF3lQu4h/3d87cd588bf7f7076dd04dd6ae8a9d77/personal-family-security-open-graph-graphic-1200x630.jpg",
+      "displayUrl": "1password.com",
+      "url": "https://1password.com/jp/personal-family-security"
+    }
   }
 }
