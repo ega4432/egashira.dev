@@ -27,7 +27,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.13.2",
     "astro-icon": "^1.1.5",
-    "axios": "^1.11.0",
+    "axios": "^1.13.2",
     "github-slugger": "^2.0.0",
     "hastscript": "^9.0.1",
     "html-entities": "^2.6.0",
