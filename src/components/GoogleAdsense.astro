@@ -1,17 +1,20 @@
 ---
+import clsx from 'clsx'
+
 export type ADClient = `ca-pub-${string}`;
 
 type Props = {
   adClient: ADClient;
   adSlot: string;
+  className?: string;
 };
 
-const { adClient, adSlot } = Astro.props;
+const { adClient, adSlot, className } = Astro.props;
 ---
 
 <div>
   <ins
-    class="adsbygoogle"
+    class={clsx(className, "sm:max-h-[20vh] adsbygoogle")}
     style="display:block"
     data-ad-client={adClient}
     data-ad-slot={adSlot}
