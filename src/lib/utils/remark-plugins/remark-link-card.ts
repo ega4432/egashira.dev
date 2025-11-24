@@ -118,7 +118,7 @@ const createLinkCard = (
 
   const imageElement = data.ogImageSrc
     ? `<div class="h-[122px] w-[33.333%] max-w-[230px] md:w-full">
-    <img class="my-0 h-[100%] w-[100%] rounded-r-[0.275rem] ${isAmazonUrl ? "object-contain bg-gray-200 dark:bg-gray-700" : "object-cover"}" src="${data.ogImageSrc}" alt="${data.title}" />
+    <img class="my-0 h-[100%] w-[100%] rounded-r-[0.275rem] ${isAmazonUrl ? "object-contain bg-white" : "object-cover"}" src="${data.ogImageSrc}" alt="${data.title}" />
   </div>`.trim()
     : "";
 
