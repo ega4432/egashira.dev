@@ -8,9 +8,10 @@ import GoogleAdsense from "@components/GoogleAdsense.astro";
 type Props = {
   title: string;
   description: string;
+  noindex?: boolean;
 };
 
-const { title, description } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 const currentUrl = Astro.url;
 
 const gtmId = import.meta.env.GTM_ID;
@@ -34,7 +35,7 @@ const adClient = import.meta.env.AD_CLIENT;
         </>
       )
     }
-    <SEO title={title} description={description} currentUrl={currentUrl} />
+    <SEO title={title} description={description} currentUrl={currentUrl} noindex={noindex} />
   </head>
   <body
     class="antialised bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 lg:text-lg xl:text-xl 2xl:text-2xl"

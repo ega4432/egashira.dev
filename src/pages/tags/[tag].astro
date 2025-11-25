@@ -26,7 +26,7 @@ const { blogs, tag } = Astro.props;
 const pageTitle = `「${tag}」の記事一覧`;
 ---
 
-<BaseLayout title={pageTitle} description={pageTitle}>
+<BaseLayout title={pageTitle} description={pageTitle} noindex={true}>
   <div class="pb-20 pt-8">
     <p>{`${pageTitle}(${blogs.length}記事)`}</p>
   </div>

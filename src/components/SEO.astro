@@ -6,11 +6,12 @@ type Props = {
   title: string;
   description: string;
   currentUrl: URL;
+  noindex: boolean;
 };
 
 const generator = Astro.generator;
 const { twitter, socialBanner } = siteMeta;
-const { title, description, currentUrl } = Astro.props;
+const { title, description, currentUrl, noindex } = Astro.props;
 
 const currentPath = currentUrl.pathname.split(".")[0];
 const isBlogPage = currentPath.startsWith("/blog/") && currentPath !== "/blog/";
@@ -28,7 +29,7 @@ const twCardType = isBlogPage ? "summary_large_image" : "summary";
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={generator} />
-<meta name="robots" content="follow, index" />
+{noindex ? <meta name="robots" content="noindex" /> : <meta name="robots" content="follow, index" />}
 <link rel="sitemap" href="/sitemap-index.xml" />
 <!-- icon, Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
