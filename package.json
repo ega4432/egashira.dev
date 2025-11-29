@@ -25,7 +25,7 @@
     "@astrojs/tailwind": "^6.0.2",
     "@notionhq/client": "^4.0.2",
     "@tailwindcss/typography": "^0.5.16",
-    "astro": "^5.13.2",
+    "astro": "^5.16.2",
     "astro-icon": "^1.1.5",
     "axios": "^1.13.2",
     "clsx": "^2.1.1",
