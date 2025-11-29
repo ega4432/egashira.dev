@@ -3419,5 +3419,16 @@
       "displayUrl": "1password.com",
       "url": "https://1password.com/jp/personal-family-security"
     }
+  },
+  "https://www.google.com/intl/ja/chrome": {
+    "timestamp": 1764394196757,
+    "data": {
+      "title": "Google Chrome - Google の高速で安全なブラウザをダウンロード",
+      "description": "新しい Google Chrome で毎日をもっと快適に。Google の最先端技術を搭載し、さらにシンプル、安全、高速になった Chrome をダウンロードしてご活用ください。",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.google.com",
+      "ogImageSrc": "https://www.google.com/chrome/static/images/homepage/homepage-v2.png",
+      "displayUrl": "www.google.com",
+      "url": "https://www.google.com/intl/ja/chrome"
+    }
   }
 }

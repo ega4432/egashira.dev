@@ -55,7 +55,9 @@ const partytownConfig = {
 export default defineConfig({
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.startsWith(`${site}/tags`)
+    }),
     partytown(partytownConfig),
     generateOgImage(),
     icon()

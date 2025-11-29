@@ -93,13 +93,13 @@ dotfiles 化できていない、かつ普段から使用するソフトウェ�
 
 以下よりダウンロードする。
 
-[https://www.google.com/intl/ja/chrome](https://www.google.com/intl/ja/chrome/gsem/download/?brand=FDKM&gclid=CjwKCAjw1MajBhAcEiwAagW9MT00xS-RNiB14Il4xEMoM7Bwzq1FtBd_PaeBhrVa0xvg7lefQUkLMxoCmcQQAvD_BwE&gclsrc=aw.ds)[/gsem/download/](https://www.google.com/intl/ja/chrome/gsem/download/)
+https://www.google.com/intl/ja/chrome
 
 ### 1Password
 
 アプリは以下よりダウンロードする。
 
-[https://1password.com/jp/downloads/linux/](https://1password.com/jp/downloads/linux/)
+https://1password.com/jp/downloads/linux/
 
 CLI もよく使うので、apt より op CLI を インストールした。
 
@@ -115,7 +115,7 @@ $ op account add --signin
 
 以下から deb パッケージをダウンロードしてインストールした。
 
-[https://slack.com/intl/ja-jp/downloads/linux](https://slack.com/intl/ja-jp/downloads/linux)
+https://slack.com/intl/ja-jp/downloads/linux
 
 ```bash
 $ sudo apt install ~/Downloads/slack-desktop-{VERSION}-amd64.deb
@@ -137,7 +137,7 @@ https://www.nerdfonts.com/font-downloads
 
 SSH key の設定はこちらを参考にした。
 
-[https://zenn.dev/lovegraph/articles/529fe37caa3f19](https://zenn.dev/lovegraph/articles/529fe37caa3f19)
+https://zenn.dev/lovegraph/articles/529fe37caa3f19
 
 `~/.ssh/config` を以下の内容で作成する。
 
@@ -172,8 +172,10 @@ Hi ega4432! You've successfully authenticated, but GitHub does not provide shell
 
 ## 参考
 
-[https://lilaboc.work/archives/29007972.html](https://lilaboc.work/archives/29007972.html)
+https://qiita.com/outou_hakutou/items/ce06cb3c8c355d5fd87c
 
-[https://qiita.com/outou_hakutou/items/ce06cb3c8c355d5fd87c](https://qiita.com/outou_hakutou/items/ce06cb3c8c355d5fd87c)
+https://zenn.dev/sprout2000/articles/8ea4a77d81583a
 
-[https://zenn.dev/sprout2000/articles/8ea4a77d81583a](https://zenn.dev/sprout2000/articles/8ea4a77d81583a)
+https://amzn.to/3M4C8Mt
+
+https://amzn.to/3KdaHj1
