@@ -174,3 +174,7 @@ $ curl http://localhost:8080/aaaaaaaaaaaaaa
 http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files
 
 https://qiita.com/kaikusakari/items/cc5955a57b74d5937fd8
+
+https://amzn.to/48tf5lX
+
+https://amzn.to/48jfFmg

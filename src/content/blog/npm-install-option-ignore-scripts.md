@@ -10,8 +10,9 @@ summary: npm prepare などのスクリプトを意図して無視したい場�
 
 npm 管理化のアプリをコンテナ化する際、docker build でエラーとなったのでメモがてら原因と解決策をまとめる。以下の条件に当てはまる場合発生するっぽい。
 
-- npm prepare が npm-scripts に設定してある
+- npm prepare が npm-scripts（package.json 内の script 内）に設定してある
 - husky など上記の npm prepare で使用しているライブラリが devDependencies にあり Dockerfile では devDependencies をインストールしないようにしている
+  - `npm install --omit=dev` や `npm ci --omit=dev` になっている場合 devDependencies 内のライブラリはインストールされない
 
 実際のエラーはこんな感じ。
 
@@ -30,7 +31,7 @@ $ docker build -t react-app .
  => [3/6] COPY ./package*.json ./                                                                                     0.2s
  => ERROR [4/6] RUN npm install  --production                                                                         50.2s
 ------
- > [4/6] RUN npm install --production:
+ > [4/6] RUN npm install --omit=dev:
 #8 48.98
 #8 48.98 > sample-app@1.5.1 prepare
 #8 48.98 > husky install
@@ -49,7 +50,7 @@ $ docker build -t react-app .
 #8 48.99 npm ERR! A complete log of this run can be found in:
 #8 48.99 npm ERR!     /root/.npm/_logs/2022-08-04T14_28_44_690Z-debug-0.log
 ------
-executor failed running [/bin/sh -c npm install --production]: exit code: 127
+executor failed running [/bin/sh -c npm install --omit=dev]: exit code: 127
 ```
 
 ## 原因
@@ -80,7 +81,7 @@ package.json の一部を抜粋すると…
 ```dockerfile:Dockerfile showLineNumbers {3}
 ...
 
-RUN npm install --production
+RUN npm install --omit=dev
 
 ...
 ```
@@ -96,8 +97,8 @@ RUN npm install --production
 ```diff:Dockerfile showLineNumbers
 ...
 
-- RUN npm install --productio
-+ RUN npm install --production --ignore-scripts
+- RUN npm install --omit=dev
++ RUN npm install --omit=dev --ignore-scripts
 
 ...
 ```
@@ -117,7 +118,7 @@ $ docker build -t sample-app --no-cache .
  => => transferring context: 3.24MB                                                                                   7.9s
  => CACHED [2/6] WORKDIR /usr/local/app                                                                               0.0s
  => [3/6] COPY ./package*.json ./                                                                                     1.0s
- => [4/6] RUN npm install --production --ignore-scripts                                                              96.0s
+ => [4/6] RUN npm install --omit=dev --ignore-scripts                                                              96.0s
  => [5/6] COPY ./ ./                                                                                                 18.0s
  => [6/6] RUN npm run build                                                                                         225.7s
  => exporting to image                                                                                               32.4s
@@ -133,7 +134,7 @@ Use 'docker scan' to run Snyk tests against images to find vulnerabilities and l
 npm など日頃から使い慣れているツールだと思っていたが、こんなオプションがあるとは知らなかった！
 また、npm install の際に prepare が実行されるなどライフサイクルを知っていないと沼にハマりそうだなと思ったので、この記事をまとめてみた。
 
-また今回は例として prepare を取り上げたが、おそらく postinstall, prepublish などの npm-script も該当すると思う。npm-scripts については下記のドキュメントを見るとだいたい分かるので是非参考にして欲しい。
+また今回は例として prepare を取り上げたが、postinstall, prepublish などの npm-script も該当すると思う。npm-scripts については下記のドキュメントを見るとだいたい分かるので是非参考にして欲しい。
 
 https://docs.npmjs.com/cli/v8/using-npm/scripts
 
@@ -141,8 +142,8 @@ https://docs.npmjs.com/cli/v8/using-npm/scripts
 
 https://docs.npmjs.com/cli/v8/commands/npm-install
 
-https://docs.npmjs.com/cli/v8/using-npm/scripts
-
-https://github.com/npm/cli
-
 https://qiita.com/ndxbn/items/f0cd2b13a3268254f2aa#%E8%AA%BF%E6%9F%BB%E5%86%85%E5%AE%B9
+
+https://amzn.to/3K1na9t
+
+https://amzn.to/4pBqOWz

@@ -147,3 +147,9 @@ export const App = (): JSX.Element => {
 今回は、React + TypeScript でファイルのアップロード機能を実装してみた。おそらく API 側で受け取れるようになっているはず。
 
 ファイルの扱い方にも触れることができて勉強となった。あとはファイル選択部分の UI をカスタマイズしてみたり、受け取る側の API を実装したりしてみたい。
+
+## 参考
+
+https://amzn.to/3K1na9t
+
+https://amzn.to/4pBqOWz
