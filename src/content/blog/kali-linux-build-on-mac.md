@@ -1,7 +1,7 @@
 ---
 title: VirtualBox を使って macOS 上に Kali Linux をインストールしてみた
 date: "2022-05-08"
-tags: ["Kali", "Linux", "security"]
+tags: ["Kali", "Linux", "Security"]
 draft: false
 summary: macOS 上に Kali Linux 環境を構築したメモ
 images: []

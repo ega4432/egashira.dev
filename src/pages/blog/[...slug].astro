@@ -1,13 +1,14 @@
 ---
 import { render } from "astro:content";
 
-import { getBlogs } from "@lib/blog";
+import { getBlogs, getRelatedBlogs } from "@lib/blog";
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
 import BlogHead from "@components/BlogHead.astro";
 import TOC from "@components/TOC.astro"
 import "@styles/prism.css";
 import GoogleAdsense from "@components/GoogleAdsense.astro";
 import PrevNextLink from "@components/PrevNextLink.astro"
+import RelatedBlogLinks from "@components/RelatedBlogLinks.astro";
 
 export const getStaticPaths = async () => {
   const allBlogs = await getBlogs();
@@ -33,6 +34,8 @@ const description =
   blog.data.summary || blog.body?.slice(0, 30).replace(/\n/g, "") || "";
 
 const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug === "footnote-label" && heading.text === "Footnotes"));
+
+const relatedBlogs = await getRelatedBlogs(blog.data.tags, 5, blog.id);
 ---
 
 <MarkdownLayout title={blog.data.title} description={description}>
@@ -46,6 +49,11 @@ const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug ==
       />
       <Content />
       <PrevNextLink prev={prev} next={next} />
+
+      {relatedBlogs.length > 0 && (
+        <RelatedBlogLinks blogs={relatedBlogs} />
+      )}
+
     </div>
     <aside class="hidden xl:col-span-3 xl:flex xl:flex-col xl:sticky xl:top-28 gap-y-6">
       {import.meta.env.CF_PAGES_BRANCH === "main" ? (

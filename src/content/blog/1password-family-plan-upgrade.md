@@ -1,7 +1,7 @@
 ---
 title: "家庭内のパスワード管理を安全に！1Password Families プランに無料でアップグレードできる裏技"
 date: "2025-08-27"
-tags: ["1Password", "セキュリティ"]
+tags: ["1Password", "Security"]
 draft: false
 summary: "1Password Families プランへアップグレードしたのでメリットや使い勝手を紹介"
 ---

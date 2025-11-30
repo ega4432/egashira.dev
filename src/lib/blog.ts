@@ -29,3 +29,41 @@ export const getTags = async () => {
   }
   return tagsCount;
 };
+
+/**
+ * 現在の記事のタグ配列と比較し、共通タグ数が多い順に関連記事を取得する
+ * @param currentTags 現在の記事のタグ配列
+ * @param limit 取得する関連記事の最大件数（デフォルト5件）
+ * @param excludeSlug 現在の記事のスラッグ（関連記事に含めないため）
+ * @returns 関連記事の配列
+ */
+export const getRelatedBlogs = async (
+  currentTags: string[],
+  limit = 5,
+  excludeSlug?: string
+): Promise<CollectionEntry<"blog">[]> => {
+  const blogs = await getBlogs();
+
+  // 現在の記事のタグセットを作成（小文字化）
+  const currentTagSet = new Set(currentTags.map((tag) => tag.toLowerCase()));
+
+  // 各記事の共通タグ数を計算し、スコアとして保持
+  const scoredBlogs = blogs
+    .filter((blog) => blog.id !== excludeSlug)
+    .map((blog) => {
+      const blogTags = blog.data.tags.map((tag) => tag.toLowerCase());
+      const commonCount = blogTags.filter((tag) =>
+        currentTagSet.has(tag)
+      ).length;
+      return { blog, score: commonCount };
+    })
+    // 共通タグ数が0の記事は除外
+    .filter(({ score }) => score > 0)
+    // スコアの降順でソート
+    .sort((a, b) => b.score - a.score)
+    // limit件数に絞る
+    .slice(0, limit)
+    .map(({ blog }) => blog);
+
+  return scoredBlogs;
+};

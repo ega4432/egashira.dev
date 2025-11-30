@@ -4,7 +4,7 @@ updatedAt: "2023-04-08T09:20:00.000Z"
 summary: "このサイトを Vercel から Cloudflare Pages へ移行した際にプレビュー画面へ Google 認証を設定した。その方法についてまとめる。"
 tags:
   - "Cloudflare"
-  - "security"
+  - "Security"
   - "Google"
   - "OAuth"
 date: "2023-04-02"

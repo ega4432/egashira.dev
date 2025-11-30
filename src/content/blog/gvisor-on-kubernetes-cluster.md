@@ -1,7 +1,7 @@
 ---
 title: "RuntimeClass を使って Kubernetes クラスタで gVisor ランタイムを使う"
 date: "2024-12-02"
-tags: ["gVisor", "k8s", "Container", "security"]
+tags: ["gVisor", "k8s", "Container", "Security"]
 draft: false
 summary: "低レベルコンテナランタイムである gVisor を導入することで Kubernetes クラスタのセキュリティを向上させる方法を紹介"
 ---

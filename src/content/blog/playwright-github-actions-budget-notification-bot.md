@@ -7,8 +7,7 @@ tags:
     "Playwright",
     "GitHub Actions",
     "MoneyForward",
-    "スクレイピング",
-    "Life"
+    "スクレイピング"
   ]
 draft: false
 summary: "表題の通り、家族みんなが定期的に通知を受け取ることができるようにする bot を作ってみた"
