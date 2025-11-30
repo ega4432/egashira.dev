@@ -1,7 +1,7 @@
 ---
 import { render } from "astro:content";
 
-import { getBlogs } from "@lib/blog";
+import { getBlogs, getRelatedBlogs } from "@lib/blog";
 import MarkdownLayout from "@layouts/MarkdownLayout.astro";
 import BlogHead from "@components/BlogHead.astro";
 import TOC from "@components/TOC.astro"
@@ -33,6 +33,9 @@ const description =
   blog.data.summary || blog.body?.slice(0, 30).replace(/\n/g, "") || "";
 
 const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug === "footnote-label" && heading.text === "Footnotes"));
+
+// ここで関連記事を取得
+const relatedBlogs = await getRelatedBlogs(blog.data.tags, 5, blog.id);
 ---
 
 <MarkdownLayout title={blog.data.title} description={description}>
@@ -46,6 +49,18 @@ const toc = headings.filter((heading) => heading.depth <= 3 && !(heading.slug ==
       />
       <Content />
       <PrevNextLink prev={prev} next={next} />
+
+      <section class="mt-12">
+        <h2 class="text-xl font-semibold mb-4">関連記事</h2>
+        <ul>
+          {relatedBlogs.map((related) => (
+            <li>
+              <a href={`/blog/${related.id}`}>{related.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
     </div>
     <aside class="hidden xl:col-span-3 xl:flex xl:flex-col xl:sticky xl:top-28 gap-y-6">
       {import.meta.env.CF_PAGES_BRANCH === "main" ? (
