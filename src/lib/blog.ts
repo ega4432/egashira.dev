@@ -49,7 +49,7 @@ export const getRelatedBlogs = async (
 
   // 各記事の共通タグ数を計算し、スコアとして保持
   const scoredBlogs = blogs
-    .filter((blog) => blog.slug !== excludeSlug)
+    .filter((blog) => blog.id !== excludeSlug)
     .map((blog) => {
       const blogTags = blog.data.tags.map((tag) => tag.toLowerCase());
       const commonCount = blogTags.filter((tag) =>
@@ -58,7 +58,7 @@ export const getRelatedBlogs = async (
       return { blog, score: commonCount };
     })
     // 共通タグ数が0の記事は除外
-    .filter(({ score }) => score > 0)
+    .filter(({ score }) => score > 1)
     // スコアの降順でソート
     .sort((a, b) => b.score - a.score)
     // limit件数に絞る
