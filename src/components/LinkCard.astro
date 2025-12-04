@@ -1,0 +1,61 @@
+---
+type Props = {
+  title: string;
+  description?: string;
+  displayUrl: string;
+  faviconSrc?: string;
+  ogImageSrc?: string;
+  href: string;
+  isExternal?: boolean;
+  isAmazon?: boolean;
+};
+const {
+  title,
+  description,
+  displayUrl,
+  faviconSrc,
+  ogImageSrc,
+  href,
+  isExternal = false,
+  isAmazon = false
+} = Astro.props;
+const targetAttr = isExternal ? "_blank" : undefined;
+const relAttr = isExternal ? "noopener noreferrer" : undefined;
+const imageClass = isAmazon ? "object-contain bg-white" : "object-cover";
+---
+<a
+  class="remark-link-card-wrapper"
+  href={href}
+  target={targetAttr}
+  rel={relAttr}
+>
+  <div class="remark-link-card-main">
+    <div class="remark-link-card-title">{title}</div>
+    {description && (
+      <div class="remark-link-card-description">{description}</div>
+    )}
+    <div class="remark-link-card-origin">
+      {faviconSrc && (
+        <img
+          class="my-0 mr-2 h-[15px] w-[15px] object-contain"
+          src={faviconSrc}
+          alt={`${title} favicon`}
+          width="16"
+          height="16"
+        />
+      )}
+      <span class="flex truncate flex-row text-xs dark:text-gray-300">
+        {displayUrl}
+      </span>
+    </div>
+  </div>
+  {ogImageSrc && (
+    <div class="remark-link-card-image">
+      <img
+        class={`my-0 h-[100%] w-[100%] rounded-r-[0.275rem] ${imageClass}`}
+        src={ogImageSrc}
+        alt={title}
+      />
+    </div>
+  )}
+</a>

@@ -108,39 +108,27 @@ const createLinkCard = (
   targetUrl: string,
   isAmazonUrl: boolean
 ): Html => {
-  const faviconElement = data.faviconSrc
-    ? `<img class="my-0 mr-2 h-[15px] w-[15px] object-contain" src="${data.faviconSrc}" alt="${data.title} favicon" width="16" height="16">`.trim()
-    : "";
+  const { title, description, displayUrl, faviconSrc, ogImageSrc } = data;
+  const props = {
+    title,
+    description: description || undefined,
+    displayUrl,
+    faviconSrc: faviconSrc || undefined,
+    ogImageSrc: ogImageSrc || undefined,
+    href: targetUrl,
+    isExternal: isExternal(targetUrl),
+    isAmazon: isAmazonUrl
+  };
 
-  const descriptionElement = data.description
-    ? `<div class="truncate text-xs leading-normal text-gray-500 dark:text-gray-400">${data.description}</div>`
-    : "";
+  const serializedProps = Object.entries(props)
+    .filter(([, value]) => value !== undefined)
+    .map(
+      ([key, value]) =>
+        ` ${key}={${typeof value === "string" ? `"${value}"` : value}}`
+    )
+    .join("");
 
-  const imageElement = data.ogImageSrc
-    ? `<div class="h-[122px] w-[33.333%] max-w-[230px] md:w-full">
-    <img class="my-0 h-[100%] w-[100%] rounded-r-[0.275rem] ${isAmazonUrl ? "object-contain bg-white" : "object-cover"}" src="${data.ogImageSrc}" alt="${data.title}" />
-  </div>`.trim()
-    : "";
-
-  const value = `
-<a class="min-h-[122px] my-4 box-border flex flex-row justify-between rounded-md border-2 text-gray-800 no-underline hover:bg-gray-200 hover:!text-gray-800 dark:border-gray-700 dark:hover:bg-gray-700" href="${targetUrl}" ${
-    isExternal(targetUrl) ? 'target="_blank" rel="noopener noreferrer"' : ""
-  }>
-<div class="flex w-[50%] flex-1 flex-col justify-evenly break-words p-4 md:w-[65%]">
-  <div class="text-xs font-semibold line-clamp-2 dark:text-gray-300 sm:text-sm md:text-base">${
-    data.title
-  }</div>
-  ${descriptionElement}
-  <div class="flex flex-row text-xs dark:text-gray-300">
-    ${faviconElement}
-    <span class="flex truncate flex-row text-xs dark:text-gray-300">${
-      data.displayUrl
-    }</span>
-  </div>
-</div>
-${imageElement}
-</a>
-`.trim();
+  const value = `<LinkCard${serializedProps} />`;
   return { type: "html", value };
 };
 
