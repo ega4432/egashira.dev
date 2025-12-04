@@ -6,18 +6,13 @@ import type { Plugin } from "unified";
 import type { Html, Link, Text, Root } from "mdast";
 import type { ImageObject } from "open-graph-scraper/types";
 
+import { AMAZON_META, siteMeta } from "../../../constants";
 import amazon from "../../../../public/amazon.json";
 import { getOgData, setOgData, type LinkCardData } from "../../ogCache";
 
-const OWN_DOMAIN = "egashira.dev";
-const amazonMeta = {
-  URL: "https://amzn.to",
-  FAVICON_URL: "https://i.imgur.com/pHkePZN.png",
-  DISPLAY_URL: "amazon.co.jp"
-};
 const faviconApiUrl = "https://www.google.com/s2/favicons?domain=";
 const ignoreHosts = ["hub.docker.com", "ffmpeg.org"];
-const affiliateLinks = ["click.linksynergy.com"];
+const affiliateLinks: string[] = [];
 
 const formatOgImageUrl = (
   ogImage: string | ImageObject | ImageObject[],
@@ -101,13 +96,9 @@ const fetchOpenGraph = async (url: string): Promise<LinkCardData> => {
   }
 };
 
-const isExternal = (url: string) => !url.includes(OWN_DOMAIN);
+const isExternal = (url: string) => !url.includes(siteMeta.siteUrl);
 
-const createLinkCard = (
-  data: LinkCardData,
-  targetUrl: string,
-  isAmazonUrl: boolean
-): Html => {
+const createLinkCard = (data: LinkCardData, targetUrl: string): Html => {
   const { title, description, displayUrl, faviconSrc, ogImageSrc } = data;
   const props = {
     title,
@@ -116,8 +107,7 @@ const createLinkCard = (
     faviconSrc: faviconSrc || undefined,
     ogImageSrc: ogImageSrc || undefined,
     href: targetUrl,
-    isExternal: isExternal(targetUrl),
-    isAmazon: isAmazonUrl
+    isExternal: isExternal(targetUrl)
   };
 
   const serializedProps = Object.entries(props)
@@ -146,25 +136,23 @@ const remarkLinkCard: Plugin<[undefined], Root> = () => async (tree) => {
 
   const addTransformer = (url: string, index: number | undefined) => {
     let data: LinkCardData;
-    let isAmazonUrl = false;
     transformers.push(async () => {
-      if (url.startsWith(amazonMeta.URL)) {
+      if (url.startsWith(AMAZON_META.URL)) {
         const item = amazon.find(
           ({ key }) => key === url.split("/").slice(-1)[0]
         );
         if (!item) return;
         data = {
           ...item,
-          faviconSrc: amazonMeta.FAVICON_URL,
-          displayUrl: amazonMeta.DISPLAY_URL,
+          faviconSrc: AMAZON_META.FAVICON_URL,
+          displayUrl: AMAZON_META.DISPLAY_URL,
           url
         };
-        isAmazonUrl = true;
       } else {
         data = await fetchOpenGraph(url);
       }
 
-      const linkCardNode = createLinkCard(data, url, isAmazonUrl);
+      const linkCardNode = createLinkCard(data, url);
       if (index !== undefined) {
         tree.children.splice(index, 1, linkCardNode);
       }

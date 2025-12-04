@@ -1,4 +1,6 @@
 ---
+import { AMAZON_META } from "@constants";
+
 type Props = {
   title: string;
   description?: string;
@@ -7,7 +9,6 @@ type Props = {
   ogImageSrc?: string;
   href: string;
   isExternal?: boolean;
-  isAmazon?: boolean;
 };
 const {
   title,
@@ -16,11 +17,11 @@ const {
   faviconSrc,
   ogImageSrc,
   href,
-  isExternal = false,
-  isAmazon = false
+  isExternal = false
 } = Astro.props;
 const targetAttr = isExternal ? "_blank" : undefined;
 const relAttr = isExternal ? "noopener noreferrer" : undefined;
+const isAmazon = href.startsWith(AMAZON_META.URL);
 const imageClass = isAmazon ? "object-contain bg-white" : "object-cover";
 ---
 <a

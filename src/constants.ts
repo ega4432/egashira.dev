@@ -55,3 +55,9 @@ export const siteMeta: SiteMeta = {
 };
 
 export const DEFAULT_PAGE_SIZE = 10;
+
+export const AMAZON_META = {
+  URL: "https://amzn.to",
+  FAVICON_URL: "https://i.imgur.com/pHkePZN.png",
+  DISPLAY_URL: "amazon.co.jp"
+};
