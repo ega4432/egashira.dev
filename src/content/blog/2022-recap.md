@@ -1,7 +1,7 @@
 ---
 title: 2022 年の振り返り
 date: "2022-12-31"
-tags: ["Engineer", "Career", "Recap", "Retrospective", "2022"]
+tags: ["Engineer", "Career", "Retrospective"]
 draft: false
 summary: 2022 年 1 年間のやってきたことを振り返ってみた
 ---

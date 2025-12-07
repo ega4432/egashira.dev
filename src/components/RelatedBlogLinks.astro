@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  blogs: CollectionEntry<"blog">[]
+}
+
+const { blogs } = Astro.props;
+
+---
+<section class="mt-12">
+  <h2>関連記事</h2>
+  <div class="grid gap-6 xl:gap-8">
+    {blogs.map((related) => (
+      <a href={`/blog/${related.id}`}>{related.data.title}</a>
+    ))}
+  </div>
+</section>

@@ -6,8 +6,6 @@ tags:
   - "Retrospective"
   - "Engineer"
   - "Career"
-  - "2023"
-  - "Recap"
 date: "2023-12-31"
 draft: false
 title: "2023 年のふりかえり"

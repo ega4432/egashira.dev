@@ -4,9 +4,8 @@ updatedAt: "2025-04-19T03:47:00.000Z"
 summary: "CKS に合格したので、受験に至るまでの学習内容や受験してみての感想などをまとめる。"
 tags:
   - "k8s"
-  - "security"
+  - "Security"
   - "Certification"
-  - "Tips"
 date: "2025-03-30"
 draft: false
 title: "Certified Kubernetes Security Specialist に合格した"

@@ -1,7 +1,7 @@
 ---
 title: 書籍「ホワイトハッカーの教科書」を読んだ
 date: "2022-08-20"
-tags: ["security", "engineer", "career", "hacker", "book"]
+tags: ["Security", "Engineer", "Career", "book"]
 draft: false
 summary: 読んだ感想まとめ
 completeDate: "2022-08-07"

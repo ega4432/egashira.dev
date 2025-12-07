@@ -1,7 +1,7 @@
 ---
 title: Kubernetes クラスタで X509 クライアント証明書を使用してユーザを作成する
 date: "2022-09-10"
-tags: ["k8s", "Container", "security"]
+tags: ["k8s", "Container", "Security"]
 draft: false
 summary: Kubernetes クラスタにユーザを作成する方法の復習メモ
 ---

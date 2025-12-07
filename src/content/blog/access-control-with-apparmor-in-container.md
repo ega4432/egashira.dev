@@ -1,7 +1,7 @@
 ---
 title: "AppArmor を使ったコンテナ内のアクセス制御"
 date: "2024-11-30"
-tags: ["AppArmor", "k8s", "Container", "security", "Linux"]
+tags: ["AppArmor", "k8s", "Container", "Security", "Linux"]
 draft: false
 summary: "Linux のセキュリティモジュールである AppArmor を Kubernetes クラスタに導入する手順についての備忘録"
 ---

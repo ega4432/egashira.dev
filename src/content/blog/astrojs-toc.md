@@ -3,6 +3,7 @@ summary: "remark, rehype などのプラグインを使わずに TOC を実装�
 tags:
   - "Astro"
   - "Markdown"
+  - "Update"
 date: "2023-10-02"
 draft: false
 title: "Astro で Table of Contents(目次)を実装する"
