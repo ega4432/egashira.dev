@@ -8,7 +8,7 @@ export const collections = {
     schema: pageScheme
   }),
   blog: defineCollection({
-    loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
+    loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
     schema: blogScheme
   })
 };

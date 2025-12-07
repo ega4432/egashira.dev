@@ -78,19 +78,19 @@ Pod 用のサブネットは、基本的にローカルネットワークで使�
 flowchart RL
   Internet((インターネット))
 
-   R[ルータ]
-   SW[[スイッチングハブ]]
-   SW --> R
+  R[ルータ]
+  SW[[スイッチングハブ]]
+  SW --> R
 
-   subgraph Kubernetes
-      C[Controlplane 192.168.11.11/24]
-      W1[Worker Node 1 192.168.11.21/24]
-      W2[Worker Node 2 192.168.11.31/24]
-   end
+  subgraph Kubernetes
+    C[Controlplane 192.168.11.11/24]
+    W1[Worker Node 1 192.168.11.21/24]
+    W2[Worker Node 2 192.168.11.31/24]
+  end
 
-   C ---> SW
-   W1 --> SW
-   W2 --> SW
+  C ---> SW
+  W1 --> SW
+  W2 --> SW
 
   R --> Internet
 ```

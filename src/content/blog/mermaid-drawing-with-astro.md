@@ -91,7 +91,7 @@ export default defineConfig({
 
 こちらに追記した。
 
-http://egashira.dev/blog/dummy-entry#コードブロック
+http://egashira.dev/blog/dummy-entry#mermaid-記法
 
 ## まとめ
 
