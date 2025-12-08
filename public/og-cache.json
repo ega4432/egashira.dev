@@ -3430,5 +3430,38 @@
       "displayUrl": "www.google.com",
       "url": "https://www.google.com/intl/ja/chrome"
     }
+  },
+  "https://egashira.dev/blog/books-for-newcomer-engineers": {
+    "timestamp": 1765118232718,
+    "data": {
+      "title": "若手エンジニア必読 技術力とキャリアを伸ばすおすすめ書籍10選",
+      "description": "将来エンジニアを目指している大学・大学院に進学した人や、この春からエンジニアとしてキャリアをスタートした新社会人向けにおすすめの本を個人的な主観たっぷりで紹介する",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=egashira.dev",
+      "ogImageSrc": "https://egashira.dev/images/blog/books-for-newcomer-engineers/og.png",
+      "displayUrl": "egashira.dev",
+      "url": "https://egashira.dev/blog/books-for-newcomer-engineers"
+    }
+  },
+  "https://egashira.dev/": {
+    "timestamp": 1765118235021,
+    "data": {
+      "title": "egashira.dev",
+      "description": "外資系企業で働く防衛大卒のプリセールスエンジニア",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=egashira.dev",
+      "ogImageSrc": "https://egashira.dev/images/undraw.png",
+      "displayUrl": "egashira.dev",
+      "url": "https://egashira.dev/"
+    }
+  },
+  "https://egashira.dev/blog/book-review/what-smart-people-think-before-they-speak": {
+    "timestamp": 1765118249226,
+    "data": {
+      "title": "書籍「頭のいい人が話す前に考えていること」を読んだ",
+      "description": "一年前くらいに読んだ本書をたまたま手にとって再読したので感想などメモ",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=egashira.dev",
+      "ogImageSrc": "https://egashira.dev/images/blog/book-review/what-smart-people-think-before-they-speak/og.png",
+      "displayUrl": "egashira.dev",
+      "url": "https://egashira.dev/blog/book-review/what-smart-people-think-before-they-speak"
+    }
   }
 }
