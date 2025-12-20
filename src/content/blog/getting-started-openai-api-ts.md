@@ -70,8 +70,6 @@ console.log(message);
 
 もし 429 エラーとなる場合は、支払い方法などを設定できていない可能性があるので、事前に設定してから API キーを発行しておく必要がある。参考にした記事をいくつか貼っておく。
 
-https://help.openai.com/en/articles/6891831-error-code-429-you-exceeded-your-current-quota-please-check-your-plan-and-billing-details
-
 https://qiita.com/kotattsu3/items/d6533adc785ee8509e2c
 
 https://zenn.dev/masaki_mori72/scraps/3ad2a70353e9b8

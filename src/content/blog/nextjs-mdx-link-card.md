@@ -274,12 +274,14 @@ const remarkCardLinks = () => {
 
 https://github.com/syntax-tree/mdast-util-mdx-jsx
 
-```showLineNumbers
+```json showLineNumbers
 {
-  type: "mdxJsxFlowElement",
-  name: "div",
-  attributes: [{ type: "mdxJsxAttribute", name: "className", value: "contents" }],
-  children: [{ type: "text", value: "This is contents!" }]
+  "type": "mdxJsxFlowElement",
+  "name": "div",
+  "attributes": [
+    { "type": "mdxJsxAttribute", "name": "className", "value": "contents" }
+  ],
+  "children": [{ "type": "text", "value": "This is contents!" }]
 }
 ```
 

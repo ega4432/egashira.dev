@@ -85,7 +85,7 @@ canonicalUrl: https://egashira.dev/blog/dummy-entry
 
 ### ベーシック
 
-```
+```sh
 $ rm -rf /*
 ```
 
@@ -108,7 +108,7 @@ console.log("Hello markdown")
 
 ### diff
 
-```diff
+```diff-go
 package main
 
 import "fmt"

@@ -1,7 +1,7 @@
 ---
 title: "AI 時代のサイト最適化のため LLMs.txt を導入した"
 date: "2025-07-20"
-tags: ["AI", "LLM", "Astro"]
+tags: ["生成AI", "LLM", "Astro"]
 draft: false
 summary: "当サイトに導入したので Astro で構築されたサイトへの実装方法について記載する"
 ---
