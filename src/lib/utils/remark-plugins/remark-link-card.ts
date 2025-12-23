@@ -17,7 +17,7 @@ const amazonMeta = {
 };
 const faviconApiUrl = "https://www.google.com/s2/favicons?domain=";
 const ignoreHosts = ["hub.docker.com", "ffmpeg.org"];
-const affiliateLinks = ["click.linksynergy.com"];
+const affiliateLinks: string[] = [];
 
 const formatOgImageUrl = (
   ogImage: string | ImageObject | ImageObject[],

@@ -1,0 +1,32 @@
+/* Link Card styles */
+.remark-link-card-wrapper {
+  @apply my-4 box-border flex flex-row justify-between rounded-md border-2 text-gray-800 no-underline hover:bg-slate-200 hover:!text-gray-800 dark:border-gray-700 dark:hover:bg-slate-800;
+}
+
+.remark-link-card-main {
+  @apply flex w-[50%] flex-1 flex-col justify-evenly break-words p-4 md:w-[65%];
+}
+
+.remark-link-card-title {
+  @apply text-xs font-semibold line-clamp-2 dark:text-gray-300 sm:text-sm md:text-base;
+}
+
+.remark-link-card-description {
+  @apply truncate text-xs leading-normal text-gray-500 dark:text-gray-400;
+}
+
+.remark-link-card-origin {
+  @apply flex flex-row text-xs dark:text-gray-300;
+}
+
+.remark-link-card-origin img {
+  @apply my-0 mr-2 h-[15px] w-[15px] object-contain;
+}
+
+.remark-link-card-image {
+  @apply h-[122px] w-[33.333%] max-w-[230px] md:w-auto;
+}
+
+.remark-link-card-image img {
+  @apply my-0 h-[100%] w-[100%] rounded-r-[0.275rem] object-cover;
+}

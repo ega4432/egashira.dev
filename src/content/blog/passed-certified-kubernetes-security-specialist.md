@@ -71,7 +71,7 @@ CKS に特化した書籍ではないが、こういう普遍的な内容が個�
 
 上記の書籍と並行してこちらの講座を受講した。
 
-https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-security-specialist-certification%2F
+https://www.udemy.com/course/certified-kubernetes-security-specialist-certification/
 
 動画の視聴方法としては、とりあえず 1.5 倍とかにしてあまり時間をかけずに知らない内容のインプットとしてざっと流した。一通りの試験範囲の特定と知らない知識の特定を行った。
 
@@ -121,7 +121,7 @@ CKS を受験した感想などをまとめてみた。
 
 [https://amzn.to/43zIeuW](https://amzn.to/43zIeuW)
 
-https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-security-specialist-certification%2F
+https://www.udemy.com/course/certified-kubernetes-security-specialist-certification/
 
 [https://killercoda.com/killer-shell-cka](https://killercoda.com/killer-shell-cka)
 
