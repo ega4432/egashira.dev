@@ -131,7 +131,7 @@ WIP
 
 概要をざっくり知ることができたので、引き継きインプットをしながら何か動くものを作りつつ理解をふかめていきたい。直近は以下のことを演る予定なので、またアップデートがあれば本サイトに記事を書こうと思う。
 
-- [Udemy](https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fgraphql-tutorial-with-newsapp-api%2F) を見る
+- [Udemy](https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/) を見る
 - 書籍を読む
   - https://www.oreilly.co.jp/books/9784873118932/
 - Apollo を使って GraphQL サーバを作る
@@ -144,4 +144,4 @@ https://zenn.dev/eringiv3/books/a85174531fd56a
 
 https://zenn.dev/offers/articles/20220609-graphql-onboarding
 
-https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fgraphql-tutorial-with-newsapp-api%2F
+https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/

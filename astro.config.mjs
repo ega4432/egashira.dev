@@ -6,7 +6,6 @@ import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
 import { s } from "hastscript";
 import tailwind from "@astrojs/tailwind";
-import rehypePrismPlus from "rehype-prism-plus";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
@@ -64,8 +63,8 @@ export default defineConfig({
   ],
   markdown: {
     syntaxHighlight: {
-      type: "prism",
-      excludeLangs: ["mermaid"]
+      type: "shiki",
+      excludeLangs: ["mermaid", "math"]
     },
     remarkPlugins: [emoji, remarkMath, remarkCodeTitles, remarkLinkCard],
     rehypePlugins: [
@@ -77,12 +76,6 @@ export default defineConfig({
         }
       ],
       rehypeKatex,
-      [
-        rehypePrismPlus,
-        {
-          ignoreMissing: true
-        }
-      ],
       [
         rehypeMermaid,
         {

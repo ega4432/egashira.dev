@@ -21,7 +21,7 @@ https://www.hashicorp.com/certification/terraform-associate
 
 まずは何はともあれ Udemy の下記コースを受講しておくと良い。
 
-https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fterraform-beginner-to-advanced
+https://www.udemy.com/course/terraform-beginner-to-advanced
 
 最後のセクションに Practice Test がいくつか用意されているが、それを実施した際の私のスコアを参考に書いておく。
 `テスト名 - 正答数/問題数 (正答率)` 形式で記載する。
@@ -36,7 +36,7 @@ https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F
 
 私は時間がなく断念したが、下記のコースも時間に余裕があれば取り組んでおくと、より十分に対策ができると思う。
 
-https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fudemy.com%2Fcourse%2Fterraform-associate-practice-exam
+https://www.udemy.com/course/terraform-associate-practice-exam
 
 ### 書籍
 

@@ -604,17 +604,6 @@
       "url": "https://docs.docker.jp/engine/reference/run.html#pid-pid"
     }
   },
-  "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-administrator-with-practice-tests%2F": {
-    "timestamp": 1754119837575,
-    "data": {
-      "title": "Certified Kubernetes Administrator (CKA) Practice Exam Tests",
-      "description": "Prepare for the Certified Kubernetes Administrators Certification with live practice tests right in your browser - CKA",
-      "faviconSrc": "https://www.google.com/s2/favicons?domain=https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/",
-      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/2301254_26c8_8.jpg",
-      "displayUrl": "www.udemy.com",
-      "url": "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-administrator-with-practice-tests%2F"
-    }
-  },
   "https://docs.tigera.io/calico/latest/getting-started/kubernetes/quickstart": {
     "timestamp": 1754119837622,
     "data": {
@@ -635,17 +624,6 @@
       "ogImageSrc": "https://repository-images.githubusercontent.com/328121260/c1c74100-5b7e-11eb-8185-2b9492767ed6",
       "displayUrl": "github.com",
       "url": "https://github.com/timlrx/tailwind-nextjs-starter-blog"
-    }
-  },
-  "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-application-developer%2F": {
-    "timestamp": 1754119837853,
-    "data": {
-      "title": "Kubernetes Certified Application Developer (CKAD) Training",
-      "description": "Learn concepts and practice for the Kubernetes Certification with hands-on labs right in your browser - DevOps - CKAD",
-      "faviconSrc": "https://www.google.com/s2/favicons?domain=https://www.udemy.com/course/certified-kubernetes-application-developer/",
-      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/1988542_3bcb_15.jpg",
-      "displayUrl": "www.udemy.com",
-      "url": "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-application-developer%2F"
     }
   },
   "https://kubernetes.io/ja/docs/setup/production-environment/tools/kubeadm/": {
@@ -1416,17 +1394,6 @@
       "ogImageSrc": "https://helm.sh/img/boat.svg",
       "displayUrl": "helm.sh",
       "url": "https://helm.sh/ja/"
-    }
-  },
-  "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fgraphql-tutorial-with-newsapp-api%2F": {
-    "timestamp": 1754119846695,
-    "data": {
-      "title": "【GraphQL入門】RESTに代わるモダンAPIのGraphQLでニュースアプリAPIを構築しながら基礎を学ぶ入門講座",
-      "description": "HackerNewsアプリのGraphQLサーバーを構築しながら、GraphQLの本質とREST APIとの違いを理解して実務でも使いこなせる知識を身に着けられるGraphQL実践講座。モダンなAPI構築手法キャッチアップしてみよう",
-      "faviconSrc": "https://www.google.com/s2/favicons?domain=https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/",
-      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/4666160_9dd0_2.jpg",
-      "displayUrl": "www.udemy.com",
-      "url": "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fgraphql-tutorial-with-newsapp-api%2F"
     }
   },
   "https://zenn.dev/stafes_blog/articles/ikkitang-a694b8afeb66f5": {
@@ -2540,17 +2507,6 @@
       "url": "https://www.hashicorp.com/certification/terraform-associate"
     }
   },
-  "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-security-specialist-certification%2F": {
-    "timestamp": 1754119868302,
-    "data": {
-      "title": "Certified Kubernetes Security Specialist 2025",
-      "description": "Master Course to prepare for CKS certification.",
-      "faviconSrc": "https://www.google.com/s2/favicons?domain=https://www.udemy.com/course/certified-kubernetes-security-specialist-certification/",
-      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/3336410_66b0.jpg",
-      "displayUrl": "www.udemy.com",
-      "url": "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fcertified-kubernetes-security-specialist-certification%2F"
-    }
-  },
   "https://training.linuxfoundation.org/ja/blog/cks-exam-to-update-september-12-2024/": {
     "timestamp": 1754119868370,
     "data": {
@@ -2617,17 +2573,6 @@
       "url": "https://github.blog/2023-03-28-announcing-the-github-actions-extension-for-vs-code/"
     }
   },
-  "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fudemy.com%2Fcourse%2Fterraform-associate-practice-exam": {
-    "timestamp": 1754119869177,
-    "data": {
-      "title": "HashiCorp Certified: Terraform Associate Practice Exam 2025",
-      "description": "The Original Terraform Associate 003 Prep: Pass your Terraform cert with 300+ Questions with Explanations and Resources",
-      "faviconSrc": "https://www.google.com/s2/favicons?domain=https://udemy.com/course/terraform-associate-practice-exam",
-      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/2736086_4d37_13.jpg",
-      "displayUrl": "udemy.com",
-      "url": "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fudemy.com%2Fcourse%2Fterraform-associate-practice-exam"
-    }
-  },
   "https://github.com/npm/cli": {
     "timestamp": 1754119869299,
     "data": {
@@ -2648,17 +2593,6 @@
       "ogImageSrc": "https://cli.github.com/assets/images/social-card.png",
       "displayUrl": "cli.github.com",
       "url": "https://cli.github.com/manual/"
-    }
-  },
-  "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fterraform-beginner-to-advanced": {
-    "timestamp": 1754119869385,
-    "data": {
-      "title": "HashiCorp Certified: Terraform Associate 2025",
-      "description": "All in One course for learning Terraform and gaining the official Terraform Associate Certification (003).",
-      "faviconSrc": "https://www.google.com/s2/favicons?domain=https://www.udemy.com/course/terraform-beginner-to-advanced",
-      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/1617616_5a60_3.jpg",
-      "displayUrl": "www.udemy.com",
-      "url": "https://click.linksynergy.com/deeplink?id=aWRSbM3RHks&mid=47984&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fterraform-beginner-to-advanced"
     }
   },
   "https://blog.usize-tech.com/how-to-pass-terraform-associate/": {
@@ -3462,6 +3396,83 @@
       "ogImageSrc": "https://egashira.dev/images/blog/book-review/what-smart-people-think-before-they-speak/og.png",
       "displayUrl": "egashira.dev",
       "url": "https://egashira.dev/blog/book-review/what-smart-people-think-before-they-speak"
+    }
+  },
+  "https://www.udemy.com/course/terraform-beginner-to-advanced": {
+    "timestamp": 1766486176319,
+    "data": {
+      "title": "HashiCorp Certified: Terraform Associate 2026",
+      "description": "All in One course for learning Terraform and gaining the official Terraform Associate Certification (004).",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.udemy.com",
+      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/1617616_5a60_3.jpg",
+      "displayUrl": "www.udemy.com",
+      "url": "https://www.udemy.com/course/terraform-beginner-to-advanced"
+    }
+  },
+  "https://udemy.com/course/terraform-associate-practice-exam": {
+    "timestamp": 1766486184733,
+    "data": {
+      "title": "HashiCorp Certified Terraform Associate 003 - Practice Exams",
+      "description": "Terraform Associate 003 Certification Practice Exams – Detailed Questions, Explanations, Study Guides, and Prep Material",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=udemy.com",
+      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/2736086_4d37_13.jpg",
+      "displayUrl": "udemy.com",
+      "url": "https://udemy.com/course/terraform-associate-practice-exam"
+    }
+  },
+  "https://www.udemy.com/course/certified-kubernetes-security-specialist-certification/": {
+    "timestamp": 1766486283577,
+    "data": {
+      "title": "Certified Kubernetes Security Specialist 2026",
+      "description": "Master Course to prepare for CKS certification.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.udemy.com",
+      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/3336410_66b0.jpg",
+      "displayUrl": "www.udemy.com",
+      "url": "https://www.udemy.com/course/certified-kubernetes-security-specialist-certification/"
+    }
+  },
+  "https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/": {
+    "timestamp": 1766486310461,
+    "data": {
+      "title": "Certified Kubernetes Administrator (CKA) Practice Exam Tests",
+      "description": "Prepare for the Certified Kubernetes Administrators Certification with live practice tests right in your browser - CKA",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.udemy.com",
+      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/2301254_26c8_8.jpg",
+      "displayUrl": "www.udemy.com",
+      "url": "https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/"
+    }
+  },
+  "https://www.udemy.com/course/certified-kubernetes-application-developer/": {
+    "timestamp": 1766486317894,
+    "data": {
+      "title": "Kubernetes Certified Application Developer (CKAD) Training",
+      "description": "Learn concepts and practice for the Kubernetes Certification with hands-on labs right in your browser - DevOps - CKAD",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.udemy.com",
+      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/1988542_3bcb_15.jpg",
+      "displayUrl": "www.udemy.com",
+      "url": "https://www.udemy.com/course/certified-kubernetes-application-developer/"
+    }
+  },
+  "https://www.udemy.com/course/terraform-associate-practice-exam": {
+    "timestamp": 1766486327364,
+    "data": {
+      "title": "HashiCorp Certified Terraform Associate 003 - Practice Exams",
+      "description": "Terraform Associate 003 Certification Practice Exams – Detailed Questions, Explanations, Study Guides, and Prep Material",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.udemy.com",
+      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/2736086_4d37_13.jpg",
+      "displayUrl": "www.udemy.com",
+      "url": "https://www.udemy.com/course/terraform-associate-practice-exam"
+    }
+  },
+  "https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/": {
+    "timestamp": 1766486749660,
+    "data": {
+      "title": "【GraphQL入門】RESTに代わるモダンAPIのGraphQLでニュースアプリAPIを構築しながら基礎を学ぶ入門講座",
+      "description": "HackerNewsアプリのGraphQLサーバーを構築しながら、GraphQLの本質とREST APIとの違いを理解して実務でも使いこなせる知識を身に着けられるGraphQL実践講座。モダンなAPI構築手法キャッチアップしてみよう",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.udemy.com",
+      "ogImageSrc": "https://img-c.udemycdn.com/course/480x270/4666160_9dd0_2.jpg",
+      "displayUrl": "www.udemy.com",
+      "url": "https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/"
     }
   }
 }
