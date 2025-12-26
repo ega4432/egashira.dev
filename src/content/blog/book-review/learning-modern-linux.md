@@ -1,5 +1,5 @@
 ---
-title: 書籍「入門 モダンLinux」を読んだ
+title: "コンテナを学ぶ前に Linux を学べ ––– 書評「入門 モダンLinux」"
 date: "2023-07-25"
 tags: ["book", "Linux", "O'reilly"]
 draft: false
@@ -111,3 +111,7 @@ https://www.oreilly.co.jp/books/9784814400218/
 ## 参考
 
 https://www.oreilly.co.jp/books/9784814400218/
+
+https://amzn.to/3M4C8Mt
+
+https://amzn.to/4jmZJ6u

@@ -23,7 +23,7 @@ $ npx astro add sitemap
 
 上記コマンドを実行したら`astro.config.mjs` に以下が追記されているはず。（注意点として `site` プロパティは追記が必要）
 
-```javascript
+```javascript:astro.config.mjs
 + import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
@@ -36,7 +36,7 @@ export default defineConfig({
 
 ビルドしたら `sitemap-0.xml`, `sitemap-index.xml` が dist/ 配下に生成される。
 
-## 1 つのファイルとしてサイトマップを出力したい
+## 1 つのファイルとしてサイトマップを出力したい場合
 
 上記の公式インテグレーションを使用すると、2 つのファイルが生成される。 `sitemap.xml` だけを生成して欲しい場合は自分でカスタムインテグレーションとして実装する必要がある。
 
