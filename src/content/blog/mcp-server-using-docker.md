@@ -173,3 +173,5 @@ https://amzn.to/4aWy5Mw
 https://amzn.to/4jgGFI3
 
 https://amzn.to/4rgPx48
+
+[^1]: https://github.com/microsoft/playwright-mcp
