@@ -1,7 +1,8 @@
 ---
 title: "Next.js のサイトに Google Tag Manager 経由でGoogle Analytics(GA4)を導入する"
 date: "2022-03-28"
-tags: ["Next.js", "GA", "GTM", "TypeScript", "Update"]
+tags:
+  ["Next.js", "Google Analytics", "Google Tag Manager", "TypeScript", "Update"]
 draft: false
 summary: "このサイトのアクセス解析のため Google Analytics を導入した際のメモ"
 ---

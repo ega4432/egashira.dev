@@ -3474,5 +3474,60 @@
       "displayUrl": "www.udemy.com",
       "url": "https://www.udemy.com/course/graphql-tutorial-with-newsapp-api/"
     }
+  },
+  "https://github.com/modelcontextprotocol/servers": {
+    "timestamp": 1766712014985,
+    "data": {
+      "title": "GitHub - modelcontextprotocol/servers: Model Context Protocol Servers",
+      "description": "Model Context Protocol Servers. Contribute to modelcontextprotocol/servers development by creating an account on GitHub.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/ed69c0e74a45ea8d6c472b6f36ac1eb73b0acd530f68ed58006d86ac050c6b02/modelcontextprotocol/servers",
+      "displayUrl": "github.com",
+      "url": "https://github.com/modelcontextprotocol/servers"
+    }
+  },
+  "https://modelcontextprotocol.io/": {
+    "timestamp": 1766712848208,
+    "data": {
+      "title": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
+      "description": "",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=modelcontextprotocol.io",
+      "ogImageSrc": "https://raw.githubusercontent.com/modelcontextprotocol/docs/2eb6171ddbfeefde349dc3b8d5e2b87414c26250/images/og-image.png",
+      "displayUrl": "modelcontextprotocol.io",
+      "url": "https://modelcontextprotocol.io/"
+    }
+  },
+  "https://christina04.hatenablog.com/entry/docker-init": {
+    "timestamp": 1766714403305,
+    "data": {
+      "title": "Dockerの--initフラグについて - Carpe Diem",
+      "description": "概要 dockerのコンテナは指定したコマンドがPID 1で起動されており、使い方によってはシグナルハンドリングできないことがありますよ、という話です。 それによってプロセスをGracefulに終了できなかったりリソースリークが起きたりするので注意する必要があります。 環境 docker v18.09.0 どんな問題が起きる？ こちらでとてもわかり易く説明されてます。 Unix プロセスと Docker の罠 - けちゃぶろぐ Dockerケースを要約すると、親、子、孫の3プロセスが起動している状態で ケース 何が起きる 問題点 親が死ぬ 子も孫も強制的に死ぬ 処理中リクエストをハンドリングで…",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=christina04.hatenablog.com",
+      "ogImageSrc": "https://ogimage.blog.st-hatena.com/8454420450066812279/10257846132683026666/1544436024",
+      "displayUrl": "christina04.hatenablog.com",
+      "url": "https://christina04.hatenablog.com/entry/docker-init"
+    }
+  },
+  "https://qiita.com/ko1nksm/items/e8c2fbf58687e6979448": {
+    "timestamp": 1766714452465,
+    "data": {
+      "title": "docker --init (Tini) が PID 1 問題を解決している様子を調べてみた - Qiita",
+      "description": "はじめに docker --init は PID 1 として動作させることを想定してないプロセスを適切に処理するために、軽量の init を PID 1 で実行する Docker 1.13 で追加されたオプションです。内部的には Tini が使用されています。Tini の...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=qiita.com",
+      "ogImageSrc": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGNTQ5MTglMkZwcm9maWxlLWltYWdlcyUyRjE0NzM2OTM1Mjg_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPWE4NWVmYWZlYzFkZjcyYTVmYWIyN2ZmOGViMjQ1Nzdi%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D40c4de7a2283f8493d0f8cd798df1ed7?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9ZG9ja2VyJTIwLS1pbml0JTIwJTI4VGluaSUyOSUyMCVFMyU4MSU4QyUyMFBJRCUyMDElMjAlRTUlOTUlOEYlRTklQTElOEMlRTMlODIlOTIlRTglQTclQTMlRTYlQjElQkElRTMlODElOTclRTMlODElQTYlRTMlODElODQlRTMlODIlOEIlRTYlQTclOTglRTUlQUQlOTAlRTMlODIlOTIlRTglQUElQkYlRTMlODElQjklRTMlODElQTYlRTMlODElQkYlRTMlODElOUYmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1lYTYxNjc2ZWE0OWJmNGRkNjA2MTNjYmE1NjdkNWJjMQ&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBrbzFua3NtJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ODVlMzIyOWJiNjA2ZTE4YzM2ZmM0MzNjMTk0ZjJkMmI&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=2855002b554cc510e01c1add7c92fdd4",
+      "displayUrl": "qiita.com",
+      "url": "https://qiita.com/ko1nksm/items/e8c2fbf58687e6979448"
+    }
+  },
+  "https://qiita.com/tbpgr/items/5ff706ce2c62bffafd88": {
+    "timestamp": 1766729087797,
+    "data": {
+      "title": "Docker | docker run の -v オプションでホストの任意のパスをコンテナの任意のパスにマウントする - Qiita",
+      "description": "docker run の -v オプションでホストの任意のパスをコンテナの任意のパスにマウントします。 サンプル ホスト側の構成は以下 $ tree . └── sample_volume ├── hage.txt (中身は hage ) ├── h...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=qiita.com",
+      "ogImageSrc": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGNDM0ODAlMkZwcm9maWxlLWltYWdlcyUyRjE0NzM2ODk1NDU_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPTA4Nzc5MmE1NzBjNTU1NmIwNTRmZjBiZWQxNmY5OTky%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dc3e5f4037003826c8ad980f0f86675f2?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9RG9ja2VyJTIwJTdDJTIwZG9ja2VyJTIwcnVuJTIwJUUzJTgxJUFFJTIwLXYlMjAlRTMlODIlQUElRTMlODMlOTclRTMlODIlQjclRTMlODMlQTclRTMlODMlQjMlRTMlODElQTclRTMlODMlOUIlRTMlODIlQjklRTMlODMlODglRTMlODElQUUlRTQlQkIlQkIlRTYlODQlOEYlRTMlODElQUUlRTMlODMlOTElRTMlODIlQjklRTMlODIlOTIlRTMlODIlQjMlRTMlODMlQjMlRTMlODMlODYlRTMlODMlOEElRTMlODElQUUlRTQlQkIlQkIlRTYlODQlOEYlRTMlODElQUUlRTMlODMlOTElRTMlODIlQjklRTMlODElQUIlRTMlODMlOUUlRTMlODIlQTYlRTMlODMlQjMlRTMlODMlODglRTMlODElOTklRTMlODIlOEImdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz04ZDFiYzNiOTI0Zjk4ZWE1YWNkOWU0YjQ0Mzg5MDgwZg&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDB0YnBnciZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTY5NWE0OTFmYThjYjY0MTc1NDY3NWQ1YjY3OGY3OGI0&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=da3221300046277eff37052df4f80bc7",
+      "displayUrl": "qiita.com",
+      "url": "https://qiita.com/tbpgr/items/5ff706ce2c62bffafd88"
+    }
   }
 }

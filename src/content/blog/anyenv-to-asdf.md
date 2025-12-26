@@ -61,7 +61,7 @@ $ source ~/.zshrc
 
 既に以下の設定を `~/.zshrc` に記載している場合は、Homebrew でインストールするとそれだけで補完設定ができていた。[^1]
 
-```shell:~/.zshrc showLineNumbers
+```sh:~/.zshrc showLineNumbers
 if type brew &> /dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
@@ -121,7 +121,7 @@ asdf は `.tool-versions` というファイルを元に現在使用するバー
 
 システム全体で使用するバージョンを固定する場合は `asdf global` コマンドで設定できる。設定したものについては `$HOME/.tool-versions` に保持される。
 
-```shell
+```sh
 $ asdf global nodejs latest
 
 $ cat ~/.tool-versions
@@ -132,7 +132,7 @@ nodejs 18.7.0
 
 一方でプロジェクトごとバージョンを固定したい場合は `asdf local` コマンドで設定する。設定は `$PWD/.tool-versions` に保持される。この辺りの設定ファイルの扱いは統一感あって非常に分かりやすい！
 
-```shell
+```sh
 $ asdf local nodejs latest
 
 $ cat ./.tool-versions
@@ -145,7 +145,7 @@ nodejs 18.7.0
 
 これらのツールの設定ファイルを読み込む設定は `~/.asdfrc` に以下を記載する。
 
-```shell:~/.asdfrc showLineNumbers
+```sh:~/.asdfrc showLineNumbers
 legacy_version_file = yes
 ```
 

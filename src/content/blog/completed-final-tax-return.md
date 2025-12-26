@@ -5,7 +5,6 @@ summary: "今年も無事完了した。"
 tags:
   - "Life"
   - "Note"
-  - "admi"
 date: "2023-03-05"
 draft: false
 title: "2022（令和 4 ）年度 確定申告"
