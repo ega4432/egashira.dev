@@ -1,16 +1,18 @@
 import { defineConfig } from "astro/config";
+import { transformerNotationDiff } from "@shikijs/transformers";
 import emoji from "remark-emoji";
 import remarkMath from "remark-math";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
+import { rehypePrettyCode } from "rehype-pretty-code";
 import { s } from "hastscript";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
-import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
+// import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
 import generateOgImage from "./src/integrations/generateOgImages";
 import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
 import rehypeMermaid from "rehype-mermaid";
@@ -62,11 +64,8 @@ export default defineConfig({
     icon()
   ],
   markdown: {
-    syntaxHighlight: {
-      type: "shiki",
-      excludeLangs: ["mermaid", "math"]
-    },
-    remarkPlugins: [emoji, remarkMath, remarkCodeTitles, remarkLinkCard],
+    syntaxHighlight: false,
+    remarkPlugins: [emoji, remarkMath, remarkLinkCard],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -84,6 +83,12 @@ export default defineConfig({
             theme: "dark",
             fontFamily: "sans-serif"
           }
+        }
+      ],
+      [
+        rehypePrettyCode,
+        {
+          transformers: [transformerNotationDiff()]
         }
       ]
     ]
