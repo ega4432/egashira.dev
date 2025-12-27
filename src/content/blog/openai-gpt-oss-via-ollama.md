@@ -1,7 +1,7 @@
 ---
 title: "ローカルで動く OpenAI の大規模言語モデル「gpt-oss」を Ollama で実際に使ってみた"
 date: "2025-08-16"
-tags: ["AI", "GPT", "OpenAI", "Ollama"]
+tags: ["生成AI", "LLM", "OpenAI", "Ollama"]
 draft: false
 summary: "Apple M1 Macで動作する OpenAI のオープンソース大規模言語モデル「gpt-oss」を、Ollama を使って実際に試した"
 ---

@@ -73,7 +73,7 @@ MCP サーバをコンテナで実行する際によく使うオプションを�
 
 - **`-i`**: 標準入力を開いたまま（MCP の stdio 通信に必須）
 - **`--init`**: PID 1 プロセスとして init を使用（ゾンビプロセス対策）
-- **`-v`**: ボリュームマウント（ファイルアクセス用）
+- **`--mount` / `-v`**: ボリュームマウント（ファイルアクセス用）
 - **`-p`**: ポートフォワード（ホストからコンテナへ直接にアクセス）
 
 これらについて一つずつ説明する。
@@ -92,23 +92,25 @@ https://christina04.hatenablog.com/entry/docker-init
 
 https://qiita.com/ko1nksm/items/e8c2fbf58687e6979448
 
-### `-v(--volume)` オプション
+### `--mount` と `-v(--volume)` オプション
 
 ホストのディレクトリやファイルをコンテナ内にマウントするオプションである。MCP サーバがファイルシステムにアクセスする際に必要となる。
 
 例えば、Playwright MCP サーバでスクリーンショットをローカルマシン上に保存したい場合や、SQLite MCP サーバでデータをローカルに永続化したい場合に使用する。また、ログファイルやドキュメントを読み取り専用で MCP サーバに提供する場合にも活用できる。
 
-基本的に下記のようなかたちで指定する。
+Docker では、ストレージのマウントに `--mount` と `-v(--volume)` の 2 つのオプションが用意されているが、公式としては前者を推奨している[^2] ため理由がなければ前者を使うと良い。
+
+下記の通り、key=value 形式で可読性が高く、マウントの種類を `type=volume` で明示的に指定する。
 
 ```sh
-$ docker run -v <ホストのパス>:<コンテナ内のパス>[:<オプション>]
+# Volume の場合
+$ docker run --mount type=volume,source=myvolume,target=/app/data image
 
-# オプションは下記の 2 パターン
-# - `:ro` - 読み取り専用（read-only）
-# - `:rw` - 読み書き可能（read-write、デフォルト）
+# 読み取り専用にする場合
+$ docker run --mount type=volume,source=myvolume,target=/app/data,readonly image
 ```
 
-LLM に読み書きを許可するボリュームマウントを最小限に絞ることで、誤操作のリスクを減らせる。必要最小限のディレクトリのみをマウントし、可能な限り読み取り専用にすることを推奨する。
+LLM に読み書きを許可するマウントを最小限に絞ることで、誤操作のリスクを減らせる。必要最小限のディレクトリのみをマウントし、可能な限り読み取り専用にすることを推奨する。
 
 ```mermaid
 graph TB
@@ -125,7 +127,7 @@ graph TB
   end
 ```
 
-https://qiita.com/tbpgr/items/5ff706ce2c62bffafd88
+https://docs.docker.com/engine/storage/volumes/#differences-between--v-and---mount-behavior
 
 ### `-p(--publish)` オプション
 
@@ -175,3 +177,6 @@ https://amzn.to/4jgGFI3
 https://amzn.to/4rgPx48
 
 [^1]: https://github.com/microsoft/playwright-mcp
+
+[^2]:
+    > [In general, --mount is preferred. The main difference is that the --mount flag is more explicit and supports all the available options.](https://docs.docker.com/engine/storage/volumes/#differences-between--v-and---mount-behavior:~:text=In%20general%2C%20%2D%2Dmount%20is%20preferred.%20The%20main%20difference%20is%20that%20the%20%2D%2Dmount%20flag%20is%20more%20explicit%20and%20supports%20all%20the%20available%20options.)
