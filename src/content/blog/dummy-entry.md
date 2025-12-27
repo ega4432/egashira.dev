@@ -85,9 +85,13 @@ canonicalUrl: https://egashira.dev/blog/dummy-entry
 
 ### ベーシック
 
+- ターミナル
+
 ```sh
 $ rm -rf /*
 ```
+
+- ファイル
 
 ```go
 package main
@@ -102,36 +106,37 @@ func main() {
 
 ### ファイル名表示
 
-```js:hello.js
-console.log("Hello markdown")
+```ts title="hello.ts"
+console.log("Hello markdown");
 ```
 
-### diff
+### ファイル名表示 + diff
 
-```diff-go
+```go title="main.go"
 package main
 
 import "fmt"
 
-+var world string
+var world string // [!code ++]
 
 func main() {
-+   world = "world"
-+   fmt.Printf("Hello %s\n", world)
+    w = "world" // [!code ++]
+    fmt.Printf("Hello %s\n", w) // [!code ++]
+    fmt.Println("Hello world") // [!code --]
 }
 ```
 
-### (WIP)diff & シンタックスハイライト
-
-```diff:main.js
--console.log('hallo')
-+console.log('hello')
+```ts title="diff.ts"
+console.log("removed"); // [!code --]
+console.log("added"); // [!code ++]
+console.log("unchanged");
 ```
 
-### (WIP)行数表示
+### ファイル名表示 + diff + 行数表示
 
-```js showLineNumbers
-console.log("Line 1");
+```ts title="showLineNumbers.ts" showLineNumbers
+console.log("Line"); // [!code --]
+console.log("Line 1"); // [!code ++]
 console.log("Line 2");
 console.log("Line 3");
 ```

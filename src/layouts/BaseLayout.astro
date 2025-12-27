@@ -62,7 +62,7 @@ const adClient = import.meta.env.AD_CLIENT;
       /* コード、数式 */
       .prose pre,
       .math {
-        @apply text-xs xl:text-sm;
+        @apply text-xs xl:text-sm !leading-5 sm:!leading-6;
       }
       /* チェックボックス */
       .prose ul:has(> .task-list-item) {

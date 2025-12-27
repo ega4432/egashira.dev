@@ -88,7 +88,7 @@ mas "Twitter", id: 1482454543
 
 先に全体を貼り付けておく。
 
-```bash showLineNumbers
+```sh title="brew.sh" showLineNumbers
 #!/bin/bash -eux
 
 echo "Start setup ..."
@@ -117,30 +117,30 @@ fi
 
 `.github/workflows/` ディレクトリに以下のような YAML ファイルを作った。使用できる環境は [こちら](https://docs.github.com/ja/actions/using-github-hosted-runners/about-github-hosted-runners) を参照して欲しい。
 
-```yaml:.github/workflows/build.yaml showLineNumbers
-name: 'build'
+```yaml title=".github/workflows/build.yaml" showLineNumbers
+name: "build"
 
 on:
   pull_request:
     branches:
-    - main
+      - main
   workflow_dispatch:
 
 jobs:
   build:
     name: Build
-    runs-on: macos-latest   # <--- macOS Big Sur 11
+    runs-on: macos-latest # <--- macOS Big Sur 11
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Execute install script
-      run: |
-        MAS_APPS="$(cat Brewfile | grep -v brew | grep mas | sed 's/^.*"\(.*\)".*$/\1/' | tr '\n' ' ')"
-        export HOMEBREW_BUNDLE_MAS_SKIP="$MAS_APPS"
-        export HOMEBREW_BUNDLE_BREW_SKIP="awscli go"
-        ./install.sh
+      - name: Execute install script
+        run: |
+          MAS_APPS="$(cat Brewfile | grep -v brew | grep mas | sed 's/^.*"\(.*\)".*$/\1/' | tr '\n' ' ')"
+          export HOMEBREW_BUNDLE_MAS_SKIP="$MAS_APPS"
+          export HOMEBREW_BUNDLE_BREW_SKIP="awscli go"
+          ./install.sh
 ```
 
 `install.sh` が実行できるかを確認するだけで良いのだが、GitHub Actions の macOS ランナーでは既に Homebrew や awscli など既にセットアップされている。そのため、`HOMEBREW_BUNDLE_BREW_SKIP` , `HOMEBREW_BUNDLE_MAS_SKIP` を環境変数に設定してインストールをスキップするように細工した。
