@@ -3519,15 +3519,15 @@
       "url": "https://qiita.com/ko1nksm/items/e8c2fbf58687e6979448"
     }
   },
-  "https://qiita.com/tbpgr/items/5ff706ce2c62bffafd88": {
-    "timestamp": 1766729087797,
+  "https://docs.docker.com/engine/storage/volumes/#differences-between--v-and---mount-behavior": {
+    "timestamp": 1766803188003,
     "data": {
-      "title": "Docker | docker run の -v オプションでホストの任意のパスをコンテナの任意のパスにマウントする - Qiita",
-      "description": "docker run の -v オプションでホストの任意のパスをコンテナの任意のパスにマウントします。 サンプル ホスト側の構成は以下 $ tree . └── sample_volume ├── hage.txt (中身は hage ) ├── h...",
-      "faviconSrc": "https://www.google.com/s2/favicons?domain=qiita.com",
-      "ogImageSrc": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGNDM0ODAlMkZwcm9maWxlLWltYWdlcyUyRjE0NzM2ODk1NDU_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPTA4Nzc5MmE1NzBjNTU1NmIwNTRmZjBiZWQxNmY5OTky%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dc3e5f4037003826c8ad980f0f86675f2?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9RG9ja2VyJTIwJTdDJTIwZG9ja2VyJTIwcnVuJTIwJUUzJTgxJUFFJTIwLXYlMjAlRTMlODIlQUElRTMlODMlOTclRTMlODIlQjclRTMlODMlQTclRTMlODMlQjMlRTMlODElQTclRTMlODMlOUIlRTMlODIlQjklRTMlODMlODglRTMlODElQUUlRTQlQkIlQkIlRTYlODQlOEYlRTMlODElQUUlRTMlODMlOTElRTMlODIlQjklRTMlODIlOTIlRTMlODIlQjMlRTMlODMlQjMlRTMlODMlODYlRTMlODMlOEElRTMlODElQUUlRTQlQkIlQkIlRTYlODQlOEYlRTMlODElQUUlRTMlODMlOTElRTMlODIlQjklRTMlODElQUIlRTMlODMlOUUlRTMlODIlQTYlRTMlODMlQjMlRTMlODMlODglRTMlODElOTklRTMlODIlOEImdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz04ZDFiYzNiOTI0Zjk4ZWE1YWNkOWU0YjQ0Mzg5MDgwZg&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDB0YnBnciZ0eHQtY29sb3I9JTIzMUUyMTIxJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTY5NWE0OTFmYThjYjY0MTc1NDY3NWQ1YjY3OGY3OGI0&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=da3221300046277eff37052df4f80bc7",
-      "displayUrl": "qiita.com",
-      "url": "https://qiita.com/tbpgr/items/5ff706ce2c62bffafd88"
+      "title": "Volumes",
+      "description": "Learn how to create, manage, and use volumes instead of bind mounts for persisting data generated and used by Docker.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=docs.docker.com",
+      "ogImageSrc": "https://docs.docker.com/images/thumbnail.webp",
+      "displayUrl": "docs.docker.com",
+      "url": "https://docs.docker.com/engine/storage/volumes/#differences-between--v-and---mount-behavior"
     }
   }
 }

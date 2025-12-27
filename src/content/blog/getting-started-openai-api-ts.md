@@ -1,7 +1,7 @@
 ---
 title: "OpenAI API を TypeScript で叩いてみた"
 date: "2024-01-10"
-tags: ["TypeScript", "Node.js", "OpenAI", "ChatGPT"]
+tags: ["TypeScript", "OpenAI", "生成AI", "ChatGPT", "LLM"]
 draft: false
 summary: "公式の Node.js/TypeScript ライブラリを使ってみた"
 ---

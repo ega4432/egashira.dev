@@ -89,7 +89,7 @@ https://egashira.dev/llms.txt
 
 ## 参考
 
-https://llmstxt.org/
+https://amzn.to/4rgPx48
 
 https://directory.llmstxt.cloud/llms.text
 
