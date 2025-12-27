@@ -38,7 +38,7 @@ k8s を触っていると複数ノードが必要な Taint/Toleration や Affini
 
 僕は Homebrew でインストールしたので、その方法を記載する。もし、違う方法でやりたい場合は公式のドキュメントを参照して欲しい。
 
-```shell
+```sh
 $ brew install kind
 
 $ kind version
@@ -61,7 +61,7 @@ kind v0.14.0 go1.18.2 darwin/amd64
 
 `kind create cluster` コマンドでクラスタを作成していく。
 
-```shell
+```sh
 # 最初は何もない
 $ kind get clusters
 No kind clusters found.
@@ -90,7 +90,7 @@ Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/
   - `--image` オプションでクラスタに使用する Docker イメージ名を指定できる（デフォルトだと `kindest/node` が使用される）
 - Context が自動でセットされる。
 
-```shell
+```sh
 # クラスタ一覧を取得
 $ kind get clusters
 kind
@@ -121,7 +121,7 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 
 `--name` オプションでクラスタ名を指定して任意のクラスタを削除できる。ちなみに指定しない場合は、デフォルトの `kind` という名前のクラスタを削除しにいくようだ[^1]。
 
-```shell
+```sh
 $ kind delete cluster --name kind
 Deleting cluster "kind" ...
 
@@ -135,7 +135,7 @@ No kind clusters found.
 
 YAML にクラスタの情報を定義できるためついでに試してみた。YAML ファイルを使って、クラスタを作成する場合は `kind create cluster` コマンドに `--config` オプションとしてファイルパスを渡してあげることで対応できる。
 
-```shell
+```sh
 $ cat <<EOF > kind-config.yaml
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
@@ -148,7 +148,7 @@ EOF
 $ kind create cluster --config ./kind-config.yaml
 ```
 
-```shell
+```sh
 $ kind get clusters
 kind
 

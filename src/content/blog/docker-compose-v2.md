@@ -16,7 +16,7 @@ summary: Docker Compose V2 が GA されたので何が変わったのか簡単�
 
 Docker CLI plugin とは、Docker CLI にプラグインとしてサブコマンドを追加できる機能で、下記でプラグインの一覧を確認できる。[^1]
 
-```shell
+```sh
 $ ls -1 /usr/local/lib/docker/cli-plugins/* | grep compose
 /usr/local/lib/docker/cli-plugins/docker-compose
 ```
@@ -51,7 +51,7 @@ Cloud Integuration という機能により AWS や Azure といったクラウ�
 
 現在は Amazon Elastic Container Service(ECS) と Microsoft Azure Container Instances(ACI) に対応しているとのこと。
 
-```shell
+```sh
 # 簡単にイメージだけを示すとこんな感じ
 $ docker context create ecs my-ecs
 

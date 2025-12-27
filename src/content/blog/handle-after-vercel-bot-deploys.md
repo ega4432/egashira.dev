@@ -14,7 +14,7 @@ summary: Vercel bot のデプロイ後に処理をする方法について検討
 
 GitHub Actions で [`deployment_status`](https://docs.github.com/ja/actions/using-workflows/events-that-trigger-workflows#deployment_status) というイベントをトリガーとすることで実現できる。
 
-```yaml:.github/workflows/deploy-after-action.yaml showLineNumbers
+```yaml title=".github/workflows/deploy-after-action.yaml" showLineNumbers
 name: Handle after Vercel bot deploys
 
 on: [deployment_status]
@@ -52,7 +52,7 @@ Vercel bot のデプロイ後の処理で考えられるユースケースとそ
 - デプロイが成功したらブログの更新を Twitter に投稿する
 - デプロイが失敗したら Slack へ通知する
 
-```yaml:.github/workflows/deploy-after-action.yaml showLineNumbers {9, 15}
+```yaml title=".github/workflows/deploy-after-action.yaml" showLineNumbers
 name: Handle after Vercel bot deploys
 
 on: [deployment_status]
@@ -61,13 +61,13 @@ jobs:
   success-job:
     name: In case of successful
     runs-on: ubuntu-latest
-    if: github.event.deployment_status.state == 'success'
+    if: github.event.deployment_status.state == 'success' # [!code ++]
     steps:
       # One or several steps
   failure-job:
     name: In case of failure
     runs-on: ubuntu-latest
-    if: github.event.deployment_status.state == 'failure'
+    if: github.event.deployment_status.state == 'failure' # [!code ++]
     steps:
       # One or several steps
 ```
@@ -76,19 +76,19 @@ jobs:
 
 通常 push や Pull Request では下記のようにできる。
 
-```
+```yaml showLineNumbers
 on:
   push:
     branches:
       - main
-      - 'feature/**'
+      - "feature/**"
 ```
 
 しかし、deployment_status では、ブランチによるイベントのフィルタができない。回避策としては、デプロイする環境でデフォルトブランチ（main/master）とそれ以外で区別する。
 
 2022/05 現在ではそれしか対処法がないと思うが、もしこうやったらできるよという対策があれば教えていただきたい:pray:
 
-```yaml:.github/workflows/deploy-after-action.yaml showLineNumbers {9, 15}
+```yaml title=".github/workflows/deploy-after-action.yaml" showLineNumbers
 name: Handle after Vercel bot deploys
 
 on: [deployment_status]
@@ -97,13 +97,13 @@ jobs:
   production-env:
     name: In case of production
     runs-on: ubuntu-latest
-    if: github.event.deployment.environment == 'Prorduction'
+    if: github.event.deployment.environment == 'Prorduction' # [!code ++]
     steps:
       # One or several steps
   preview-env:
     name: In case of preview
     runs-on: ubuntu-latest
-    if: github.event.deployment.environment == 'Preview'
+    if: github.event.deployment.environment == 'Preview' # [!code ++]
     steps:
       # One or several steps
 ```

@@ -28,7 +28,7 @@ API クライアントには慣れている axios を使用した。
 
 まず、こんな感じで適当にフォームを作ってファイルを選択できるような UI を作る。
 
-```tsx:App.tsx showLineNumbers
+```tsx title="App.tsx" showLineNumbers
 export const App = (): JSX.Element => {
   return (
     <div className="App">
@@ -37,8 +37,8 @@ export const App = (): JSX.Element => {
         <input type="button" disabled={!file} value="送信" />
       </div>
     </div>
-  )
-}
+  );
+};
 ```
 
 マークアップは雑だが、とりあえず下記のような見た目ができあがる。
@@ -51,18 +51,21 @@ export const App = (): JSX.Element => {
 
 ファイルを選択したら、そのデータをリクエストに含めたいので、ファイルを選択した際の処理を書いていく。
 
-```tsx:App.tsx showLineNumbers {1,4-11,20}
-import React, { useState } from "react"
+```tsx title="App.tsx" showLineNumbers
+import React, { useState } from "react"; // [!code ++]
 
 export const App = (): JSX.Element => {
-  const [file, setFile] = useState<File | null>(null)
+  const [file, setFile] = useState<File | null>(null); // [!code ++]
+  // [!code ++]
 
   const onChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files
+    // [!code ++]
+    const files = e.target.files; // [!code ++]
     if (files && files[0]) {
-      setFile(files[0])
-    }
-  }
+      // [!code ++]
+      setFile(files[0]); // [!code ++]
+    } // [!code ++]
+  }; // [!code ++]
 
   return (
     <div className="App">
@@ -71,13 +74,13 @@ export const App = (): JSX.Element => {
           name="file"
           type="file"
           accept="image/*"
-          onChange={onChangeFile}
+          onChange={onChangeFile} // [!code ++]
         />
         <input type="button" disabled={!file} value="送信" />
       </div>
     </div>
-  )
-}
+  );
+};
 ```
 
 - ファイルを選択する度に Change メソッドが呼ばれ、`onChangeFile` が発火する。
@@ -87,9 +90,9 @@ export const App = (): JSX.Element => {
 
 続いて送信ボタン押下した際の処理を書いていく。
 
-```tsx:App.tsx showLineNumbers {2,14-29,40}
+```tsx title="App.tsx" showLineNumbers {2,14-29,40}
 import React, { useState } from "react"
-import axios, { AxiosError } from "axios"
+import axios, { AxiosError } from "axios"  // [!code ++]
 
 export const App = (): JSX.Element => {
   const [file, setFile] = useState<File | null>(null)
@@ -101,22 +104,23 @@ export const App = (): JSX.Element => {
     }
   }
 
-  const onClickSubmit = async () => {
-    if (!file) {
-      return
-    }
-    const formData = new FormData()
-    formData.append("file", file)
+  const onClickSubmit = async () => { // [!code ++]
+    if (!file) { // [!code ++]
+      return  // [!code ++]
+    } // [!code ++]
+    const formData = new FormData() // [!code ++]
+    formData.append("file", file) // [!code ++]
+// [!code ++]
 
-    await axios.post(`${apiUrl}/api/upload`, formData)
-      .then((res) => {
-        console.log(res.data)
-      })
-      .catch((e: AxiosError) => {
-        console.error(e)
-      })
-    }
-  }
+    await axios.post(`${apiUrl}/api/upload`, formData) // [!code ++]
+      .then((res) => { // [!code ++]
+        console.log(res.data) // [!code ++]
+      }) // [!code ++]
+      .catch((e: AxiosError) => { // [!code ++]
+        console.error(e) // [!code ++]
+      }) // [!code ++]
+    } // [!code ++]
+  } // [!code ++]
 
   return (
     <div className="App">
@@ -127,7 +131,7 @@ export const App = (): JSX.Element => {
           accept="image/*"
           onChange={onChangeFile}
         />
-        <input type="button" disabled={!file} value="送信" onClick={onClickSubmit} />
+        <input type="button" disabled={!file} value="送信" onClick={onClickSubmit} /> {/*  [!code ++] */}
       </div>
     </div>
   )

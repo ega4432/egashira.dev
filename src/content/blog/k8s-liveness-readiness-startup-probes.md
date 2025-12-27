@@ -87,7 +87,7 @@ spec:
 
 まずは、下記の YAML ファイルを適用して Pod を作成する。
 
-```yaml showLineNumbers
+```yaml title="pod.yaml" showLineNumbers
 apiVersion: v1
 kind: Pod
 metadata:
@@ -107,7 +107,7 @@ spec:
 
 Pod の状態を watch オプションで見てみると、30 秒毎[^2]に Restart されるのが確認できる。
 
-```shell
+```sh
 $ k get po -w
 NAME       READY   STATUS    RESTARTS   AGE
 liveness   1/1     Running   3          97s
@@ -118,7 +118,7 @@ liveness   1/1     Running   4          2m4s
 
 イベントログを確認すると、livenessProbe によるチェックで失敗しているのが分かる。
 
-```shell {8}
+```sh
 $ k describe po liveness | grep -A10 Events
 Events:
   Type     Reason     Age                From               Message
@@ -126,7 +126,7 @@ Events:
   Normal   Scheduled  75s                default-scheduler  Successfully assigned default/liveness to docker-desktop
   Normal   Pulled     72s                kubelet            Successfully pulled image "nginx" in 2.6530177s
   Normal   Pulled     43s                kubelet            Successfully pulled image "nginx" in 2.5414899s
-  Normal   Killing    16s (x2 over 46s)  kubelet            Container liveness failed liveness probe, will be restarted
+  Normal   Killing    16s (x2 over 46s)  kubelet            Container liveness failed liveness probe, will be restarted # [!code ++]
   Normal   Pulling    15s (x3 over 75s)  kubelet            Pulling image "nginx"
   Normal   Created    13s (x3 over 72s)  kubelet            Created container liveness
   Normal   Started    13s (x3 over 72s)  kubelet            Started container liveness
@@ -141,7 +141,7 @@ Events:
 
 ここでは、HTTPGetAction で検証していく。
 
-```yaml showLineNumbers
+```yaml title="pod.yaml" showLineNumbers
 apiVersion: v1
 kind: Pod
 metadata:
@@ -164,7 +164,7 @@ spec:
 
 `kubectl describe` コマンドで設定できているか確認してみる。
 
-```shell
+```sh
 $ k describe pod readiness | grep  Readiness
     Readiness:      http-get http://:80/ delay=0s timeout=1s period=10s #success=1 #failure=3
 ```
@@ -172,7 +172,7 @@ $ k describe pod readiness | grep  Readiness
 ReadinessProbe も設定できているのが分かる。
 ここで確認用の Pod を作成して、Service に接続できるか確認してみる。
 
-```shell
+```sh
 # 確認用の Pod を作成
 $ k run test --image busybox --command sleep "3000"
 
@@ -211,11 +211,11 @@ Service 経由で readiness Pod で配信している HTML ファイルをダウ
 
 Nginx のデフォルトのエントリーポイントは `/usr/share/nginx/html/index.html` 。なのでこれを削除すれば ReadinessProbe が失敗するか試してみる（後で戻したいのでファイル名を書き換えるに留めた）。
 
-```shell
+```sh
 $ k exec -it readiness -- mv /usr/share/nginx/html/index.html /usr/share/nginx/html/tmp.html
 ```
 
-```shell
+```sh
 # Pod のイベントに ReadinessProbe 失敗のイベントログが表示されている
 $ k describe po readiness | grep -A5 Events
 Events:
@@ -252,7 +252,7 @@ ExecAction で（例として適しているかは微妙だが）検証してい
 
 Pod は、下記のような YAML を適用して作成する。
 
-```yaml showLineNumbers
+```yaml title="pod.yaml" showLineNumbers
 apiVersion: v1
 kind: Pod
 metadata:
@@ -280,7 +280,7 @@ spec:
 
 確認すると、StartupProbe が成功して、Pod の起動ができていることが分かる。
 
-```shell
+```sh
 $ k describe po startup | grep Startup
     Startup:        exec [cat /etc/nginx/nginx.conf] delay=1s timeout=1s period=2s #success=1 #failure=1
 
@@ -291,7 +291,7 @@ startup   1/1     Running   0          65s
 
 続いて下記のように YAML を修正して、StartupProbe が失敗するか見ていく。
 
-```yaml {15} showLineNumbers
+```yaml title="pod.yaml" showLineNumbers
 apiVersion: v1
 kind: Pod
 metadata:
@@ -304,9 +304,9 @@ spec:
       name: startup
       startupProbe:
         exec:
-          command:
-            - cat
-            - /etc/nginx/nginx.conf-do-not-exist
+          command: # [!code ++]
+            - cat # [!code ++]
+            - /etc/nginx/nginx.conf-do-not-exist # [!code ++]
         initialDelaySeconds: 1
         periodSeconds: 2
         timeoutSeconds: 1
@@ -317,7 +317,7 @@ spec:
   restartPolicy: Always
 ```
 
-```shell {15}
+```sh
 $ k replace --force -f <FILE_PATH>
 
 $ k get po
@@ -332,7 +332,7 @@ Events:
   Normal   Pulled     64s                kubelet            Successfully pulled image "nginx" in 3.0760395s
   Normal   Pulled     58s                kubelet            Successfully pulled image "nginx" in 3.1046343s
   Normal   Pulled     52s                kubelet            Successfully pulled image "nginx" in 2.8248999s
-  Warning  Unhealthy  50s (x3 over 62s)  kubelet            Startup probe failed: cat: /etc/nginx/nginx.conf-do-not-exist: No such file or directory
+  Warning  Unhealthy  50s (x3 over 62s)  kubelet            Startup probe failed: cat: /etc/nginx/nginx.conf-do-not-exist: No such file or directory # [!code ++]
   Normal   Killing    49s (x3 over 61s)  kubelet            Container startup failed startup probe, will be restarted
   Warning  BackOff    47s (x3 over 49s)  kubelet            Back-off restarting failed container
   Normal   Pulling    36s (x4 over 67s)  kubelet            Pulling image "nginx"
