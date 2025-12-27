@@ -28,18 +28,16 @@ https://github.com/vercel/og-image
 
 README.md のデプロイボタンからワンクリックで Vercel へデプロイできるようになっているのだが、無料の Hobby Plan ではこのままだとデプロイできないので以下に修正する。
 
-```json:vercel.json {2-3, 6} showLineNumbers
+```json title="vercel.json" {2-3, 6} showLineNumbers
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "regions": ["hnd1"],
+  "$schema": "https://openapi.vercel.sh/vercel.json", // [!code ++]
+  "regions": ["hnd1"], // [!code ++]
   "functions": {
     "api/**": {
-      "memory": 1024
+      "memory": 1024 // [!code ++]
     }
   },
-  "rewrites": [
-    { "source": "/(.+)", "destination": "/api" }
-  ]
+  "rewrites": [{ "source": "/(.+)", "destination": "/api" }]
 }
 ```
 
@@ -47,7 +45,7 @@ Vercel は AWS で作られているらしく、できればより読者が多�
 
 また、これから OGP 画像をカスタマイズしていく訳だが、ローカルで確認しながら修正していきたい。それには Vercel CLI を使うとローカルで Serverless Function を含んだコードを実行できるので非常に便利だ。導入は下記に書いたが、3 行コマンドを実行するだけで完了する。
 
-```shell
+```sh
 # インストールがまだであればインストールする
 $ npm install -g vercel
 
@@ -63,10 +61,10 @@ $ vercel dev
 
 まずは、デフォルトだと日本語に対応していないので日本語対応させる。
 
-```ts:api/_lib/template.ts showLineNumbers
+```ts title="api/_lib/template.ts" showLineNumbers
 function getCss(theme: string, fontSize: string) {
-    // 省略
-    return `
+  // 省略
+  return `
     @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
 
     ..
@@ -98,26 +96,20 @@ SNS のタイムラインなどでシェアされた場合、ユーザに視覚�
 
 このサイトは Next.js で作られていて、SEO に関する meta タグ類は SEO コンポーネントにまとめている。
 
-```tsx:components/SEO.tsx showLineNumbers
+```tsx title="components/SEO.tsx" showLineNumbers
 interface SEOProps {
-  title: string
-  description: string
-  ogType: string
-  ogImage: string
-  twImage: string
+  title: string;
+  description: string;
+  ogType: string;
+  ogImage: string;
+  twImage: string;
 }
 
-const SEO = ({
-  title,
-  description,
-  ogType,
-  ogImage,
-  twImage
-}: SEOProps) => {
-  if (ogType === 'article') {
-    const dynamicOgImage = `${process.env.NEXT_PUBLIC_OG_IMAGE_DOMAIN}/${encodeURIComponent(title)}`
-    ogImage = dynamicOgImage
-    twImage = dynamicOgImage
+const SEO = ({ title, description, ogType, ogImage, twImage }: SEOProps) => {
+  if (ogType === "article") {
+    const dynamicOgImage = `${process.env.NEXT_PUBLIC_OG_IMAGE_DOMAIN}/${encodeURIComponent(title)}`;
+    ogImage = dynamicOgImage;
+    twImage = dynamicOgImage;
   }
   return (
     <Head>
@@ -126,10 +118,10 @@ const SEO = ({
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={ogImage} key={ogImage} />
       <meta name="twitter:image" content={twImage} />
-      <meta name="twitter:card" content='summary_large_image' />
+      <meta name="twitter:card" content="summary_large_image" />
     </Head>
-  )
-}
+  );
+};
 ```
 
 コメントアウトにも書いている通り OGP 以外の meta タグを省略して書くと上記のようになる。

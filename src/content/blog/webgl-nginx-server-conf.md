@@ -22,8 +22,8 @@ https://github.com/jeffreylanters/react-unity-webgl
 
 事前に Unity でビルドしたコンテンツをこんな感じで `public/build` に置いておけばローカルでもすぐに確認できる。非常に便利だ！
 
-```js:App.js showLineNumbers
-import { Unity, useUnityContext } from "react-unity-webgl"
+```js title="App.js" showLineNumbers
+import { Unity, useUnityContext } from "react-unity-webgl";
 
 function App() {
   const { unityProvider } = useUnityContext({
@@ -31,9 +31,9 @@ function App() {
     dataUrl: "build/xxx.data",
     frameworkUrl: "build/xxx.framework.js",
     codeUrl: "build/xxx.wasm"
-  })
+  });
 
-  return <Unity unityProvider={unityProvider} />
+  return <Unity unityProvider={unityProvider} />;
 }
 ```
 
@@ -41,7 +41,7 @@ function App() {
 
 React を SPA としてビルドしたものを配信するサーバとして nginx を選定した。さらによりポータビリティを考慮してコンテナしてみた。その際の Dockerfile は以下を参照してもらえたらと思う。
 
-```dockerfile:Dockerfile showLineNumbers
+```dockerfile title="Dockerfile" showLineNumbers
 FROM docker.io/library/node:18.12.1-slim AS builder
 WORKDIR /app
 COPY ./package*.json ./
@@ -62,7 +62,7 @@ CMD [ "nginx", "-g", "daemon off;" ]
 
 ビルドして起動する。
 
-```shell
+```sh
 $ docker build --no-cache -t nginx-webgl:v0.1 -f ./docker/Dockerfile .
 
 $ docker run -itd --name test --rm -p 8080:8080 nginx-webgl:v0.1
@@ -88,7 +88,7 @@ https://docs.unity3d.com/Manual/webgl-deploying.html
 
 https://docs.unity3d.com/Manual/webgl-server-configuration-code-samples.html
 
-```nginx:./docker/nginx/default.conf showLineNumbers {11-32}
+```nginx title="./docker/nginx/default.conf" showLineNumbers {11-32}
 server {
   listen       8080;
   server_name  localhost;

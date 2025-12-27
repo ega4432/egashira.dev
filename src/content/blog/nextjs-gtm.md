@@ -67,7 +67,7 @@ summary: "このサイトのアクセス解析のため Google Analytics を導�
 
 まずは Google Tag Manager の Script を埋め込むためのコンポーネント作成する。
 
-```ts:components/GoogleTagManager.tsx showLineNumbers
+```ts title="components/GoogleTagManager.tsx" showLineNumbers
 import Script from 'next/script'
 import { FC } from 'react'
 
@@ -102,37 +102,37 @@ Google Tag Manager を見ると、`このコードは、次のようにページ
 
 [script\-in\-document\-page \| Next\.js](https://nextjs.org/docs/messages/no-script-in-document-page)
 
-```tsx:pages/_app.tsx {1-2, 7} showLineNumbers
-import GoogleTagManager, { GtmId } from '@/components/GoogleTagManager'
-import { gtmId } from '@/lib/utils/gtm'
+```tsx title="pages/_app.tsx" showLineNumbers{1-2, 7}
+import GoogleTagManager, { GtmId } from "@/components/GoogleTagManager"; // [!code ++]
+import { gtmId } from "@/lib/utils/gtm"; // [!code ++]
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <GoogleTagManager gtmId={gtmId as GtmId} />
+      <GoogleTagManager gtmId={gtmId as GtmId} /> {/* [!code ++] */}
       <LayoutWrapper>
         <Component {...pageProps} />
       </LayoutWrapper>
     </ThemeProvider>
-  )
+  );
 }
 ```
 
 Google Tag Manager へ情報を渡す dataLayer を使えるように window interface を拡張する。
 
-```ts:lib/utils/gtm.ts showLineNumbers
-export const gtmId = process.env.NEXT_PUBLIC_GTM_ID || ''
+```ts title="lib/utils/gtm.ts" showLineNumbers
+export const gtmId = process.env.NEXT_PUBLIC_GTM_ID || "";
 
 declare global {
   interface Window {
-    dataLayer: Record<string, unknown>[]
+    dataLayer: Record<string, unknown>[];
   }
 }
 ```
 
 Google Tag Manager の ID は、`NEXT_PUBLIC_` プレフィックスを使用して、ビルド時に参照する。（プレフィックスなしの `process.env.HOGE_FUGA` はサーバーサイドでのみ参照できる）
 
-```:.env showLineNumbers
+```plaintext title=".env" showLineNumbers
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXX
 ```
 

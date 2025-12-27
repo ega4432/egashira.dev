@@ -22,7 +22,7 @@ Kubernetes（以下 k8s）のための宣言型 GitOps 継続的デリバリツ�
 
 Argo CD 用の Namespace を作成して進めていく。
 
-```shell
+```sh
 $ k create ns argocd
 namespace/argocd created
 
@@ -88,7 +88,7 @@ networkpolicy.networking.k8s.io/argocd-server-network-policy created
 
 argocd コマンドを Homebrew でインストールする。
 
-```shell
+```sh
 $ brew install argocd
 ```
 
@@ -103,7 +103,7 @@ $ brew install argocd
 
 の 3 パターンで実現できる。今回は一番手っ取り早く確認できる `Port Forwarding` で Service を公開せず API サーバに接続する。
 
-```shell
+```sh
 $ k port-forward svc/argocd-server -n argocd 8080:443
 Forwarding from 127.0.0.1:8080 -> 8080
 Forwarding from [::1]:8080 -> 8080
@@ -118,7 +118,7 @@ http://localhost:8080 をブラウザで開くと、「この接続ではプラ�
 
 Argo CD の管理者ユーザは `admin` 用の初期パスワードは、`argocd-initial-admin-secret` に設定されているので、下記のコマンドで確認し、CLI でログインする。
 
-```shell
+```sh
 $ k -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 uQ2m3iqu9hNzyl5G
 
@@ -136,7 +136,7 @@ Context 'localhost:8080' updated
 
 また、ログインができたらパスワードを変更し、初期パスワード用の Secret リソースを削除しておく。
 
-```shell
+```sh
 $ argocd account update-password
 *** Enter password of currently logged in user (admin):
 *** Enter new password for user admin:
@@ -162,7 +162,7 @@ secret "argocd-initial-admin-secret" deleted
 
 なお、登録する方法として CLI, GUI の両方がサポートされており、チュートリアルでは両方が紹介されている。今回は CLI で登録するが、もし GUI での操作を見てみたい場合は[こちら](https://argo-cd.readthedocs.io/en/stable/getting_started/#creating-apps-via-ui)を確認して欲しい。
 
-```shell
+```sh
 $ argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git \
     --path guestbook \
     --dest-server https://kubernetes.default.svc \
@@ -182,7 +182,7 @@ guestbook  https://kubernetes.default.svc  default    default  OutOfSync  Missin
 
 ステータスを確認するとまだ同期していない状態なので、アプリケーションはまだデプロイされていない状態らしい。引き続き CLI でデプロイまでやっていく。
 
-```shell
+```sh
 $ argocd app get guestbook
 Name:               guestbook
 Project:            default
@@ -252,7 +252,7 @@ apps   Deployment  default    guestbook-ui  Synced  Progressing        deploymen
 
 [ega4432/argocd\-example\-apps: Example Apps to Demonstrate Argo CD](https://github.com/ega4432/argocd-example-apps)
 
-```shell
+```sh
 $ argocd app create my-guestbook --repo https://github.com/ega4432/argocd-example-apps.git \
     --path guestbook \
     --dest-server https://kubernetes.default.svc \
@@ -270,19 +270,19 @@ $ argocd app sync my-guestbook
 
 自動で同期するように設定する必要がある。
 
-```shell
+```sh
 $ argocd app set my-guestbook --sync-policy automated
 ```
 
 そして、下記のように `guestbook/guestbook-ui-deployment.yaml` のマニフェストファイルを修正し、リポジトリに push します。
 
-```diff:guestbook/guestbook-ui-deployment.yaml
+```yaml title="guestbook/guestbook-ui-deployment.yaml" showLineNumbers
 ...
 metadata:
   name: guestbook-ui
 spec:
--  replicas: 1
-+  replicas: 3
+  replicas: 1 # [!code --]
+  replicas: 3 # [!code ++]
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -290,7 +290,7 @@ spec:
 
 そして数分待つと、自動的に Deployment の ReplicaSet が 3 に増える！
 
-```shell
+```sh
 $ k get pod -w
 NAME                            READY   STATUS    RESTARTS   AGE
 guestbook-ui-85985d774c-54kcw   1/1     Running   0          89s
@@ -311,7 +311,7 @@ guestbook-ui   3/3     3            3           45m
 
 全て終わったら使用したリソースを削除する。
 
-```shell
+```sh
 $ argocd app delete guestbook -y
 $ argocd app delete my-guestbook -y
 

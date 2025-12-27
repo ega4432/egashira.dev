@@ -59,7 +59,7 @@ $ terraform apply -var-file=terraform.tfvars -auto-approve
 
 HCL ファイルは以下のような感じだった。
 
-```hcl:main.tf showLineNumbers
+```hcl title="main.tf" showLineNumbers
 resource "ibm_code_engine_secret" "app_secret" {
   project_id = var.project_id
   name       = "${var.project_name}-secret"
@@ -118,7 +118,7 @@ https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/code
 
 上記を踏まえると HCL ファイルは最終的に以下のようになった。
 
-```diff:main.tf showLineNumbers
+```hcl title="main.tf" showLineNumbers
 resource "ibm_code_engine_secret" "app_secret" {
   project_id = var.project_id
   name       = "${var.project_name}-secret"
@@ -131,23 +131,22 @@ resource "ibm_code_engine_secret" "app_secret" {
   }
 }
 
-+ resource "ibm_code_engine_secret" "registry_secret" {
-+   project_id = var.project_id
-+   name       = "${var.project_name}-registry-secret"
-+   format     = "registry"
-+
-+   data = {
-+     username = var.registry_username
-+     password = var.registry_secret
-+     server   = var.registry_server
-+   }
-+ }
+ resource "ibm_code_engine_secret" "registry_secret" { # [!code ++]
+    project_id = var.project_id # [!code ++]
+    name       = "${var.project_name}-registry-secret" # [!code ++]
+    format     = "registry" # [!code ++]
+    data = { # [!code ++]
+      username = var.registry_username # [!code ++]
+      password = var.registry_secret # [!code ++]
+      server   = var.registry_server # [!code ++]
+    } # [!code ++]
+ } # [!code ++]
 
 resource "ibm_code_engine_app" "main_app" {
   project_id              = var.project_id
   name                    = "${var.project_name}-app"
   image_reference         = var.image
-+ image_secret            = "${var.project_name}-registry-secret"
+  image_secret            = "${var.project_name}-registry-secret" # [!code ++]
   image_port              = 3000
   managed_domain_mappings = "local_public"
   scale_min_instances     = 1
@@ -159,26 +158,26 @@ resource "ibm_code_engine_app" "main_app" {
 }
 ```
 
-```diff:variables.tf
+```hcl title="variables.tf" showLineNumbers
 variable "project_name" {}
 # 省略
 
-+ variable "registry_username" {
-+   type        = string
-+   default     = "iamapikey"
-+   description = "The username of registry secret"
-+ }
-+
-+ variable "registry_secret" {
-+   type        = string
-+   description = "The secret value of registry secret"
-+ }
-+
-+ variable "registry_server" {
-+   type        = string
-+   default     = "jp.icr.io"
-+   description = "The server of registry secret"
-+}
+variable "registry_username" { # [!code ++]
+  type        = string # [!code ++]
+  default     = "iamapikey" # [!code ++]
+  description = "The username of registry secret" # [!code ++]
+} # [!code ++]
+
+variable "registry_secret" { # [!code ++]
+  type        = string # [!code ++]
+  description = "The secret value of registry secret" # [!code ++]
+} # [!code ++]
+
+variable "registry_server" { # [!code ++]
+  type        = string # [!code ++]
+  default     = "jp.icr.io" # [!code ++]
+  description = "The server of registry secret" # [!code ++]
+} # [!code ++]
 ```
 
 `registry_secret` は、IBM Cloud の Web コンソールなどから API key を発行し、それを使えば良い。今回は、Container Registry 上にあるイメージを指定するため、それに合わせてデフォルト値を指定している。

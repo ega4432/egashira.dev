@@ -12,13 +12,21 @@ draft: false
 title: "初めて GitHub Actions を自作してる→作った"
 ---
 
-昨日やり始めて雑だが取りあえず動くものを作った。
+## 前回の記事
 
-[https://github.com/marketplace/actions/notion-to-markdown-action](https://github.com/marketplace/actions/notion-to-markdown-action)
+https://egashira.dev/blog/creating-my-own-first-github-action
 
-Notion から API 経由でデータを取得してローカルに Markdown ファイルとして保存するもの。GitHub 公式が [action を自作する場合のテンプレート](https://github.com/actions/typescript-action)を用意してくれているので、それを利用した。
+## 本題
 
-ただし、現状だといくらか課題がある
+昨日から初の GitHub Action を作り始めた。一旦雑だが取りあえず動くところまではできた。
+
+https://github.com/marketplace/actions/notion-to-markdown-action
+
+Notion から API 経由でデータを取得してローカルに Markdown ファイルとして保存するもの。GitHub 公式が action を自作する場合のテンプレートを用意してくれているので、それを利用した。
+
+https://github.com/actions/typescript-action
+
+ただし、現状だといくらか課題がある。
 
 - 画像が AWS S3 の署名付き URL で返ってくるので、それを外部アクセスできるようにするにはどうするか（有効期限が切れると閲覧できなくなる）
 - そのまま GitHub にプッシュせずに PR 経由でマージするフローを検討する

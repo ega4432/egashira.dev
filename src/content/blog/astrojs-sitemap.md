@@ -17,13 +17,13 @@ Astro でサイトをリニューアルしたのでタイトルの通りサイ�
 
 めちゃくちゃ簡単に実現できて、以下のコマンドでインテグレーションを追加するだけで良い。
 
-```shell
+```sh
 $ npx astro add sitemap
 ```
 
 上記コマンドを実行したら`astro.config.mjs` に以下が追記されているはず。（注意点として `site` プロパティは追記が必要）
 
-```javascript:astro.config.mjs
+```javascript title="astro.config.mjs" showLineNumbers
 + import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
@@ -42,8 +42,8 @@ export default defineConfig({
 
 以下に参考になりそうな記事を見つけたので、興味がある人は参考にして欲しい。
 
-[https://shinobiworks.com/blog/641/](https://shinobiworks.com/blog/641/)
+https://shinobiworks.com/blog/641/
 
 ## 参考
 
-[https://docs.astro.build/ja/guides/integrations-guide/sitemap/](https://docs.astro.build/ja/guides/integrations-guide/sitemap/)
+https://docs.astro.build/ja/guides/integrations-guide/sitemap/

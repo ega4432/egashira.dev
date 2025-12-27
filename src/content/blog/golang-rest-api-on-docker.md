@@ -24,7 +24,7 @@ Docker でサクッと動かせる環境が欲しい時はぜひ使ってもら�
 
 先に全体感を見せるとこんな感じになった。
 
-```shell
+```sh
 $ tree -a -I .git -L 3 --gitignore
 .
 ├── .dockerignore
@@ -69,8 +69,8 @@ Dockerfile をはじめとする主にコンテナに関する設定ファイル
 
 コンテナとして api, db と 2 つに分けて設計した。
 
-```yaml:docker-compose.yaml showLineNumbers
-version: '3'
+```yaml title="docker-compose.yaml" showLineNumbers
+version: "3"
 
 services:
   api:
@@ -150,7 +150,7 @@ Docker Compose は基本的にローカルでのコンテナ環境なので、Do
 
 Dockerfile で次のようにすることで、初期データを dump した。
 
-```dockerfile:build/db/Dockerfile showLineNumbers {4}
+```dockerfile title="build/db/Dockerfile" showLineNumbers {4}
 FROM mysql:8.0
 
 COPY build/db/conf.d/ /etc/mysql/conf.d/

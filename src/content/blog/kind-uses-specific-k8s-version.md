@@ -26,7 +26,7 @@ https://kind.sigs.k8s.io/docs/user/configuration/#kubernetes-version
 
 kind CLI は Homebrew でインストールした。まだインストールできていなければ `brew install kind` を実行すれば良い。念の為最新にアップグレードしておく。今回の作業については 2022 年 12 月現在での最新バージョンを使用している。
 
-```shell
+```sh
 $ brew list | grep kind
 kind
 
@@ -40,7 +40,7 @@ kind v0.17.0 go1.19.3 darwin/amd64
 
 kind では CLI の `kind create cluster` コマンドでクラスタを構築できる。
 
-```shell
+```sh
 $ kind create cluster --name=simple
 Creating cluster "simple" ...
  ✓ Ensuring node image (kindest/node:v1.25.3) 🖼  # <---- ☆
@@ -59,7 +59,7 @@ Not sure what to do next? 😅  Check out https://kind.sigs.k8s.io/docs/user/qui
 
 特に指定しない場合は上記のログにも出ている通り、v1.25.3 のイメージが使用される。kubectl コマンドでも確認するとそのバージョンと一致していることが分かる。
 
-```shell
+```sh
 $ kubectl version --short
 Flag --short has been deprecated, and will be removed in the future. The --short output will become the default.
 Client Version: v1.26.0
@@ -95,7 +95,7 @@ nodes:
 
 `kind create cluster` コマンドを実行する際、上記の設定ファイルを `--config` オプションで指定する。
 
-```shell
+```sh
 $ kind create cluster --config=./config.yaml --name=custom
 Creating cluster "custom" ...
  ✓ Ensuring node image (kindest/node:v1.25.3) 🖼
@@ -116,7 +116,7 @@ Have a nice day! 👋
 
 ログにも v1.26.0 のイメージが使われていることが分かる。また、先程と同様に kubectl コマンドでも確認してみる。
 
-```shell
+```sh
 $ kubectl version --short
 Flag --short has been deprecated, and will be removed in the future. The --short output will become the default.
 Client Version: v1.26.0

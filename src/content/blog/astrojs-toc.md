@@ -21,7 +21,7 @@ Astro で構築している当サイトに TOC を実装したくネットであ
 
 以下に簡単な実装例を示す。
 
-```astro:./src/pages/blog/index.astro showLineNumbers
+```astro title="./src/pages/blog/index.astro" showLineNumbers
 ---
 // `/blog/aaa`, `/blog/bbb` などのページを生成する関数
 export const getStaticPaths = async () => {
@@ -48,7 +48,7 @@ const { Content, headings } = await blog.render();  // ここで取得できる
 
 ちなみに `render()` メソッドから取得できる `headings` プロパティの型は `MarkdownHeading[]` で一例を示すとこのような形で取得できる。
 
-```md
+```md showLineNumbers
 ## はじめに
 
 ### ほげ
@@ -56,7 +56,7 @@ const { Content, headings } = await blog.render();  // ここで取得できる
 #### ふが
 ```
 
-```json
+```json showLineNumbers
 [
   { "depth": 2, "slug": "はじめに", "text": "はじめに" },
   { "depth": 3, "slug": "ほげ", "text": "ほげ" },

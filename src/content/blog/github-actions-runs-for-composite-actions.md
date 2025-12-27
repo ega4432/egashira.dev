@@ -22,7 +22,7 @@ npm エコシステムでは `npm install` や `npm run xxx` みたいなコマ�
 
 `.github/actions/npm/action.yaml` を作成し、共通箇所を抜き出した。
 
-```yaml
+```yaml title=".github/actions/npm/action.yaml" showLineNumbers
 inputs:
   node-version-file:
     required: false
@@ -61,7 +61,7 @@ runs:
 
 ここでは、例として `.github/workflows/ci.yaml` という CI 用に定義しておいた action ファイルを上記で作成した composite action を使用するように修正した。
 
-```yaml
+```yaml title=".github/workflows/ci.yaml" showLineNumbers
 name: "build"
 
 on:
@@ -78,18 +78,18 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-+     - name: Initialize node & npm
-+       uses: ./.github/actions/npm
+      - name: Initialize node & npm # [!code ++]
+        uses: ./.github/actions/npm # [!code ++]
 
--     - name: Setup node
--       uses: actions/setup-node@v3
--       with:
--         node-version-file: ${{ inputs.node-version-file }}
--         cache: ${{ inputs.cache }}
--         cache-dependency-path: ${{ inputs.cache-dependency-path }}
--
--     - name: Install dependencies
--       run: npm ci
+      - name: Setup node # [!code --]
+        uses: actions/setup-node@v3 # [!code --]
+        with: # [!code --]
+          node-version-file: ${{ inputs.node-version-file }} # [!code --]
+          cache: ${{ inputs.cache }} # [!code --]
+          cache-dependency-path: ${{ inputs.cache-dependency-path }} # [!code --]
+
+      - name: Install dependencies # [!code --]
+        run: npm ci # [!code --]
 
       - name: Execute prettier
         run: npm run prettier
@@ -111,10 +111,10 @@ jobs:
 
 ## 参考
 
-[https://docs.github.com/en/actions/creating-actions/creating-a-composite-action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-action)
+https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
 
-[https://docs.github.com/ja/actions/using-workflows/reusing-workflows](https://docs.github.com/ja/actions/using-workflows/reusing-workflows)
+https://docs.github.com/ja/actions/using-workflows/reusing-workflows
 
-[https://zenn.dev/stafes_blog/articles/ikkitang-a694b8afeb66f5](https://zenn.dev/stafes_blog/articles/ikkitang-a694b8afeb66f5)
+https://zenn.dev/stafes_blog/articles/ikkitang-a694b8afeb66f5
 
-[https://tsgcpp.hateblo.jp/entry/2022/09/25/135115](https://tsgcpp.hateblo.jp/entry/2022/09/25/135115)
+https://tsgcpp.hateblo.jp/entry/2022/09/25/135115

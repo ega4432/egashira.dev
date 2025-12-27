@@ -24,7 +24,7 @@ https://llmstxt.org/
 
 `src/pages/llms.txt.ts` にファイルを作成し、以下のように(AI が)実装した。
 
-```ts:src/pages/llms.txt.ts
+```ts title="src/pages/llms.txt.ts" showLineNumbers
 import { getBlogs } from "@lib/blog";
 import { siteMeta } from "@constants";
 
@@ -58,7 +58,7 @@ ${blogLines.join("\n")}
 
 このようにすると `/llms.txt` に下記のようなテキストファイルが生成される。
 
-```txt:llms.txt
+```text title="llms.txt" showLineNumbers
 # egashira.dev
 
 外資系企業で働く防衛大卒のプリセールスエンジニア ega4432 の Web サイトです。

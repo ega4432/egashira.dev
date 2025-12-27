@@ -18,7 +18,7 @@ summary: GitHub CLI を使った Tips の紹介 第二弾
 
 Usage をチェックすると以下のようにな感じとなる。
 
-```shell
+```sh
 $ gh alias --help
 Aliases can be used to make shortcuts for gh commands or to compose multiple commands.
 
@@ -54,13 +54,13 @@ Usage を見ると一目瞭然ではあるが主に 3 つのことが可能。
 
 何も設定しないと以下のコマンドで実現できる。
 
-```shell
+```sh
 $ gh issue list --assignee @me
 ```
 
 しかし、これを毎回打つとなると少し長いので、これに対して `gh homework` というエイリアスを設定してみたい。
 
-```shell
+```sh
 $ gh alias set homework 'issue list --assignee @me'
 - Adding alias for homework: issue list --assignee @me
 ✓ Added alias.
@@ -70,7 +70,7 @@ $ gh alias set homework 'issue list --assignee @me'
 
 テストのため [ega4432/dotfiles](https://github.com/ega4432/dotfiles) リポジトリに都合よく issue があるので、そちらのディレクトリに移動して実行してみる。
 
-```shell
+```sh
 $ gh homework
 
 Showing 2 of 2 issues in ega4432/dotfiles that match your search
@@ -83,7 +83,7 @@ Showing 2 of 2 issues in ega4432/dotfiles that match your search
 
 まだ先人の知恵を参考にいじっている段階なのでオリジナルものは少ないが、僕が設定しているエイリアスの一覧を載せておく。
 
-```shell
+```sh
 $ gh alias list
 aliases:    alias list
 co:         pr checkout

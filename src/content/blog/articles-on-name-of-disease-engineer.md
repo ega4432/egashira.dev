@@ -7,7 +7,7 @@ tags:
   - "Engineer"
   - "Life"
 date: "2023-02-09"
-draft: false
+draft: true
 title: "[病名]エンジニアを支える技術"
 ---
 

@@ -20,7 +20,7 @@ Kubernetes のユーザという概念には Service Account と通常のユー�
   - Docker Desktop for Mac
   - v1.24.0
 
-```shell
+```sh
 alias k=kubectl
 ```
 
@@ -32,7 +32,7 @@ alias k=kubectl
 
 まずは、PKI 秘密鍵とそれを元に証明書署名要求（CSR）を作成する。ここではユーザ名（CN）を `test` と指定している。
 
-```shell
+```sh
 openssl genrsa -out test.key 2048
 
 openssl req -new -key test.key -out test.csr -subj "/CN=test"
@@ -42,7 +42,7 @@ openssl req -new -key test.key -out test.csr -subj "/CN=test"
 
 kubectl を使って Kubernetes クラスタに CSR を作成する。作成する CSR オブジェクトの雛形は下記のようになっている。
 
-```yaml:csr.yaml showLineNumbers
+```yaml title="csr.yaml" showLineNumbers
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
@@ -56,13 +56,13 @@ spec:
 
 普通に base64 した値をコピー & ペーストしてもいいが、yq コマンドを使用してワンライナーで csr.yaml を更新すると以下のようになる。
 
-```shell
+```sh
 request="$(cat test.csr | base64 | tr -d "\n")" yq -i '.spec.request = strenv(request)' csr.yaml
 ```
 
 CSR を作成してすぐに確認すると Pending になっていることが分かる。
 
-```shell
+```sh
 k apply -f csr.yaml
 
 k get csr
@@ -72,7 +72,7 @@ masa   4s    kubernetes.io/kube-apiserver-client   docker-for-desktop   <none>  
 
 作成した CSR を承認し、証明書を取得する。
 
-```shell
+```sh
 k certificate approve test
 certificatesigningrequest.certificates.k8s.io/test approved
 
@@ -87,7 +87,7 @@ test   73s   kubernetes.io/kube-apiserver-client   docker-for-desktop   <none>  
 
 作成したユーザが Kubernetes クラスタにアクセスするためのロールとロールバインディングを作成する。
 
-```shell
+```sh
 # Role
 k create role test-role --verb=get --verb=list --resource=pods
 role.rbac.authorization.k8s.io/test-role created
@@ -103,7 +103,7 @@ rolebinding.rbac.authorization.k8s.io/test-binding created
 
 CSR から証明書を取得して、ユーザ情報として使用する。
 
-```shell
+```sh
 k get csr test -o jsonpath='{ .status.certificate }' | base64 -d > test.crt
 
 # User
@@ -121,7 +121,7 @@ Docker Desktop の Kubernetes クラスタを使用している場合 `~/.kube/c
 
 事前に Pod を作成しておく。
 
-```shell
+```sh
 k run nginx --image nginx
 
 k get po
@@ -133,7 +133,7 @@ nginx   1/1     Running   0          32m
 
 もちろん `kubectl config use-context` で context を切り替えて動作確認しても良い。
 
-```shell
+```sh
 # Pod の一覧を取得
 k auth can-i list pod --as test
 yes

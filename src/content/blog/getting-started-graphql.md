@@ -47,7 +47,7 @@ GraphQL でデータを取得する際に使用する。
 
 一番シンプルなクエリで以下は、ユーザの一覧を取得するクエリとなっている。 user というフィールドのプロパティとして name, email を指定しているが、クライアント側が他にも取得したいプロパティがあれば随時追加するといった形でオーバーフェッチングを防ぐ。
 
-```graphql
+```graphql showLineNumbers
 query {
   user {
     name
@@ -61,7 +61,7 @@ query {
 
 フィールドに引数を渡すことが可能で、データのフィルタリングなどに使用できる。
 
-```graphql
+```graphql showLineNumbers
 query {
   user(id: 123) {
     id
@@ -73,7 +73,7 @@ query {
 
 さらにネストされたデータの取得はこんなかんじで記述できる。リレーショナルデータベースでリレーションを持つ子要素のデータを取得したい場合も対応できる。例えばユーザの情報に加えて、そのユーザが投稿した記事の一覧も欲しい場合は以下のように書く。
 
-```graphql
+```graphql showLineNumbers
 query {
   user(id: 123) {
     id
@@ -90,7 +90,7 @@ query {
 
 GraphQL で共通するものをまとめて再利用可能にする機能。任意の型に対して定義でき、Query の中で JavaScript のスプレッド構文で利用できる。
 
-```graphql
+```graphql showLineNumbers
 fragment UserName on User {
   firstname
   lastname
@@ -109,7 +109,7 @@ query {
 
 GraphQL でデータを作成、更新および削除する際に使用する。Query と同様にフィールドに引数を渡すことが可能。
 
-```graphql
+```graphql showLineNumbers
 mutation {
   createUser(data: { name: "John", email: "johndoe@example.com" }) {
     id

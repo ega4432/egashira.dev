@@ -14,8 +14,8 @@ OpenShift クラスタを作った際、デフォルトでは kubeadmin ユー�
 
 使用したクラスタのバージョンは以下の通り。
 
-```bash
-oc get clusterversion
+```sh
+$ oc get clusterversion
 NAME      VERSION   AVAILABLE   PROGRESSING   SINCE   STATUS
 version   4.12.20   True        False         5d      Cluster version is 4.12.20
 ```
@@ -26,19 +26,19 @@ version   4.12.20   True        False         5d      Cluster version is 4.12.20
 
 以下は `htpasswd` コマンドを使って `dev-users.htpasswd` というファイルを作成している例である。今回はテストということであたり障りのないユーザ名、パスワードで作成しているが、本来であれば桁数だったり、含める文字などを多くして複雑なパスワードにしておいたほうが良い。
 
-```bash
+```sh
 # ex) htpasswd -c -B -b <ファイル名> <ユーザ名> <パスワード>
 
 # 作成する場合
-htpasswd -c -B -b dev-users.htpasswd alice pa55w0rd
+$ htpasswd -c -B -b dev-users.htpasswd alice pa55w0rd
 
 # 追加する場合
-htpasswd -b dev-users.htpasswd bob h0geh0ge
+$ htpasswd -b dev-users.htpasswd bob h0geh0ge
 ```
 
 生成されたファイルを確認すると以下のような内容が記載されているはずだ。
 
-```txt:dev-users.htpasswd
+```text title="dev-users.htpasswd" showLineNumbers
 alice:$2y$05$UF5GFgbhvr65KSYKr8EZhermFCGKj6XEzqR/1zkmgsY/FIxp55/.i
 bob:$apr1$/eLa1rBD$kP7EMggu01Ol61qMunTjS/
 ```
@@ -47,15 +47,15 @@ bob:$apr1$/eLa1rBD$kP7EMggu01Ol61qMunTjS/
 
 それでは、先程作した htpasswd ファイルを元に Secret を作成していく。
 
-```bash
-oc create secret generic dev-users \
+```sh
+$ oc create secret generic dev-users \
     --from-file=htpasswd=dev-users.htpasswd \
     -n openshift-config
 ```
 
 この際に YAML に残しておきたい場合は、`--dry-run=client -o yaml` オプションで YAML ファイルとしておけばいいだろう。ただし、ユーザの認証情報が含まれるため取り扱いには注意が必要だ(今回は例のため全てマスクせずに表示している)。
 
-```yaml:secret.yaml showLineNumbers
+```yaml title="secret.yaml" showLineNumbers
 apiVersion: v1
 data:
   htpasswd: YWxpY2U6JDJ5JDA1JFVGNUdGZ2JodnI2NUtTWUtyOEVaaGVybUZDR0tqNlhFenFSLzF6a21nc1kvRkl4cDU1Ly5pCmJvYjokYXByMSQvZUxhMXJCRCRrUDdFTWdndTAxT2w2MXFNdW5UalMvCg==
@@ -69,23 +69,23 @@ metadata:
 
 最後に OAuth カスタムリソースを作成する。
 
-```yaml:oauth.yaml showLineNumbers
+```yaml title="oauth.yaml" showLineNumbers
 apiVersion: config.openshift.io/v1
 kind: OAuth
 metadata:
   name: cluster
 spec:
   identityProviders:
-    - name: htpasswd_provider  # 任意の名前（ログイン画面に表示される名前になる）
+    - name: htpasswd_provider # 任意の名前（ログイン画面に表示される名前になる）
       htpasswd:
         fileData:
-          name: htpasswd  # 作成した htpasswd 用の secret の名前を指定
+          name: htpasswd # 作成した htpasswd 用の secret の名前を指定
       mappingMethod: claim
       type: HTPasswd
 ```
 
-```bash
-oc apply -f ./oauth.yaml
+```sh
+$ oc apply -f ./oauth.yaml
 ```
 
 ## 確認
@@ -100,13 +100,13 @@ oc apply -f ./oauth.yaml
 
 以下のように `oc adm` コマンドに追加したいユーザを指定してあげればよい。
 
-```bash
-oc adm policy add-cluster-role-to-user cluster-admin <ユーザ名>
+```sh
+$ oc adm policy add-cluster-role-to-user cluster-admin <ユーザ名>
 ```
 
 もし、htpasswd ファイルに記載してあるユーザを全員追加したい場合は以下の Bash スクリプトを書いたので良かったら活用してもらうといいと思う。
 
-```bash:assign-cluster-admin.sh showLineNumbers
+```sh title="assign-cluster-admin.sh" showLineNumbers
 #!/usr/bin/env bash
 
 set -eu

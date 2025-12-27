@@ -28,7 +28,7 @@ templatefile(path, vars)
 
 `aws_ecs_task_definition` は結構肥大化しやすいので、`container_definitions` の箇所を別ファイル化しておくと可読性を維持できていいと思う。
 
-```hcl:modules/ecs/main.tf showLineNumbers
+```hcl title="modules/ecs/main.tf" showLineNumbers
 resource "aws_ecs_task_definition" "main" {
   ...
   (省略)
@@ -49,7 +49,7 @@ variable "container_def_vars" {
 
 以下のファイルでは `${node_env}` と `${port}` を外部から注入している。
 
-```json:modules/ecs/templates/api.json.tpl showLineNumbers
+```json title="modules/ecs/templates/api.json.tpl" showLineNumbers
 [
   {
     "name": "sample-api",
@@ -68,11 +68,11 @@ variable "container_def_vars" {
     "secrets": [
       {
         "name" : "NODE_ENV",
-        "valueFrom" : "${node_env}"  // <-- here
+        "valueFrom" : "${node_env}" // [!code ++]
       },
       {
         "name" : "PORT",
-        "valueFrom" : "${port}"  // <-- here
+        "valueFrom" : "${port}"  // [!code ++]
       }
     ],
     "mountPoints": [],

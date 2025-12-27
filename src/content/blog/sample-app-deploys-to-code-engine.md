@@ -26,7 +26,7 @@ IBM Cloud に Code Engine というサーバレスなサービスがあって以
 
 先に全体感を示すとこんな感じで、メインは、ソースコードのロジック部分である main.go とアプリケーションをコンテナ化するための Dockerfile を用意した。
 
-```shell
+```sh
 $ tree .
 .
 ├── Dockerfile
@@ -39,7 +39,7 @@ $ tree .
 
 main.go には、サーバを立ち上げる処理とルーティングを少々定義している。
 
-```go:main.go showLineNumbers
+```go title="main.go" showLineNumbers
 package main
 
 import (
@@ -80,7 +80,7 @@ func main() {
 
 個人的な興味として distroless[^1] をベースイメージとして使ってみた！
 
-```dockerfile:Dockerfile
+```dockerfile title="Dockerfile" showLineNumbers
 # === Build phase ===
 FROM golang:1.18.3 AS builder
 
@@ -115,7 +115,7 @@ CMD [ "/bin/main" ]
 
 https://hub.docker.com/repository/docker/ega4432/sample-api
 
-```shell
+```sh
 # Usage:
 $ docker pull ega4432/sample-api
 ```
@@ -153,7 +153,7 @@ $ docker pull ega4432/sample-api
 
 実際にアクセスするとちゃんと期待通りの結果が得られた！
 
-```shell
+```sh
 $ curl -s https://go-ce-sample.qv6t88p3xf0.jp-tok.codeengine.appdomain.cloud
 hello world
 

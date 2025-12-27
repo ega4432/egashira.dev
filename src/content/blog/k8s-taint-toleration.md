@@ -26,7 +26,7 @@ https://egashira.dev/blog/kind-uses-specific-k8s-version
 
 まず、クラスタの設定を定義したファイルを作成する。
 
-```yaml:config.yaml showLineNumbers
+```yaml title="config.yaml" showLineNumbers
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -44,7 +44,7 @@ nodes:
 $ kind create cluster --name=alice --config=config.yaml
 ```
 
-```shell
+```sh
 $ kubectl get nodes -o wide
 NAME                  STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE       KERNEL-VERSION      CONTAINER-RUNTIME
 alice-control-plane   Ready    control-plane   11m   v1.24.0   172.18.0.4    <none>        Ubuntu 21.10   5.10.124-linuxkit   containerd://1.6.4
@@ -58,7 +58,7 @@ alice-worker2         Ready    <none>          11m   v1.24.0   172.18.0.2    <no
 
 Taint の設定には、`kubectl taint` コマンドを使用する（もちろんマニフェストファイルを `kubectl apply -f` しても良い）。確認のため、複数の Taint を付与してみた。
 
-```shell
+```sh
 $ kubectl taint nodes alice-worker key1=xxx:NoSchedule
 $ kubectl taint nodes alice-worker key2=yyy:NoExecute
 $ kubectl taint nodes alice-worker2 key1=zzz:NoSchedule
@@ -68,7 +68,7 @@ Taint が付与されたか確認してみる。余談だが、以下の記事�
 
 https://kakakakakku.hatenablog.com/entry/2022/05/24/102351
 
-```shell
+```sh
 $ kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
 NAME                  TAINTS
 alice-control-plane   [map[effect:NoSchedule key:node-role.kubernetes.io/control-plane]]
@@ -82,13 +82,14 @@ key が `key1` で value が `xxx` の Taint が削除されたことが確認�
 
 Taint を解除するには `kubectl taint` コマンドに `-` を付けるだけで可能。
 
-```shell {6}
+```sh
 $ kubectl taint node alice-worker key1=xxx:NoSchedule-
 
+# alice-worker ノードの key1=xxx:NoSchedule が消えている
 $ kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
 NAME                  TAINTS
 alice-control-plane   [map[effect:NoSchedule key:node-role.kubernetes.io/control-plane]]
-alice-worker          [map[effect:NoExecute key:key2 value:yyy]]　# key1=xxx:NoSchedule が消えている
+alice-worker          [map[effect:NoExecute key:key2 value:yyy]] # [!code ++]
 alice-worker2         [map[effect:NoSchedule key:key1 value:zzz]]
 ```
 
@@ -96,7 +97,7 @@ alice-worker2         [map[effect:NoSchedule key:key1 value:zzz]]
 
 上記で Taint を使ってノードに汚れを付けることができたので、一度 Pod を作成して挙動を確認する。
 
-```shell
+```sh
 $ kubectl run nginx --image nginx:1.23.2
 
 $ kubectl get po -w
@@ -107,7 +108,7 @@ nginx   0/1     Pending   0          1m16s
 
 `-w` オプションを使って作成した Pod の状況を確認するもいくら時間が経過してもステータスは Pending のまま止まってしまう。
 
-```shell
+```sh
 $ kubectl describe po nginx | grep -i events: -A5
 Events:
   Type     Reason            Age    From               Message
@@ -123,7 +124,7 @@ Pod が立ち上がらない原因としては、存在するノード全てに 
 
 Pod が Taint を許容するために Toleration を付与する。設定項目の詳細については後述する。
 
-```shell {16-20}
+```sh
 $ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Pod
@@ -149,10 +150,10 @@ EOF
 
 Pod の状況を確認する。
 
-```shell {3}
+```sh
 $ kubectl get po -o wide
 NAME      READY   STATUS    RESTARTS   AGE     IP           NODE            NOMINATED NODE   READINESS GATES
-busybox   1/1     Running   0          63s     10.244.2.3   alice-worker2   <none>           <none>
+busybox   1/1     Running   0          63s     10.244.2.3   alice-worker2   <none>           <none> # [!code ++]
 nginx     0/1     Pending   0          4m15s   <none>       <none>          <none>           <none>
 ```
 
@@ -174,44 +175,44 @@ Running になり、`alice-worker2` ノードで Pod が立ち上がっている
 
 試すにあたり既存の Taint を `NoExecute` から `PreferNoSchedule` 付け替える。
 
-```shell {7}
+```sh
 $ kubectl taint node alice-worker key2=yyy:NoExecute-
 $ kubectl taint node alice-worker key2=yyy:PreferNoSchedule
 
 $ kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
 NAME                  TAINTS
 alice-control-plane   [map[effect:NoSchedule key:node-role.kubernetes.io/control-plane]]
-alice-worker          [map[effect:PreferNoSchedule key:key2 value:yyy]]
+alice-worker          [map[effect:PreferNoSchedule key:key2 value:yyy]] # [!code ++]
 alice-worker2         [map[effect:NoSchedule key:key1 value:zzz]]
 ```
 
 しばらくして Pod 状況を確認すると、以前は Pending で立ち上がらなかった nginx Pod が alice-worker ノードで起動している。
 
-```shell {4}
+```sh
 $ kubectl get po -o wide
 NAME      READY   STATUS    RESTARTS   AGE     IP           NODE            NOMINATED NODE   READINESS GATES
 busybox   1/1     Running   0          6h13m   10.244.1.2   alice-worker2   <none>           <none>
-nginx     1/1     Running   0          6h14m   10.244.2.3   alice-worker    <none>           <none>
+nginx     1/1     Running   0          6h14m   10.244.2.3   alice-worker    <none>           <none> # [!code ++]
 ```
 
 #### `NoExecute`
 
 繰り返しになるが、先程付け替えた Taint を元に戻す。
 
-```shell {7}
+```sh
 $ kubectl taint node alice-worker key2=yyy:PreferNoSchedule-
 $ kubectl taint node alice-worker key2=yyy:NoExecute
 
 $ kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
 NAME                  TAINTS
 alice-control-plane   [map[effect:NoSchedule key:node-role.kubernetes.io/control-plane]]
-alice-worker          [map[effect:NoExecute key:key2 value:yyy]]
+alice-worker          [map[effect:NoExecute key:key2 value:yyy]] # [!code ++]
 alice-worker2         [map[effect:NoSchedule key:key1 value:zzz]]
 ```
 
 すると nginx Pod が消えている。Taint を満たすノードが見つからず、起動中であったにもかかわらず排除されたのが分かる。
 
-```shell
+```sh
 $ kubectl get po -o wide
 NAME      READY   STATUS    RESTARTS   AGE     IP           NODE            NOMINATED NODE   READINESS GATES
 busybox   1/1     Running   0          6h19m   10.244.1.2   alice-worker2   <none>           <none>
@@ -228,7 +229,7 @@ busybox   1/1     Running   0          6h19m   10.244.1.2   alice-worker2   <non
 
 Equal については上記で動作を確認できたので `Exists` についてのみ試してみる。
 
-```shell
+```sh
 $ kubectl get nodes -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints
 NAME                  TAINTS
 alice-control-plane   [map[effect:NoSchedule key:node-role.kubernetes.io/control-plane]]
@@ -236,7 +237,7 @@ alice-worker          [map[effect:NoExecute key:key2 value:yyy]]
 alice-worker2         [map[effect:NoSchedule key:key1 value:zzz]]
 ```
 
-```shell {16-19}
+```sh
 $ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Pod
@@ -261,11 +262,11 @@ EOF
 
 Pod の一覧を確認する。
 
-```shell {4}
+```sh
 $ kubectl get po -o wide
 NAME              READY   STATUS    RESTARTS   AGE     IP           NODE            NOMINATED NODE   READINESS GATES
 busybox           1/1     Running   0          7h12m   10.244.1.2   alice-worker2   <none>           <none>
-operator-exists   1/1     Running   0          13s     10.244.1.3   alice-worker2   <none>           <none>
+operator-exists   1/1     Running   0          13s     10.244.1.3   alice-worker2   <none>           <none> # [!code ++]
 ```
 
 ちゃんと指定した通り、key: `key1`, effect: `NoSchedule` の Taint がある `alice-worker2` ノードで Pod が実行されているのが分かる。

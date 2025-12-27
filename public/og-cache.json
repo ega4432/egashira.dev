@@ -3529,5 +3529,60 @@
       "displayUrl": "docs.docker.com",
       "url": "https://docs.docker.com/engine/storage/volumes/#differences-between--v-and---mount-behavior"
     }
+  },
+  "https://www.publickey1.jp/blog/23/jamnetlifygatsbyweb.html": {
+    "timestamp": 1767077903362,
+    "data": {
+      "title": "JAMスタックのNetlify、静的サイトジェネレータ開発元のGatsby買収を発表。Webサイトホスティングサービス強化へ",
+      "description": "Webサイトのホスティングサービスを提供するNetlifyは、静的サイトジェネレータGatsby.jsの開発元であり、GatsbyをベースにしたWebサイトホスティングサービスを提供しているGatsbyの買収を発表しました（Netlifyの...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.publickey1.jp",
+      "ogImageSrc": "https://www.publickey1.jp/2023/jvn-3jro.jpg",
+      "displayUrl": "www.publickey1.jp",
+      "url": "https://www.publickey1.jp/blog/23/jamnetlifygatsbyweb.html"
+    }
+  },
+  "https://www.publickey1.jp/blog/23/it2023idechatgptpublickeyit202320231.html": {
+    "timestamp": 1767077911130,
+    "data": {
+      "title": "ITエンジニア本大賞2023／IDEにChatGPTを統合してコードと対話／PublickeyのIT業界予想2023、ほか。2023年1月の人気記事",
+      "description": "気がつくと今月末でPublickeyは14周年です。ずいぶん長くやってきたなあと改めて思います。 いままで一番長く務めた会社でさえ最長で約10年でしたので、自分のキャリアの中でPublickeyが確実に一番長いものになりました。あまり区切り...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.publickey1.jp",
+      "ogImageSrc": "https://www.publickey1.jp/fbico_pblky.png",
+      "displayUrl": "www.publickey1.jp",
+      "url": "https://www.publickey1.jp/blog/23/it2023idechatgptpublickeyit202320231.html"
+    }
+  },
+  "https://egashira.dev/http://localhost:4322/blog/created-my-own-github-action": {
+    "timestamp": 1767077953778,
+    "data": {
+      "title": "egashira.dev",
+      "description": "外資系企業で働く防衛大卒のプリセールスエンジニア",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=egashira.dev",
+      "ogImageSrc": "https://egashira.dev/images/undraw.png",
+      "displayUrl": "egashira.dev",
+      "url": "https://egashira.dev/http://localhost:4322/blog/created-my-own-github-action"
+    }
+  },
+  "https://egashira.dev/blog/creating-my-own-first-github-action": {
+    "timestamp": 1767077987494,
+    "data": {
+      "title": "初めて GitHub Actions を自作してる",
+      "description": "Notion 記事を GitHub に Markdown として反映させたくて見切り発車で作り始めた。",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=egashira.dev",
+      "ogImageSrc": "https://egashira.dev/images/blog/creating-my-own-first-github-action/og.png",
+      "displayUrl": "egashira.dev",
+      "url": "https://egashira.dev/blog/creating-my-own-first-github-action"
+    }
+  },
+  "https://github.com/actions/typescript-action": {
+    "timestamp": 1767078087855,
+    "data": {
+      "title": "GitHub - actions/typescript-action: Create a TypeScript Action with tests, linting, workflow, publishing, and versioning",
+      "description": "Create a TypeScript Action with tests, linting, workflow, publishing, and versioning - actions/typescript-action",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/a557514d9c9f20cd925f66d724be1744ee2637dd22aac1033cc2cb1454d54e10/actions/typescript-action",
+      "displayUrl": "github.com",
+      "url": "https://github.com/actions/typescript-action"
+    }
   }
 }

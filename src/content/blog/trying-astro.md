@@ -15,7 +15,7 @@ title: "Astro を触っている"
 
 先日 v2 がリリースされ割とホットなのかなと思うので、このブログを Astro で書き換えようと着手している。
 
-[静的サイトジェネレータ「Astro 2\.0」正式リリース。新機能「Content Collections」で大量 Markdown 対応、「Hybrid Rendering」で静的と動的ページの混在可能に － Publickey](https://www.publickey1.jp/blog/23/astro_20content_cllectionsmarkdownhybrid_rendering.html)
+https://www.publickey1.jp/blog/23/astro_20content_cllectionsmarkdownhybrid_rendering.html
 
 JS をできる限り排除できるのはやっぱり魅力的。
 
@@ -25,16 +25,16 @@ JS をできる限り排除できるのはやっぱり魅力的。
 
 公式のドキュメントはこれ。
 
-[https://docs.astro.build/en/guides/content-collections/](https://docs.astro.build/en/guides/content-collections/)
+https://docs.astro.build/en/guides/content-collections/
 
-```shell
+```sh
 $ tree ./src/content
 ./src/content
 ├── config.ts
 ├── blog
 │   ├── aaa.md
 │   ├── bbb.md
-│   ├── ccc.md
+│   └── ccc.md
 └── schemes.ts
 ```
 
@@ -42,7 +42,7 @@ $ tree ./src/content
 
 ページ側で Markdown を読み込むのも非常に簡単で、以下のようにするだけで画面に表示できた。
 
-```typescript
+```astro title="blog.astro" showLineNumbers
 ---
 import { getCollection } from "astro:content";
 

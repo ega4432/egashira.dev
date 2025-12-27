@@ -123,7 +123,7 @@ ubuntu $ sudo reboot
 
 Raspberry PI の IP アドレスを固定するため、下記の内容を書いて保存する。
 
-```yaml:/etc/netplan/99-custom-conf.yaml
+```yaml title="/etc/netplan/99-custom-conf.yaml" showLineNumbers
 network:
   version: 2
   renderer: networkd
@@ -132,11 +132,11 @@ network:
     eth0:
       dhcp4: no
       addresses:
-      - 192.168.11.11/24   # <--- 前項で決めたサブネットを指定
+        - 192.168.11.11/24 # [!code ++]
       gateway4: 192.168.11.1
       nameservers:
         addresses:
-        - 192.168.11.1
+          - 192.168.11.1
 ```
 
 ちなみに Netplan とは、Ubuntu のネットワーク設定を YAML で書ける仕組みである。`/etc/netplan/50-cloud-init.yaml` が cloud-init で使われるファイルとして既存であると思うので、50 以降の数字をファイル名の頭につけておくと上書き設定される。
@@ -161,7 +161,7 @@ ubuntu $ sudo chmod 600 /etc/ssh/sshd_config.d/01-custom.conf
 
 SSH 設定ファイルを作成し、下記を記載して保存する。内容は適宜変えてもらいたいが、私の場合は公開鍵認証を使用して、デフォルトの Port を使わないようになどよくやる設定を記述している。
 
-```txt:/etc/ssh/sshd_config.d/01-custom.conf
+```ssh-config title="/etc/ssh/sshd_config.d/01-custom.conf" showLineNumbers
 Port xxxx
 PubkeyAuthentication yes
 PasswordAuthentication no

@@ -35,7 +35,7 @@ npm のシステムに対応していて package.json がある場合は package
 
 こんな感じの JSON ファイルを用意し VSCode でプロジェクトを開くと、自動で開発サーバを起動してくれるようになる。
 
-```json:.vscode/tasks.json showLineNumber
+```json title=".vscode/tasks.json" showLineNumbers
 {
   "version": "2.0.0",
   "tasks": [
@@ -73,7 +73,7 @@ VSCode でコマンドパレットを開き（mac だと ⌘ + Shift + P で開�
 
 すると以下のようなファイルが作成される。
 
-```json:.vscode/tasks.json showLineNumber
+```json title=".vscode/tasks.json" showLineNumbers
 {
   "version": "2.0.0",
   "tasks": [
@@ -93,7 +93,7 @@ VSCode でコマンドパレットを開き（mac だと ⌘ + Shift + P で開�
 
 その場合 `runOptions` プロパティの `runOn` を使って、動作のタイミングをカスタマイズできる。今回は開いたときに実行させたいので `folderOpen` を指定すると良い。
 
-```json:.vscode/tasks.json showLineNumber {8-10}
+```json title=".vscode/tasks.json" showLineNumbers
 {
   "version": "2.0.0",
   "tasks": [
@@ -101,9 +101,10 @@ VSCode でコマンドパレットを開き（mac だと ⌘ + Shift + P で開�
       "type": "npm",
       "script": "start",
       "problemMatcher": [],
-      "label": "npm: start",
+      "label": "npm: start", // [!code ++]
       "runOptions": {
-        "runOn": "folderOpen"
+        // [!code ++]
+        "runOn": "folderOpen" // [!code ++]
       }
     }
   ]
@@ -122,7 +123,7 @@ VSCode でコマンドパレットを開き（mac だと ⌘ + Shift + P で開�
 
 この場合、パッケージのインストールをしたあとにサーバを起動するという順番なのでタスク間の依存関係も定義する必要がある。
 
-```json:.vscode/tasks.json showLineNumber {12, 14-21}
+```json title=".vscode/tasks.json" showLineNumbers
 {
   "version": "2.0.0",
   "tasks": [
@@ -134,16 +135,17 @@ VSCode でコマンドパレットを開き（mac だと ⌘ + Shift + P で開�
       "runOptions": {
         "runOn": "folderOpen"
       },
-      "dependsOn": ["npm: install"]
+      "dependsOn": ["npm: install"] // [!code ++]
     },
     {
-      "type": "npm",
-      "script": "install",
-      "group": "none",
-      "problemMatcher": [],
-      "label": "npm: install",
-      "detail": "install dependencies from package"
-    }
+      // [!code ++]
+      "type": "npm", // [!code ++]
+      "script": "install", // [!code ++]
+      "group": "none", // [!code ++]
+      "problemMatcher": [], // [!code ++]
+      "label": "npm: install", // [!code ++]
+      "detail": "install dependencies from package" // [!code ++]
+    } // [!code ++]
   ]
 }
 ```

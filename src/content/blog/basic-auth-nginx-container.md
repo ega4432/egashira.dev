@@ -24,7 +24,7 @@ summary: よくやるのでまとめておく
 
 コピペで使えるようにとりあえずファイルの内容全体を貼り付ける。
 
-```diff:default.conf showLineNumbers
+```nginx title="default.conf" showLineNumbers
 server {
     listen       8080;
     server_name  localhost;
@@ -35,9 +35,9 @@ server {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
 
-+       # basic auth
-+       auth_basic            "Restriceted";
-+       auth_basic_user_file  /etc/nginx/.htpasswd;
+        # basic auth # [!code ++]
+        auth_basic            "Restriceted"; # [!code ++]
+        auth_basic_user_file  /etc/nginx/.htpasswd; # [!code ++]
     }
 
     #error_page  404              /404.html;
@@ -68,7 +68,7 @@ name3:password3
 
 どちらも `http`, `server`, `location`, `limit_except` のディレクティブで指定できる。親のパスで設定している場合、ネストされたパスでも設定が継承される。ネストされたパスで無効化したい場合は、前述の `auth_basic: off;` で無効化も可能。
 
-```diff:Dockerfile showLineNumbers
+```diff title="Dockerfile" showLineNumbers
 FROM nginx:1.23.1 AS build
 
 + ARG BASIC_AUTH_USER
@@ -116,11 +116,11 @@ CMD [ "nginx", "-g", "daemon off;" ]
 docker build 時に Basic 認証のユーザ名、パスワードを `--build-arg` オプションで渡す。
 
 ```sh
-docker build -t ega4432/nginx-basic-auth:v0.1 \
+$ docker build -t ega4432/nginx-basic-auth:v0.1 \
     --build-arg BASIC_AUTH_USER="ega4432" \
     --build-arg BASIC_AUTH_PASSWORD="password" .
 
-docker run -it --name nginx \
+$ docker run -it --name nginx \
     --rm -p 8080:8080 ega4432/nginx-basic-auth:v0.1
 ```
 
@@ -133,7 +133,7 @@ cURL で確認してみる。
 ちゃんと 401 が返ってきた！
 
 ```sh
-curl -I localhost:8080
+$ curl -I localhost:8080
 HTTP/1.1 401 Unauthorized
 Server: nginx/1.23.1
 Date: Sat, 08 Oct 2022 07:23:16 GMT
@@ -148,7 +148,7 @@ WWW-Authenticate: Basic realm="Restriceted"
 `--user(-u)` オプションで認証情報を渡すと 200 が返ってきた！
 
 ```sh
-curl -I -u ega4432:password localhost:8080
+$ curl -I -u ega4432:password localhost:8080
 HTTP/1.1 200 OK
 Server: nginx/1.23.1
 Date: Sat, 08 Oct 2022 08:01:04 GMT

@@ -48,16 +48,16 @@ $ mv ./src/content/config.ts ./src/content.config.ts
 
 `astro/loaders` から `glob` をインポートして、コレクションの場所（ベース）のフォルダと、コレクションエントリのファイル名と拡張子を定義するパターンの両方を指定する必要がある。
 
-```diff:src/content.config.ts
+```ts title="src/content.config.ts" showLineNumbers
 export const collections = {
   page: defineCollection({
--   type: "content",
-+   loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/page" }),
+    type: "content", // [!code --]
+    loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/page" }), // [!code ++]
     schema: pageScheme
   }),
   blog: defineCollection({
--   type: "content",
-+   loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
+    type: "content", // [!code --]
+    loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }), // [!code ++]
     schema: blogScheme
   })
 };
@@ -68,13 +68,13 @@ export const collections = {
 各所で slug フィールドを使っている箇所を id フィールドに変える。
 `astro:content` の `CollectionEntry` 型に変更入っており slug フィールではなく id フィールドを返すようになっている。
 
-```diff:src/pages/blog/[...slug].astro
+```astro title="src/pages/blog/[...slug].astro" showLineNumbers
 export const getStaticPaths = async () => {
   const allBlogs = await getBlogs();
 
   return allBlogs.map((blog) => ({
--   params: { slug: blog.slug },
-+   params: { slug: blog.id },
+    params: { slug: blog.slug }, // [!code --]
+    params: { slug: blog.id }, // [!code ++]
     props: { blog }
   }));
 };
@@ -84,22 +84,25 @@ export const getStaticPaths = async () => {
 
 上記同様 `CollectionEntry` 型から `render` メソッドがなくなったため別途 `astro:content` の `render` 関数を使うようにする。
 
-```diff::src/pages/blog/[...slug].astro
+```astro title="src/pages/blog/[...slug].astro" showLineNumbers
+---
 const { blog } = Astro.props;
 
 if (!blog) {
   return Astro.redirect('/404')
 }
-- const { Content, headings } = await blog.render();
-+ const { Content, headings } = await render(blog);
+
+const { Content, headings } = await blog.render(); // [!code --]
+const { Content, headings } = await render(blog); // [!code ++]
+---
 ```
 
 ### Astro の型定義ファイルの参照先変更
 
 Astro v5 では、`.astro/types.d.ts` ファイルを型参照に使用するようになったため、それを tsconfig.json に設定する。
 
-```diff:tsconfig.json
-+ "include": [".astro/types.d.ts", "**/*"],
+```json title="tsconfig.json" showLineNumbers
+  "include": [".astro/types.d.ts", "**/*"], // [!code ++]
   "exclude": ["dist", "node_modules"]
 ```
 

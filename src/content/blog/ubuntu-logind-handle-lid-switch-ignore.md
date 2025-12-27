@@ -19,13 +19,13 @@ title: "Ubuntu のノート PC を閉じてもスリープさせない設定"
 
 結論から言うと、設定ファイルの一箇所を変えるだけで対応できる。
 
-```bash
+```sh
 sudo vim /etc/systemd/logind.conf
 ```
 
 以下のコメントアウトを外し、`HandleLidSwitch` の値を `ignore` に変える。
 
-```bash
+```systemd title="/etc/systemd/logind.conf" showLineNumbers
 # HandleLidSwitch=suspend # デフォルトは "suspend" に設定されている
 HandleLidSwitch=ignore
 ```
@@ -34,7 +34,7 @@ HandleLidSwitch=ignore
 
 設定変更後は、以下のコマンドで systemd-logind サービスを再起動し、システムを再起動する。
 
-```bash
+```sh
 sudo systemctl restart systemd-logind
 sudo reboot
 ```

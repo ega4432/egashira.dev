@@ -16,7 +16,7 @@ npm 管理化のアプリをコンテナ化する際、docker build でエラー
 
 実際のエラーはこんな感じ。
 
-```shell
+```sh
 $ docker build -t react-app .
 [+] Building 53.2s (8/10)
  => [internal] load build definition from Dockerfile                                                                  0.3s
@@ -61,16 +61,16 @@ npm prepare が package.json の npm-script に定義されている場合、npm
 
 package.json の一部を抜粋すると…
 
-```json:package.json showLineNumbers {5}
+```json title="package.json" showLineNumbers
 {
   "name": "sample-app",
   "scripts": {
     "build": "next build",
-    "prepare": "husky install" // npm install をトリガに実行される
+    "prepare": "husky install" // npm install をトリガに実行される // [!code ++]
     // ... 略 ...
   },
   "devDependencies": {
-    "husky": "^7.0.0",
+    "husky": "^7.0.0"
     // ... 略 ...
   }
 }
@@ -78,12 +78,8 @@ package.json の一部を抜粋すると…
 
 また Dockerfile では devDependencies をインストールしないようにしていると husky がインストールされず `husky: not found` となる。
 
-```dockerfile:Dockerfile showLineNumbers {3}
-...
-
+```dockerfile title="Dockerfile" showLineNumbers
 RUN npm install --omit=dev
-
-...
 ```
 
 ## 対策
@@ -94,18 +90,14 @@ RUN npm install --omit=dev
 >
 > Note that commands explicitly intended to run a particular script, such as npm start, npm stop, npm restart, npm test, and npm run-script will still run their intended script if ignore-scripts is set, but they will not run any pre- or post-scripts. - ref. [npm\-install \| npm Docs](https://docs.npmjs.com/cli/v8/commands/npm-install#ignore-scripts)
 
-```diff:Dockerfile showLineNumbers
-...
-
+```diff title=""Dockerfile" showLineNumbers
 - RUN npm install --omit=dev
 + RUN npm install --omit=dev --ignore-scripts
-
-...
 ```
 
 上記のオプションを入れると無事に docker build が成功する。
 
-```shell
+```sh
 $ docker build -t sample-app --no-cache .
 [+] Building 383.4s (11/11) FINISHED
  => [internal] load build definition from Dockerfile                                                                  0.1s
