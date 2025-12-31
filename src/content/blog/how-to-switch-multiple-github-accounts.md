@@ -25,7 +25,7 @@ summary: 普段から使い分ける必要がある人はこれやっておく�
 SSH の設定は、`~/.ssh/config` に定義するので、以下に Enterprise 用と個人のプライベート用の設定を示す。
 前者が Enterprise アカウント用の設定で、後者がプライベートアカウント用の設定になる。
 
-```plain:~/.ssh/config showLineNumbers
+```ssh-config title="~/.ssh/config" showLineNumbers
 Host github.company.com
   HostName github.company.com
   IdentityFile ~/.ssh/id_github_rsa
@@ -45,7 +45,7 @@ Git では commit する際にユーザの情報（ユーザ名、メールア�
 
 ユーザの情報については、グローバルの設定として基本的に `~/.gitconfig` に設定していると思う。
 
-```plain:~/.gitconfig showLineNumbers
+```plain title="~/.gitconfig" showLineNumbers
 [user]
     name = "taro yamada"
     email = "taro.yamada@comapny.com"
@@ -53,7 +53,7 @@ Git では commit する際にユーザの情報（ユーザ名、メールア�
 
 しかし、上記のように会社のアカウントのユーザ情報のみを設定している場合、リポジトリを作成もしくはクローンした際に、都度手動でユーザ設定をする必要がある。
 
-```shell
+```sh
 $ git config --local user.name = "private"
 $ git config --local user.email = "private@example.com"
 ```
@@ -62,7 +62,7 @@ $ git config --local user.email = "private@example.com"
 
 `~/.gitconfig` で `includeIf` を使うと、この問題を解決を解決できる。
 
-```plain:~/.gitconfig showLineNumbers
+```plain title="~/.gitconfig" showLineNumbers
 [user]
     name = "taro yamada"
     email = "taro.yamada@comapny.com"
@@ -71,7 +71,7 @@ $ git config --local user.email = "private@example.com"
     path = ~/.gitconfig.private
 ```
 
-```plain:~/.gitconfig.private showLineNumbers
+```plain title="~/.gitconfig.private" showLineNumbers
 [user]
     name = "private"
     email = "private@example.com"

@@ -18,7 +18,7 @@ textlint を導入し、このサイトのブログ記事を校正するよう�
 
 まず、以下のコマンドでインストールする。
 
-```shell
+```sh
 $ npm i --save-dev textlint
 ```
 
@@ -28,13 +28,13 @@ $ npm i --save-dev textlint
 
 [textlint\-ja/textlint\-rule\-preset\-ja\-technical\-writing: 技術文書向けの textlint ルールプリセット](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)
 
-```shell
+```sh
 $ npm i --save-dev textlint-rule-preset-ja-technical-writing
 ```
 
 プロジェクト直下に設定ファイルを作成し、以下のルールプリセットを有効化する。
 
-```json:.textlintrc showLineNumbers
+```json title=".textlintrc" showLineNumbers
 {
   "rules": {
     "preset-ja-technical-writing": true
@@ -44,7 +44,7 @@ $ npm i --save-dev textlint-rule-preset-ja-technical-writing
 
 この状態で一旦実行してみる。
 
-```shell
+```sh
 $ npx textlint "./path/to/contents"
 ```
 
@@ -56,7 +56,8 @@ $ npx textlint "./path/to/contents"
 
 まず、細かい設定よりもはじめに結論から。~現時点ではミニマムで始めることを優先すると以下のようになった。~ **2023 年 1 月現在**での状態がこちら。詳しい解説については後述する。
 
-```json:.textlintrc showLineNumbers
+<!-- prettier-ignore -->
+```json title=".textlintrc" showLineNumbers
 {
   "rules": {
     "preset-ja-technical-writing": {
@@ -66,11 +67,7 @@ $ npx textlint "./path/to/contents"
       "no-exclamation-question-mark": false,
       "ja-no-weak-phrase": false,
       "ja-no-mixed-period": {
-        "allowPeriodMarks": [
-          "笑",
-          "…",
-          ":"
-        ],
+        "allowPeriodMarks": ["笑", "…", ":"],
         "allowEmojiAtEnd": true
       },
       "max-kanji-continuous-len": {
@@ -81,14 +78,10 @@ $ npx textlint "./path/to/contents"
   "filters": {
     "comments": true,
     "allowlist": {
-      "allow": [
-        "/\\$\\$[\\s\\S]*?\\$\\$/m",
-        "/^\\>.*$/m"
-      ]
+      "allow": ["/\\$\\$[\\s\\S]*?\\$\\$/m", "/^\\>.*$/m"]
     }
   }
 }
-
 ```
 
 ## 細かい設定
@@ -101,17 +94,17 @@ $ npx textlint "./path/to/contents"
 
 [textlint\-rule/textlint\-rule\-no\-exclamation\-question\-mark: textlint rule that disallow exclamation and question mark\.](https://github.com/textlint-rule/textlint-rule-no-exclamation-question-mark)
 
-```shell
+```sh
 $ npm i --save-dev textlint-rule-no-exclamation-question-mark
 ```
 
 `!` , `！` , `?` , `？` をとりあえず全て許可。
 
-```json:.textlintrc showLineNumbers {4}
+```json title=".textlintrc" showLineNumbers
 {
   "rules": {
     "preset-ja-technical-writing": {
-      "no-exclamation-question-mark": false,
+      "no-exclamation-question-mark": false // [!code ++]
     }
   }
 }
@@ -121,20 +114,21 @@ $ npm i --save-dev textlint-rule-no-exclamation-question-mark
 
 [textlint\-ja/textlint\-rule\-ja\-no\-mixed\-period: 文末の句点\(。\)の統一 と 抜けをチェックする textlint ルール](https://github.com/textlint-ja/textlint-rule-ja-no-mixed-period)
 
-```shell
+```sh
 $ npm i --save-dev textlint-rule-ja-no-mixed-period
 ```
 
 `。` 以外に文末で使用可能な文字を `allowPeriodMarks` に定義する。絵文字も使うので許可。
 
-```json:.textlintrc showLineNumbers {4-7}
+<!-- prettier-ignore -->
+```json title=".textlintrc" showLineNumbers
 {
   "rules": {
     "preset-ja-technical-writing": {
-      "ja-no-mixed-period": {
-        "allowPeriodMarks": ["笑", "…", ":"],
-        "allowEmojiAtEnd": true
-      }
+      "ja-no-mixed-period": { // [!code ++]
+        "allowPeriodMarks": ["笑", "…", ":"], // [!code ++]
+        "allowEmojiAtEnd": true // [!code ++]
+      } // [!code ++]
     }
   }
 }
@@ -144,19 +138,20 @@ $ npm i --save-dev textlint-rule-ja-no-mixed-period
 
 [textlint\-rule/textlint\-rule\-sentence\-length: textlint rule that limit maximum length of sentence\.](https://github.com/textlint-rule/textlint-rule-sentence-length)
 
-```shell
+```sh
 $ npm i --save-dev textlint-rule-sentence-length
 ```
 
 デフォルトだと 100 文字で短めなので緩和する。
 
-```json:.textlintrc showLineNumbers {4-6}
+<!-- prettier-ignore -->
+```json title=".textlintrc" showLineNumbers
 {
   "rules": {
     "preset-ja-technical-writing": {
-      "sentence-length": {
-        "max": 150
-      }
+      "sentence-length": { // [!code ++]
+        "max": 150 // [!code ++]
+      } // [!code ++]
     }
   }
 }
@@ -166,17 +161,17 @@ $ npm i --save-dev textlint-rule-sentence-length
 
 [textlint\-ja/textlint\-rule\-ja\-no\-weak\-phrase: 弱い表現の利用を禁止する textlint ルール](https://github.com/textlint-ja/textlint-rule-ja-no-weak-phrase)
 
-```shell
+```sh
 $ npm i --save-dev  textlint-rule-ja-no-weak-phrase
 ```
 
 割と `〜思う` などを使用していたのと、当サイトは個人ブログであり論文などと比べそこまで厳密でもないため許容する。
 
-```json:.textlintrc showLineNumbers {4}
+```json title=".textlintrc" showLineNumbers
 {
   "rules": {
     "preset-ja-technical-writing": {
-      "ja-no-weak-phrase": false
+      "ja-no-weak-phrase": false // [!code ++]
     }
   }
 }
@@ -186,23 +181,24 @@ $ npm i --save-dev  textlint-rule-ja-no-weak-phrase
 
 [textlint/textlint\-filter\-rule\-allowlist: textlint filter rule that filters any word by allowing lists\.](https://github.com/textlint/textlint-filter-rule-allowlist)
 
-```shell
+```sh
 $ npm i --save-dev textlint-filter-rule-allowlist
 ```
 
 当サイトは、数式のレンダリングに KaTeX を使用しているため数式と引用文は除外するようにした。
 
-```json:.textlintrc showLineNumbers {3-8}
+<!-- prettier-ignore -->
+```json title=".textlintrc" showLineNumbers
 {
   "rules": {},
-  "filters": {
-    "allowlist": {
-      "allow": [
-        "/\\$\\$[\\s\\S]*?\\$\\$/m",
-        "/^\\>.*$/m"
-      ]
-    }
-  }
+  "filters": { // [!code ++]
+    "allowlist": { // [!code ++]
+      "allow": [ // [!code ++]
+        "/\\$\\$[\\s\\S]*?\\$\\$/m", // [!code ++]
+        "/^\\>.*$/m" // [!code ++]
+      ] // [!code ++]
+    } // [!code ++]
+  } // [!code ++]
 }
 ```
 
@@ -218,7 +214,7 @@ $ npm i --save-dev textlint-filter-rule-allowlist
 
 除外リストについては `.textlintignore` ファイルを作成し、そこに記載すると無視される。
 
-```text:.textlintignore showLineNumbers
+```text title=".textlintignore" showLineNumbers
 i-want-to-ignore.md
 ignore-directory/
 ```
@@ -227,13 +223,13 @@ ignore-directory/
 
 こんな感じの YAML を書いて main ブランチへの Pull Request の度に textlint を実行するようにした。
 
-```yaml:.github/workflows/ci.yaml
+```yaml title=".github/workflows/ci.yaml" showLineNumbers
 name: CI
 
 on:
   pull_request:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
   ci:
@@ -245,7 +241,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: "npm"
       - run: npm ci --ignore-scripts
       - run: npx textlint "./path/to/contents"
 ```
@@ -258,7 +254,7 @@ jobs:
 
 しかし、ここで問題となるのが mdx-bundler[^1] のシンタックスが Markdown のコメント記法と異なることだ。（コードシンタックスもロウライトされていない…）
 
-```markdown
+```md showLineNumbers
 <!-- 従来の Markdown でのコメント -->
 
 {/** mdx-bundler でのコメント **/}

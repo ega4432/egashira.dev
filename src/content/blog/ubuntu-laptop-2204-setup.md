@@ -26,7 +26,7 @@ windows laptop が余っていたので Ubuntu をクリーンインストール
 
 マシンをデフォルトの英語で使用しているのでロケールはそのままで良いがタイムゾーンを日本に変える。
 
-```bash
+```sh
 # ロケールの確認
 $ localectl status | head -n 1
 System Locale: LANG=en_US.UTF-8
@@ -39,7 +39,7 @@ $ timedatectl set-timezone Asia/Tokyo
 
 mozc を導入した。
 
-```bash
+```sh
 $ sudo apt update
 $ sudo apt install -y ibus-mozc
 $ sudo reboot
@@ -49,14 +49,14 @@ $ sudo reboot
 
 ### 詳細設定ツールのインストール
 
-```bash
+```sh
 $ sudo apt update
 $ sudo apt install -y gnome-tweaks
 ```
 
 ### **ファイアウォールの有効化**
 
-```bash
+```sh
 $ sudo ufw enable
 
 # ログを確認
@@ -67,13 +67,13 @@ $ tail -f /var/log/ufw.log
 
 Caps Lock を Ctrl にした。
 
-```bash
+```sh
 sudo vim /etc/default/keyboard
 ```
 
 以下のようにして再起動すれば設定が読み込まれる。
 
-```bash
+```sh
 XKBOPTIONS="ctrl:nocaps"
 ```
 
@@ -81,7 +81,7 @@ XKBOPTIONS="ctrl:nocaps"
 
 こちらが基本的には初期セットアップの大半を占める。シェルの設定ファイルだったり、コマンドラインツールだったりを一気にインストールしてくれる。今後もゆるく育てていきたい。
 
-```bash
+```sh
 $ /bin/bash -c "$(wget -qO - https://raw.githubusercontent.com/ega4432/dotfiles/main/install.sh)"
 ```
 
@@ -103,7 +103,7 @@ https://1password.com/jp/downloads/linux/
 
 CLI もよく使うので、apt より op CLI を インストールした。
 
-```bash
+```sh
 # インストール
 $ sudo apt install -y 1password-cli
 
@@ -117,7 +117,7 @@ $ op account add --signin
 
 https://slack.com/intl/ja-jp/downloads/linux
 
-```bash
+```sh
 $ sudo apt install ~/Downloads/slack-desktop-{VERSION}-amd64.deb
 ```
 
@@ -141,7 +141,7 @@ https://zenn.dev/lovegraph/articles/529fe37caa3f19
 
 `~/.ssh/config` を以下の内容で作成する。
 
-```text
+```ssh title="~/.ssh/config" showLineNumbers
 Host github github.com
   HostName github.com
   IdentityFile ~/.ssh/id_git_rsa
@@ -150,14 +150,14 @@ Host github github.com
 
 疎通確認する。
 
-```bash
+```sh
 ssh -T github
 Hi ega4432! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 ローカル用 config ファイル `~/.gitconfig.local` を作成
 
-```text
+```text title="~/.gitconfig.local" showLineNumbers
 [user]
 		name = "ega4432"
 			email = "xxxxxx+ega4432@users.noreply.github.com"
@@ -165,7 +165,7 @@ Hi ega4432! You've successfully authenticated, but GitHub does not provide shell
 
 このファイルは、`~/.gitconfig` から以下のような形で読み込むようにしている。
 
-```text
+```text title="~/.gitconfig" showLineNumbers
 [include]
     path = ~/.gitconfig.local
 ```

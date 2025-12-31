@@ -14,7 +14,7 @@ GitHub でソースコード管理をしていて、ふと一番最後にマー�
 
 ## 結論
 
-```shell
+```sh
 $ gh pr list --base main --state merged --limit 1
 
 Showing 1 of XXX pull requests in ega4432/<REPOSITORY> that match your search
@@ -34,7 +34,7 @@ Showing 1 of XXX pull requests in ega4432/<REPOSITORY> that match your search
 
 分かりやすいように 3 件にして実行した。
 
-```shell
+```sh
 $ gh pr list --state merged \
   --base main \
   --limit 3 \
@@ -115,7 +115,7 @@ url
 
 あまりユースケースは思いつかないが `#123 title` みたいに PR 番号とタイトルを結合した形式で取得するパターンを `--jq` オプションを使ってやってみる。
 
-```shell
+```sh
 $ gh pr list --state merged \
   --base main \
   --limit 3 \

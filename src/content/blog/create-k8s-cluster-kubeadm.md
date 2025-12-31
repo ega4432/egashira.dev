@@ -34,7 +34,7 @@ $ swapoff -a
 
 マシンを再起動した際も永続化されるように `/etc/fstab` を編集する。
 
-```:/etc/fstab
+```text title="/etc/fstab" showLineNumbers
 # コメントアウトしておく
 # /swap.img   none   swap   sw   0    0
 ```

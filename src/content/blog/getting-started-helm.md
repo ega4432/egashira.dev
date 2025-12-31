@@ -32,7 +32,7 @@ Helm には大きく 3 つの概念が登場する。
 
 利用する macOS 上に Homebrew 経由でインストールする。
 
-```shell
+```sh
 $ brew install helm
 
 $ helm version --short
@@ -46,7 +46,7 @@ v3.9.0+g7ceeda6
 helm コマンドには bash, fish, powershell, zsh の補完機能を備えているのでお使いのシェルが対応していれば設定しておくのをおすすめする。
 以下は zsh についての設定方法を書いておく。
 
-```shell
+```sh
 $ echo "source <(helm completion zsh)" >> ~/.zshrc
 
 $ source ~/.zshrc
@@ -80,14 +80,14 @@ Helm の公式が提供しているのが stable, incubator というリポジ�
 
 登録は `helm repo add` コマンドで行う。bitnami 社が提供する Repository を追加する。
 
-```shell
+```sh
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 "bitnami" has been added to your repositories
 ```
 
 追加したリポジトリの一覧を確認するには `helm repo list` コマンドを実行する。
 
-```shell
+```sh
 $ helm repo list
 NAME                URL
 bitnami             https://charts.bitnami.com/bitnami
@@ -95,7 +95,7 @@ bitnami             https://charts.bitnami.com/bitnami
 
 リポジトリはローカルにキャッシュするため、もし追加してから時間が空いてしまった場合は更新した方が良い。以下のコマンドで最新の状態に更新する。
 
-```shell
+```sh
 $ helm repo update bitnami
 Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "bitnami" chart repository
@@ -106,7 +106,7 @@ Update Complete. ⎈Happy Helming!⎈
 
 リポジトリを追加したら、その中に含まれているチャートを検索できる。検索は `helm search repo` コマンドを使用し、WordPress のチャートを検索してみる。
 
-```shell
+```sh
 $ helm search repo wordpress
 NAME                   	CHART VERSION	APP VERSION	DESCRIPTION
 bitnami/wordpress      	15.0.2       	6.0.0      	WordPress is the world's most popular blogging ...
@@ -121,7 +121,7 @@ bitnami/wordpress-intel	2.0.2        	6.0.0      	WordPress for Intel is the mos
 
 コマンドは `helm install` を使用し、リリース名として任意の名前を付与する。今回は簡易的に `my-release` という名前でデプロイする。
 
-```shell
+```sh
 $ helm install my-release bitnami/wordpress
 NAME: my-release
 LAST DEPLOYED: Sat Jun 25 23:29:01 2022
@@ -161,7 +161,7 @@ To access your WordPress site from outside the cluster follow the steps below:
 
 インストール結果が出力され、リリースが作成されたことを確認できる。リリースの一覧を確認する場合は `helm list` コマンドを使って確認できる。
 
-```shell
+```sh
 $ helm list
 NAME      	NAMESPACE	REVISION	UPDATED                             	STATUS  	CHART           	APP VERSION
 my-release	default  	1       	2022-06-25 23:29:01.402517 +0900 JST	deployed	wordpress-15.0.4	6.0.0
@@ -175,7 +175,7 @@ REVISION	UPDATED                 	STATUS  	CHART           	APP VERSION	DESCRIPT
 
 リリースの実体を確認するには kubectl コマンドを使って確認してみる。
 
-```shell
+```sh
 $ alias k=kubectl
 
 $ k get all | grep -v services/kubernetes
@@ -206,7 +206,7 @@ k8s リソースで Deployment, Service がデプロイされているのが分�
 
 どんなパラメータを設定できるのかを確認するには `helm show values` コマンドを使用する。
 
-```shell
+```sh
 $ helm show values bitnami/wordpress | wc -l
   1168
 ```
@@ -215,7 +215,7 @@ $ helm show values bitnami/wordpress | wc -l
 
 `helm show values` コマンドでは YAML ファイル形式で出力するが、特定の値を確認したい場合 `--jsonpath` オプションを使うことで絞り込んで表示できる。
 
-```shell
+```sh
 $ helm show values bitnami/wordpress --jsonpath='{ .service.type }{ "\n" }'
 LoadBalancer
 ```
@@ -226,7 +226,7 @@ LoadBalancer
 
 `helm upgrade` コマンドを使ってリリースをアップグレードできる。その際、`--set key=value` 形式かあるいは `-f override.yaml` でパラメータを上書きする YAML ファイルを指定できる。
 
-```shell
+```sh
 $ helm upgrade my-release --set service.type=NodePort bitnami/wordpress
 Release "my-release" has been upgraded. Happy Helming!
 NAME: my-release
@@ -265,7 +265,7 @@ To access your WordPress site from outside the cluster follow the steps below:
 
 出力結果からも分かるがリビジョンが 2 となった。
 
-```shell
+```sh
 $ helm history my-release
 REVISION	UPDATED                 	STATUS    	CHART           	APP VERSION	DESCRIPTION
 1       	Sat Jun 25 23:29:01 2022	superseded	wordpress-15.0.4	6.0.0      	Install complete
@@ -274,7 +274,7 @@ REVISION	UPDATED                 	STATUS    	CHART           	APP VERSION	DESCRI
 
 WordPress 用の Service の type が NodePort に変更された！
 
-```shell
+```sh
 $ k get svc | grep -v kubernetes
 NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
 my-release-mariadb     ClusterIP   10.108.157.3     <none>        3306/TCP                     28m
@@ -291,7 +291,7 @@ my-release-wordpress   NodePort    10.103.195.125   <none>        80:30119/TCP,4
 
 デフォルトだとユーザ名は `user` で、下記のコマンドを使って secret よりパスワードを取得できる。
 
-```shell
+```sh
 $ echo Password: $(kubectl get secret --namespace default my-release-wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d)
 ```
 
@@ -303,7 +303,7 @@ $ echo Password: $(kubectl get secret --namespace default my-release-wordpress -
 
 一通り作業が終わったら `helm uninstall` コマンドを使ってリリースをアンインストールする。アンインストールすると、同時に k8s リソースも削除される。
 
-```shell
+```sh
 $ helm uninstall my-release
 release "my-release" uninstalled
 ```

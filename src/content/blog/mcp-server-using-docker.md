@@ -32,14 +32,12 @@ MCP サーバをローカルで動作させる際、個人的にはコンテナ�
 
 **ネイティブ実行の場合**
 
-```json:mcp.json showLineNumbers
+```json title="mcp.json" showLineNumbers
 {
   "mcpServers": {
     "playwright": {
       "command": "npx",
-      "args": [
-        "@playwright/mcp@latest"
-      ]
+      "args": ["@playwright/mcp@latest"]
     }
   }
 }
@@ -47,7 +45,7 @@ MCP サーバをローカルで動作させる際、個人的にはコンテナ�
 
 **コンテナ実行の場合**
 
-```json:mcp.json showLineNumbers
+```json title="mcp.json" showLineNumbers
 {
   "mcpServers": {
     "playwright": {

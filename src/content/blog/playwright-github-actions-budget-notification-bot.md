@@ -41,7 +41,7 @@ Money Forward ME は 1 週間に一度現時点での口座の入出金履歴や
 
 ログイン画面は、サイトによって DOM 要素が異なるため、devtool を使って調べながら実装した。
 
-```ts:main.ts showLineNumbers
+```ts title="main.ts" showLineNumbers
 const email = process.env.EMAIL as string;
 const password = process.env.PASSWORD as string;
 
@@ -50,9 +50,9 @@ await page.locator('input[type="email"]').fill(email);
 const nextEmailEmail = page.locator('button[id="submitto"]');
 await page.screenshot({ path: `images/screenshot1.png`, fullPage: true });
 if (await nextBtnEmail.isVisible()) {
-    await nextBtnEmail.click();
+  await nextBtnEmail.click();
 } else {
-    throw new Error("Not found next button before password input.");
+  throw new Error("Not found next button before password input.");
 }
 
 // パスワードを入力
@@ -60,9 +60,9 @@ await page.locator('input[type="password"]').fill(password);
 await page.screenshot({ path: "images/screenshot2.png", fullPage: true });
 const nextBtnPassword = page.locator('button[id="submitto"]');
 if (await nextBtnPassword.isVisible()) {
-    await nextBtnPassword.click();
+  await nextBtnPassword.click();
 } else {
-    throw new Error("Not found next button before login.");
+  throw new Error("Not found next button before login.");
 }
 ```
 
@@ -72,7 +72,7 @@ if (await nextBtnPassword.isVisible()) {
 
 その際に回避した方法としては `waitForLoadState` メソッドでロード状態が完了するの待機することができた。
 
-```ts:main.ts showLineNumbers
+```ts title="main.ts" showLineNumbers
 // ボタンやリンククリック後
 await page.waitForLoadState("networkidle"),
 ```
@@ -85,7 +85,7 @@ await page.waitForLoadState("networkidle"),
 
 LINE の API については詳しくないので他にもいいやり方があればぜひ教えていただけると嬉しい。
 
-```ts:main.ts showLineNumbers
+```ts title="main.ts" showLineNumbers
 const lineNotifyApiToken = process.env.LINE_NOTIFY_API_TOKEN as string;
 
 export const postMessage = async (message: string) => {
@@ -93,9 +93,9 @@ export const postMessage = async (message: string) => {
     method: "POST",
     headers: {
       Authorization: `Bearer ${lineNotifyApiToken}`,
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: new URLSearchParams({ message }).toString(),
+    body: new URLSearchParams({ message }).toString()
   });
 
   const json = await response.json();
@@ -121,7 +121,7 @@ GitHub Actions の処理終了までだいたい 2 分ほどかかっている�
 
 定義ファイル内で Playwright をインストールする step を作っているが、その処理を上手くキャッシュするなどして、短縮できないか画策としていてそれも残課題だ。
 
-```yaml:main.yaml showLineNumbers
+```yaml title="main.yaml" showLineNumbers
 jobs:
   notify:
     runs-on: ubuntu-latest
@@ -132,9 +132,10 @@ jobs:
         with:
           node-version-file: .tool-versions
       - name: Install Playwright
-        run: pnpx playwright install  # <-- here
+        run: pnpx playwright install # <-- here
 
-     # 省略 ...
+
+      # 省略 ...
 ```
 
 ## まとめ

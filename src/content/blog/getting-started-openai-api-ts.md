@@ -20,8 +20,8 @@ https://github.com/openai/openai-node/discussions/217
 
 ## サンプルコード
 
-```ts:main.ts showLineNumbers
-import OpenAI from 'openai';
+```ts title="main.ts" showLineNumbers
+import OpenAI from "openai";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -30,19 +30,19 @@ const openai = new OpenAI({
 async function main() {
   try {
     const stream = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
+      model: "gpt-3.5-turbo",
       stream: true,
       // prompt: "TypeScript で Hello World を書いてください。"
       messages: [
         {
-          role: 'user',
-          content: 'TypeScript で Hello World を書いてください。'
+          role: "user",
+          content: "TypeScript で Hello World を書いてください。"
         }
       ]
     });
 
     for await (const chunk of stream) {
-      process.stdout.write(chunk.choices[0].delta?.content || '');
+      process.stdout.write(chunk.choices[0].delta?.content || "");
     }
   } catch (error) {
     throw new Error(error as string);

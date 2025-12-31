@@ -15,20 +15,20 @@ summary: 以前作った Chrome 拡張 ( tweet-current-page ) の CI/CD 環境�
 細かい説明へ入る前に、まず GitHub Actions の YAML ファイルは以下のようになっている。
 下記は、2022 年 9 月時点でのものだが、OSS として公開しているので最新版は [こちら](https://github.com/ega4432/tweet-current-page/blob/main/.github/workflows/release.yaml) から閲覧できる。
 
-```yaml:.github/workflows/release.yaml showLineNumbers
+```yaml title=".github/workflows/release.yaml" showLineNumbers
 name: release
 
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
   workflow_dispatch:
     inputs:
       version:
         required: true
         type: string
         description: 'Deploy version without "v" ( ex: *.*.* )'
-        default: ''
+        default: ""
 
 jobs:
   release:
@@ -41,7 +41,7 @@ jobs:
         uses: actions/setup-node@v3 # Ref: https://github.com/actions/setup-node
         with:
           node-version-file: .node-version
-          cache: 'yarn'
+          cache: "yarn"
 
       - name: Get yarn cache directory path # Ref: https://github.com/actions/cache/blob/main/examples.md#node---yarn
         id: yarn-cache-dir-path
@@ -88,17 +88,17 @@ jobs:
       - name: Upload and Publish
         run: npx chrome-webstore-upload-cli@2 upload --source extension.zip --auto-publish # Ref: https://github.com/fregante/chrome-webstore-upload-cli
         env:
-          EXTENSION_ID: '${{ secrets.EXTENSION_ID }}'
-          CLIENT_ID: '${{ secrets.CLIENT_ID }}'
-          CLIENT_SECRET: '${{ secrets.CLIENT_SECRET }}'
-          REFRESH_TOKEN: '${{ secrets.REFRESH_TOKEN }}'
+          EXTENSION_ID: "${{ secrets.EXTENSION_ID }}"
+          CLIENT_ID: "${{ secrets.CLIENT_ID }}"
+          CLIENT_SECRET: "${{ secrets.CLIENT_SECRET }}"
+          REFRESH_TOKEN: "${{ secrets.REFRESH_TOKEN }}"
 
       - name: Create new release
         uses: marvinpinto/action-automatic-releases@latest # Ref: https://github.com/marvinpinto/action-automatic-releases
         with:
-          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          title: 'Release ${{ steps.variables.outputs.VERSION }}'
+          title: "Release ${{ steps.variables.outputs.VERSION }}"
           files: |
             LICENSE
             extension.zip
@@ -191,7 +191,7 @@ JSON ファイルの整形は使い慣れている jq が多やっぱり使い�
   run: ./bin/build.sh
 ```
 
-```bash:bin/build.sh showLineNumbers
+```bash title="bin/build.sh" showLineNumbers
 #!/bin/bash -eu
 
 cd "$(dirname "$0")/../dist"

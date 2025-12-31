@@ -72,7 +72,7 @@ AppArmor プロファイルは、コンテナが実行できる操作を制限�
 
 本記事では、確認のためワーカーノードの 1 つに簡易的なプロファイルを設定して検証してみる。
 
-```text:~/aa-profile
+```text title="~/aa-profile" showLineNumbers
 #include <tunables/global>
 
 profile deny-write flags=(attach_disconnected) {
@@ -106,21 +106,21 @@ root@k8s-study2:~# aa-status | grep deny-write
 
 ### Pod を作成
 
-```yaml:apparmor-pod.yaml
+```yaml title="apparmor-pod.yaml" showLineNumbers
 apiVersion: v1
 kind: Pod
 metadata:
   name: apparmor
 spec:
-  nodeName: k8s-study2       # ノードを指定
-  securityContext:           # AppArmor の設定
+  nodeName: k8s-study2 # ノードを指定
+  securityContext: # AppArmor の設定
     appArmorProfile:
       type: Localhost
       localhostProfile: deny-write
   containers:
-  - name: busybox
-    image: busybox:1.28
-    command: [ "sh", "-c", "echo 'Hello AppArmor!' && sleep 1h" ]
+    - name: busybox
+      image: busybox:1.28
+      command: ["sh", "-c", "echo 'Hello AppArmor!' && sleep 1h"]
 ```
 
 上記の YAML を適用して、Pod を作成する。

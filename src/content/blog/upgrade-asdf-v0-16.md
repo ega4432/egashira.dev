@@ -14,7 +14,7 @@ title: "asdf v0.16 にアップグレードする"
 
 ある日、久しぶりに使った端末で npm のプロジェクトをローカルで動かそうとしたら、node.js が入っていないと怒られた。
 
-```shell
+```sh
 $ node --version
 zsh: command not found: node
 ```
@@ -31,7 +31,7 @@ https://asdf-vm.com/ja-jp/guide/upgrading-to-v0-16
 
 下記の手順で設定していけば問題なく使えるようになった。シェルは zsh を使っている前提なので、そこだけはお使いのシェルに置き換えて考えてもらえるといいと思う。
 
-```shell
+```sh
 $ asdf --version
 v0.14.0
 
@@ -55,7 +55,7 @@ $ asdf reshim
 
 プラグインは入れていたはずだが、`No plugins installed` と表示されて消えていそうだったのでインストールから行っていく。
 
-```shell
+```sh
 $ asdf plugin list
 No plugins installed
 

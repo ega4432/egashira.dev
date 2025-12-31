@@ -34,32 +34,33 @@ $ npm i rehype-mermaid
 
 パッケージがインストールできたら Astro の config ファイルに設定を追加していく。
 
-```diff:astro.config.mjs
-+import rehypeMermaid from "rehype-mermaid";
+<!-- prettier-ignore -->
+```js title="astro.config.mjs" showLineNumbers
+import rehypeMermaid from "rehype-mermaid"; // [!code ++]
 
 export default defineConfig({
   // ... 省略
   markdown: {
     syntaxHighlight: {
       type: "prism",
-+     excludeLangs: ["mermaid"]
+      excludeLangs: ["mermaid"] // [!code ++]
     },
     rehypePlugins: [
       rehypeSlug,
-+     [
-+       rehypeMermaid,
-+       {
-+         strategy: "img-svg",
-+         dark: {
-+           theme: "dark",
-+           fontFamily: "sans-serif"
-+         }
-+       }
-+     ]
+      [ // [!code ++]
+        rehypeMermaid, // [!code ++]
+        { // [!code ++]
+          strategy: "img-svg", // [!code ++]
+          dark: { // [!code ++]
+            theme: "dark", // [!code ++]
+            fontFamily: "sans-serif" // [!code ++]
+          } // [!code ++]
+        } // [!code ++]
+      ] // [!code ++]
     ]
   }
   // ... 省略
-})
+});
 ```
 
 - `markdown.syntaxHighlight.excludeLangs`

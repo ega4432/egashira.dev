@@ -27,7 +27,7 @@ summary: 結構前に作ったが割と運用が回ってきたので知見を�
 
 上記の一連のフローを実現している GitHub Actions の YAML を貼ると以下のようなかたちになっている。詳細については後述する。
 
-```yaml:.github/workflows/tweet.yaml showLineNumbers
+```yaml title=".github/workflows/tweet.yaml" showLineNumbers
 name: Tweet
 
 on: [deployment_status]
@@ -75,7 +75,7 @@ jobs:
       - name: Setup go
         uses: actions/setup-go@v2
         with:
-          go-version: '1.18'
+          go-version: "1.18"
       - name: Install rss-feed command
         run: go install github.com/ega4432/rss-feed@latest
       - name: Fetch feed

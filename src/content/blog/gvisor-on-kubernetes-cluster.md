@@ -94,7 +94,7 @@ $ vim /etc/containerd/config.toml
 
 下記を `[plugins."io.containerd.grpc.v1.cri".containerd.runtimes]` の箇所にネストして記載する。
 
-```txt:/etc/contained/config.toml
+```toml title="/etc/contained/config.toml" showLineNumbers
 ...
         [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runsc]
           runtime_type = "io.containerd.runsc.v1"
@@ -115,7 +115,7 @@ $ exit
 
 Kubernetes クラスタへ RuntimeClass リソースを作成する。
 
-```yaml:rtc.yaml
+```yaml title="rtc.yaml" showLineNumbers
 apiVersion: node.k8s.io/v1
 kind: RuntimeClass
 metadata:
@@ -158,7 +158,7 @@ Pod は以下のように 2 つ作成する。
 1. RuntimeClass の設定なし
 2. RuntimeClass の設定あり（`gVisor` を指定）
 
-```yaml:nginx-gvisor.yaml
+```yaml title="nginx-gvisor.yaml" showLineNumbers
 apiVersion: v1
 kind: Pod
 metadata:
@@ -167,12 +167,12 @@ metadata:
     run: nginx-gvisor
   name: nginx-gvisor
 spec:
-  nodeName: k8s-study2      # gVisor を導入したノードを指定
-  runtimeClassName: gvisor  # RuntimeClass 名を指定
+  nodeName: k8s-study2 # gVisor を導入したノードを指定
+  runtimeClassName: gvisor # RuntimeClass 名を指定
   containers:
-  - image: nginx
-    name: nginx-gvisor
-    resources: {}
+    - image: nginx
+      name: nginx-gvisor
+      resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 ```

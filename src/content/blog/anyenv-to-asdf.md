@@ -26,7 +26,7 @@ summary: 満を持して乗り換えてみたのでメモ
 
 中でも僕は「**ZSH & Homebrew**」でやってみることにした。
 
-```shell
+```sh
 $ brew install asdf
 
 $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
@@ -38,22 +38,22 @@ $ echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
 
 続いて anyenv のアンインストールを行う。
 
-```shell
+```sh
 $ brew uninstall anyenv
 ```
 
-```shell
+```sh
 $ rm -rf ~/.anyenv
 ```
 
 `~/.zshrc` に書いていた設定も削除しておく。
 
-```diff:~/.zshrc showLineNumbers
+```diff title="~/.zshrc" showLineNumbers
 -export PATH="$HOME/.anyenv/bin:$PATH"
 -eval "$(anyenv init -)"
 ```
 
-```shell
+```sh
 $ source ~/.zshrc
 ```
 
@@ -61,7 +61,7 @@ $ source ~/.zshrc
 
 既に以下の設定を `~/.zshrc` に記載している場合は、Homebrew でインストールするとそれだけで補完設定ができていた。[^1]
 
-```sh:~/.zshrc showLineNumbers
+```sh title="~/.zshrc" showLineNumbers
 if type brew &> /dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
   autoload -Uz compinit
@@ -81,19 +81,19 @@ fi
 
 > Each plugin has dependencies so we need to check the plugin repo where they should be listed. For asdf-nodejs they are - ref. [Home \| asdf](https://asdf-vm.com/guide/getting-started.html#plugin-dependencies)
 
-```shell
+```sh
 $ brew install gpg gawk
 ```
 
 プラグインのインストールを実行する。
 
-```shell
+```sh
 $ asdf plugin add https://github.com/asdf-vm/asdf-nodejs.git
 ```
 
 今回は最新バージョンをインストールする。
 
-```shell
+```sh
 $ asdf install nodejs latest
 Trying to update node-build... ok
 Downloading node-v18.7.0-darwin-x64.tar.gz...
@@ -104,7 +104,7 @@ Installed node-v18.7.0-darwin-x64 to /Users/<USER>/.asdf/installs/nodejs/18.7.0
 
 インストール可能なバージョンを調べたい場合は `asdf list all nodejs <VERSION>` コマンドで確認できる。
 
-```shell
+```sh
 $ asdf list all nodejs 16
 16.0.0
 16.1.0
@@ -153,7 +153,7 @@ legacy_version_file = yes
 
 anyenv で管理していた Terraform を導入する。流れは同じなので細かいところは省略する。
 
-```shell
+```sh
 # プラグインを追加
 $ asdf plugin add terraform
 

@@ -53,195 +53,227 @@ https://github.com/kentcdodds/mdx-bundler
 
 リンクだけのパラグラフをリンクカードに変換する unified プラグインを実装する。かなり長いので一旦全体を貼り付けつつ、ポイントだけを後で解説する。
 
-```ts:lib/remark-link-card.ts showLineNumbers
-import { Parent, Position } from 'unist'
-import { visit } from 'unist-util-visit'
-import getMetadata from 'metadata-scraper'
+```ts title="lib/remark-link-card.ts" showLineNumbers
+import { Parent, Position } from "unist";
+import { visit } from "unist-util-visit";
+import getMetadata from "metadata-scraper";
 
 const URL_REGEXP =
-  /^https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3000-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+$/g
-const MY_HOST = 'egashira.dev'
+  /^https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#\u3000-\u30FE\u4E00-\u9FA0\uFF01-\uFFE3]+$/g;
+const MY_HOST = "egashira.dev";
 
 type LinkNode = Parent & {
-  children: { type: string; value: string; position: Position }[]
-  url: string
-  title: string | null
-}
+  children: { type: string; value: string; position: Position }[];
+  url: string;
+  title: string | null;
+};
 
 type Meta = {
-  url: string
-  title: string
-  description: string
-  image: string
-  icon: string
-}
+  url: string;
+  title: string;
+  description: string;
+  image: string;
+  icon: string;
+};
 
 type JsxElement = {
-  type: 'mdxJsxFlowElement' | 'mdxJsxTextElement'
-  name: string
-  attributes: JsxAttribute[]
-  children: (JsxElement | TextElement)[]
-}
+  type: "mdxJsxFlowElement" | "mdxJsxTextElement";
+  name: string;
+  attributes: JsxAttribute[];
+  children: (JsxElement | TextElement)[];
+};
 
 type TextElement = {
-  type: 'text'
-  value: string
-}
+  type: "text";
+  value: string;
+};
 
 type JsxAttribute = {
-  type: 'mdxJsxAttribute'
-  name: string
-  value: string
-}
+  type: "mdxJsxAttribute";
+  name: string;
+  value: string;
+};
 
 const remarkCardLinks = () => {
   return async (tree: Parent) => {
-    const promises: (() => Promise<void>) = []
+    const promises: () => Promise<void> = [];
 
     const visitor = (node: Parent) => {
-      const linkNode = node.children.find((n) => n.type === 'link') as LinkNode
-      const url = linkNode.url
+      const linkNode = node.children.find((n) => n.type === "link") as LinkNode;
+      const url = linkNode.url;
 
       promises.push(async () => {
-        const meta = await fetchMeta(url)
+        const meta = await fetchMeta(url);
         if (!meta) {
-          return
+          return;
         }
 
-        const domain = new URL(url)
-        const isExternal = domain.hostname !== MY_HOST
+        const domain = new URL(url);
+        const isExternal = domain.hostname !== MY_HOST;
         const main = {
-          type: 'mdxJsxFlowElement',
-          name: 'div',
+          type: "mdxJsxFlowElement",
+          name: "div",
           attributes: [
-            { type: 'mdxJsxAttribute', name: 'className', value: 'remark-link-card-main' }
+            {
+              type: "mdxJsxAttribute",
+              name: "className",
+              value: "remark-link-card-main"
+            }
           ],
           children: [
             {
-              type: 'mdxJsxTextElement',
-              name: 'div',
+              type: "mdxJsxTextElement",
+              name: "div",
               attributes: [
-                { type: 'mdxJsxAttribute', name: 'className', value: 'remark-link-card-title' }
+                {
+                  type: "mdxJsxAttribute",
+                  name: "className",
+                  value: "remark-link-card-title"
+                }
               ],
-              children: [{ type: 'text', value: meta.title }]
+              children: [{ type: "text", value: meta.title }]
             }
           ]
-        } as JsxElement
+        } as JsxElement;
 
         if (meta.description) {
           main.children.push({
-            type: 'mdxJsxTextElement',
-            name: 'div',
+            type: "mdxJsxTextElement",
+            name: "div",
             attributes: [
-              { type: 'mdxJsxAttribute', name: 'className', value: 'remark-link-card-description' }
+              {
+                type: "mdxJsxAttribute",
+                name: "className",
+                value: "remark-link-card-description"
+              }
             ],
-            children: [{ type: 'text', value: meta.description }]
-          })
+            children: [{ type: "text", value: meta.description }]
+          });
         }
 
         if (meta.icon) {
           main.children.push({
-            type: 'mdxJsxFlowElement',
-            name: 'div',
+            type: "mdxJsxFlowElement",
+            name: "div",
             attributes: [
               {
-                type: 'mdxJsxAttribute',
-                name: 'className',
-                value: 'remark-link-card-origin'
+                type: "mdxJsxAttribute",
+                name: "className",
+                value: "remark-link-card-origin"
               }
             ],
             children: [
               {
-                type: 'mdxJsxFlowElement',
-                name: 'img',
+                type: "mdxJsxFlowElement",
+                name: "img",
                 attributes: [
-                  { type: 'mdxJsxAttribute', name: 'alt', value: url },
-                  { type: 'mdxJsxAttribute', name: 'src', value: meta.icon }
+                  { type: "mdxJsxAttribute", name: "alt", value: url },
+                  { type: "mdxJsxAttribute", name: "src", value: meta.icon }
                 ],
                 children: []
               },
               {
-                type: 'mdxJsxTextElement',
-                name: 'div',
+                type: "mdxJsxTextElement",
+                name: "div",
                 attributes: [
-                  { type: 'mdxJsxAttribute', name: 'className', value: 'remark-link-card-domain' }
+                  {
+                    type: "mdxJsxAttribute",
+                    name: "className",
+                    value: "remark-link-card-domain"
+                  }
                 ],
-                children: [{ type: 'text', value: domain.hostname }]
+                children: [{ type: "text", value: domain.hostname }]
               }
             ]
-          })
+          });
         }
 
         const image = {
-          type: 'mdxJsxFlowElement',
-          name: 'div',
+          type: "mdxJsxFlowElement",
+          name: "div",
           attributes: [
-            { type: 'mdxJsxAttribute', name: 'className', value: 'remark-link-card-image' }
+            {
+              type: "mdxJsxAttribute",
+              name: "className",
+              value: "remark-link-card-image"
+            }
           ],
           children: []
-        } as JsxElement
+        } as JsxElement;
 
         const linkCardNode = {
-          type: 'mdxJsxFlowElement',
-          name: 'a',
+          type: "mdxJsxFlowElement",
+          name: "a",
           attributes: [
-            { type: 'mdxJsxAttribute', name: 'className', value: 'remark-link-card-wrapper' },
-            { type: 'mdxJsxAttribute', name: 'href', value: isExternal ? url : domain.pathname }
+            {
+              type: "mdxJsxAttribute",
+              name: "className",
+              value: "remark-link-card-wrapper"
+            },
+            {
+              type: "mdxJsxAttribute",
+              name: "href",
+              value: isExternal ? url : domain.pathname
+            }
           ],
           children: [main, image]
-        } as JsxElement
+        } as JsxElement;
 
         if (isExternal) {
-          linkCardNode.attributes.push({ type: 'mdxJsxAttribute', name: 'target', value: '_blank' })
+          linkCardNode.attributes.push({
+            type: "mdxJsxAttribute",
+            name: "target",
+            value: "_blank"
+          });
         }
 
         if (meta.image) {
           (linkCardNode.children[1] as JsxElement).children.push({
-            type: 'mdxJsxFlowElement',
-            name: 'img',
+            type: "mdxJsxFlowElement",
+            name: "img",
             attributes: [
-              { type: 'mdxJsxAttribute', name: 'alt', value: meta.url },
-              { type: 'mdxJsxAttribute', name: 'src', value: meta.image }
+              { type: "mdxJsxAttribute", name: "alt", value: meta.url },
+              { type: "mdxJsxAttribute", name: "src", value: meta.image }
             ],
             children: []
-          })
+          });
         }
 
-        node.type = 'LinkCard'
-        node.children = [linkCardNode]
-      })
-    }
+        node.type = "LinkCard";
+        node.children = [linkCardNode];
+      });
+    };
 
-    visit(tree, isLink, visitor)
-    await Promise.all(promises.map((t) => t()))
-  }
-}
+    visit(tree, isLink, visitor);
+    await Promise.all(promises.map((t) => t()));
+  };
+};
 
 const isLink = (node: Parent): node is Parent =>
-  node.type === 'paragraph' &&
+  node.type === "paragraph" &&
   node.children &&
   node.children.length === 1 &&
-  node.children[0].type === 'link' &&
-  (node.children[0] as LinkNode).children[0].value.match(URL_REGEXP) !== null
+  node.children[0].type === "link" &&
+  (node.children[0] as LinkNode).children[0].value.match(URL_REGEXP) !== null;
 
 const fetchMeta = async (url: string): Promise<Meta | null> => {
   return await getMetadata(url)
     .then((meta) => {
       return {
         url,
-        title: meta.title || '',
-        description: meta.description || '',
-        image: meta.image || '',
-        icon: meta.icon || ''
-      }
+        title: meta.title || "",
+        description: meta.description || "",
+        image: meta.image || "",
+        icon: meta.icon || ""
+      };
     })
     .catch((e) => {
-      console.error(e)
-      return null
-    })
-}
+      console.error(e);
+      return null;
+    });
+};
 
-export default remarkCardLinks
+export default remarkCardLinks;
 ```
 
 まずプラグインの肝は以下の部分で第一引数にノードすなわち MDAST(Markdown AST)を受け取り、第二引数にこのプラグインで処理したいノードの条件を、第三引数で実際に処理内容を書く。
@@ -256,17 +288,18 @@ const remarkCardLinks = () => {
 
 https://github.com/syntax-tree/unist-util-visit-parents/issues/8
 
-```ts showLineNumbers {2,4-7,10}
+```ts showLineNumbers
 const remarkCardLinks = () => {
-  const promises: (() => Promise<void>)[] = [];
+  const promises: (() => Promise<void>)[] = []; // [!code ++]
   const visitor = () => {
     promises.push(async () => {
+      // [!code ++]
       // 非同期処理
       // ex: await axios.get('https://api.example.com')
-    });
+    }); // [!code ++]
   };
   visit(tree, isLink, visitor);
-  await Promise.all(promises.map((t) => t()));
+  await Promise.all(promises.map((t) => t())); // [!code ++]
 };
 ```
 
@@ -307,17 +340,17 @@ https://github.com/BetaHuhn/metadata-scraper
 
 実装したプラグインを mdx-bundler に読み込ませる。
 
-```ts:lib/mdx.ts showLineNumbers {7}
+```ts title="lib/mdx.ts" showLineNumbers
 const { code, frontmatter } = await bundleMDX({
-    source,
-    cwd: path.join(process.cwd(), 'components'),
-    xdmOptions(options, frontmatter) {
-        options.remarkPlugins = {
-            ...(options.remarkPlugins ?? []),
-           remarkCardLinks
-        }
-    }
-})
+  source,
+  cwd: path.join(process.cwd(), "components"),
+  xdmOptions(options, frontmatter) {
+    options.remarkPlugins = {
+      ...(options.remarkPlugins ?? []),
+      remarkCardLinks // [!code ++]
+    };
+  }
+});
 ```
 
 ## 今後の課題

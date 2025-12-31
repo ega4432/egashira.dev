@@ -28,7 +28,7 @@ images: []
 
 普通に [公式サイト](https://www.virtualbox.org/) からインストールしても良いのだが、CLI が楽なので Homebrew 経由で行う。
 
-```shell
+```sh
 $ brew install --cask virtualbox
 ..
 # 途中パスワードを聞かれたら入力する

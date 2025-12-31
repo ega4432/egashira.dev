@@ -55,7 +55,7 @@ nodes:
 
 勘違いしそうになるが 6 行目の `containerPort` は、kind がノードとして振る舞う Docker コンテナのポートと言う意味で、すなわちこれは k8s クラスタの NodePort を意味する。そのため NodePort のルールに従い 30000 - 32767 番のポートを割り当てる必要があるため、この範囲の任意の数字にする。
 
-```shell
+```sh
 $ kind create cluster --name port-mapping-cluster --config ./kind-portmapping-config.yaml
 Creating cluster "port-mapping-cluster" ...
  ✓ Ensuring node image (kindest/node:v1.24.0) 🖼
@@ -89,7 +89,7 @@ port-mapping-cluster-worker          Ready    <none>          38s   v1.24.0
 
 続いて作成したクラスタに Pod をデプロイしていくが、今回は Deployment で 3 つの Pod を作成した。
 
-```shell
+```sh
 $ kubectl create deploy my-app \
     --image=nginx \
     --replicas=3 \
@@ -107,7 +107,7 @@ my-app-6ddcb74989-wvbcr   1/1     Running   0          37s   10.244.1.2   port-m
 
 作成した Pod を NodePort タイプでクラスタ外に公開し、ホストマシンからアクセスできるか確認する。
 
-```shell
+```sh
 $ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Service
@@ -140,7 +140,7 @@ my-svc       NodePort    10.96.232.252   <none>        80:30599/TCP   11s
 
 ここまでで検証するためのリソースの作成ができたので curl を実行してみると…
 
-```shell
+```sh
 $ curl -I 0.0.0.0:8080
 HTTP/1.1 200 OK
 Server: nginx/1.21.6
@@ -160,7 +160,7 @@ Accept-Ranges: bytes
 
 kind ノードとして動作している Docker コンテナを見ると、ホスト側の 8080 番ポートがコンテナ内の 30599 番ポートにマッピングされているのが分かった。
 
-```shell
+```sh
 $ docker ps
 CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS                                                NAMES
 824855c064c4   kindest/node:v1.24.0   "/usr/local/bin/entr…"   40 minutes ago   Up 40 minutes   127.0.0.1:54456->6443/tcp, 0.0.0.0:8080->30599/tcp   port-mapping-cluster-control-plane

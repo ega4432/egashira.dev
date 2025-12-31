@@ -22,7 +22,7 @@ AWS などの他クラウド provider を Terraform で実装したことのあ�
 
 Terraform のバージョンは v0.13 以上である必要がある。
 
-```hcl:providers.tf showLineNumbers
+```hcl title="providers.tf" showLineNumbers
 terraform {
   required_providers {
     github = {
@@ -43,7 +43,7 @@ https://registry.terraform.io/providers/integrations/github/latest/docs#authenti
 
 一例として PAT を使う場合だと、以下のようにしておけば
 
-```hcl:providers.tf showLineNumbers
+```hcl title="providers.tf" showLineNumbers
 provider "github" {
   token = var.github_pat
 }

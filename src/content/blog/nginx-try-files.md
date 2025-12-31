@@ -27,12 +27,12 @@ Context:	server, location
 
 以下に設定ファイルの一例を置いておく。
 
-```diff showLineNumbers
+```nginx showLineNumbers
 server {
     ...
     location / {
         ...
-+       try_files $uri $uri/ $uri/index.html $uri.html =404;
+        try_files $uri $uri/ $uri/index.html $uri.html =404; # [!code ++]
     }
 }
 ```
@@ -50,8 +50,8 @@ server {
 
 ディレクトリの構成は以下のようにいくつかの静的コンテンツを用意しておく。ここで使用する HTML ファイルの中身はそれぞれの区別ができれば何でも良い）
 
-```shell
-tree .
+```sh
+$ tree .
 .
 ├── contents
 │   ├── hoge
@@ -64,7 +64,7 @@ tree .
 
 nginx の設定ファイルは以下。
 
-```nginx:nginx.conf showLineNumbers
+```nginx title="nginx.conf" showLineNumbers
 server {
     listen       80;
     root         /usr/share/nginx/html;
@@ -82,7 +82,7 @@ nginx コンテナをデバッグモードで起動する。
 
 起動時に `-v(--volume)` オプションを用いて設定ファイルとコンテンツをマウントする。また、`-p(--publish)` オプションを用いてコンテナ上の 80 番ポートとホスト上の 8080 番ポートをバインドする。
 
-```shell
+```sh
 $ docker run -itd --rm --name nginx \
     -v ${PWD}/nginx.conf:/etc/nginx/conf.d/default.conf:ro \
     -v ${PWD}/contents/:/usr/share/nginx/html:ro  \
@@ -94,7 +94,7 @@ $ docker run -itd --rm --name nginx \
 
 `/` ルートにアクセスすると、`./contents/index.html` の内容が返る。
 
-```shell
+```sh
 $ curl http://localhost:8080
 <!DOCTYPE html>
 <html>
@@ -109,7 +109,7 @@ $ curl http://localhost:8080
 
 `/hoge` にアクセスすると、`./contents/hoge/index.html` の内容が返る。
 
-```shell
+```sh
 $ curl http://localhost:8080/hoge
 <!DOCTYPE html>
 <html>
@@ -124,7 +124,7 @@ $ curl http://localhost:8080/hoge
 
 `/hoge/` にアクセスすると、`./contents/hoge/index.html` の内容が返る。
 
-```shell
+```sh
 $ curl http://localhost:8080/hoge/
 <!DOCTYPE html>
 <html>
@@ -139,7 +139,7 @@ $ curl http://localhost:8080/hoge/
 
 `/hoge/index.html` にアクセスすると、`./contents/hoge/index.html` の内容が返る。
 
-```shell
+```sh
 $ curl http://localhost:8080/hoge/index.html
 <!DOCTYPE html>
 <html>
@@ -154,7 +154,7 @@ $ curl http://localhost:8080/hoge/index.html
 
 存在しないパス `/aaaaaaaaaaaaaa` にアクセスすると、ステータスコード 404 とデフォルト 404 ページの内容が返る。
 
-```shell
+```sh
 $ curl http://localhost:8080/aaaaaaaaaaaaaa
 <html>
   <head><title>404 Not Found</title></head>

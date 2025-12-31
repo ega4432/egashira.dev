@@ -42,7 +42,7 @@ $ cd dbmarlin-docker
 $ vim docker/docker-compose.yml
 ```
 
-```yml:docker-compose.yml
+```yml title="docker-compose.yml" showLineNumbers
 services:
   dbmarlin-server:
     image: dbmarlin/dbmarlin-server:latest

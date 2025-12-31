@@ -22,7 +22,7 @@ strSlice := []string{"a", "b", "c", "d", "a", "c"}
 
 以下のような関数を書いてみた。
 
-```go
+```go showLineNumbers
 func uniqueSlice(s []string) (r []string) {
     fmt.Printf("%v\n---> Start loop\n", s) // For debug
 	set := make(map[string]bool)
@@ -45,7 +45,7 @@ func uniqueSlice(s []string) (r []string) {
 
 確認のため fmt パッケージを使って無駄に出力させていたり、わざと冗長に書いている部分もあったりするが、これを実行すると以下のようになる。
 
-```shell
+```sh
 # output
 [a b c d a c]
 ---> Start loop
@@ -78,7 +78,7 @@ map[a:true b:true c:true d:true]
 
 Go では全ての型と互換性を持っている interface{} 型というのがある。引数で interface{} として受け取り、関数内部で型アサーションをすることで `[]int`, `[]string` といった型に依らないように実装できそうだったのやってみた！
 
-```go
+```go showLineNumbers
 func uniqueSlice(i interface{}) (r []interface{}) {
 	switch s := i.(type) {
 	case []int:

@@ -31,7 +31,7 @@ nginx コンテナを建てる際に、どうやって設定ファイルに環�
 
 公式の nginx イメージを使う場合、デフォルトで `/etc/nginx/templates/*.template` の設定ファイルに対して envsubst を実行して `/etc/nginx/conf.d/*.conf` へ出力するようになっている。そのためまずは、以下のようなテンプレートファイルを作成する。
 
-```nginx:default.conf.template showLineNumbers {14}
+```nginx title="default.conf.template" showLineNumbers {14}
 server {
     listen       80;
     server_name  localhost;
@@ -56,19 +56,18 @@ server {
 
 ポイントとしては、`--volume` オプションで先程作成したテンプレートファイルをマウントしている点と、`--env` オプションで環境変数を渡している点である。
 
-```shell {2-3,12}
-docker run --rm --interactive --tty --name nginx-env --publish 80:80 \
-  --volume $(pwd)/default.conf.template:/etc/nginx/templates/default.conf.template:ro \
-  --env "PROXY_URL=www.google.com" \
+```sh
+$ docker run --rm --interactive --tty --name nginx-env --publish 80:80 \
+  --volume $(pwd)/default.conf.template:/etc/nginx/templates/default.conf.template:ro \  # [!code ++]
+  --env "PROXY_URL=www.google.com" \  # [!code ++]
   nginx:1.23.3
-
 /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
 10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
 10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
-20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/default.conf.template to /etc/nginx/conf.d/default.conf
+20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/default.conf.template to /etc/nginx/conf.d/default.conf # [!code ++]
 /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 /docker-entrypoint.sh: Configuration complete; ready for start up
 2023/01/29 08:22:43 [notice] 1#1: using the "epoll" event method
@@ -85,8 +84,8 @@ docker run --rm --interactive --tty --name nginx-env --publish 80:80 \
 
 `--env` オプションで与えたものが正しく設定されているかは以下のコマンドで確認できる（grep して見たいものだけ出力した）。
 
-```shell
-docker exec -it nginx-env cat /etc/nginx/conf.d/default.conf | grep -A2 -m1 proxy
+```sh
+$ docker exec -it nginx-env cat /etc/nginx/conf.d/default.conf | grep -A2 -m1 proxy
     location /proxy {
         rewrite    /proxy / break;
         proxy_pass https://www.google.com;

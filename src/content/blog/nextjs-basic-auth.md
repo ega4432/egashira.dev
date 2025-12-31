@@ -21,29 +21,29 @@ Next.js で個人プロジェクトを開発していて一旦雑に Basic 認�
 
 超絶簡単だが、プロジェクトルートに `middleware.ts` を作成して以下のようにするだけでお k。
 
-```ts:middleware.ts showLineNumbers
-import { NextRequest, NextResponse } from 'next/server';
+```ts title="middleware.ts" showLineNumbers
+import { NextRequest, NextResponse } from "next/server";
 
 export const config = {
-  matcher: ['/admin']
+  matcher: ["/admin"]
 };
 
 export default function middleware(req: NextRequest) {
-  const basicAuth = req.headers.get('authorization');
+  const basicAuth = req.headers.get("authorization");
 
   if (basicAuth) {
-    const authValue = basicAuth.split(' ')[1];
-    const [user, password] = atob(authValue).split(':');
+    const authValue = basicAuth.split(" ")[1];
+    const [user, password] = atob(authValue).split(":");
 
     if (user === process.env.USERNAME && password === process.env.PASSWORD) {
       return NextResponse.next();
     }
   }
 
-  return new NextResponse('Unauthorized.', {
+  return new NextResponse("Unauthorized.", {
     status: 401,
     headers: {
-      'WWW-authenticate': 'Basic realm="Secure Area"'
+      "WWW-authenticate": 'Basic realm="Secure Area"'
     }
   });
 }
@@ -57,11 +57,11 @@ export default function middleware(req: NextRequest) {
 
 https://nextjs.org/docs/messages/nested-middleware
 
-```bash {4}
+```sh
 $ tree -L 1 .
 .
 ├── app
-├── middleware.ts   # <-- here
+├── middleware.ts # [!code ++]
 ├── next-env.d.ts
 ├── next.config.js
 ├── node_modules
@@ -88,7 +88,7 @@ Header に Authorization がなかったり、Basic 認証のユーザ名、パ�
 
 `process.env.USERNAME` , `process.env.PASSWORD` としている箇所についてはローカルで確認する際には .env.local に記載しておけば大丈夫。
 
-```txt:.env.local showLineNumbers
+```text title=".env.local" showLineNumbers
 USERNAME=user
 PASSWORD=pass
 ```

@@ -93,7 +93,7 @@ https://killer.sh/
 
 `kubectl` コマンドを何度も叩くことになるので、エイリアスを設定しておくのがおすすめ。クラスタによってはデフォルトで設定されていることもあるが、気づけばもはや手癖で設定するレベルになっていた笑
 
-```shell
+```sh
 $ alias k=kubectl
 
 $ k version --short
@@ -109,7 +109,7 @@ $ k run pod1 --image=nginx $do
 
 explain サブコマンドが便利。YAML の書き方がわからなくなった場合、ドキュメントを調べるよりもこちらのほうが早い時も多々ある。
 
-```shell
+```sh
 $ k explain pod
 
 # --recursive オプションを付けるとネストしたオブジェクトも全て参照できる
@@ -126,7 +126,7 @@ $ k explain --recursive pod | less
 
 k8s のリソースには、Pod だと `po`、ConfigMap だと `cm`、PersistentVolumeClaim だと `pvc` のようにショートネームが定義されている。コマンドで使用する場合はショートネームを使うと時間を短縮できる。
 
-```shell
+```sh
 # api-resources サブコマンドを使うとどういうショートネームが定義されているか確認できる
 $ k api-resources | head -n 10
 NAME                              SHORTNAMES   APIVERSION                             NAMESPACED   KIND
@@ -143,7 +143,7 @@ persistentvolumeclaims            pvc          v1                               
 
 ### できるだけ kubectl コマンドワンライナーでリソースを作成、変更する
 
-```shell
+```sh
 # シングルコンテナな Pod を作る
 $ k run pod1 --image=nginx:alpine
 
