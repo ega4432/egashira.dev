@@ -12,7 +12,6 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
-// import remarkCodeTitles from "./src/lib/utils/remark-plugins/remark-code-titles";
 import generateOgImage from "./src/integrations/generateOgImages";
 import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
 import rehypeMermaid from "rehype-mermaid";
