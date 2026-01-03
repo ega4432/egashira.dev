@@ -192,7 +192,7 @@ https://amzn.to/4igc1hz
 
 最後に期間限定で安くなっている書籍を紹介して終わろうと思う。
 
-https://amzn.to/43MWZtI
+https://amzn.to/4pny9t9
 
 https://amzn.to/4rgPx48
 

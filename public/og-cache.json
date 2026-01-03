@@ -3584,5 +3584,38 @@
       "displayUrl": "github.com",
       "url": "https://github.com/actions/typescript-action"
     }
+  },
+  "http://egashira.dev/blog/dummy-entry#mermaid-記法": {
+    "timestamp": 1767233400157,
+    "data": {
+      "title": "テスト",
+      "description": "自分用 Markdown ファイルのテスト",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=egashira.dev",
+      "ogImageSrc": "https://egashira.dev/images/blog/dummy-entry/og.png",
+      "displayUrl": "egashira.dev",
+      "url": "http://egashira.dev/blog/dummy-entry#mermaid-記法"
+    }
+  },
+  "https://www.ipa.go.jp/jinzai/skill-standard/plus-it-ui/itss/download_v3_2011.html": {
+    "timestamp": 1767234665530,
+    "data": {
+      "title": "ITスキル標準V3 2011 ダウンロード | デジタル人材の育成 | IPA 独立行政法人 情報処理推進機構",
+      "description": "情報処理推進機構（IPA）の「ITスキル標準V3 2011 ダウンロード」に関する情報です。\n",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=www.ipa.go.jp",
+      "ogImageSrc": "https://www.ipa.go.jp/k3q2q400000050d7-img/k3q2q400000050dg.png",
+      "displayUrl": "www.ipa.go.jp",
+      "url": "https://www.ipa.go.jp/jinzai/skill-standard/plus-it-ui/itss/download_v3_2011.html"
+    }
+  },
+  "https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898": {
+    "timestamp": 1767237567238,
+    "data": {
+      "title": "The S.O.L.I.D Principles in Pictures",
+      "description": "If you are familiar with Object-Oriented Programming, then you’ve probably heard about the SOLID principles.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=medium.com",
+      "ogImageSrc": "https://miro.medium.com/v2/resize:fit:1200/1*wrxj0oBKpA_GXb8LPhXOeg.png",
+      "displayUrl": "medium.com",
+      "url": "https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898"
+    }
   }
 }

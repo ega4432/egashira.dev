@@ -101,6 +101,4 @@ Vercel にデプロイする際は Vercel 上の環境変数に設定してお�
 
 ## 参考
 
-https://nextjs.org/docs/pages/building-your-application/routing/middleware#producing-a-response
-
 https://nextjs.org/docs/messages/nested-middleware
