@@ -6,47 +6,23 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
 import { rehypePrettyCode } from "rehype-pretty-code";
-import { s } from "hastscript";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 
+import { siteMeta } from "./src/constants";
 import generateOgImage from "./src/integrations/generateOgImages";
 import remarkLinkCard from "./src/lib/utils/remark-plugins/remark-link-card";
+import { anchorIcon } from "./src/lib/utils/rehype-plugins/rehype-auto-link-headings";
 import rehypeMermaid from "rehype-mermaid";
 
 let site = "http://localhost:4321";
 if (process.env.CF_PAGES_BRANCH === "main") {
-  site = "https://egashira.dev";
+  site = siteMeta.siteUrl;
 } else if (process.env.CF_PAGES_URL) {
   site = process.env.CF_PAGES_URL;
 }
-
-const anchorIcon = s(
-  "svg",
-  {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    class: "anchor-icon"
-  },
-  [
-    s("path", {
-      stroke: "none",
-      fill: "none",
-      d: "M0 0h24v24H0z"
-    }),
-    s("path", {
-      d: "M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"
-    }),
-    s("path", {
-      d: "M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"
-    })
-  ]
-);
 
 const partytownConfig = {
   config: { forward: ["dataLayer.push"] }
