@@ -11,7 +11,7 @@
 
 /**
  * サイト所有者のユーザー名
- * GitHub、X(Twitter)などのソーシャルメディアで使用されます
+ * GitHub、Xなどのソーシャルメディアで使用されます
  */
 const SITE_AUTHOR_USERNAME = "ega4432" as const;
 
@@ -39,7 +39,7 @@ const SITE_DESCRIPTION =
 const SITE_EMAIL = "hello@egashira.dev" as const;
 
 /**
- * X(Twitter)のユーザーID
+ * XのユーザーID
  * Twitter Card用のメタタグで使用されます
  */
 const TWITTER_USER_ID = "1220570588885868544" as const;
@@ -101,7 +101,7 @@ export const footerLinks: readonly Link[] = [
   { href: "/feed.xml", title: "フィード" },
   { href: "/sitemap-index.xml", title: "サイトマップ" },
   { href: `https://github.com/${SITE_AUTHOR_USERNAME}`, title: "GitHub" },
-  { href: `https://x.com/${SITE_AUTHOR_USERNAME}`, title: "X(Twitter)" }
+  { href: `https://x.com/${SITE_AUTHOR_USERNAME}`, title: "X" }
   // 将来的に追加する可能性のあるリンク：
   // { href: `https://bsky.app/profile/${SITE_AUTHOR_USERNAME}.bsky.social`, title: "Bluesky" }
 ] as const;

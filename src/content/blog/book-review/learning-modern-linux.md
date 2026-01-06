@@ -1,5 +1,5 @@
 ---
-title: "コンテナを学ぶ前に Linux を学べ ––– 書評「入門 モダンLinux」"
+title: "コンテナを学ぶ前に Linux を学べ ― 書評「入門 モダンLinux」"
 date: "2023-07-25"
 tags: ["book", "Linux", "O'reilly"]
 draft: false

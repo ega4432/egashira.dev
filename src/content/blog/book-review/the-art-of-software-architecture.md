@@ -1,5 +1,5 @@
 ---
-title: "アーキテクトを目指すエンジニアへ ––– 書評「アーキテクトの教科書」"
+title: "アーキテクトを目指すエンジニアへ ― 書評「アーキテクトの教科書」"
 date: "2026-01-03"
 tags: ["Architect", "Engineer", "Career", "book"]
 draft: false
