@@ -137,8 +137,8 @@ console.log("unchanged");
 ```ts title="showLineNumbers.ts" showLineNumbers
 console.log("Line"); // [!code --]
 console.log("Line 1"); // [!code ++]
-console.log("Line 2");
-console.log("Line 3");
+console.log("Line 2"); // [!code ++]
+console.log("Line 3"); // [!code ++]
 ```
 
 ### Mermaid 記法
