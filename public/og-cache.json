@@ -3617,5 +3617,181 @@
       "displayUrl": "medium.com",
       "url": "https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898"
     }
+  },
+  "https://ghostty.org/": {
+    "timestamp": 1767703685764,
+    "data": {
+      "title": "Ghostty",
+      "description": "Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=ghostty.org",
+      "ogImageSrc": "https://ghostty.org/social-share-card.jpg",
+      "displayUrl": "ghostty.org",
+      "url": "https://ghostty.org/"
+    }
+  },
+  "https://ghostty.org/docs/install/binary": {
+    "timestamp": 1767703860959,
+    "data": {
+      "title": "Binaries and Packages - Install",
+      "description": "Install Ghostty without building it manually by downloading\nand running a prebuilt binary or package.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=ghostty.org",
+      "ogImageSrc": "https://ghostty.org/social-share-card.jpg",
+      "displayUrl": "ghostty.org",
+      "url": "https://ghostty.org/docs/install/binary"
+    }
+  },
+  "https://ghostty.org/docs/config#zero-configuration-philosophy": {
+    "timestamp": 1767704360186,
+    "data": {
+      "title": "Configuration",
+      "description": "Ghostty supports hundreds of configuration options to make\nit look and behave exactly how you want.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=ghostty.org",
+      "ogImageSrc": "https://ghostty.org/social-share-card.jpg",
+      "displayUrl": "ghostty.org",
+      "url": "https://ghostty.org/docs/config#zero-configuration-philosophy"
+    }
+  },
+  "https://zenn.dev/koya_iwamura/articles/65e4fbb747bcd2": {
+    "timestamp": 1767704611376,
+    "data": {
+      "title": "Ghosttyのconfig大公開",
+      "description": "",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=zenn.dev",
+      "ogImageSrc": "https://res.cloudinary.com/zenn/image/upload/s--tTNqO95T--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_66:Ghostty%25E3%2581%25AEconfig%25E5%25A4%25A7%25E5%2585%25AC%25E9%2596%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Koya%2520IWAMURA%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzFlY2E2MDdiMTIuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT",
+      "displayUrl": "zenn.dev",
+      "url": "https://zenn.dev/koya_iwamura/articles/65e4fbb747bcd2"
+    }
+  },
+  "https://qiita.com/reoring/items/df6d02ed7d6800c4eebe": {
+    "timestamp": 1767704624935,
+    "data": {
+      "title": "GhosttyでiTerm2風のVisor(クイックターミナル)を設定する - Qiita",
+      "description": "macOSのターミナルエミュレータとして人気の高いiTerm2には、グローバルホットキーで呼び出せるVisor機能があります。今回は、新しいターミナルエミュレータであるGhosttyで、同様の機能を実現する方法をご紹介します。 Ghosttyとは Ghosttyは、Zig...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=qiita.com",
+      "ogImageSrc": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGNzU2NSUyRnByb2ZpbGUtaW1hZ2VzJTJGMTUyNDQ3MTEzMj9peGxpYj1yYi00LjAuMCZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9MmJkM2I2MmYzYjk0Y2RkZDU1MzlkOTlmOGY5ZGY2MzY%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkY2MmM5ZDdhM2JjZTc5M2VjMjNlZGI5MDAwYzkyOGQxNzc4YTBmYmU2JTJGb3JpZ2luYWwuanBnJTNGMTYwMTI4MzUwNz9peGxpYj1yYi00LjAuMCZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZiZz1GRkZGRkYmYm9yZGVyPTIlMkNGRkZGRkYmZm09cG5nMzImcz1iZTc2MGNiM2IyOWM5YTU2N2ZiZDA5MTcwOWFhMzBkMw%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3D37ae1bff6ab5458dcf67d0026c7715a1?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9R2hvc3R0eSVFMyU4MSVBN2lUZXJtMiVFOSVBMiVBOCVFMyU4MSVBRVZpc29yJTI4JUUzJTgyJUFGJUUzJTgyJUE0JUUzJTgzJTgzJUUzJTgyJUFGJUUzJTgyJUJGJUUzJTgzJUJDJUUzJTgzJTlGJUUzJTgzJThBJUUzJTgzJUFCJTI5JUUzJTgyJTkyJUU4JUE4JUFEJUU1JUFFJTlBJUUzJTgxJTk5JUUzJTgyJThCJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9NjM1ZGYzMGYxNTVjZjMwODM0NDQ5MDZhYzJiMGJiYjI&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDByZW9yaW5nJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9MzMzZDg2OWU0ZDVmNTM0ODAxY2QzZWY1NTJjMmE4OTg&blend-x=242&blend-y=454&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&txt64=Q3JhZnRzbWFuIFNvZnR3YXJl&txt-x=242&txt-y=539&txt-width=838&txt-clip=end%2Cellipsis&txt-color=%231E2121&txt-font=Hiragino%20Sans%20W6&txt-size=28&s=0d8140b03ca8a8049d2ef0a710c991a3",
+      "displayUrl": "qiita.com",
+      "url": "https://qiita.com/reoring/items/df6d02ed7d6800c4eebe"
+    }
+  },
+  "https://iterm2.com/documentation-hotkey.html": {
+    "timestamp": 1767705047411,
+    "data": {
+      "title": "Hotkeys - Documentation - iTerm2 - macOS Terminal Replacement",
+      "description": "iTerm2 is a replacement for Terminal and the successor to iTerm",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=iterm2.com",
+      "ogImageSrc": "",
+      "displayUrl": "iterm2.com",
+      "url": "https://iterm2.com/documentation-hotkey.html"
+    }
+  },
+  "https://github.com/ghostty-org/ghostty/discussions/7319": {
+    "timestamp": 1767765772459,
+    "data": {
+      "title": "Quick Terminal Fullscreen does not extend window height to fill screen · ghostty-org/ghostty · Discussion #7319",
+      "description": "Issue Description The quick terminal window does not fully respect full screen setting in config. Screencap too large so here&apos;s a dropbox link: https://www.dropbox.com/scl/fi/v1cbkm67bibn0x5egfxgw/...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/d6d1714920d660e0ce1a7fdd6d8dccf5edaa1e23e7f063cb7f9049eefdb1fbec/ghostty-org/ghostty/discussions/7319",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ghostty-org/ghostty/discussions/7319"
+    }
+  },
+  "https://github.com/ega4432/dotfiles/pulls/": {
+    "timestamp": 1767766324709,
+    "data": {
+      "title": "Pull requests · ega4432/dotfiles",
+      "description": "@ega4432 &apos;s dotfiles. Contribute to ega4432/dotfiles development by creating an account on GitHub.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/96c47ae46dce46f4d195475da48d3fc6d9f1baa564f39714ac90bd2f7fbe9c15/ega4432/dotfiles",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ega4432/dotfiles/pulls/"
+    }
+  },
+  "https://github.com/ega4432/dotfiles/pulls/26": {
+    "timestamp": 1767766329692,
+    "data": {
+      "title": "Pull requests · ega4432/dotfiles",
+      "description": "@ega4432 &apos;s dotfiles. Contribute to ega4432/dotfiles development by creating an account on GitHub.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/96c47ae46dce46f4d195475da48d3fc6d9f1baa564f39714ac90bd2f7fbe9c15/ega4432/dotfiles",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ega4432/dotfiles/pulls/26"
+    }
+  },
+  "https://github.com/ega4432/dotfiles/pulls/36": {
+    "timestamp": 1767766332159,
+    "data": {
+      "title": "Pull requests · ega4432/dotfiles",
+      "description": "@ega4432 &apos;s dotfiles. Contribute to ega4432/dotfiles development by creating an account on GitHub.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/96c47ae46dce46f4d195475da48d3fc6d9f1baa564f39714ac90bd2f7fbe9c15/ega4432/dotfiles",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ega4432/dotfiles/pulls/36"
+    }
+  },
+  "https://github.com/ega4432/dotfiles/pull/36": {
+    "timestamp": 1767766355036,
+    "data": {
+      "title": "2026/01 update by ega4432 · Pull Request #36 · ega4432/dotfiles",
+      "description": "",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/b9620aba6a6580fbb561ed748d214db886bac66deb4405e4ac169b444a7599dc/ega4432/dotfiles/pull/36",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ega4432/dotfiles/pull/36"
+    }
+  },
+  "https://engineering.konso.me/articles/iterm2-to-ghostty/": {
+    "timestamp": 1767766958957,
+    "data": {
+      "title": "iTerm2 から Ghostty に乗り換える",
+      "description": "世間では Ghostty が賑わいを見せています。 ミーハーな僕もこのビッグウェーブに乗って iTerm2 から Ghostty に乗り換えることにしました。 今回はその記録です。 Ghostty Zig で書か",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=engineering.konso.me",
+      "ogImageSrc": "https://engineering.konso.me/tcard/2025-01-15_002447.png",
+      "displayUrl": "engineering.konso.me",
+      "url": "https://engineering.konso.me/articles/iterm2-to-ghostty/"
+    }
+  },
+  "https://izanami.dev/post/36f2a88f-48d2-45b5-b0d7-a7dc32e68152": {
+    "timestamp": 1767767073984,
+    "data": {
+      "title": "Ghostty - 爆速で美しい、次世代ターミナル - izanami",
+      "description": "Ghostty は Mitchell Hashimoto が Zig で開発した GPU アクセラレーション対応のターミナルエミュレータ。速度・機能・ネイティブ UI の 3 つを両立し、macOS では Metal、Linux では GTK4 を採用。シェル統合で作業効率が劇的",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=izanami.dev",
+      "ogImageSrc": "https://izanami.dev/post/36f2a88f-48d2-45b5-b0d7-a7dc32e68152/opengraph-image-1umokf?5589478d64c13f8a",
+      "displayUrl": "izanami.dev",
+      "url": "https://izanami.dev/post/36f2a88f-48d2-45b5-b0d7-a7dc32e68152"
+    }
+  },
+  "https://github.com/ega4432/dotfiles/blob/main/ghostty_config": {
+    "timestamp": 1768033726765,
+    "data": {
+      "title": "dotfiles/ghostty_config at main · ega4432/dotfiles",
+      "description": "@ega4432 &apos;s dotfiles. Contribute to ega4432/dotfiles development by creating an account on GitHub.",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/e255d29ff29570449da5ffec827d4afd88e22c1a04031e118ec262d67b63d19e/ega4432/dotfiles",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ega4432/dotfiles/blob/main/ghostty_config"
+    }
+  },
+  "https://github.com/ghostty-org/ghostty/discussions/3459": {
+    "timestamp": 1768033887017,
+    "data": {
+      "title": "toggle_quick_terminal not working on gnome wayland · ghostty-org/ghostty · Discussion #3459",
+      "description": "I have this setup in my config: keybind = global:f12=toggle_quick_terminal using gnome wayland; however, this is not working as desired. I wonder if it&apos;s possible to trigger it using a gnome keyboa...",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/4feee5538d8bbdcf9b2a9ab9fd33cdfd5d9fa0f94706ac78a6bfb98b617503de/ghostty-org/ghostty/discussions/3459",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ghostty-org/ghostty/discussions/3459"
+    }
+  },
+  "https://github.com/ghostty-org/ghostty": {
+    "timestamp": 1768035581876,
+    "data": {
+      "title": "GitHub - ghostty-org/ghostty: 👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration.",
+      "description": "👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. - ghostty-org/ghostty",
+      "faviconSrc": "https://www.google.com/s2/favicons?domain=github.com",
+      "ogImageSrc": "https://opengraph.githubassets.com/c756b02d310a9b3de127f541cc5e61b7567aa1750ec2c72ed85ceea20215d5e7/ghostty-org/ghostty",
+      "displayUrl": "github.com",
+      "url": "https://github.com/ghostty-org/ghostty"
+    }
   }
 }
