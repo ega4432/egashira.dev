@@ -47,7 +47,6 @@ summary: 2022 年 1 年間のやってきたことを振り返ってみた
 - [ega4432/tweet\-current\-page: The simple chrome extension that allows you to tweet the site you are currently viewing\.](https://github.com/ega4432/tweet-current-page)
   - 2021 年に作った Chrome 拡張のメンテと Google Market Place へのデプロイの仕組みを同様に GitHub Actions で作った。
 - [ega4432/dotfiles: @ega4432 's dotfiles](https://github.com/ega4432/dotfiles)
-
   - いわゆる dotfiles を作った。macOS, Ubuntu に対応させて、GitHub Actions で週一でインストール処理を回すようにした。
 
 ### 読書
