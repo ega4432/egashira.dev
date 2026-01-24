@@ -31,7 +31,7 @@ const SITE_TITLE = "egashira.dev" as const;
  * メタタグやOGPで使用されます
  */
 const SITE_DESCRIPTION =
-  "外資系企業で働く防衛大卒のプリセールスエンジニア" as const;
+  "外資系企業で働く防衛大卒のソリューションアーキテクト" as const;
 
 /**
  * 連絡先メールアドレス
