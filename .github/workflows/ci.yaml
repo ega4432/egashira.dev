@@ -23,8 +23,5 @@ jobs:
       - name: Execute eslint
         run: npm run eslint
 
-      - name: Install playwright
-        run: npx playwright install
-
       - name: Build
         run: npm run build
