@@ -6,7 +6,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
 import { rehypePrettyCode } from "rehype-pretty-code";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
@@ -30,7 +30,6 @@ const partytownConfig = {
 
 export default defineConfig({
   integrations: [
-    tailwind(),
     sitemap({
       filter: (page) => !page.startsWith(`${site}/tags`)
     }),
@@ -72,5 +71,8 @@ export default defineConfig({
   site,
   build: {
     format: "file"
+  },
+  vite: {
+    plugins: [tailwindcss()]
   }
 });

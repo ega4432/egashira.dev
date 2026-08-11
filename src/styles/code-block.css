@@ -5,6 +5,9 @@
  * https://github.com/PrismJS/prism-themes
  */
 
+/* Tailwind v4: 別ファイルの @apply にテーマ文脈を与えるため global.css を参照する */
+@reference "./global.css";
+
 /* Code title styles */
 [data-rehype-pretty-code-title] {
   @apply w-fit rounded-t bg-gray-800 px-4 py-2 font-mono text-sm text-gray-400 drop-shadow-xl dark:bg-gray-900;
@@ -17,11 +20,11 @@
 /* Code block styles */
 
 pre {
-  @apply border border-gray-800 drop-shadow-2xl !bg-gray-800 !text-gray-200 dark:!bg-gray-900;
+  @apply border border-gray-800 drop-shadow-2xl bg-gray-800! text-gray-200! dark:bg-gray-900!;
 }
 
 pre > code {
-  @apply dark:!bg-inherit;
+  @apply dark:bg-inherit!;
 }
 
 /* 行数表示 */
@@ -41,11 +44,11 @@ pre [data-line] {
 
 /* diff style */
 .diff.add {
-  @apply bg-green-500 bg-opacity-20;
+  @apply bg-green-500/20;
 }
 
 .diff.remove {
-  @apply bg-red-500 bg-opacity-20;
+  @apply bg-red-500/20;
 }
 
 /* Token styles */
