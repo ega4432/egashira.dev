@@ -31,15 +31,15 @@ const pageTitle = "このサイトについて";
         height={192}
         className="mr-0 rounded-full"
       />
-      <div class="!ml-0 text-2xl font-semibold">{me.data.name}</div>
+      <div class="ml-0! text-2xl font-semibold">{me.data.name}</div>
       <span
-        class="!ml-0 whitespace-nowrap text-base text-gray-600 dark:text-gray-400"
+        class="ml-0! whitespace-nowrap text-base text-gray-600 dark:text-gray-400"
         >{me.data.occupation}</span
       >
     </div>
     <div class="xl:col-span-3">
       <div
-        class="lg:text-md blog prose max-w-none break-words dark:prose-dark xl:text-xl"
+        class="lg:text-md blog prose max-w-none wrap-break-word dark:prose-dark xl:text-xl"
       >
         <Content />
       </div>
