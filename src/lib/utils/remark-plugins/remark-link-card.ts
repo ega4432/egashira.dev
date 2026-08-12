@@ -109,7 +109,7 @@ const createLinkCard = (
   isAmazonUrl: boolean
 ): Html => {
   const faviconElement = data.faviconSrc
-    ? `<img class="my-0 mr-2 h-[15px] w-[15px] object-contain" src="${data.faviconSrc}" alt="${data.title} favicon" width="16" height="16">`.trim()
+    ? `<img class="not-prose mr-2 h-[15px] w-[15px] object-contain" src="${data.faviconSrc}" alt="${data.title} favicon" width="16" height="16">`.trim()
     : "";
 
   const descriptionElement = data.description
@@ -118,12 +118,12 @@ const createLinkCard = (
 
   const imageElement = data.ogImageSrc
     ? `<div class="h-[122px] w-[33.333%] max-w-[230px] md:w-full">
-    <img class="my-0 h-full w-full rounded-r-[0.275rem] ${isAmazonUrl ? "object-contain bg-white" : "object-cover"}" src="${data.ogImageSrc}" alt="${data.title}" />
+    <img class="not-prose h-full w-full rounded-r-[0.275rem] ${isAmazonUrl ? "object-contain bg-white" : "object-cover"}" src="${data.ogImageSrc}" alt="${data.title}" />
   </div>`.trim()
     : "";
 
   const value = `
-<a class="min-h-[122px] my-4 box-border flex flex-row justify-between rounded-md border-2 text-gray-800 no-underline hover:bg-gray-200 hover:text-gray-800! dark:border-gray-700 dark:hover:bg-gray-700" href="${targetUrl}" ${
+<a class="min-h-[122px] my-4 box-border flex flex-row justify-between rounded-md border-2 text-gray-800 no-underline hover:bg-gray-200 hover:text-gray-800! border-gray-200 dark:border-gray-700 dark:hover:bg-gray-700" href="${targetUrl}" ${
     isExternal(targetUrl) ? 'target="_blank" rel="noopener noreferrer"' : ""
   }>
 <div class="flex w-[50%] flex-1 flex-col justify-evenly wrap-break-word p-4 md:w-[65%]">
@@ -131,7 +131,7 @@ const createLinkCard = (
     data.title
   }</div>
   ${descriptionElement}
-  <div class="flex flex-row text-xs dark:text-gray-300">
+  <div class="flex flex-row text-xs dark:text-gray-300 items-center">
     ${faviconElement}
     <span class="flex truncate flex-row text-xs dark:text-gray-300">${
       data.displayUrl
