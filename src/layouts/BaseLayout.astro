@@ -4,6 +4,7 @@ import Footer from "@components/Footer.astro";
 import SEO from "@components/SEO.astro";
 import GoogleTagManager from "@components/GoogleTagManager.astro";
 import GoogleAdsense from "@components/GoogleAdsense.astro";
+import "@styles/global.css";
 
 type Props = {
   title: string;
@@ -59,10 +60,12 @@ const adClient = import.meta.env.AD_CLIENT;
       <Footer />
     </div>
     <style is:global>
+      /* Tailwind v4: この <style> 内の @apply にテーマ文脈を与える */
+      @reference "../styles/global.css";
       /* コード、数式 */
       .prose pre,
       .math {
-        @apply text-xs xl:text-sm !leading-5 sm:!leading-6;
+        @apply text-xs xl:text-sm leading-5! sm:leading-6!;
       }
       /* チェックボックス */
       .prose ul:has(> .task-list-item) {
@@ -92,7 +95,7 @@ const adClient = import.meta.env.AD_CLIENT;
       }
       /* アンカーリンク */
       .prose a:has(.anchor-icon) {
-        @apply text-inherit hover:!text-inherit;
+        @apply text-inherit hover:text-inherit!;
       }
       .prose .anchor-icon {
         @apply my-0 ml-[-1.25rem] inline-block w-5 align-middle dark:text-gray-200 md:invisible;

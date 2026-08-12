@@ -1,6 +1,9 @@
 /* Link Card styles */
+/* Tailwind v4: 別ファイルの @apply にテーマ文脈を与えるため global.css を参照する */
+@reference "./global.css";
+
 .remark-link-card-wrapper {
-  @apply my-4 box-border flex flex-row justify-between rounded-md border-2 text-gray-800 no-underline hover:bg-slate-200 hover:!text-gray-800 dark:border-gray-700 dark:hover:bg-slate-800;
+  @apply my-4 box-border flex flex-row justify-between rounded-md border-2 text-gray-800 no-underline hover:bg-slate-200 hover:text-gray-800! dark:border-gray-700 dark:hover:bg-slate-800;
 }
 
 .remark-link-card-main {

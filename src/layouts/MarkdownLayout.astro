@@ -12,7 +12,7 @@ const { title, description } = Astro.props;
 
 <BaseLayout title={title} description={description}>
   <article
-    class="lg:text-md blog prose max-w-none break-words dark:prose-dark xl:text-xl"
+    class="lg:text-md blog prose max-w-none wrap-break-word dark:prose-dark xl:text-xl"
   >
     <slot />
   </article>
